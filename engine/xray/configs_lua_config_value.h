@@ -40,7 +40,7 @@ class lua_config_value;
 class XRAY_CORE_API	lua_config_iterator {
 public:
 	IMPLICIT			lua_config_iterator		( ::luabind::iterator const& iterator );
-	IMPLICIT			lua_config_iterator		(cJSON* js);
+	IMPLICIT			lua_config_iterator		(cJSON* js, cJSON* parent);
 						lua_config_iterator		( lua_config_iterator const& other );
 						~lua_config_iterator	( );
 	lua_config_iterator& operator =				( lua_config_iterator const& other );
@@ -59,16 +59,17 @@ private:
 		luabind_handle_sizeof			= ((sizeof(pvoid) + sizeof(int) - 1)/sizeof(pvoid) + 1)*sizeof(pvoid),
 		luabind_object_iterator_sizeof	= 2*luabind_handle_sizeof + sizeof(pvoid),
 	};
-	/*XRAY_DEFAULT_ALIGN*/ char	m_iterator_fake[ luabind_object_iterator_sizeof ];// sizeof(luabind::object::iterator);
-	::luabind::iterator*	m_iterator;
-	cJSON* root;
+	///*XRAY_DEFAULT_ALIGN*/ char	m_iterator_fake[ luabind_object_iterator_sizeof ];// sizeof(luabind::object::iterator);
+	//::luabind::iterator*	m_iterator;
+	cJSON * root, * parent;
 }; // class lua_config_iterator
 
 class XRAY_CORE_API lua_config_value {
 public:
-	IMPLICIT			lua_config_value		( ::luabind::object const& object);
-	IMPLICIT			lua_config_value		(cJSON* js);
-						lua_config_value		( ::luabind::object const& object, ::luabind::object const& table_object, pcstr field_id );
+//	IMPLICIT			lua_config_value		( ::luabind::object const& object);
+						lua_config_value		(cJSON* js);
+						lua_config_value		(cJSON* js, cJSON *parent);
+//						lua_config_value		( ::luabind::object const& object, ::luabind::object const& table_object, pcstr field_id );
 						~lua_config_value		( );
 
 	void				save					( strings::stream& stream, pstr indent, u32 indent_size, u32 indent_level ) const;
@@ -81,7 +82,7 @@ public:
 	void				swap					( lua_config_value& other );
 
 	bool				value_exists			( pcstr field_id ) const;
-	void				sweep					();
+	void				destroy					( );
 
 public:
 	typedef lua_config_iterator					iterator;
@@ -163,14 +164,14 @@ private:
 	enum {
 		luabind_object_sizeof	= ((sizeof(pvoid) + sizeof(int) - 1)/sizeof(pvoid) + 1)*sizeof(pvoid),
 	};
-	/*XRAY_DEFAULT_ALIGN*/ char	m_object_fake[ luabind_object_sizeof ];			// sizeof(luabind::object);
-	::luabind::object*		m_object;
-	/*XRAY_DEFAULT_ALIGN*/ char	m_table_object_fake[ luabind_object_sizeof ];	// sizeof(luabind::object);
-	::luabind::object*		m_table_object;
-	mutable pstr			m_field_id;
-	mutable bool			m_fixed_up;
+	///*XRAY_DEFAULT_ALIGN*/ char	m_object_fake[ luabind_object_sizeof ];			// sizeof(luabind::object);
+	//::luabind::object*		m_object;
+	///*XRAY_DEFAULT_ALIGN*/ char	m_table_object_fake[ luabind_object_sizeof ];	// sizeof(luabind::object);
+	//::luabind::object*		m_table_object;
+	//mutable pstr			m_field_id;
+	//mutable bool			m_fixed_up;
 
-	cJSON* root;
+	cJSON * root, * parent;
 
 }; // class lua_config_value
 

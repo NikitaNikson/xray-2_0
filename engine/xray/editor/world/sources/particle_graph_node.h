@@ -42,7 +42,8 @@ namespace xray {
 			!particle_graph_node()
 			{
 				DELETE						(m_property_holder);
-				DELETE						(m_properties_config);					
+				DELETE						(m_properties_config);
+				DELETE						(m_properties_config_ptr);
 			}
 			~particle_graph_node()
 			{
@@ -98,6 +99,7 @@ namespace xray {
 		
 			bool									m_highlighted;
 			configs::lua_config_value*				m_properties_config;
+			configs::lua_config_ptr*				m_properties_config_ptr;
 			particle_node_time_parameters_holder^	m_time_parameters_holder;
 		
 		private:

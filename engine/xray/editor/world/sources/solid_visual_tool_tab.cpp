@@ -4,6 +4,13 @@
 
 using xray::editor::solid_visual_tool_tab;
 
+System::Void  solid_visual_tool_tab::refresh_library(System::Object ^, System::EventArgs ^)
+{
+	treeView->nodes->Clear();
+	m_tool->load_library();
+	treeView->Refresh();
+}
+
 System::Void  solid_visual_tool_tab::treeView_AfterSelect(System::Object^, System::Windows::Forms::TreeViewEventArgs^)
 {
 	TreeNode^ current_node	= treeView->SelectedNode;

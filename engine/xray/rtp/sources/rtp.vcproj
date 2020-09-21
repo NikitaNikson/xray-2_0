@@ -488,7 +488,7 @@
 				MinimalRebuild="true"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
+				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				FloatingPointExceptions="true"

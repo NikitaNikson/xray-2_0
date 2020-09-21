@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="editor"
 	ProjectGUID="{F9523302-4516-4FEC-863B-01031632EC37}"
 	RootNamespace="xray.editor"
 	Keyword="Win32Proj"
+	AssemblyReferenceSearchPaths="&quot;..\..\..\wpf_controls&quot;"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -87,6 +88,7 @@
 				EmbedManagedResourceFile="$(TargetDir)intermediates\$(ConfigurationName)\editor_base\editor_base.resources.resources"
 				DelayLoadDLLs=""
 				GenerateDebugInformation="true"
+				AssemblyDebug="0"
 				ProgramDatabaseFile="$(SolutionDir)../binaries/$(PlatformName)/$(TargetName).pdb"
 				GenerateMapFile="false"
 				SubSystem="2"
@@ -476,7 +478,7 @@
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
-			RelativePath="k:\Program Files (x86)\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll"
+			RelativePath="C:\program files (x86)\microsoft visual studio 9.0\visual studio tools for office\pia\office12\microsoft.office.interop.excel.dll"
 			AssemblyName="Microsoft.Office.Interop.Excel, Version=12.0.0.0, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
 			MinFrameworkVersion="0"
 		/>
@@ -1352,6 +1354,7 @@
 						>
 						<File
 							RelativePath=".\terrain_core_form.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1365,6 +1368,7 @@
 						>
 						<File
 							RelativePath=".\terrain_import_form.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1378,6 +1382,7 @@
 						>
 						<File
 							RelativePath=".\terrain_painter_control_tab.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1477,6 +1482,7 @@
 						>
 						<File
 							RelativePath=".\control_properties_tab.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1534,6 +1540,7 @@
 						>
 						<File
 							RelativePath=".\options_page_general.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1619,6 +1626,7 @@
 					>
 					<File
 						RelativePath=".\scene_graph_tab.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1636,6 +1644,7 @@
 					>
 					<File
 						RelativePath=".\sound_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1684,6 +1693,7 @@
 								>
 								<File
 									RelativePath=".\graph_view.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1763,6 +1773,7 @@
 						>
 						<File
 							RelativePath=".\sound_items_view_panel.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1792,6 +1803,7 @@
 						>
 						<File
 							RelativePath=".\sound_item_editor_panel.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1814,6 +1826,7 @@
 								<File
 									RelativePath=".\inplace_combo_box.resx"
 									DeploymentContent="true"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1831,6 +1844,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1848,6 +1862,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item_property.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1865,6 +1880,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item_dependency.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1898,6 +1914,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_bool_bool.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1915,6 +1932,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_bool_float.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1932,6 +1950,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_float_bool.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1996,6 +2015,7 @@
 					>
 					<File
 						RelativePath=".\particle_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2291,6 +2311,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2313,6 +2334,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor_cancel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2326,6 +2348,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor_commit.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2343,6 +2366,7 @@
 					>
 					<File
 						RelativePath=".\resource_selector.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2370,6 +2394,7 @@
 							>
 							<File
 								RelativePath=".\texture_document.resx"
+								SubType="Designer"
 								>
 							</File>
 						</File>
@@ -3317,6 +3342,7 @@
 					>
 					<File
 						RelativePath=".\project_browser_dialog.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>

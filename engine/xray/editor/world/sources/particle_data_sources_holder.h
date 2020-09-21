@@ -44,7 +44,7 @@ private:
 private:
 	color_curve_data_sources^				m_color_curves;
 	float_curve_data_sources^				m_float_curves;
-	configs::lua_config_value*				m_data_sources_config;
+	configs::lua_config_ptr*				m_data_sources_config;
 	particle_graph_document^				m_parent_document;
 
 #pragma endregion
@@ -73,10 +73,10 @@ public:
 		float_curve_data_sources^			get(){return m_float_curves;}
 	}
 	property configs::lua_config_value		float_curves_config{
-		configs::lua_config_value			get(){return (*m_data_sources_config)["float_curves"];}
+		configs::lua_config_value			get(){return (**m_data_sources_config)["float_curves"];}
 	}
 	property configs::lua_config_value		color_curves_config{
-		configs::lua_config_value			get(){return (*m_data_sources_config)["color_curves"];}
+		configs::lua_config_value			get(){return (**m_data_sources_config)["color_curves"];}
 	}
 
 #pragma endregion

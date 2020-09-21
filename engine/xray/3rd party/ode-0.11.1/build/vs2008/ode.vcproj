@@ -315,8 +315,8 @@
 		</Configuration>
 		<Configuration
 			Name="DebugDoubleDLL|Win32"
-			OutputDirectory="..\..\lib\DebugDoubleDLL"
-			IntermediateDirectory="obj\DebugDoubleDLL"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -345,7 +345,7 @@
 				RuntimeLibrary="3"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				ProgramDataBaseFileName="$(OutDir)\$(ProjectName).pdb"
+				ProgramDataBaseFileName="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName).pdb"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -363,13 +363,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="user32.lib"
-				OutputFile="$(OutDir)\ode_doubled.dll"
+				OutputFile="$(OutDir)/xray_$(ProjectName).dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OutDir)\$(ProjectName).pdb"
+				ProgramDatabaseFile="$(OutDir)/xray_$(ProjectName).pdb"
 				SubSystem="2"
-				ImportLibrary="..\..\lib\DebugDoubleDLL\ode_doubled.lib"
+				ImportLibrary="$(OutDir)/libraries/xray_$(ProjectName).lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -396,8 +396,8 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDoubleDLL|Win32"
-			OutputDirectory="..\..\lib\ReleaseDoubleDLL"
-			IntermediateDirectory="obj\ReleaseDoubleDLL"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -444,14 +444,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="user32.lib"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).dll"
+				OutputFile="$(OutDir)/xray_$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				ImportLibrary="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName).lib"
+				ImportLibrary="$(OutDir)/libraries/xray_$(ProjectName).lib"
 				TargetMachine="1"
 			/>
 			<Tool

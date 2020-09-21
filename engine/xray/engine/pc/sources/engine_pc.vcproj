@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="engine_pc"
 	ProjectGUID="{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
 	RootNamespace="engine_pc"
@@ -144,7 +144,7 @@
 				MinimalRebuild="true"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
+				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				FloatingPointExceptions="true"
@@ -162,7 +162,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/delayload:advapi32.dll&#x0D;&#x0A;/delayload:user32.dll&#x0D;&#x0A;/delayload:ole32.dll&#x0D;&#x0A;/delayload:d3d110.dll&#x0D;&#x0A;/delayload:d3d111.dll&#x0D;&#x0A;/delayload:d3d9.dll&#x0D;&#x0A;/delayload:d3dcompiler_42.dll&#x0D;&#x0A;/delayload:d3dx10_42.dll&#x0D;&#x0A;/delayload:d3dx11_42.dll&#x0D;&#x0A;/delayload:d3dx9_42.dll&#x0D;&#x0A;/delayload:dinput8.dll&#x0D;&#x0A;/delayload:dxgi.dll&#x0D;&#x0A;/delayload:winmm.dll&#x0D;&#x0A;/delayload:ws2_32.dll&#x0D;&#x0A;/delayload:xinput1_3.dll&#x0D;&#x0A;/delayload:xray_texture_compressor-debug.dll&#x0D;&#x0A;/delayload:x3daudio1_7.dll&#x0D;&#x0A;/delayload:ddraw.dll"
+				AdditionalOptions="/delayload:advapi32.dll&#x0D;&#x0A;/delayload:user32.dll&#x0D;&#x0A;/delayload:ole32.dll&#x0D;&#x0A;/delayload:d3d10.dll&#x0D;&#x0A;/delayload:d3d11.dll&#x0D;&#x0A;/delayload:d3d9.dll&#x0D;&#x0A;/delayload:d3dcompiler_42.dll&#x0D;&#x0A;/delayload:d3dx10_42.dll&#x0D;&#x0A;/delayload:d3dx11_42.dll&#x0D;&#x0A;/delayload:d3dx9_42.dll&#x0D;&#x0A;/delayload:dinput8.dll&#x0D;&#x0A;/delayload:dxgi.dll&#x0D;&#x0A;/delayload:winmm.dll&#x0D;&#x0A;/delayload:ws2_32.dll&#x0D;&#x0A;/delayload:xinput1_3.dll&#x0D;&#x0A;/delayload:xray_texture_compressor-debug.dll&#x0D;&#x0A;/delayload:x3daudio1_7.dll&#x0D;&#x0A;/delayload:ddraw.dll"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName)-debug.dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;"

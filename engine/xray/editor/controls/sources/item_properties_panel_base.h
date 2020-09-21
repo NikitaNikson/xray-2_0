@@ -15,7 +15,6 @@ using namespace Flobbster::Windows::Forms;
 
 using xray::editor::wpf_controls::property_grid_host;
 
-
 namespace xray {
 namespace editor {
 namespace controls {
@@ -90,3 +89,5 @@ namespace controls {
 } // namespace editor
 } // namespace xray
 #endif 
+
+

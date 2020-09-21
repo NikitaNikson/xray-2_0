@@ -18,7 +18,12 @@ mutable_buffer   lua_config_cook::allocate_resource	(resources::query_result_for
 													 bool								file_exist)
 {
 	XRAY_UNREFERENCED_PARAMETERS			(& in_query, & raw_file_data, & file_exist);
-	void* buffer = XRAY_MALLOC_IMPL(xray::core::configs::g_lua_allocator,sizeof(xray::configs::lua_config),"lua");
+
+	void* buffer;
+
+	core::configs::g_lua_allocator.user_current_thread_id();
+	buffer = XRAY_MALLOC_IMPL(xray::core::configs::g_lua_allocator,sizeof(xray::configs::lua_config),"lua");
+
 	return									mutable_buffer (buffer, 
 															sizeof(xray::configs::lua_config));
 }
@@ -31,7 +36,8 @@ void   lua_config_cook::destroy_resource	(resources::unmanaged_resource * resour
 
 void   lua_config_cook::deallocate_resource	(pvoid buffer)
 {
-	XRAY_FREE_IMPL(xray::core::configs::g_lua_allocator,buffer);
+	core::configs::g_lua_allocator.user_current_thread_id();
+	XRAY_FREE_IMPL(xray::core::configs::g_lua_allocator, buffer);
 }
 
 void   lua_config_cook::create_resource (resources::query_result_for_cook &	in_out_query, 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="render_core_dx11"
 	ProjectGUID="{056D4C47-10DD-49AD-8213-8201E2114B06}"
 	RootNamespace="core_dx11"
@@ -125,7 +125,7 @@
 				MinimalRebuild="false"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
+				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				FloatingPointExceptions="true"

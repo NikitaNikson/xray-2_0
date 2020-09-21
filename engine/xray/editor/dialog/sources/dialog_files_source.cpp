@@ -58,7 +58,7 @@ void dialog_files_source::refresh()
 
 void dialog_files_source::on_fs_iterator_ready(xray::resources::fs_iterator fs_it)
 {
-	process_fs(fs_it.children_begin(), "dialogs/");
+	process_fs(fs_it.children_begin(), "");
 	m_parent->TreeViewNodeSorter = gcnew dialogs_node_sorter();
 	m_parent->Sort();
 	TreeNode^ node = m_parent->root;

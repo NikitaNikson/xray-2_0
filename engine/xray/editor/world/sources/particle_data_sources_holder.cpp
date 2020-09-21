@@ -16,10 +16,10 @@ void particle_data_sources_holder::in_constructor(){
 	m_float_curves			= gcnew float_curve_data_sources();
 	m_color_curves			= gcnew color_curve_data_sources();
 	
-	m_data_sources_config	= NEW(xray::configs::lua_config_value)((*xray::configs::create_lua_config())["data_sources"]);
+	m_data_sources_config	= NEW(configs::lua_config_ptr)(configs::create_lua_config());
 	
-	(*m_data_sources_config)["float_curves"].create_table();
-	(*m_data_sources_config)["color_curves"].create_table();
+	(**m_data_sources_config)["data_sources"]["float_curves"].create_table();
+	(**m_data_sources_config)["data_sources"]["color_curves"].create_table();
 }
 
 void particle_data_sources_holder::add_sources_to_panel(particle_data_sources_panel^ panel){
@@ -38,6 +38,7 @@ void particle_data_sources_holder::add_sources_to_panel(particle_data_sources_pa
 particle_data_sources_holder::~particle_data_sources_holder()
 {
 	DELETE(m_data_sources_config);
+
 	for each(particle_data_source_cc_node^ n in m_color_curves)
 	{
 		delete n;
@@ -57,7 +58,7 @@ void particle_data_sources_holder::add_data_source(particle_data_source_fc_node^
 }
 
 void particle_data_sources_holder::save(configs::lua_config_value config){
-	config.assign_lua_value(*m_data_sources_config);
+	config.assign_lua_value((*m_data_sources_config)->get_root());
 }
 
 void particle_data_sources_holder::create_fc_data_source(String^ name, configs::lua_config_value config){
@@ -94,9 +95,9 @@ void particle_data_sources_holder::create_cc_data_source(String^ name, configs::
 
 void particle_data_sources_holder::load(configs::lua_config_value config){
 
-	m_data_sources_config->assign_lua_value(config);
+	(*m_data_sources_config)->assign_lua_value(config);
 
-	configs::lua_config_value float_curves_config	= (*m_data_sources_config)["float_curves"];
+	configs::lua_config_value float_curves_config	= (**m_data_sources_config)["data_sources"]["float_curves"];
 	configs::lua_config_value::iterator begin		= float_curves_config.begin();
 	configs::lua_config_value::iterator end			= float_curves_config.end();
 
@@ -104,7 +105,7 @@ void particle_data_sources_holder::load(configs::lua_config_value config){
 		create_fc_data_source(gcnew String(begin.key()), float_curves_config);
 	}
 
-	configs::lua_config_value color_curves_config	= (*m_data_sources_config)["color_curves"];
+	configs::lua_config_value color_curves_config	= (**m_data_sources_config)["data_sources"]["color_curves"];
 	begin		= color_curves_config.begin();
 	end			= color_curves_config.end();
 

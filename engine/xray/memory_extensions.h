@@ -23,7 +23,7 @@
 
 #define XRAY_MAX_CACHE_LINE_PAD			char XRAY_STRING_CONCAT(m_cache_line_pad_$, __LINE__) [XRAY_MAX_CACHE_LINE_SIZE]
 
-#define XRAY_USE_CRT_MEMORY_ALLOCATOR	0
+#define XRAY_USE_CRT_MEMORY_ALLOCATOR	1
 
 #if XRAY_USE_CRT_MEMORY_ALLOCATOR || defined(XRAY_MAYA_BUILDING) || defined(__SNC__)
 #	include <xray/memory_crt_allocator.h>

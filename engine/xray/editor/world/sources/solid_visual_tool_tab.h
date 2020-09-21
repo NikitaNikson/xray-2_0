@@ -32,7 +32,19 @@ ref class tool_solid_visual;
 			//
 			//TODO: Add the constructor code here
 			//
+
+			Windows::Forms::ContextMenuStrip ^ menu = gcnew Windows::Forms::ContextMenuStrip;
+			Windows::Forms::ToolStripMenuItem ^ item = gcnew Windows::Forms::ToolStripMenuItem;
+
+			item->Text = "Refresh";
+			item->Click += gcnew System::EventHandler(this, &solid_visual_tool_tab::refresh_library);
+
+			menu->Items->Add(item);
+			treeView->ContextMenuStrip = menu;
 		}
+
+	private:
+		System::Void refresh_library(System::Object ^ sender, System::EventArgs ^ e);
 
 	public: 
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
@@ -81,7 +93,6 @@ ref class tool_solid_visual;
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::TreeNode^  treeNode1 = (gcnew System::Windows::Forms::TreeNode(L""));
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(solid_visual_tool_tab::typeid));
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
@@ -102,7 +113,7 @@ ref class tool_solid_visual;
 			// toolStripStatusLabel1
 			// 
 			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-			this->toolStripStatusLabel1->Size = System::Drawing::Size(34, 17);
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(37, 17);
 			this->toolStripStatusLabel1->Text = L"total:";
 			// 
 			// treeView
@@ -115,13 +126,11 @@ ref class tool_solid_visual;
 			this->treeView->ImageList = this->imageList1;
 			this->treeView->Indent = 27;
 			this->treeView->is_multiselect = false;
+			this->treeView->is_selectable_groups = true;
 			this->treeView->ItemHeight = 20;
 			this->treeView->Location = System::Drawing::Point(0, 0);
 			this->treeView->Name = L"treeView";
 			this->treeView->PathSeparator = L"/";
-			treeNode1->Name = L"";
-			treeNode1->Text = L"";
-			this->treeView->root = treeNode1;
 			this->treeView->SelectedImageIndex = 0;
 			this->treeView->Size = System::Drawing::Size(242, 363);
 			this->treeView->source = nullptr;

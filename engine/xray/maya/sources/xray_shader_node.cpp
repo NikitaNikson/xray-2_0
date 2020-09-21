@@ -94,9 +94,10 @@ MStatus xray_shader_node::initialize()
 	CHK_STAT			( status );
 	MAKE_INPUT_ATT		(eAttr);
 	CHK_STAT(eAttr.addField		("default", 0));
-	CHK_STAT(eAttr.addField		("High quality(not supported)", 1));
-	CHK_STAT(eAttr.addField		("Medium quality(not supported)", 2));
-	CHK_STAT(eAttr.addField		("Low quality(not supported)", 3));
+	CHK_STAT(eAttr.addField		("def_shaders\\def_aref", 1));
+//	CHK_STAT(eAttr.addField		("High quality(not supported)", 1));
+//	CHK_STAT(eAttr.addField		("Medium quality(not supported)", 2));
+//	CHK_STAT(eAttr.addField		("Low quality(not supported)", 3));
 	CHK_STAT			( eAttr.setDefault( 0 ));
 
 	aXrayDoubleSided	= nAttr.create( doublesided_att_name, "xds", MFnNumericData::kBoolean, 0, &status );

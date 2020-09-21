@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="editor_controls"
 	ProjectGUID="{FDDFC8AD-1E92-4A92-8937-152C64C5B980}"
 	RootNamespace="controls"
 	Keyword="Win32Proj"
+	AssemblyReferenceSearchPaths="&quot;..\..\..\wpf_controls&quot;"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -645,6 +646,7 @@
 					>
 					<File
 						RelativePath=".\tree_view_filter_panel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -666,6 +668,7 @@
 					>
 					<File
 						RelativePath=".\tree_view_search_panel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -687,6 +690,7 @@
 					>
 					<File
 						RelativePath=".\scalable_scroll_bar.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>

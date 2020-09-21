@@ -13,10 +13,10 @@ using xray::dialog_editor::e_action_functions;
 u32 dialog_action::m_created_counter = 0;
 
 dialog_action::dialog_action(u8 func, pstr par)
-:m_function(e_action_functions(func)),
-m_param(par)
+:m_function(e_action_functions(func))
 {
 	++m_created_counter;
+	m_param = strings::duplicate(g_allocator, par);
 }
 
 dialog_action::~dialog_action()

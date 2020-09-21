@@ -78,6 +78,7 @@
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).dll"
 				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
 				EmbedManagedResourceFile="$(TargetDir)intermediates\$(ConfigurationName)\editor_base\editor_base.resources.resources"
+				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				SupportUnloadOfDelayLoadedDLL="true"
@@ -1016,6 +1017,7 @@
 					>
 					<File
 						RelativePath=".\add_language_form.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1029,6 +1031,7 @@
 					>
 					<File
 						RelativePath=".\dialog_language_panel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1042,6 +1045,7 @@
 					>
 					<File
 						RelativePath=".\remove_language_form.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1075,6 +1079,7 @@
 					>
 					<File
 						RelativePath=".\dialog_precondition_action_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1118,6 +1123,7 @@
 					>
 					<File
 						RelativePath=".\dialog_export_form.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1131,6 +1137,7 @@
 					>
 					<File
 						RelativePath=".\dialog_import_form.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>

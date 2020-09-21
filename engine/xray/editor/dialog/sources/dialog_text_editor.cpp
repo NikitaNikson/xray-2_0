@@ -134,8 +134,12 @@ u32 dialog_text_editor::find_new_str_id_cb_pos(System::String^ new_str_id)
 {
 	u32 index = 0;
 	AlphanumComparator^ comparer = gcnew AlphanumComparator();
-	while(comparer->Compare(new_str_id, (String^)combo_box->Items[index])>=0)
+
+	while(index < u32(combo_box->Items->Count) && 
+		  comparer->Compare(new_str_id, (String^)combo_box->Items[index]) >= 0)
+	{
 		++index;
+	}
 
 	return index;
 }

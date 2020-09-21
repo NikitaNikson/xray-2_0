@@ -151,7 +151,7 @@
 				MinimalRebuild="false"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
+				SmallerTypeCheck="false"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				FloatingPointExceptions="true"
@@ -173,7 +173,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/ignore:4096&#x0D;&#x0A;/delayload:user32.dll&#x0D;&#x0A;/delayload:xray_engine_pc-debug.dll&#x0D;&#x0A;/delayload:xray_game-debug.dll&#x0D;&#x0A;/delayload:gdi32.dll"
+				AdditionalOptions="/ignore:4096&#x0D;&#x0A;/delayload:user32.dll&#x0D;&#x0A;/delayload:-xray_engine_pc-debug.dll&#x0D;&#x0A;/delayload:xray_game-debug.dll&#x0D;&#x0A;/delayload:gdi32.dll"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/stalker2-win32-dynamic-debug.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
