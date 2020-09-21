@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/126/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers
+END
+vssver2.scc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/40/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers/vssver2.scc
+END
+DrawHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/40/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers/DrawHelper.cs
+END
+DockHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/40/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers/DockHelper.cs
+END
+Win32Helper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/40/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers/Win32Helper.cs
+END
+ResourceHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/40/trunk/XmlExplorer/DockPanelSuite/Docking/Helpers/ResourceHelper.cs
+END
