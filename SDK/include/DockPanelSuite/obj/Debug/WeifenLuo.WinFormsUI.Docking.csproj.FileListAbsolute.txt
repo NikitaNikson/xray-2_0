@@ -1,0 +1,9 @@
+H:\xray2\xray2\SDK\include\DockPanelSuite\bin\Debug\license.txt
+H:\xray2\xray2\SDK\include\DockPanelSuite\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+H:\xray2\xray2\SDK\include\DockPanelSuite\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\ResolveAssemblyReference.cache
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\WeifenLuo.WinFormsUI.Docking.csproj.GenerateResource.Cache
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+H:\xray2\xray2\SDK\include\DockPanelSuite\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

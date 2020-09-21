@@ -98,7 +98,7 @@ public:
     return "asio.misc";
   }
 
-  std::string message(int value) const
+  xray::network::std_string message(int value) const
   {
     if (value == error::already_open)
       return "Already open";

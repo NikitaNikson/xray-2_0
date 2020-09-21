@@ -189,7 +189,7 @@ namespace boost
       virtual ~error_category(){}
 
       virtual const char *     name() const BOOST_SYSTEM_NOEXCEPT = 0;
-      virtual std::string      message( int ev ) const = 0;
+	  virtual xray::network::std_string      message( int ev ) const = 0;
       inline virtual error_condition  default_error_condition( int ev ) const  BOOST_SYSTEM_NOEXCEPT;
       inline virtual bool             equivalent( int code,
                                            const error_condition & condition ) const  BOOST_SYSTEM_NOEXCEPT;
@@ -216,8 +216,8 @@ namespace boost
     //  deprecated synonyms --------------------------------------------------//
 
 # ifndef BOOST_SYSTEM_NO_DEPRECATED
-    inline const error_category &  get_system_category() { return system_category(); }
-    inline const error_category &  get_generic_category() { return generic_category(); }
+    inline const error_category &  get_system_category();// { return system_category(); }
+    inline const error_category &  get_generic_category();// { return generic_category(); }
     inline const error_category &  get_posix_category() { return generic_category(); }
     static const error_category &  posix_category = generic_category();
     static const error_category &  errno_ecat     = generic_category();

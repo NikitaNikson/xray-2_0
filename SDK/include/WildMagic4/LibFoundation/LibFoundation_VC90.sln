@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibFoundation_VC90", "LibFoundation_VC90.vcproj", "{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug DLL|Win32 = Debug DLL|Win32
+		Debug Memory|Win32 = Debug Memory|Win32
+		Debug|Win32 = Debug|Win32
+		NoPCH|Win32 = NoPCH|Win32
+		Release DLL|Win32 = Release DLL|Win32
+		Release Memory|Win32 = Release Memory|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug Memory|Win32.ActiveCfg = Debug Memory|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug Memory|Win32.Build.0 = Debug Memory|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Debug|Win32.Build.0 = Debug|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.NoPCH|Win32.ActiveCfg = NoPCH|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.NoPCH|Win32.Build.0 = NoPCH|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release Memory|Win32.ActiveCfg = Release Memory|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release Memory|Win32.Build.0 = Release Memory|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release|Win32.ActiveCfg = Release|Win32
+		{9CE08AA4-9163-4A42-BCBF-E361B5BA5BC0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

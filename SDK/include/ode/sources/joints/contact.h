@@ -32,7 +32,7 @@ struct dxJointContact : public dxJoint
     int the_m;   // number of rows computed by getInfo1
     dContact contact;
 
-    dxJointContact( dxWorld* w );
+	dxJointContact( dxWorld* w );
     virtual void getSureMaxInfo( SureMaxInfo* info );
     virtual void getInfo1( Info1* info );
     virtual void getInfo2( Info2* info );

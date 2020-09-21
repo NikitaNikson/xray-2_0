@@ -1,0 +1,48 @@
+// Geometric Tools, LLC
+// Copyright (c) 1998-2010
+// Distributed under the Boost Software License, Version 1.0.
+// http://www.boost.org/LICENSE_1_0.txt
+// http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
+//
+// File Version: 4.10.0 (2009/11/18)
+
+#ifndef WM4PICKRECORD_H
+#define WM4PICKRECORD_H
+
+#include "Wm4GraphicsLIB.h"
+#include "Wm4Spatial.h"
+
+namespace Wm4
+{
+
+class WM4_GRAPHICS_ITEM PickRecord
+{
+public:
+    // The intersected object.
+    SpatialPtr Intersected;
+
+    // The linear component is parameterized by P + t*D.  The T member is
+    // the value of parameter t at the intersection point.
+    float T;
+
+    // The index of the triangle that is intersected by the ray.
+    int Triangle;
+
+    // The barycentric coordinates of the point of intersection.  All of the
+    // coordinates are in [0,1] and b0 + b1 + b2 = 1.
+    float B0, B1, B2;
+
+    // For sorting purposes.
+    bool operator== (const PickRecord& rkRecord) const;
+    bool operator!= (const PickRecord& rkRecord) const;
+    bool operator<  (const PickRecord& rkRecord) const;
+    bool operator<= (const PickRecord& rkRecord) const;
+    bool operator>  (const PickRecord& rkRecord) const;
+    bool operator>= (const PickRecord& rkRecord) const;
+};
+
+#include "Wm4PickRecord.inl"
+
+}
+
+#endif

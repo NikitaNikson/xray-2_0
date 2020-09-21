@@ -1,0 +1,49 @@
+// Geometric Tools, LLC
+// Copyright (c) 1998-2010
+// Distributed under the Boost Software License, Version 1.0.
+// http://www.boost.org/LICENSE_1_0.txt
+// http://www.geometrictools.com/License/Boost/LICENSE_1_0.txt
+//
+// File Version: 4.10.0 (2009/11/18)
+
+#ifndef SURFACEMESHES_H
+#define SURFACEMESHES_H
+
+#include "Wm4WindowApplication3.h"
+#include "SimpleSegment.h"
+#include "SimplePatch.h"
+using namespace Wm4;
+
+class SurfaceMeshes : public WindowApplication3
+{
+    WM4_DECLARE_INITIALIZE;
+
+public:
+    SurfaceMeshes ();
+
+    virtual bool OnInitialize ();
+    virtual void OnTerminate ();
+    virtual void OnIdle ();
+    virtual bool OnKeyDown (unsigned char ucKey, int iX, int iY);
+
+protected:
+    void CreateScene ();
+    void CreateSimpleSegment ();
+    void CreateSimplePatch ();
+
+    NodePtr m_spkScene;
+    WireframeStatePtr m_spkWireframe;
+    Culler m_kCuller;
+
+    SimpleSegmentPtr m_spkSegment;
+    CurveMeshPtr m_spkCurve;
+
+    SimplePatchPtr m_spkPatch;
+    SurfaceMeshPtr m_spkSurface;
+
+    int m_iLevel;
+};
+
+WM4_REGISTER_INITIALIZE(SurfaceMeshes);
+
+#endif
