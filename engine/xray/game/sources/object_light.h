@@ -18,6 +18,8 @@ public:
 					object_light			( game& game );
 	virtual			~object_light			( );
 	virtual void	load					( xray::configs::lua_config_value const& t );
+	virtual void	decrease_quality		( ) {/* dummy */}
+	virtual void	make_quality_optimal	( ) {/* dummy */}
 
 protected:
 	xray::math::color	m_color;

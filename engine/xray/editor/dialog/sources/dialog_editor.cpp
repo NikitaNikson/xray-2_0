@@ -200,7 +200,7 @@ void dialog_editor_impl::save_string_table()
 		for(; str_it!=get_string_tables()->string_table_ids()->end(); ++str_it)
 		{
 			pcstr key = str_it->first;
-			references_table::iterator opt_it = m_references_table->find(key);
+			references_table::iterator opt_it = m_references_table->find((char* const)key);
 			R_ASSERT(opt_it!=m_references_table->end());
 			if(opt_it->second->references_count()==0 && str_it->second->check_on_empty_text())
 				continue;

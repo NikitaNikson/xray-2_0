@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="maya"
 	ProjectGUID="{5A9538ED-593C-40A1-979E-1ADF9312B6C5}"
 	RootNamespace="maya"
@@ -71,9 +71,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Wm4Foundation90.lib"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray.$(ProjectName).mll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName);$(SolutionDir)maya/lib;$(SolutionDir)tootle/lib"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)maya/lib&quot;;&quot;$(SolutionDir)tootle/lib&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"

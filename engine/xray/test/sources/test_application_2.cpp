@@ -21,6 +21,7 @@ using namespace xray;
 #include <xray/core/simple_engine.h>
 #include <xray/uninitialized_reference.h>
 #include <xray/type_variant.h>
+#include <xray/configs_lua_config.h>
 
 xray::memory::doug_lea_allocator_type		g_test_allocator;
 
@@ -68,11 +69,24 @@ struct resource_with_children : public unmanaged_resource
 
 void   application::execute ()
 {
+	/*
 	resource_with_children	c;
 	sub_resource			a;
 	c.set_child				(& a);
+*/
 
-	
+	configs::lua_config_ptr cfg = configs::create_lua_config("test.json");
+	configs::lua_config_value root = cfg->get_root()["main"];
+
+	root["test"] = true;
+	root["test2"] = "pcstr";
+	root["test3"] = math::float2(1,2);
+
+	configs::lua_config_value v = root["test_assign"];
+
+	v.assign_lua_value(cJSON_CreateString("strstrstr"));
+
+	cfg->save();
 	
 
 	m_exit_code								=	0;

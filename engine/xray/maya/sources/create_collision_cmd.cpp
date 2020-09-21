@@ -12,8 +12,8 @@
 
 #include "fake_drawing_locator.h"
 
-#include <wildmagic/sdk/include/Wm4ContBox3.h>
-#include <wildmagic/sdk/include/Wm4ContSphere3.h>
+#include <wildmagic4/SDK/include/Wm4ContBox3.h>
+#include <wildmagic4/SDK/include/Wm4ContSphere3.h>
 
 const MString createCollisionCmd::Name	( "xray_collision" );
 

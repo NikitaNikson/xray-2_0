@@ -25,7 +25,9 @@ uninitialized_reference<file_system>	g_fat;
 
 void   set_allocator_thread_id (u32 thread_id)
 {
+#if !XRAY_USE_CRT_MEMORY_ALLOCATOR
 	memory::g_fs_allocator.user_thread_id	(thread_id);
+#endif
 }
 
 void   set_on_resource_leaked_callback	(on_resource_leaked_callback callback)

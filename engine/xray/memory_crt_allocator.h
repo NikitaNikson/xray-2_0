@@ -20,6 +20,7 @@ public:
 			pvoid	realloc_impl		( pvoid pointer, size_t new_size XRAY_CORE_DEBUG_PARAMETERS_DESCRIPTION_DECLARATION XRAY_CORE_DEBUG_PARAMETERS_DECLARATION );
 			void	free_impl			( pvoid pointer XRAY_CORE_DEBUG_PARAMETERS_DECLARATION );
 	virtual	size_t	allocated_size		( ) const;
+	void	user_current_thread_id() {} //stub!
 
 private:
 	typedef	base_allocator				super;

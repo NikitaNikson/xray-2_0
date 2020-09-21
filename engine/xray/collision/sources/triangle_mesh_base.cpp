@@ -51,7 +51,7 @@ void triangle_mesh_base::initialize		( float3 const* const vertices, u32 const v
 {
 	ASSERT					( (index_count % 3) == 0 );
 
-	m_mesh					= XRAY_NEW_IMPL ( m_allocator, Opcode::MeshInterface )( m_allocator );
+	m_mesh					= XRAY_NEW_IMPL ( m_allocator, Opcode::MeshInterface );//( (const Opcode::MeshInterface&) m_allocator );
 	m_mesh->SetNbTriangles	( index_count / 3 );
 	m_mesh->SetNbVertices	( vertex_count );
 	m_mesh->SetPointers		( ( IndexedTriangle const* )indices, ( Point const* )vertices );
@@ -65,7 +65,7 @@ void triangle_mesh_base::initialize		( float3 const* const vertices, u32 const v
 	options.mQuantized		= false;
 	options.mCanRemap		= false;
 
-	m_model					= XRAY_NEW_IMPL ( m_allocator, Opcode::Model )( m_allocator );
+	m_model					= XRAY_NEW_IMPL ( m_allocator, Opcode::Model );//( (const Opcode::Model&) m_allocator );
 	m_model->Build			( options );
 
 	m_root					= dynamic_cast<Opcode::AABBNoLeafTree const*>( m_model->GetTree( ) )->GetNodes( );

@@ -9,8 +9,36 @@
 #include <stdarg.h>
 
 using xray::strings::stream;
+/*
+xray::strings::stream::stream				( memory::base_allocator* allocator ) :
+	m_allocator		( allocator ),
+	m_buffer		( 0 ),
+	m_buffer_size	( 0 ),
+	m_allocated_size( 0 )
+{
+}
 
-void stream::append				( pcstr format, ... )
+xray::strings::stream::~stream				( )
+{
+	XRAY_FREE_IMPL	( *m_allocator, m_buffer );
+}
+
+pcbyte xray::strings::stream::get_buffer		( ) const
+{
+	return			m_buffer;
+}
+
+u32 xray::strings::stream::get_buffer_size	( ) const
+{
+	return			m_buffer_size;
+}
+
+void xray::strings::stream::clear			( )
+{
+	m_buffer_size	= 0;
+}
+*/
+void __cdecl stream::append				( pcstr format, ... )
 {
 	va_list						mark;
 	va_start					( mark, format );

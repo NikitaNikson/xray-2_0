@@ -61,7 +61,7 @@ void string_table_id_options::save(xray::configs::lua_config_value cfg)
 
 void string_table_id_options::set_batch_file_name(pcstr loc_name, pcstr fn)	
 {
-	batch_file_names_type::iterator it = m_batch_file_names->find(loc_name);
+	batch_file_names_type::iterator it = m_batch_file_names->find((char* const)loc_name);
 	R_ASSERT(it!=m_batch_file_names->end());
 	FREE(it->second);
 	it->second = strings::duplicate(g_allocator, fn);
@@ -69,7 +69,7 @@ void string_table_id_options::set_batch_file_name(pcstr loc_name, pcstr fn)
 
 pcstr string_table_id_options::batch_file_name(pcstr loc_name)
 {
-	batch_file_names_type::iterator it = m_batch_file_names->find(loc_name);
+	batch_file_names_type::iterator it = m_batch_file_names->find((char* const)loc_name);
 	R_ASSERT(it!=m_batch_file_names->end());
 	return it->second;
 }

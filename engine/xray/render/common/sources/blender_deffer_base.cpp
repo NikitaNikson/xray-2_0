@@ -66,38 +66,47 @@ void blender_deffer_base::uber_deffer(blender_compiler& compiler,LPCSTR vs_base,
 	shared_string mat_name = options.tex_list[0];
 	ref_material mat = material_manager::get_ref().get_material(mat_name);
 
-	bool has_bump = m_use_bump && mat->has_bump();
-	const char* bump_name = mat->get_bump_name().c_str();
-	fixed_string<128> ext_bump_name(bump_name);
-	ext_bump_name += "#";
-	
-	bool use_steep = false;
-	if (has_bump)
-		use_steep = m_use_steep_plax && mat->use_steep_parallax();
+	bool has_bump,use_steep,has_detail,has_detail_bump;
+	const char *bump_name, *detail_name, *det_bump_name;
+	fixed_string<128> ext_bump_name, ext_det_bump_name;
+	const_setup_cb	dt_scaler;
 
-	if (!has_bump)
-		is_hq = false;
+	has_bump = use_steep = has_detail = has_detail_bump = false;
 
-	bool has_detail = m_use_detail && mat->has_detail();
-	const_setup_cb	dt_scaler = mat->get_detail_setup();
-	ref_material	det_mat;
-	const char* detail_name = NULL;
-	if(has_detail)
+	if(mat)
 	{
-		detail_name		= mat->get_detail_name().c_str();
-		det_mat			= material_manager::get_ref().get_material(detail_name);
-	}
-	ASSERT(has_detail ? detail_name&&detail_name[0]&&mat->has_detail()&&det_mat : true);
+		has_bump = m_use_bump && mat->has_bump();
+		bump_name = mat->get_bump_name().c_str();
+		ext_bump_name = bump_name;
+		ext_bump_name += "#";
+		
+		use_steep = false;
+		if (has_bump)
+			use_steep = m_use_steep_plax && mat->use_steep_parallax();
 
-	fixed_string<128> ext_det_bump_name;
-	bool has_detail_bump = false;
-	const char* det_bump_name = 0;
-	if (det_mat)
-	{
-		has_detail_bump = m_use_detail && det_mat->has_detail();
-		det_bump_name = det_mat->get_bump_name().c_str();
-		ext_det_bump_name = det_bump_name;
-		ext_det_bump_name += "#";
+		if (!has_bump)
+			is_hq = false;
+
+		has_detail = m_use_detail && mat->has_detail();
+		dt_scaler = mat->get_detail_setup();
+		ref_material	det_mat;
+		detail_name = NULL;
+		if(has_detail)
+		{
+			detail_name		= mat->get_detail_name().c_str();
+			det_mat			= material_manager::get_ref().get_material(detail_name);
+		}
+		ASSERT(has_detail ? detail_name&&detail_name[0]&&mat->has_detail()&&det_mat : true);
+
+		has_detail_bump = false;
+		det_bump_name = 0;
+		if (det_mat)
+		{
+			has_detail_bump = m_use_detail && det_mat->has_detail();
+			det_bump_name = det_mat->get_bump_name().c_str();
+			ext_det_bump_name = det_bump_name;
+			ext_det_bump_name += "#";
+		}
 	}
 
 	fixed_string<128> vs, ps, params;

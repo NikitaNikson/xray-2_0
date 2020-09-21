@@ -131,7 +131,8 @@ void xray::core::initialize			(
 	
 	strings::initialize		( );
 	fs::initialize			( );
-	core::configs::initialize ( s_engine->get_resource_path(), s_engine->get_underscore_G_path() );
+//	core::configs::initialize ( s_engine->get_resource_path(), s_engine->get_underscore_G_path() );
+	xray::configs::initialize ( );
 
 	tasks::initialize		(	2 * threading::core_count(),	// tasks thread count
 								64,								// user thread count
@@ -173,7 +174,7 @@ void xray::core::finalize			( )
 
 	fs::finalize_watcher	( ); // must be finalized before resources
 	resources::finalize		( );
-	core::configs::finalize	( );
+//	core::configs::finalize	( );
 	fs::finalize			( );
 	strings::finalize		( );
 //	build::finalize			( );

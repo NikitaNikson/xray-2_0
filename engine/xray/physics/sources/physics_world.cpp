@@ -71,9 +71,9 @@ physics_world::physics_world( xray::physics::engine& engine,
 //	dWorldSetERP(phWorld, erp(world_spring,world_damping) );
 //	dWorldSetCFM(phWorld, CFM(world_spring,world_damping));
 
-	dWorldSetERP( 0, default_erp );
-	dWorldSetCFM( 0, default_cfm );
-	dWorldSetGravity( 0, 0, -default_gravity, 0 );
+//	dWorldSetERP( 0, default_erp );
+//	dWorldSetCFM( 0, default_cfm );
+//	dWorldSetGravity( 0, 0, -default_gravity, 0 );
 
 }
 

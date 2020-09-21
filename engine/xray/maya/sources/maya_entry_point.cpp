@@ -189,11 +189,13 @@ XRAY_DLL_EXPORT MStatus initializePlugin( MObject obj )
 
    MGlobal::executeCommand( command );
 
-
+/*
    xray::resources::query_mount_disk	("andy", 
 								"e:/stk2/resources/library/static", 
 								NULL,
 								&xray::maya::g_allocator);
+*/
+   xray::resources::query_mount("xray",NULL,&xray::maya::g_allocator);
 
    xray::fs::set_allocator_thread_id	(xray::threading::current_thread_id());
 

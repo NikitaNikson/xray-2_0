@@ -26,12 +26,12 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #pragma warning(pop)
-
+/*
 namespace std {
 	class ostream;
 	class istream;
 } // namespace std
-
+*/
 // what this is for?
 #define NT_PLUGIN
 

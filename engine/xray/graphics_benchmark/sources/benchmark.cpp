@@ -662,8 +662,8 @@ void benchmark::start_execution()
 	sprintf(buffer,"[%s, %s] Results for %S: (%dx%d)\n", 
 		__DATE__, 
 		__TIME__, 
-		//target_to_string(m_benchmark_target).c_str(), 
-		xray::render_dx10::device::ref().adapter_desc().Description, 
+		target_to_string(m_benchmark_target).c_str(), 
+//		xray::render_dx10::device::ref().adapter_desc().Description, 
 		m_window_size_x, 
 		m_window_size_y
 	);

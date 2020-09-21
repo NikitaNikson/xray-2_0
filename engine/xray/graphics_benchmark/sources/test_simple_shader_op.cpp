@@ -81,7 +81,7 @@ static std::string file_to_string( char const* file_name )
 	size_t file_size = ftell(file);
 	fseek(file,0,SEEK_SET);
 	result.resize(file_size);
-	fread(result.begin(),1,file_size,file);
+	fread(&*result.begin(),1,file_size,file);
 	fclose(file);
 	return result;
 }

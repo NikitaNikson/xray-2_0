@@ -11,6 +11,7 @@
 #include <share.h>			// for _SH_DENYWR, _SH_DENYNO
 #include <sys/stat.h>		// for _S_IREAD, _S_IWRITE
 #include <direct.h>			// for _mkdir
+#include <errno.h>			// for EEXIST
 
 namespace xray {
 namespace fs {

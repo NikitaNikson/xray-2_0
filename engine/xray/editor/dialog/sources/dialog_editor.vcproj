@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="dialog_editor"
 	ProjectGUID="{5EC58FB8-223B-4991-9074-AB7739DD7773}"
 	RootNamespace="dialog_editor"
@@ -50,7 +50,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;NDEBUG;"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -133,7 +133,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);$(SolutionDir)../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;"
 				StringPooling="false"
 				ExceptionHandling="0"
@@ -383,12 +383,13 @@
 			RelativePathToProject=".\xray\editor\controls\sources\editor_controls.vcproj"
 		/>
 		<AssemblyReference
-			RelativePath=".\microsoft.office.interop.excel.dll"
+			RelativePath="k:\Program Files (x86)\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll"
 			AssemblyName="Microsoft.Office.Interop.Excel, Version=12.0.0.0, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
 			MinFrameworkVersion="0"
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
+			RelativePathToProject=".\xray\engine\pc\sources\engine_pc.vcproj"
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{D48CBBFF-8B47-4E0F-915B-3220F3BC2402}"
@@ -396,6 +397,7 @@
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{1351B0D6-E811-43F6-B57D-08655826DE18}"
+			RelativePathToProject=".\xray\wpf_controls\wpf_controls.csproj"
 		/>
 		<AssemblyReference
 			RelativePath="PresentationCore.dll"
@@ -425,6 +427,14 @@
 			<File
 				RelativePath=".\dialog_document.cpp"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\dialog_document.h"

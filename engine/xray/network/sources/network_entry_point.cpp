@@ -37,4 +37,4 @@ void xray::network::dispatch_callbacks				( )
 }
 
 // here is _STLP_DECLSPEC
-_STLP_DECLSPEC
+//_STLP_DECLSPEC

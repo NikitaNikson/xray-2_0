@@ -8,6 +8,7 @@
 
 using xray::editor::controls::hypergraph::node_style;
 using xray::editor::controls::hypergraph::connection_point_style;
+using System::Windows::MessageBox;
 //-------------------------------------------------------------------------------------------
 //- class connection_point_style ------------------------------------------------------------
 //-------------------------------------------------------------------------------------------
@@ -124,12 +125,13 @@ Color node_style::get_point_color(System::String^ n, e_states st)
 			res = st;
 	}
 
-	switch (st)
-	{
-		case e_states::active: return res->active_color;
-		case e_states::highlihted: return res->highlight_color;
-		case e_states::inactive: return res->inactive_color;
-	}
+	if(res != nullptr)
+		switch (st)
+		{
+			case e_states::active: return res->active_color;
+			case e_states::highlihted: return res->highlight_color;
+			case e_states::inactive: return res->inactive_color;
+		}
 
 	return Color::Black;
 }

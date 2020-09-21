@@ -100,7 +100,17 @@ MStatus solid_visual_exporter::doIt( const MArgList& arglist)
 		result					= writer.build_collision_geometry_by_render( );
 	}
 
+	xray::memory::writer w_visual( &xray::maya::g_allocator );
 
+	if( result )
+		result					= writer.write_render_geometry(w_visual);
+
+	if( result )
+		result					= writer.write_collision_geometry(w_visual);
+
+	w_visual.save_to(fileName.asChar());
+
+/*
 	xray::memory::writer w_render( &xray::maya::g_allocator );
 
 	if( result )
@@ -129,7 +139,7 @@ MStatus solid_visual_exporter::doIt( const MArgList& arglist)
 	fixed_vector<fs::fat_inline_data::item, 1>	items;
 	fs::fat_inline_data			inline_data(& items);
 	fat.save_db					("e:/andy.db", "e:/andy.db", false, 512, &xray::maya::g_allocator, NULL, 0, xray::fs::file_system::db_target_platform_pc, inline_data, NULL);
-
+*/
 	if( !result )
 		MGlobal::displayError	("solid_visual_exporter: Export failed");
 	else

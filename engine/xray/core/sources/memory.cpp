@@ -271,13 +271,15 @@ void xray::memory::dump_statistics		( )
 			(*i).allocator->dump_statistics	( );
 	}
 #else // #if !XRAY_USE_CRT_MEMORY_ALLOCATOR
-	u64 crt_allocated_size		= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( )
-	u64 process_allocated_size	= (static_cast<base_allocator const&>(s_process_allocator)).allocated_size( )
+	u64 crt_allocated_size		= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( );
+	u64 process_allocated_size	= (static_cast<base_allocator const&>(s_process_allocator)).allocated_size( );
 	u64 const total_size		= (static_cast<base_allocator const&>(s_crt_allocator)).total_size( );
 	u64 const allocated_size	= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( );
 #endif // #if !XRAY_USE_CRT_MEMORY_ALLOCATOR
-
+//глючит
+#if !XRAY_USE_CRT_MEMORY_ALLOCATOR
 	R_ASSERT_CMP				( allocated_size, >=, crt_allocated_size + process_allocated_size );
+#endif
 	u64 const xray_used			= allocated_size - (crt_allocated_size + process_allocated_size);
 	LOG_INFO					( "---------------overall memory stats---------------" );
 	LOG_INFO					( "xray: " XRAY_PRINTF_SPEC_LONG_LONG(10) " (%6.2f%%)", xray_used, total_size == 0.f ? 0.f : float(xray_used)/float(total_size)*100.f );

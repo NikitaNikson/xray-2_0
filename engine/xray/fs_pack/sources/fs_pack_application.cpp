@@ -109,8 +109,8 @@ void   on_inline_config_loaded (resources::queries_result & in_result)
 	configs::lua_config_ptr config_ptr = static_cast_checked<configs::lua_config *>(in_result[0].get_unmanaged_resource().c_ptr());
 	configs::lua_config_value const & config	=	config_ptr->get_root();
 
-	for ( configs::lua_config::const_iterator	it	=	config.begin();
-												it	!=	config.end();
+	for ( configs::lua_config::const_iterator	it	=	config.begin(), end = config.end();
+												it	!=	end;
 												++it )
 	{
 		configs::lua_config_value const & value	=	* it;

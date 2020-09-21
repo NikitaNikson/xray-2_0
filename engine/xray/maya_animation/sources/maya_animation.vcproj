@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="maya_animation"
 	ProjectGUID="{82E59A6B-049A-412E-AEB1-3B679AAEC50F}"
 	RootNamespace="maya_animation"
@@ -482,7 +482,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);$(SolutionDir)../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;"
 				StringPooling="false"
 				MinimalRebuild="true"

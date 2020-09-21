@@ -45,7 +45,7 @@ void	fill_island( dxJoint* dx_joint, island	&i )
 
 void detach( dxJoint* dx_joint )
 {
-	removeJointReferencesFromAttachedBodies( dx_joint );
+//	removeJointReferencesFromAttachedBodies( dx_joint );
 }
 
 

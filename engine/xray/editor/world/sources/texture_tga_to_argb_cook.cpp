@@ -12,7 +12,6 @@
 #include <amd/compress/ATI_Compress.h>
 
 using namespace xray::resources;
-
 using		xray::texture_compressor::TgaHeader;
 
 namespace xray {

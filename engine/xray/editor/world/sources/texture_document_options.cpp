@@ -120,6 +120,7 @@ void				texture_document::fill_property_holder					(texture_options* options, pr
 
 void				texture_document::external_editor_launch					(Object^ sender, RoutedEventArgs ^ )
 {
+#if 0
 	grid_property^ prop = safe_cast<grid_property^>(sender);
 	
 	resource_selector_ptr selector(
@@ -137,6 +138,7 @@ void				texture_document::external_editor_launch					(Object^ sender, RoutedEven
 	{
 		prop->value = selector->selected_name;
 	}
+#endif
 }
 
 void				texture_document::options_loaded							(xray::resources::queries_result& data)
