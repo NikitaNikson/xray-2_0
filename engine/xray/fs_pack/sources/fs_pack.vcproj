@@ -286,7 +286,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;"
 				MinimalRebuild="false"
 				ExceptionHandling="0"

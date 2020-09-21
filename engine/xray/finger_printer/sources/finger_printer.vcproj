@@ -122,7 +122,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE; XRAY_STATIC_LIBRARIES;"
 				ExceptionHandling="0"
 				RuntimeLibrary="0"

@@ -46,7 +46,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;"
 				StringPooling="true"
 				ExceptionHandling="0"

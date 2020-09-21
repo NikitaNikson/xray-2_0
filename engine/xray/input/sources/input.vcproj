@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="input"
 	ProjectGUID="{92742045-96DC-424A-883F-F4E463F4C39A}"
 	RootNamespace="input"
@@ -65,6 +65,677 @@
 				Name="VCLibrarianTool"
 				AdditionalOptions=""
 				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-static-debug.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PS3 GCC Release|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -Wall -Wextra -mwarn-lhs -mwarn-microcode -mcallprof=1 -fno-exceptions -fsigned-char -fms-extensions -O2 -funroll-loops"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__GCC__"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-static.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PS3 GCC Master Gold|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -Wall -Wextra -mwarn-lhs -mwarn-microcode -fno-exceptions -fsigned-char -fms-extensions -O2 -funroll-loops"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__GCC__;MASTER_GOLD;"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-static.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PS3 SNC Debug|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="SN_TARGET_PS3;__SNC__;__CELL_ASSERT__;XRAY_STATIC_LIBRARIES;"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+				DisableSpecificWarnings="1319"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static-debug.a"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PS3 SNC Release|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -O2 --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot; -Xcallprof=1 -Xbranchless=2 -Xunrollssa=30"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__SNC__;XRAY_STATIC_LIBRARIES;"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+				DisableSpecificWarnings="1319"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static.a"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="PS3 SNC Master Gold|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O2 --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot; -Xbranchless=2 -Xunrollssa=30"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__SNC__;MASTER_GOLD;XRAY_STATIC_LIBRARIES;"
+				ProgramDataBaseFileName=""
+				CompileAs="0"
+				DisableSpecificWarnings="1319"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static-gold.a"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				OmitFramePointers="true"
+				EnableFiberSafeOptimizations="true"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
+				PreprocessorDefinitions="WIN32;NDEBUG;"
+				StringPooling="true"
+				MinimalRebuild="false"
+				ExceptionHandling="0"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName).lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="WIN32;"
+				StringPooling="false"
+				MinimalRebuild="false"
+				ExceptionHandling="0"
+				BasicRuntimeChecks="3"
+				SmallerTypeCheck="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				FloatingPointExceptions="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-debug.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release(static)|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				OmitFramePointers="true"
+				EnableFiberSafeOptimizations="true"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="WIN32;NDEBUG;XRAY_STATIC_LIBRARIES;"
+				StringPooling="true"
+				MinimalRebuild="false"
+				ExceptionHandling="0"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions="/ignore:4221"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug(static)|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="0"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="WIN32;XRAY_STATIC_LIBRARIES;"
+				StringPooling="false"
+				MinimalRebuild="false"
+				ExceptionHandling="0"
+				BasicRuntimeChecks="3"
+				SmallerTypeCheck="true"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="true"
+				FloatingPointExceptions="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions="/ignore:4221"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static-debug.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Master Gold|Win32"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="4"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
+				Optimization="3"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				OmitFramePointers="true"
+				EnableFiberSafeOptimizations="true"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="WIN32;NDEBUG;XRAY_STATIC_LIBRARIES;MASTER_GOLD;"
+				StringPooling="true"
+				MinimalRebuild="false"
+				ExceptionHandling="0"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="false"
+				EnableEnhancedInstructionSet="2"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions="/ignore:4221"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static-gold.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -193,66 +864,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="PS3 GCC Release|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -Wall -Wextra -mwarn-lhs -mwarn-microcode -mcallprof=1 -fno-exceptions -fsigned-char -fms-extensions -O2 -funroll-loops"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
-				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__GCC__"
-				ProgramDataBaseFileName=""
-				CompileAs="0"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=""
-				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-static.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="PS3 GCC Release|Xbox 360"
 			ConfigurationType="1"
 			UseOfMFC="-1"
@@ -357,66 +968,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="PS3 GCC Master Gold|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -Wall -Wextra -mwarn-lhs -mwarn-microcode -fno-exceptions -fsigned-char -fms-extensions -O2 -funroll-loops"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
-				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__GCC__;MASTER_GOLD;"
-				ProgramDataBaseFileName=""
-				CompileAs="0"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=""
-				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-static.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -533,67 +1084,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="PS3 SNC Debug|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="-g --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot;"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="SN_TARGET_PS3;__SNC__;__CELL_ASSERT__;XRAY_STATIC_LIBRARIES;"
-				ProgramDataBaseFileName=""
-				CompileAs="0"
-				DisableSpecificWarnings="1319"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=""
-				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static-debug.a"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="PS3 SNC Debug|Xbox 360"
 			ConfigurationType="1"
 			UseOfMFC="-1"
@@ -698,67 +1188,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="PS3 SNC Release|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="-g -O2 --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot; -Xcallprof=1 -Xbranchless=2 -Xunrollssa=30"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__SNC__;XRAY_STATIC_LIBRARIES;"
-				ProgramDataBaseFileName=""
-				CompileAs="0"
-				DisableSpecificWarnings="1319"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=""
-				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static.a"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -875,67 +1304,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="PS3 SNC Master Gold|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/PS3/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="-O2 --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot; -Xbranchless=2 -Xunrollssa=30"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__SNC__;MASTER_GOLD;XRAY_STATIC_LIBRARIES;"
-				ProgramDataBaseFileName=""
-				CompileAs="0"
-				DisableSpecificWarnings="1319"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions=""
-				OutputFile="$(SolutionDir)../binaries/PS3/libraries/xray_$(ProjectName)-snc-static-gold.a"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="PS3 SNC Master Gold|Xbox 360"
 			ConfigurationType="1"
 			UseOfMFC="-1"
@@ -1040,80 +1408,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			CharacterSet="2"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="3"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				OmitFramePointers="true"
-				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN32;NDEBUG;"
-				StringPooling="true"
-				MinimalRebuild="false"
-				ExceptionHandling="0"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName).lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -1267,77 +1561,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN32;"
-				StringPooling="false"
-				MinimalRebuild="false"
-				ExceptionHandling="0"
-				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				FloatingPointExceptions="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-debug.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Debug|Xbox 360"
 			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
 			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
@@ -1463,81 +1686,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-debug.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release(static)|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			CharacterSet="2"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="3"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				OmitFramePointers="true"
-				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN32;NDEBUG;XRAY_STATIC_LIBRARIES;"
-				StringPooling="true"
-				MinimalRebuild="false"
-				ExceptionHandling="0"
-				RuntimeLibrary="0"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions="/ignore:4221"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -1705,78 +1853,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug(static)|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN32;XRAY_STATIC_LIBRARIES;"
-				StringPooling="false"
-				MinimalRebuild="false"
-				ExceptionHandling="0"
-				BasicRuntimeChecks="3"
-				SmallerTypeCheck="true"
-				RuntimeLibrary="0"
-				EnableFunctionLevelLinking="true"
-				FloatingPointExceptions="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions="/ignore:4221"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static-debug.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Debug(static)|Xbox 360"
 			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
 			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
@@ -1903,82 +1979,6 @@
 				Name="VCLibrarianTool"
 				AdditionalOptions="/ignore:4221"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static-debug.lib"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Master Gold|Win32"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="4"
-			CharacterSet="2"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP"
-				Optimization="3"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				OmitFramePointers="true"
-				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN32;NDEBUG;XRAY_STATIC_LIBRARIES;MASTER_GOLD;"
-				StringPooling="true"
-				MinimalRebuild="false"
-				ExceptionHandling="0"
-				RuntimeLibrary="0"
-				BufferSecurityCheck="false"
-				EnableEnhancedInstructionSet="2"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				AdditionalOptions="/ignore:4221"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/libraries/xray_$(ProjectName)-static-gold.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -2232,39 +2232,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Xbox 360"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-				UsePrecompiledHeader="1"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|Xbox 360"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-				UsePrecompiledHeader="1"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -2280,39 +2248,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release(static)|Xbox 360"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-				UsePrecompiledHeader="1"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release(static)|x64"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug(static)|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug(static)|Xbox 360"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-				UsePrecompiledHeader="1"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug(static)|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -2328,12 +2264,76 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Release|Xbox 360"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Xbox 360"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release(static)|Xbox 360"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release(static)|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug(static)|Xbox 360"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug(static)|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Master Gold|Xbox 360"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-				UsePrecompiledHeader="1"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+						UsePrecompiledHeader="1"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Master Gold|x64"
@@ -2408,23 +2408,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2440,14 +2424,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release(static)|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug(static)|Win32"
 					ExcludedFromBuild="true"
 					>
@@ -2456,7 +2432,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug(static)|x64"
+					Name="Master Gold|Win32"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2464,7 +2440,31 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Master Gold|Win32"
+					Name="Release|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release(static)|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug(static)|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2492,39 +2492,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="PS3 GCC Debug|Xbox 360"
-					ExcludedFromBuild="true"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 GCC Debug|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="PS3 GCC Release|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 GCC Release|Xbox 360"
-					ExcludedFromBuild="true"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 GCC Release|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2540,39 +2508,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="PS3 GCC Master Gold|Xbox 360"
-					ExcludedFromBuild="true"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 GCC Master Gold|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="PS3 SNC Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 SNC Debug|Xbox 360"
-					ExcludedFromBuild="true"
-					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="PS3 SNC Debug|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2588,12 +2524,84 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="PS3 SNC Master Gold|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Debug|Xbox 360"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Debug|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Release|Xbox 360"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Release|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Master Gold|Xbox 360"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 GCC Master Gold|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|Xbox 360"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|x64"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="PS3 SNC Release|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="PS3 SNC Release|x64"
@@ -2604,20 +2612,12 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="PS3 SNC Master Gold|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="PS3 SNC Master Gold|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="PS3 SNC Master Gold|x64"
@@ -2631,41 +2631,41 @@
 					Name="Release|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release(static)|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug(static)|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Master Gold|Xbox 360"
 					ExcludedFromBuild="true"
 					>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+					<Tool
+						Name="VCCLX360CompilerTool"
+					/>
 				</FileConfiguration>
 			</File>
 		</Filter>
@@ -2699,23 +2699,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2731,14 +2715,6 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release(static)|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug(static)|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -2747,7 +2723,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug(static)|x64"
+						Name="Master Gold|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2755,7 +2731,31 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Master Gold|Win32"
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release(static)|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug(static)|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2783,39 +2783,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 GCC Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2831,39 +2799,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Master Gold|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Master Gold|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -2879,12 +2815,84 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PS3 SNC Master Gold|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="PS3 SNC Release|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Release|x64"
@@ -2895,20 +2903,12 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 SNC Master Gold|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Master Gold|x64"
@@ -2922,41 +2922,41 @@
 						Name="Release|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release(static)|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug(static)|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 				</File>
 			</Filter>
@@ -2983,23 +2983,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3015,14 +2999,6 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release(static)|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug(static)|Win32"
 						ExcludedFromBuild="true"
 						>
@@ -3031,7 +3007,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Debug(static)|x64"
+						Name="Master Gold|Win32"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3039,7 +3015,31 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Master Gold|Win32"
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release(static)|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug(static)|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3067,39 +3067,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 GCC Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3115,39 +3083,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Master Gold|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Master Gold|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3163,12 +3099,84 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PS3 SNC Master Gold|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="PS3 SNC Release|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Release|x64"
@@ -3179,20 +3187,12 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 SNC Master Gold|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Master Gold|x64"
@@ -3206,41 +3206,41 @@
 						Name="Release|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Release(static)|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Debug(static)|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 				</File>
 			</Filter>
@@ -3263,39 +3263,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3311,39 +3279,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="Release(static)|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release(static)|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="Debug(static)|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug(static)|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Debug(static)|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3359,12 +3295,76 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="Release|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release(static)|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release(static)|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug(static)|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Debug(static)|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="Master Gold|x64"
@@ -3387,39 +3387,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Debug|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 GCC Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Release|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3435,39 +3403,7 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 GCC Master Gold|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 GCC Master Gold|x64"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Debug|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|Xbox 360"
-						ExcludedFromBuild="true"
-						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="PS3 SNC Debug|x64"
 						ExcludedFromBuild="true"
 						>
 						<Tool
@@ -3483,12 +3419,84 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
+						Name="PS3 SNC Master Gold|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Release|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 GCC Master Gold|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|Xbox 360"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS3 SNC Debug|x64"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
 						Name="PS3 SNC Release|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Release|x64"
@@ -3499,20 +3507,12 @@
 						/>
 					</FileConfiguration>
 					<FileConfiguration
-						Name="PS3 SNC Master Gold|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
 						Name="PS3 SNC Master Gold|Xbox 360"
 						ExcludedFromBuild="true"
 						>
-			<Tool
-				Name="VCCLX360CompilerTool"
-			/>
+						<Tool
+							Name="VCCLX360CompilerTool"
+						/>
 					</FileConfiguration>
 					<FileConfiguration
 						Name="PS3 SNC Master Gold|x64"

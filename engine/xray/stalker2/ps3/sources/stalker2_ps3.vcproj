@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="stalker2 - PS3"
 	ProjectGUID="{DF2483FF-540E-4953-ACFE-520EDCC5FA37}"
 	RootNamespace="stalker2_ps3"
@@ -301,7 +301,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions="-g -O2 --use_pch=&quot;$(IntDir)/$(TargetName).pch&quot; -Xcallprof=1 -Xbranchless=2 -Xunrollssa=30"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../../SDK/include"
 				PreprocessorDefinitions="SN_TARGET_PS3;NDEBUG;__SNC__;XRAY_STATIC_LIBRARIES;"
 				ProgramDataBaseFileName=""
 				CompileAs="0"

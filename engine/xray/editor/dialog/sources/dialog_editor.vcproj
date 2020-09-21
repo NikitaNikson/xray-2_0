@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="dialog_editor"
 	ProjectGUID="{5EC58FB8-223B-4991-9074-AB7739DD7773}"
 	RootNamespace="dialog_editor"
@@ -50,7 +50,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;NDEBUG;"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -84,87 +84,6 @@
 				ImportLibrary="$(SolutionDir)../binaries/$(PlatformName)/libraries/$(TargetName).lib"
 				TargetMachine="1"
 				CLRThreadAttribute="2"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
-			ConfigurationType="2"
-			CharacterSet="2"
-			ManagedExtensions="1"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
-				PreprocessorDefinitions="WIN64;WINDOWS;NDEBUG;"
-				StringPooling="true"
-				ExceptionHandling="0"
-				SmallerTypeCheck="false"
-				RuntimeLibrary="2"
-				BufferSecurityCheck="false"
-				FloatingPointModel="2"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="pch.h"
-				WarningLevel="4"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).dll"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -253,6 +172,87 @@
 				ImportLibrary="$(SolutionDir)../binaries/$(PlatformName)/libraries/$(TargetName).lib"
 				TargetMachine="1"
 				CLRThreadAttribute="2"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			IntermediateDirectory="$(SolutionDir)../binaries/$(PlatformName)/intermediates/$(ConfigurationName)/$(ProjectName)"
+			ConfigurationType="2"
+			CharacterSet="2"
+			ManagedExtensions="1"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
+				EnableFiberSafeOptimizations="true"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				PreprocessorDefinitions="WIN64;WINDOWS;NDEBUG;"
+				StringPooling="true"
+				ExceptionHandling="0"
+				SmallerTypeCheck="false"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="false"
+				FloatingPointModel="2"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="pch.h"
+				WarningLevel="4"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).dll"
+				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -383,13 +383,12 @@
 			RelativePathToProject=".\xray\editor\controls\sources\editor_controls.vcproj"
 		/>
 		<AssemblyReference
-			RelativePath="Microsoft.Office.Interop.Excel.dll"
+			RelativePath=".\microsoft.office.interop.excel.dll"
 			AssemblyName="Microsoft.Office.Interop.Excel, Version=12.0.0.0, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
 			MinFrameworkVersion="0"
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
-			RelativePathToProject=".\xray\engine\pc\sources\engine_pc.vcproj"
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{D48CBBFF-8B47-4E0F-915B-3220F3BC2402}"
@@ -397,7 +396,6 @@
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{1351B0D6-E811-43F6-B57D-08655826DE18}"
-			RelativePathToProject=".\xray\wpf_controls\wpf_controls.csproj"
 		/>
 		<AssemblyReference
 			RelativePath="PresentationCore.dll"
@@ -802,7 +800,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|x64"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -810,7 +808,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32"
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
