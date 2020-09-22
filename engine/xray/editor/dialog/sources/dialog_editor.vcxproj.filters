@@ -412,4 +412,16 @@
       <Filter>panels\export_import</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="add_language_form.resx" />
+    <EmbeddedResource Include="dialog_control_panel.resx" />
+    <EmbeddedResource Include="dialog_document.resx" />
+    <EmbeddedResource Include="dialog_export_form.resx" />
+    <EmbeddedResource Include="dialog_files_view_panel.resx" />
+    <EmbeddedResource Include="dialog_import_form.resx" />
+    <EmbeddedResource Include="dialog_language_panel.resx" />
+    <EmbeddedResource Include="dialog_precondition_action_editor.resx" />
+    <EmbeddedResource Include="dialog_text_editor.resx" />
+    <EmbeddedResource Include="remove_language_form.resx" />
+  </ItemGroup>
 </Project>

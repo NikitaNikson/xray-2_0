@@ -21,7 +21,7 @@ pcstr test_animations::application::get_underscore_G_path	( ) const
 #	include "skeleton.h"
 #	include "../../animation/sources/animation_data.h"
 #	include <xray/resources_queries_result.h>
-//#	include <xray/configs_lua_config.h>
+#	include <xray/configs_lua_config.h>
 #	include <xray/resources_fs.h>
 #	include <xray/os_include.h>
 #	include "maya_animation_data.h"

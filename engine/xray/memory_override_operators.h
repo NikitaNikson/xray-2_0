@@ -15,7 +15,8 @@
 //#include <new.h>
 
 extern "C" {
-	/*
+
+/*
 inline pvoid malloc						( size_t )
 {
 	UNREACHABLE_CODE(return 0);
@@ -47,7 +48,6 @@ inline void free						( pvoid )
 	__assume(0);
 #endif // #ifndef __SNC__
 }
-
 */
 
 #ifdef _MSC_VER

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{5EC58FB8-223B-4991-9074-AB7739DD7773}</ProjectGuid>
     <RootNamespace>dialog_editor</RootNamespace>
     <Keyword>Win32Proj</Keyword>

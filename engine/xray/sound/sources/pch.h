@@ -13,6 +13,7 @@
 #	define XRAY_ENGINE_BUILDING
 #endif // #ifndef XRAY_STATIC_LIBRARIES
 
+
 #define XRAY_LOG_MODULE_INITIATOR	"sound"
 #include <xray/extensions.h>
 
@@ -22,8 +23,8 @@
 #include <xray/os_include.h>
 
 #ifndef SN_TARGET_PS3
-#	include <xaudio2.h>
-#	include <x3daudio.h>
+#	include "xaudio2.h"
+#	include "x3daudio.h"
 #else // #ifndef SN_TARGET_PS3
 	struct IXAudio2SourceVoice;
 	struct IXAudio2;

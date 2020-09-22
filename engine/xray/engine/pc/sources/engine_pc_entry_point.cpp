@@ -17,7 +17,11 @@
 #include <vorbis/library_linkage.h>
 #include <xray/render/library_linkage.h>
 
-#pragma comment(lib,"libboost_system-vc90-mt-1_54.lib")
+#if(_MSC_VER == 1500)
+	#pragma comment(lib,"libboost_system-vc90-mt-1_54.lib")
+#else 
+	#pragma comment(lib,"boost_system-vc120-mt-1_54.lib")
+#endif
 #pragma comment(lib,"xray_ode.lib")
 
 #define XRAY_ENGINE_LIBRARY_BUILDING
@@ -39,7 +43,7 @@
 #include "linkage_resolver.h"
 
 //disabled lua conf
-#ifdef WIN64
+
 #ifdef NDEBUG
 namespace std {
 	inline void xray_terminate()
@@ -48,7 +52,6 @@ namespace std {
 	}
 } // namespace std
 #endif // #ifdef NDEBUG
-#endif
 
 namespace boost
 {

@@ -1916,4 +1916,51 @@
       <Filter>resources\cursors</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="about_dialog.resx" />
+    <EmbeddedResource Include="color_curve_editor.resx" />
+    <EmbeddedResource Include="compound_object_tab.resx" />
+    <EmbeddedResource Include="compound_tool_tab.resx" />
+    <EmbeddedResource Include="control_properties_tab.resx" />
+    <EmbeddedResource Include="dependency_editor_bool_bool.resx" />
+    <EmbeddedResource Include="dependency_editor_bool_float.resx" />
+    <EmbeddedResource Include="dependency_editor_float_bool.resx" />
+    <EmbeddedResource Include="float_curve_editor.resx" />
+    <EmbeddedResource Include="graph_view.resx" />
+    <EmbeddedResource Include="inplace_combo_box.resx" />
+    <EmbeddedResource Include="library_object_tab.resx" />
+    <EmbeddedResource Include="light_tool_tab.resx" />
+    <EmbeddedResource Include="loading_dialog.resx" />
+    <EmbeddedResource Include="object_inspector_tab.resx" />
+    <EmbeddedResource Include="options_dialog.resx" />
+    <EmbeddedResource Include="options_page_general.resx" />
+    <EmbeddedResource Include="options_page_input.resx" />
+    <EmbeddedResource Include="particle_editor.resx" />
+    <EmbeddedResource Include="project_browser_dialog.resx" />
+    <EmbeddedResource Include="project_tab.resx" />
+    <EmbeddedResource Include="property_connection_editor.resx" />
+    <EmbeddedResource Include="resource_editor.resx" />
+    <EmbeddedResource Include="resource_editor_cancel.resx" />
+    <EmbeddedResource Include="resource_editor_commit.resx" />
+    <EmbeddedResource Include="resource_selector.resx" />
+    <EmbeddedResource Include="scene_graph_tab.resx" />
+    <EmbeddedResource Include="solid_visual_tool_tab.resx" />
+    <EmbeddedResource Include="sound_editor.resx" />
+    <EmbeddedResource Include="sound_files_view_panel.resx" />
+    <EmbeddedResource Include="sound_file_item.resx" />
+    <EmbeddedResource Include="sound_file_item_dependency.resx" />
+    <EmbeddedResource Include="sound_file_item_property.resx" />
+    <EmbeddedResource Include="sound_items_view_panel.resx" />
+    <EmbeddedResource Include="sound_item_editor_panel.resx" />
+    <EmbeddedResource Include="terrain_core_form.resx" />
+    <EmbeddedResource Include="terrain_import_form.resx" />
+    <EmbeddedResource Include="terrain_painter_control_tab.resx" />
+    <EmbeddedResource Include="terrain_tool_tab.resx" />
+    <EmbeddedResource Include="texture_document.resx" />
+    <EmbeddedResource Include="tools_tab.resx" />
+    <EmbeddedResource Include="window_ide.resx" />
+    <EmbeddedResource Include="window_tab.resx" />
+    <EmbeddedResource Include="window_tree_values.resx" />
+    <EmbeddedResource Include="window_view.resx" />
+  </ItemGroup>
 </Project>

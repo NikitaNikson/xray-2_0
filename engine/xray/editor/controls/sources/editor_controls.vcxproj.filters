@@ -205,4 +205,12 @@
       <Filter>controls\dock_panel_serializer</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="file_view_panel_base.resx" />
+    <EmbeddedResource Include="hypergraph.resx" />
+    <EmbeddedResource Include="hypergraph_node.resx" />
+    <EmbeddedResource Include="scalable_scroll_bar.resx" />
+    <EmbeddedResource Include="tree_view_filter_panel.resx" />
+    <EmbeddedResource Include="tree_view_search_panel.resx" />
+  </ItemGroup>
 </Project>

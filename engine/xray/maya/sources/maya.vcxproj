@@ -110,7 +110,7 @@
     <Link>
       <AdditionalDependencies>Wm4Foundation90.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray.$(ProjectName).mll</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);$(SolutionDir)maya/lib;$(SolutionDir)tootle/lib;$(SolutionDir)../SDK/libraries;$(SolutionDir)../SDK/libraries/x64;../../../../DXSDK/lib/x86;C:\Program Files (x86)\Autodesk\Maya2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);$(SolutionDir)maya/lib;$(SolutionDir)tootle/lib;$(SolutionDir)../SDK/libraries;$(SolutionDir)../SDK/libraries/x86;../../../../DXSDK/lib/x86;C:\Program Files (x86)\Autodesk\Maya2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/xray.$(ProjectName).pdb</ProgramDatabaseFile>
       <LargeAddressAware>true</LargeAddressAware>
