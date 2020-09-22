@@ -1,8 +1,8 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2011 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2011 Mateusz Loskot, London, UK.
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -39,12 +39,6 @@
 
 namespace boost { namespace geometry
 {
-
-// Silence warning C4127: conditional expression is constant
-#if defined(_MSC_VER)
-#pragma warning(push)  
-#pragma warning(disable : 4127)
-#endif
 
 #ifndef DOXYGEN_NO_DETAIL
 namespace detail { namespace correct
@@ -86,7 +80,7 @@ struct correct_box_loop
 template <typename Box, std::size_t DimensionCount>
 struct correct_box_loop<Box, DimensionCount, DimensionCount>
 {
-    static inline void apply(Box& )
+    static inline void apply(Box& box)
     {}
 
 };
@@ -125,8 +119,10 @@ struct correct_ring
 
     typedef detail::area::ring_area
             <
+                Ring,
                 order_as_direction<geometry::point_order<Ring>::value>::value,
-                geometry::closure<Ring>::value
+                geometry::closure<Ring>::value,
+                strategy_type
             > ring_area_type;
 
 
@@ -143,7 +139,7 @@ struct correct_ring
             {
                 geometry::append(r, *boost::begin(r));
             }
-            if (! disjoint && s != closed)
+            if (! disjoint && geometry::closure<Ring>::value != closed)
             {
                 // Open it by removing last point
                 geometry::traits::resize<Ring>::apply(r, boost::size(r) - 1);
@@ -151,8 +147,7 @@ struct correct_ring
         }
         // Check area
         Predicate predicate;
-        typedef typename default_area_result<Ring>::type area_result_type;
-        area_result_type const zero = area_result_type();
+        coordinate_type const zero = 0;
         if (predicate(ring_area_type::apply(r, strategy_type()), zero))
         {
             std::reverse(boost::begin(r), boost::end(r));
@@ -166,14 +161,14 @@ template <typename Polygon>
 struct correct_polygon
 {
     typedef typename ring_type<Polygon>::type ring_type;
-    typedef typename default_area_result<Polygon>::type area_result_type;
+    typedef typename coordinate_type<Polygon>::type coordinate_type;
 
     static inline void apply(Polygon& poly)
     {
         correct_ring
             <
                 ring_type,
-                std::less<area_result_type>
+                std::less<coordinate_type>
             >::apply(exterior_ring(poly));
 
         typename interior_return_type<Polygon>::type rings
@@ -183,7 +178,7 @@ struct correct_polygon
             correct_ring
                 <
                     ring_type,
-                    std::greater<area_result_type>
+                    std::greater<coordinate_type>
                 >::apply(*it);
         }
     }
@@ -198,42 +193,48 @@ struct correct_polygon
 namespace dispatch
 {
 
-template <typename Geometry, typename Tag = typename tag<Geometry>::type>
-struct correct: not_implemented<Tag>
-{};
+template <typename Tag, typename Geometry>
+struct correct
+{
+    BOOST_MPL_ASSERT_MSG
+        (
+            false, NOT_OR_NOT_YET_IMPLEMENTED_FOR_THIS_GEOMETRY_TYPE
+            , (types<Geometry>)
+        );
+};
 
 template <typename Point>
-struct correct<Point, point_tag>
+struct correct<point_tag, Point>
     : detail::correct::correct_nop<Point>
 {};
 
 template <typename LineString>
-struct correct<LineString, linestring_tag>
+struct correct<linestring_tag, LineString>
     : detail::correct::correct_nop<LineString>
 {};
 
 template <typename Segment>
-struct correct<Segment, segment_tag>
+struct correct<segment_tag, Segment>
     : detail::correct::correct_nop<Segment>
 {};
 
 
 template <typename Box>
-struct correct<Box, box_tag>
+struct correct<box_tag, Box>
     : detail::correct::correct_box<Box>
 {};
 
 template <typename Ring>
-struct correct<Ring, ring_tag>
+struct correct<ring_tag, Ring>
     : detail::correct::correct_ring
         <
             Ring,
-            std::less<typename default_area_result<Ring>::type>
+            std::less<typename coordinate_type<Ring>::type>
         >
 {};
 
 template <typename Polygon>
-struct correct<Polygon, polygon_tag>
+struct correct<polygon_tag, Polygon>
     : detail::correct::correct_polygon<Polygon>
 {};
 
@@ -259,12 +260,9 @@ inline void correct(Geometry& geometry)
 {
     concept::check<Geometry const>();
 
-    dispatch::correct<Geometry>::apply(geometry);
+    dispatch::correct<typename tag<Geometry>::type, Geometry>::apply(geometry);
 }
 
-#if defined(_MSC_VER)
-#pragma warning(pop)
-#endif
 
 }} // namespace boost::geometry
 

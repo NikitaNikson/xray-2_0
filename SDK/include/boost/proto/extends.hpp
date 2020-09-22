@@ -34,9 +34,10 @@
 #include <boost/proto/generate.hpp>
 #include <boost/proto/detail/remove_typename.hpp>
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(push)
-# pragma warning(disable : 4714) // function 'xxx' marked as __forceinline not inlined
+#ifdef _MSC_VER
+#define BOOST_PROTO_DISABLE_MSVC_C4522 __pragma(warning(disable: 4522))
+#else
+#define BOOST_PROTO_DISABLE_MSVC_C4522 
 #endif
 
 namespace boost { namespace proto
@@ -74,7 +75,6 @@ namespace boost { namespace proto
     ///
     #define BOOST_PROTO_DEFINE_FUN_OP_IMPL_(Z, N, DATA, Const)                                      \
         BOOST_PP_IF(N, BOOST_PROTO_TEMPLATE_YES_, BOOST_PROTO_TEMPLATE_NO_)(Z, N)                   \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         typename BOOST_PROTO_RESULT_OF<                                                             \
             proto_generator(                                                                        \
                 typename boost::proto::result_of::BOOST_PP_CAT(funop, N)<                           \
@@ -104,7 +104,6 @@ namespace boost { namespace proto
     ///
     #define BOOST_PROTO_DEFINE_FUN_OP_VARIADIC_IMPL_(Const)                                         \
         template<typename... A>                                                                     \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         typename BOOST_PROTO_RESULT_OF<                                                             \
             proto_generator(                                                                        \
                 typename boost::proto::result_of::funop<                                            \
@@ -172,29 +171,25 @@ namespace boost { namespace proto
         typedef typename proto_base_expr::address_of_hack_type_ proto_address_of_hack_type_;        \
         typedef void proto_is_expr_; /**< INTERNAL ONLY */                                          \
         static const long proto_arity_c = proto_base_expr::proto_arity_c;                           \
-        typedef boost::proto::tag::proto_expr<proto_tag, proto_domain> fusion_tag;                  \
+        typedef boost::proto::tag::proto_expr fusion_tag;                                           \
         BOOST_PP_REPEAT(BOOST_PROTO_MAX_ARITY, BOOST_PROTO_EXTENDS_CHILD, ~)                        \
                                                                                                     \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         static proto_derived_expr const make(Expr const &e)                                         \
         {                                                                                           \
             proto_derived_expr that = {e};                                                          \
             return that;                                                                            \
         }                                                                                           \
                                                                                                     \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         proto_base_expr &proto_base()                                                               \
         {                                                                                           \
             return this->proto_expr_.proto_base();                                                  \
         }                                                                                           \
                                                                                                     \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         proto_base_expr const &proto_base() const                                                   \
         {                                                                                           \
             return this->proto_expr_.proto_base();                                                  \
         }                                                                                           \
                                                                                                     \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         operator proto_address_of_hack_type_() const                                                \
         {                                                                                           \
             return boost::addressof(this->proto_base().child0);                                     \
@@ -208,7 +203,6 @@ namespace boost { namespace proto
 
     #define BOOST_PROTO_EXTENDS_COPY_ASSIGN_IMPL_(This, Const, Typename)                            \
         BOOST_PROTO_DISABLE_MSVC_C4522                                                              \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         Typename() BOOST_PROTO_RESULT_OF<                                                           \
             Typename() This::proto_generator(                                                       \
                 Typename() boost::proto::base_expr<                                                 \
@@ -258,7 +252,6 @@ namespace boost { namespace proto
         ///
     #define BOOST_PROTO_EXTENDS_ASSIGN_IMPL_(ThisConst, ThatConst)                                  \
         template<typename A>                                                                        \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         typename BOOST_PROTO_RESULT_OF<                                                             \
             proto_generator(                                                                        \
                 typename boost::proto::base_expr<                                                   \
@@ -325,7 +318,6 @@ namespace boost { namespace proto
         ///
     #define BOOST_PROTO_EXTENDS_SUBSCRIPT_IMPL_(ThisConst, ThatConst)                               \
         template<typename A>                                                                        \
-        BOOST_PROTO_DISABLE_MSVC_C4714 BOOST_FORCEINLINE                                            \
         typename BOOST_PROTO_RESULT_OF<                                                             \
             proto_generator(                                                                        \
                 typename boost::proto::base_expr<                                                   \
@@ -393,7 +385,7 @@ namespace boost { namespace proto
         };                                                                                          \
         /**/
 
-    #ifndef BOOST_NO_CXX11_VARIADIC_TEMPLATES
+    #ifndef BOOST_NO_VARIADIC_TEMPLATES
         #define BOOST_PROTO_EXTENDS_FUNCTION_CONST()                                                \
             BOOST_PROTO_EXTENDS_FUNCTION_()                                                         \
             BOOST_PROTO_DEFINE_FUN_OP_VARIADIC_IMPL_(BOOST_PROTO_CONST)                             \
@@ -500,17 +492,14 @@ namespace boost { namespace proto
         >
         struct extends
         {
-            BOOST_FORCEINLINE
             extends()
               : proto_expr_()
             {}
 
-            BOOST_FORCEINLINE
             extends(extends const &that)
               : proto_expr_(that.proto_expr_)
             {}
 
-            BOOST_FORCEINLINE
             extends(Expr const &expr_)
               : proto_expr_(expr_)
             {}
@@ -531,17 +520,14 @@ namespace boost { namespace proto
         template<typename Expr, typename Derived, typename Domain>
         struct extends<Expr, Derived, Domain, 0>
         {
-            BOOST_FORCEINLINE
             extends()
               : proto_expr_()
             {}
 
-            BOOST_FORCEINLINE
             extends(extends const &that)
               : proto_expr_(that.proto_expr_)
             {}
 
-            BOOST_FORCEINLINE
             extends(Expr const &expr_)
               : proto_expr_(expr_)
             {}
@@ -571,7 +557,7 @@ namespace boost { namespace proto
             typedef detail::not_a_valid_type proto_address_of_hack_type_;
             typedef void proto_is_expr_; /**< INTERNAL ONLY */
             static const long proto_arity_c = 2;
-            typedef boost::proto::tag::proto_expr<proto_tag, Domain> fusion_tag;
+            typedef boost::proto::tag::proto_expr fusion_tag;
             typedef This &proto_child0;
             typedef expr<tag::terminal, term<Fun> > const &proto_child1;
             typedef expr<proto_tag, proto_args, proto_arity_c> proto_base_expr;
@@ -588,21 +574,18 @@ namespace boost { namespace proto
             #include <boost/proto/detail/extends_funop.hpp>
             #undef BOOST_PROTO_NO_WAVE_OUTPUT
 
-            BOOST_FORCEINLINE
             proto_base_expr const proto_base() const
             {
                 proto_base_expr that = {this->child0(), this->child1()};
                 return that;
             }
 
-            BOOST_FORCEINLINE
             proto_child0 child0() const
             {
                 using std::size_t;
                 return *(This *)((char *)this - BOOST_PROTO_OFFSETOF(This, proto_member_union_start_));
             }
 
-            BOOST_FORCEINLINE
             proto_child1 child1() const
             {
                 static expr<tag::terminal, term<Fun>, 0> const that = {Fun()};
@@ -639,9 +622,5 @@ namespace boost { namespace proto
     }
 
 }}
-
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(pop)
-#endif
 
 #endif

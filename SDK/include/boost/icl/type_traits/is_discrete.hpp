@@ -50,6 +50,7 @@ namespace boost{ namespace icl
                          <
                              has_rep_type<Type>
                            , is_discrete<typename rep_type_of<Type>::type>
+                           //CL , is_non_floating_point<typename rep_type_of<Type>::type>
                          >
                      >
                  >::value

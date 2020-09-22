@@ -65,7 +65,7 @@
 
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
 
             /// INTERNAL ONLY
@@ -110,7 +110,7 @@
 
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
 
             /// INTERNAL ONLY
@@ -182,7 +182,6 @@
 
                 /// INTERNAL ONLY
                 ///
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().BOOST_PP_CAT(child, N);
@@ -208,7 +207,6 @@
 
                 /// INTERNAL ONLY
                 ///
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().BOOST_PP_CAT(child, N);

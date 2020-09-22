@@ -1,8 +1,8 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2011 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2011 Mateusz Loskot, London, UK.
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -17,7 +17,6 @@
 #include <boost/range.hpp>
 
 #include <boost/geometry/multi/core/tags.hpp>
-#include <boost/geometry/multi/geometries/concepts/check.hpp>
 #include <boost/geometry/algorithms/detail/point_on_border.hpp>
 
 
@@ -32,13 +31,13 @@ namespace detail { namespace point_on_border
 
 template
 <
-    typename Point,
     typename MultiGeometry,
+    typename Point,
     typename Policy
 >
 struct point_on_multi
 {
-    static inline bool apply(Point& point, MultiGeometry const& multi, bool midpoint)
+    static inline bool apply(MultiGeometry const& multi, Point& point)
     {
         // Take a point on the first multi-geometry
         // (i.e. the first that is not empty)
@@ -49,7 +48,7 @@ struct point_on_multi
             it != boost::end(multi);
             ++it)
         {
-            if (Policy::apply(point, *it, midpoint))
+            if (Policy::apply(*it, point))
             {
                 return true;
             }
@@ -70,16 +69,16 @@ namespace dispatch
 {
 
 
-template<typename Point, typename Multi>
-struct point_on_border<multi_polygon_tag, Point, Multi>
+template<typename Multi, typename Point>
+struct point_on_border<multi_polygon_tag, Multi, Point>
     : detail::point_on_border::point_on_multi
         <
-            Point,
             Multi,
+            Point,
             detail::point_on_border::point_on_polygon
                 <
-                    Point,
-                    typename boost::range_value<Multi>::type
+                    typename boost::range_value<Multi>::type,
+                    Point
                 >
         >
 {};

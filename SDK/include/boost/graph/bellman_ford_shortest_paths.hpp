@@ -29,14 +29,13 @@
 #include <boost/graph/relax.hpp>
 #include <boost/graph/visitors.hpp>
 #include <boost/graph/named_function_params.hpp>
-#include <boost/concept/assert.hpp>
 
 namespace boost {
 
   template <class Visitor, class Graph>
   struct BellmanFordVisitorConcept {
     void constraints() {
-      BOOST_CONCEPT_ASSERT(( CopyConstructibleConcept<Visitor> ));
+      function_requires< CopyConstructibleConcept<Visitor> >();
       vis.examine_edge(e, g);
       vis.edge_relaxed(e, g);
       vis.edge_not_relaxed(e, g);
@@ -96,12 +95,12 @@ namespace boost {
                          BinaryPredicate compare,
                          BellmanFordVisitor v)
   {
-    BOOST_CONCEPT_ASSERT(( EdgeListGraphConcept<EdgeListGraph> ));
+    function_requires<EdgeListGraphConcept<EdgeListGraph> >();
     typedef graph_traits<EdgeListGraph> GTraits;
     typedef typename GTraits::edge_descriptor Edge;
     typedef typename GTraits::vertex_descriptor Vertex;
-    BOOST_CONCEPT_ASSERT(( ReadWritePropertyMapConcept<DistanceMap, Vertex> ));
-    BOOST_CONCEPT_ASSERT(( ReadablePropertyMapConcept<WeightMap, Edge> ));
+    function_requires<ReadWritePropertyMapConcept<DistanceMap, Vertex> >();
+    function_requires<ReadablePropertyMapConcept<WeightMap, Edge> >();
     typedef typename property_traits<DistanceMap>::value_type D_value;
     typedef typename property_traits<WeightMap>::value_type W_value;
 
@@ -171,7 +170,7 @@ namespace boost {
     bool 
     bellman_dispatch2
       (VertexAndEdgeListGraph& g, 
-       param_not_found,
+       detail::error_property_not_found,
        Size N, WeightMap weight, PredecessorMap pred, DistanceMap distance,
        const bgl_named_params<P, T, R>& params)
     {
@@ -230,7 +229,7 @@ namespace boost {
     (VertexAndEdgeListGraph& g, 
      const bgl_named_params<P, T, R>& params)
   {               
-    BOOST_CONCEPT_ASSERT(( VertexListGraphConcept<VertexAndEdgeListGraph> ));
+    function_requires<VertexListGraphConcept<VertexAndEdgeListGraph> >();
     return detail::bellman_dispatch
       (g, num_vertices(g),
        choose_const_pmap(get_param(params, edge_weight), g, edge_weight),

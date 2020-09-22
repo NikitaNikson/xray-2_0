@@ -9,7 +9,6 @@
 
 #include <boost/fusion/view/transform_view/transform_view.hpp>
 #include <boost/fusion/algorithm/transformation/detail/replace_if.hpp>
-#include <boost/fusion/support/is_sequence.hpp>
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits/is_same.hpp>
 
@@ -25,12 +24,7 @@ namespace boost { namespace fusion
     }
 
     template <typename Sequence, typename F, typename T>
-    inline 
-    typename 
-        enable_if<
-            traits::is_sequence<Sequence>
-          , typename result_of::replace_if<Sequence const, F, T>::type
-        >::type
+    inline typename result_of::replace_if<Sequence const, F, T>::type
     replace_if(Sequence const& seq, F pred, T const& new_value)
     {
         typedef typename result_of::replace_if<Sequence const, F, T>::type result;

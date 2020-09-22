@@ -12,15 +12,16 @@
 #define BOOST_SIGNALS2_FOREIGN_PTR_HPP
 
 #include <algorithm>
-#include <boost/config.hpp>
 #include <boost/assert.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/smart_ptr/bad_weak_ptr.hpp>
 #include <boost/utility/swap.hpp>
 
-#ifndef BOOST_NO_CXX11_SMART_PTR
-#include <memory>
-#endif
+namespace std
+{
+  template<typename T> class shared_ptr;
+  template<typename T> class weak_ptr;
+}
 
 namespace boost
 {
@@ -35,12 +36,10 @@ namespace boost
     {
       typedef boost::shared_ptr<T> shared_type;
     };
-#ifndef BOOST_NO_CXX11_SMART_PTR
     template<typename T> struct weak_ptr_traits<std::weak_ptr<T> >
     {
       typedef std::shared_ptr<T> shared_type;
     };
-#endif
 
     template<typename SharedPtr> struct shared_ptr_traits
     {};
@@ -49,12 +48,10 @@ namespace boost
     {
       typedef boost::weak_ptr<T> weak_type;
     };
-#ifndef BOOST_NO_CXX11_SMART_PTR
     template<typename T> struct shared_ptr_traits<std::shared_ptr<T> >
     {
       typedef std::weak_ptr<T> weak_type;
     };
-#endif
 
     namespace detail
     {

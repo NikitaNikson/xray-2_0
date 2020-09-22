@@ -82,8 +82,6 @@ public: // metafunction result
 
 } // namespace detail
 
-#ifdef BOOST_NO_CXX11_RVALUE_REFERENCES
-
 template <typename T>
 inline
     typename detail::move_type<T>::type
@@ -94,12 +92,6 @@ move(T& source)
 
     return move_t(source);
 }
-
-#else
-
-using std::move;
-
-#endif
 
 //////////////////////////////////////////////////////////////////////////
 // class template return_t

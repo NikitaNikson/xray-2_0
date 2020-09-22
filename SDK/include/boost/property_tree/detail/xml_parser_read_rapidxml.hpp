@@ -44,8 +44,7 @@ namespace boost { namespace property_tree { namespace xml_parser
                     {
                         Ptree &pt_attr = pt_attr_root.push_back(
                             std::make_pair(attr->name(), Ptree()))->second;
-                        pt_attr.data() = std::basic_string<Ch>(attr->value(),
-                                                            attr->value_size());
+                        pt_attr.data() = attr->value();
                     }
                 }
 
@@ -64,8 +63,7 @@ namespace boost { namespace property_tree { namespace xml_parser
                     pt.push_back(std::make_pair(xmltext<Ch>(),
                                                 Ptree(node->value())));
                 else
-                    pt.data() += std::basic_string<Ch>(node->value(),
-                                                       node->value_size());
+                    pt.data() += node->value();
             }
             break;
 
@@ -74,8 +72,7 @@ namespace boost { namespace property_tree { namespace xml_parser
             {
                 if (!(flags & no_comments))
                     pt.push_back(std::make_pair(xmlcomment<Ch>(),
-                                    Ptree(std::basic_string<Ch>(node->value(),
-                                                         node->value_size()))));
+                                                Ptree(node->value())));
             }
             break;
 

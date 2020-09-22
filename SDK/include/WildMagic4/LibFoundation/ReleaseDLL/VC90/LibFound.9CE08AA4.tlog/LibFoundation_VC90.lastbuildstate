@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Release DLL|x64|D:\STK2\build6\SDK\include\WildMagic4\LibFoundation\|

@@ -19,7 +19,15 @@ struct message_initiator
 
 struct DECLSPEC_NOVTABLE core
 {
-//virtual void CS_SCRIPT_CALL	message_type	(const message_type &message_type);
+	//virtual void CS_SCRIPT_CALL	message_type(const message_type &message_type);
+
+	enum message_type
+	{
+		msg_error,
+		msg_warning,
+		msg_info,
+		msg_output
+	};
 };
 
 namespace script {
@@ -34,8 +42,14 @@ struct DECLSPEC_NOVTABLE world {
 	virtual	bool CS_SCRIPT_CALL	evaluating_watch	() = 0;
 }; // struct DECLSPEC_NOVTABLE world
 
-struct DECLSPEC_NOVTABLE file_handle {
-};
+//struct DECLSPEC_NOVTABLE file_handle {
+//};
+
+//struct DECLSPEC_NOVTABLE file_buffer {
+//};
+
+typedef void* file_handle;
+typedef void* file_buffer;
 
 typedef void*	maf_parameter;
 typedef void*	(CS_SCRIPT_CALL *maf_ptr) (maf_parameter parameter, void const *, size_t);

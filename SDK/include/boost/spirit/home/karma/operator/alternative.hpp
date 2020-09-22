@@ -26,7 +26,6 @@
 #include <boost/fusion/include/for_each.hpp>
 #include <boost/mpl/accumulate.hpp>
 #include <boost/mpl/bitor.hpp>
-#include <boost/config.hpp>
 
 namespace boost { namespace spirit
 {
@@ -62,11 +61,9 @@ namespace boost { namespace spirit { namespace traits
             };
 
             // never called, but needed for decltype-based result_of (C++0x)
-#ifndef BOOST_NO_RVALUE_REFERENCES
             template <typename Element>
             typename result<element_properties(Element)>::type
-            operator()(Element&&) const;
-#endif
+            operator()(Element&) const;
         };
 
         typedef typename mpl::accumulate<

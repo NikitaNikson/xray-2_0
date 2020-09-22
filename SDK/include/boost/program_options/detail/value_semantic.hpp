@@ -16,17 +16,16 @@ namespace boost { namespace program_options {
     std::string
     typed_value<T, charT>::name() const
     {
-        std::string const& var = (m_value_name.empty() ? arg : m_value_name);
         if (!m_implicit_value.empty() && !m_implicit_value_as_text.empty()) {
-            std::string msg = "[=" + var + "(=" + m_implicit_value_as_text + ")]";
+            std::string msg = "[=arg(=" + m_implicit_value_as_text + ")]";
             if (!m_default_value.empty() && !m_default_value_as_text.empty())
                 msg += " (=" + m_default_value_as_text + ")";
             return msg;
         }
         else if (!m_default_value.empty() && !m_default_value_as_text.empty()) {
-            return var + " (=" + m_default_value_as_text + ")";
+            return arg + " (=" + m_default_value_as_text + ")";
         } else {
-            return var;
+            return arg;
         }
     }
 

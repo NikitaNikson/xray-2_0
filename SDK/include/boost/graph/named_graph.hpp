@@ -11,26 +11,14 @@
 #define BOOST_GRAPH_NAMED_GRAPH_HPP
 
 #include <boost/config.hpp>
-#include <boost/static_assert.hpp>
-#include <boost/functional/hash.hpp>
-#include <boost/graph/graph_traits.hpp>
-#include <boost/graph/properties.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index/member.hpp>
-#include <boost/multi_index_container.hpp>
-#include <boost/optional.hpp>
-#include <boost/pending/property.hpp> // for boost::lookup_one_property
-#include <boost/pending/container_traits.hpp>
-#include <boost/throw_exception.hpp>
-#include <boost/tuple/tuple.hpp> // for boost::make_tuple
-#include <boost/type_traits/is_same.hpp>
-#include <boost/type_traits/is_base_of.hpp>
 #include <boost/type_traits/remove_cv.hpp>
 #include <boost/type_traits/remove_reference.hpp>
-#include <boost/utility/enable_if.hpp>
-#include <functional> // for std::equal_to
+#include <boost/multi_index_container.hpp>
+#include <boost/multi_index/hashed_index.hpp>
+#include <boost/multi_index/member.hpp>
+#include <boost/optional.hpp>
+#include <boost/throw_exception.hpp>
 #include <stdexcept> // for std::runtime_error
-#include <utility> // for std::pair
 
 namespace boost { namespace graph {
 
@@ -117,7 +105,7 @@ public:
   typedef vertex_name_type argument_type;
   typedef VertexProperty result_type;
 
-  VertexProperty operator()(const vertex_name_type&)
+  VertexProperty operator()(const vertex_name_type& name)
   {
       boost::throw_exception(std::runtime_error("add_vertex: "
                                                 "unable to create a vertex from its name"));
@@ -168,6 +156,51 @@ struct internal_vertex_constructor<property<Tag, T, Base> >
 #endif
 
 /*******************************************************************
+ * Named graph-specific metafunctions                              *
+ *******************************************************************/
+namespace detail {
+  /** @internal
+   * Extracts the type of a bundled vertex property from a vertex
+   * property. The primary template matches when we have hit the end
+   * of the @c property<> list.
+   */
+  template<typename VertexProperty>
+  struct extract_bundled_vertex
+  {
+    typedef VertexProperty type;
+  };
+
+  /** @internal
+   * Recursively extract the bundled vertex property from a vertex
+   * property.
+   */
+  template<typename Tag, typename T, typename Base>
+  struct extract_bundled_vertex<property<Tag, T, Base> >
+    : extract_bundled_vertex<Base>
+  { };
+
+  /**
+   * We have found the bundled vertex property type, marked with
+   * vertex_bundle_t.
+   */
+  template<typename T, typename Base>
+  struct extract_bundled_vertex<property<vertex_bundle_t, T, Base> >
+  {
+    typedef T type;
+  };
+
+  /**
+   * Translate @c no_property into @c error_property_not_found when we
+   * have failed to extract a bundled vertex property type.
+   */
+  template<>
+  struct extract_bundled_vertex<no_property>
+  {
+    typedef boost::detail::error_property_not_found type;
+  };
+}
+
+/*******************************************************************
  * Named graph mixin                                               *
  *******************************************************************/
 
@@ -195,7 +228,7 @@ public:
   typedef typename internal_vertex_name<VertexProperty>::type extract_name_type;
   /// The type of the "bundled" property, from which the name can be
   /// extracted.
-  typedef typename lookup_one_property<VertexProperty, vertex_bundle_t>::type
+  typedef typename detail::extract_bundled_vertex<VertexProperty>::type
     bundled_vertex_property_type;
 
   /// The type of the function object that generates vertex properties
@@ -256,8 +289,7 @@ public:
 
   /// Notify the named_graph that we are removing the given
   /// vertex. The name of the vertex will be removed from the mapping.
-  template <typename VertexIterStability>
-  void removing_vertex(Vertex vertex, VertexIterStability);
+  void removing_vertex(Vertex vertex);
 
   /// Notify the named_graph that we are clearing the graph.
   /// This will clear out all of the name->vertex mappings
@@ -312,10 +344,8 @@ inline void BGL_NAMED_GRAPH::added_vertex(Vertex vertex)
 }
 
 template<BGL_NAMED_GRAPH_PARAMS>
-template<typename VertexIterStability>
-inline void BGL_NAMED_GRAPH::removing_vertex(Vertex vertex, VertexIterStability)
+inline void BGL_NAMED_GRAPH::removing_vertex(Vertex vertex)
 {
-  BOOST_STATIC_ASSERT_MSG ((boost::is_base_of<boost::graph_detail::stable_tag, VertexIterStability>::value), "Named graphs cannot use vecS as vertex container and remove vertices; the lack of vertex descriptor stability (which iterator stability is a proxy for) means that the name -> vertex mapping would need to be completely rebuilt after each deletion.  See https://svn.boost.org/trac/boost/ticket/7863 for more information and a test case.");
   typedef typename BGL_NAMED_GRAPH::vertex_name_type vertex_name_type;
   const vertex_name_type& vertex_name = extract_name(derived()[vertex]);
   named_vertices.erase(vertex_name);
@@ -367,15 +397,8 @@ find_vertex(typename BGL_NAMED_GRAPH::vertex_name_type const& name,
 
 /// Retrieve the vertex associated with the given name, or add a new
 /// vertex with that name if no such vertex is available.
-/// Note: This is enabled only when the vertex property type is different
-///       from the vertex name to avoid ambiguous overload problems with
-///       the add_vertex() function that takes a vertex property.
 template<BGL_NAMED_GRAPH_PARAMS>
-    typename disable_if<is_same<
-        typename BGL_NAMED_GRAPH::vertex_name_type,
-        VertexProperty
-    >,
-Vertex>::type
+Vertex
 add_vertex(typename BGL_NAMED_GRAPH::vertex_name_type const& name,
            BGL_NAMED_GRAPH& g)
 {
@@ -423,35 +446,6 @@ add_edge(typename BGL_NAMED_GRAPH::vertex_name_type const& u_name,
                   g.derived());
 }
 
-// Overloads to support EdgeMutablePropertyGraph graphs
-template <BGL_NAMED_GRAPH_PARAMS>
-std::pair<typename graph_traits<Graph>::edge_descriptor, bool>
-add_edge(typename BGL_NAMED_GRAPH::vertex_descriptor const& u,
-         typename BGL_NAMED_GRAPH::vertex_name_type const& v_name,
-         typename edge_property_type<Graph>::type const& p,
-         BGL_NAMED_GRAPH& g) {
-    return add_edge(u, add_vertex(v_name, g.derived()), p, g.derived());
-}
-
-template <BGL_NAMED_GRAPH_PARAMS>
-std::pair<typename graph_traits<Graph>::edge_descriptor, bool>
-add_edge(typename BGL_NAMED_GRAPH::vertex_name_type const& u_name,
-         typename BGL_NAMED_GRAPH::vertex_descriptor const& v,
-         typename edge_property_type<Graph>::type const& p,
-         BGL_NAMED_GRAPH& g) {
-    return add_edge(add_vertex(u_name, g.derived()), v, p, g.derived());
-}
-
-template <BGL_NAMED_GRAPH_PARAMS>
-std::pair<typename graph_traits<Graph>::edge_descriptor, bool>
-add_edge(typename BGL_NAMED_GRAPH::vertex_name_type const& u_name,
-         typename BGL_NAMED_GRAPH::vertex_name_type const& v_name,
-         typename edge_property_type<Graph>::type const& p,
-         BGL_NAMED_GRAPH& g) {
-    return add_edge(add_vertex(u_name, g.derived()),
-                    add_vertex(v_name, g.derived()), p, g.derived());
-}
-
 #undef BGL_NAMED_GRAPH
 #undef BGL_NAMED_GRAPH_PARAMS
 
@@ -483,7 +477,7 @@ struct maybe_named_graph<Graph, Vertex, VertexProperty, void>
 {
   /// The type of the "bundled" property, from which the name can be
   /// extracted.
-  typedef typename lookup_one_property<VertexProperty, vertex_bundle_t>::type
+  typedef typename detail::extract_bundled_vertex<VertexProperty>::type
     bundled_vertex_property_type;
 
   /// Notify the named_graph that we have added the given vertex. This
@@ -492,8 +486,7 @@ struct maybe_named_graph<Graph, Vertex, VertexProperty, void>
 
   /// Notify the named_graph that we are removing the given
   /// vertex. This is a no-op.
-  template <typename VertexIterStability>
-  void removing_vertex(Vertex, VertexIterStability) { }
+  void removing_vertex(Vertex) { }
 
   /// Notify the named_graph that we are clearing the graph. This is a
   /// no-op.
@@ -524,8 +517,7 @@ struct maybe_named_graph
 
   /// Notify the named_graph that we are removing the given
   /// vertex. This is a no-op.
-  template <typename VertexIterStability>
-  void removing_vertex(Vertex, VertexIterStability) { }
+  void removing_vertex(Vertex) { }
 
   /// Notify the named_graph that we are clearing the graph. This is a
   /// no-op.

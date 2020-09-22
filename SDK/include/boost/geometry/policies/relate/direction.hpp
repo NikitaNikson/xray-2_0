@@ -1,6 +1,6 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
 
 // Use, modification and distribution is subject to the Boost Software License,
 // Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
@@ -15,7 +15,6 @@
 
 #include <boost/concept_check.hpp>
 
-#include <boost/geometry/arithmetic/determinant.hpp>
 #include <boost/geometry/strategies/side_info.hpp>
 
 #include <boost/geometry/util/math.hpp>
@@ -32,8 +31,6 @@ namespace policies { namespace relate
 
 struct direction_type
 {
-    // NOTE: "char" will be replaced by enum in future version
-
     inline direction_type(side_info const& s, char h,
                 int ha, int hb,
                 int da = 0, int db = 0,
@@ -63,8 +60,6 @@ struct direction_type
     }
 
 
-    // TODO: replace this
-    // NOTE: "char" will be replaced by enum in future version
     // "How" is the intersection formed?
     char how;
 
@@ -126,9 +121,7 @@ struct segments_direction
     typedef typename select_most_precise<coordinate_type, double>::type rtype;
 
 
-    template <typename R>
     static inline return_type segments_intersect(side_info const& sides,
-                    R const&,
                     coordinate_type const& dx1, coordinate_type const& dy1,
                     coordinate_type const& dx2, coordinate_type const& dy2,
                     S1 const& s1, S2 const& s2)
@@ -242,31 +235,20 @@ struct segments_direction
         return return_type('d', false);
     }
 
-    static inline return_type error(std::string const&)
+
+    static inline return_type parallel()
     {
-        // Return "E" to denote error
-        // This will throw an error in get_turn_info
-        // TODO: change to enum or similar
-        return return_type('E', false);
+        return return_type('p', false);
+    }
+
+    static inline return_type error(std::string const& msg)
+    {
+        // msg
+        return return_type('d', false);
     }
 
 private :
 
-    static inline bool is_left
-        (
-            coordinate_type const& ux, 
-            coordinate_type const& uy,
-            coordinate_type const& vx,
-            coordinate_type const& vy
-        )
-    {
-        // This is a "side calculation" as in the strategies, but here terms are precalculated
-        // We might merge this with side, offering a pre-calculated term (in fact already done using cross-product)
-        // Waiting for implementing spherical...
-
-        rtype const zero = rtype();
-        return geometry::detail::determinant<rtype>(ux, uy, vx, vy) > zero;
-    }
 
     template <std::size_t I>
     static inline return_type calculate_side(side_info const& sides,
@@ -277,7 +259,11 @@ private :
         coordinate_type dpx = get<I, 0>(s2) - get<0, 0>(s1);
         coordinate_type dpy = get<I, 1>(s2) - get<0, 1>(s1);
 
-        return is_left(dx1, dy1, dpx, dpy)
+        // This is a "side calculation" as in the strategies, but here two terms are precalculated
+        // We might merge this with side, offering a pre-calculated term
+        // Waiting for implementing spherical...
+
+        return dx1 * dpy - dy1 * dpx > 0
             ? return_type(sides, how, how_a, how_b, -1, 1)
             : return_type(sides, how, how_a, how_b, 1, -1);
     }
@@ -291,7 +277,7 @@ private :
         coordinate_type dpx = get<I, 0>(s2) - get<0, 0>(s1);
         coordinate_type dpy = get<I, 1>(s2) - get<0, 1>(s1);
 
-        return is_left(dx1, dy1, dpx, dpy)
+         return dx1 * dpy - dy1 * dpx > 0
             ? return_type(sides, how, how_a, how_b, 1, 1)
             : return_type(sides, how, how_a, how_b, -1, -1);
     }
@@ -307,7 +293,7 @@ private :
         coordinate_type dpx = get<1, 0>(s2) - get<0, 0>(s1);
         coordinate_type dpy = get<1, 1>(s2) - get<0, 1>(s1);
 
-        int dir = is_left(dx1, dy1, dpx, dpy) ? 1 : -1;
+        int dir = dx1 * dpy - dy1 * dpx > 0 ? 1 : -1;
 
         // From other perspective, then reverse
         bool const is_a = which == 'A';
@@ -335,7 +321,7 @@ private :
 
         // Ending at the middle, one ARRIVES, the other one is NEUTRAL
         // (because it both "arrives"  and "departs"  there
-        return is_left(dx, dy, dpx, dpy)
+        return dx * dpy - dy * dpx > 0
             ? return_type(sides, 'm', 1, 0, 1, 1)
             : return_type(sides, 'm', 1, 0, -1, -1);
     }
@@ -348,7 +334,7 @@ private :
         coordinate_type dpx = get<1, 0>(s1) - get<0, 0>(s2);
         coordinate_type dpy = get<1, 1>(s1) - get<0, 1>(s2);
 
-        return is_left(dx, dy, dpx, dpy)
+        return dx * dpy - dy * dpx > 0
             ? return_type(sides, 'm', 0, 1, 1, 1)
             : return_type(sides, 'm', 0, 1, -1, -1);
     }

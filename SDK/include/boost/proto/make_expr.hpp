@@ -45,10 +45,9 @@
 #include <boost/proto/detail/poly_function.hpp>
 #include <boost/proto/detail/deprecated.hpp>
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+#ifdef _MSC_VER
 # pragma warning(push)
-# pragma warning(disable : 4180) // qualifier applied to function type has no meaning; ignored
-# pragma warning(disable : 4714) // function 'xxx' marked as __forceinline not inlined
+# pragma warning(disable: 4180) // qualifier applied to function type has no meaning; ignored
 #endif
 
 namespace boost { namespace proto
@@ -283,7 +282,6 @@ namespace boost { namespace proto
             ///
             /// \return <tt>proto::make_expr\<Tag, Domain\>(a0,...aN)</tt>
             template<typename A0>
-            BOOST_FORCEINLINE
             typename result_of::make_expr<
                 Tag
               , Domain
@@ -353,7 +351,6 @@ namespace boost { namespace proto
             /// \param sequence A Fusion Forward Sequence
             /// \return <tt>proto::unpack_expr\<Tag, Domain\>(sequence)</tt>
             template<typename Sequence>
-            BOOST_FORCEINLINE
             typename result_of::unpack_expr<Tag, Domain, Sequence const>::type const
             operator ()(Sequence const &sequence) const
             {
@@ -390,7 +387,6 @@ namespace boost { namespace proto
     ///
     /// \return <tt>Domain()(make_\<Tag\>(wrap_(a0),...wrap_(aN)))</tt>.
     template<typename Tag, typename A0>
-    BOOST_FORCEINLINE
     typename lazy_disable_if<
         is_domain<A0>
       , result_of::make_expr<
@@ -410,7 +406,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Tag, typename Domain, typename C0>
-    BOOST_FORCEINLINE
     typename result_of::make_expr<
         Tag
       , Domain
@@ -456,7 +451,6 @@ namespace boost { namespace proto
     /// \return <tt>Domain()(make_\<Tag\>(wrap_\<0\>(s),...wrap_\<N-1\>(s)))</tt>,
     /// where N is the size of \c Sequence.
     template<typename Tag, typename Sequence>
-    BOOST_FORCEINLINE
     typename lazy_disable_if<
         is_domain<Sequence>
       , result_of::unpack_expr<Tag, Sequence const>
@@ -474,7 +468,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Tag, typename Domain, typename Sequence2>
-    BOOST_FORCEINLINE
     typename result_of::unpack_expr<Tag, Domain, Sequence2 const>::type const
     unpack_expr(Sequence2 const &sequence2)
     {
@@ -502,7 +495,7 @@ namespace boost { namespace proto
 
 }}
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+#ifdef _MSC_VER
 # pragma warning(pop)
 #endif
 

@@ -1,6 +1,6 @@
 /*=============================================================================
     Copyright (c) 2001-2011 Joel de Guzman
-    Copyright (c) 2001-2012 Hartmut Kaiser
+    Copyright (c) 2001-2011 Hartmut Kaiser
 
     Distributed under the Boost Software License, Version 1.0. (See accompanying
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -45,7 +45,6 @@
 #include <boost/utility/enable_if.hpp>
 #include <boost/variant.hpp>
 #include <boost/range/iterator_range.hpp>
-#include <boost/config.hpp>
 #include <vector>
 #include <utility>
 #include <ios>
@@ -520,29 +519,6 @@ namespace boost { namespace spirit { namespace traits
         }
     };
 
-    namespace detail
-    {
-        struct attribute_size_visitor : static_visitor<std::size_t>
-        {
-            template <typename T>
-            std::size_t operator()(T const& val) const
-            {
-                return spirit::traits::size(val);
-            }
-        };
-    }
-
-    template <BOOST_VARIANT_ENUM_PARAMS(typename T)>
-    struct attribute_size<variant<BOOST_VARIANT_ENUM_PARAMS(T)> >
-    {
-        typedef std::size_t type;
-
-        static type call(variant<BOOST_VARIANT_ENUM_PARAMS(T)> const& val)
-        {
-            return apply_visitor(detail::attribute_size_visitor(), val);
-        }
-    };
-
     template <typename Iterator>
     struct attribute_size<iterator_range<Iterator> >
     {
@@ -771,11 +747,9 @@ namespace boost { namespace spirit { namespace traits
             };
 
             // never called, but needed for decltype-based result_of (C++0x)
-#ifndef BOOST_NO_RVALUE_REFERENCES
             template <typename Element>
             typename result<element_attribute(Element)>::type
-            operator()(Element&&) const;
-#endif
+            operator()(Element&) const;
         };
 
         // Compute the list of attributes of all sub-components

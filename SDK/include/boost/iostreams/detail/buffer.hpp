@@ -30,7 +30,7 @@ namespace boost { namespace iostreams { namespace detail {
 //
 // Template name: buffer
 // Description: Character buffer.
-// Template parameters:
+// Template paramters:
 //     Ch - The character type.
 //     Alloc - The Allocator type.
 //
@@ -69,7 +69,7 @@ void swap(basic_buffer<Ch, Alloc>& lhs, basic_buffer<Ch, Alloc>& rhs)
 // Template name: buffer
 // Description: Character buffer with two pointers accessible via ptr() and
 //      eptr().
-// Template parameters:
+// Template paramters:
 //     Ch - A character type.
 //
 template< typename Ch,

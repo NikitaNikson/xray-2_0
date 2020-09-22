@@ -23,7 +23,7 @@ namespace chrono
 namespace chrono_detail
 {
 
-  BOOST_CHRONO_INLINE double get_nanosecs_per_tic() BOOST_NOEXCEPT
+  BOOST_CHRONO_INLINE double get_nanosecs_per_tic() BOOST_CHRONO_NOEXCEPT
   {
       boost::detail::win32::LARGE_INTEGER_ freq;
       if ( !boost::detail::win32::QueryPerformanceFrequency( &freq ) )
@@ -33,7 +33,7 @@ namespace chrono_detail
 
 }
 
-  steady_clock::time_point steady_clock::now() BOOST_NOEXCEPT
+  steady_clock::time_point steady_clock::now() BOOST_CHRONO_NOEXCEPT
   {
     static double nanosecs_per_tic = chrono_detail::get_nanosecs_per_tic();
 
@@ -42,7 +42,6 @@ namespace chrono_detail
             (!boost::detail::win32::QueryPerformanceCounter( &pcount )) )
     {
       BOOST_ASSERT(0 && "Boost::Chrono - Internal Error");
-      return steady_clock::time_point();
     }
 
     return steady_clock::time_point(steady_clock::duration(
@@ -87,7 +86,7 @@ namespace chrono_detail
 #endif
 
   BOOST_CHRONO_INLINE
-  system_clock::time_point system_clock::now() BOOST_NOEXCEPT
+  system_clock::time_point system_clock::now() BOOST_CHRONO_NOEXCEPT
   {
     boost::detail::win32::FILETIME_ ft;
   #if defined(UNDER_CE)
@@ -98,12 +97,8 @@ namespace chrono_detail
   #else
     boost::detail::win32::GetSystemTimeAsFileTime( &ft );  // never fails
   #endif
-    return system_clock::time_point(
-      system_clock::duration(
-        ((static_cast<__int64>( ft.dwHighDateTime ) << 32) | ft.dwLowDateTime)
-       -116444736000000000LL
-      )
-    );
+    return system_clock::time_point(system_clock::duration(
+      (static_cast<__int64>( ft.dwHighDateTime ) << 32) | ft.dwLowDateTime));
   }
 
 #if !defined BOOST_CHRONO_DONT_PROVIDE_HYBRID_ERROR_HANDLING
@@ -129,19 +124,31 @@ namespace chrono_detail
 #endif
 
   BOOST_CHRONO_INLINE
-  std::time_t system_clock::to_time_t(const system_clock::time_point& t) BOOST_NOEXCEPT
+  std::time_t system_clock::to_time_t(const system_clock::time_point& t) BOOST_CHRONO_NOEXCEPT
   {
       __int64 temp = t.time_since_epoch().count();
+
+  #   if (!defined( BOOST_MSVC )) || (BOOST_MSVC > 1300) // > VC++ 7.0
+      temp -= 116444736000000000LL;  // delta from epoch in microseconds
+  #   else
+      temp -= 116444736000000000;
+  #   endif
 
       temp /= 10000000;
       return static_cast<std::time_t>( temp );
   }
 
   BOOST_CHRONO_INLINE
-  system_clock::time_point system_clock::from_time_t(std::time_t t) BOOST_NOEXCEPT
+  system_clock::time_point system_clock::from_time_t(std::time_t t) BOOST_CHRONO_NOEXCEPT
   {
       __int64 temp = t;
       temp *= 10000000;
+
+  #   if (!defined( BOOST_MSVC )) || (BOOST_MSVC > 1300) // > VC++ 7.0
+      temp += 116444736000000000LL;
+  #   else
+      temp += 116444736000000000;
+  #   endif
 
       return time_point(duration(temp));
   }

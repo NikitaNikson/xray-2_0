@@ -27,7 +27,7 @@ namespace boost { namespace fusion
             template <typename Sequence, typename N>
             struct apply 
             {
-                typedef typename mpl::at<typename Sequence::types, N>::type element;
+                typedef mpl::at<typename Sequence::types, N> element;
                 typedef typename detail::ref_result<element>::type type;
     
                 static type
@@ -40,7 +40,7 @@ namespace boost { namespace fusion
             template <typename Sequence, typename N>
             struct apply <Sequence const, N>
             {
-                typedef typename mpl::at<typename Sequence::types, N>::type element;
+                typedef mpl::at<typename Sequence::types, N> element;
                 typedef typename detail::cref_result<element>::type type;
     
                 static type

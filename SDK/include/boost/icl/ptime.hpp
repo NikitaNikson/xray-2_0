@@ -76,12 +76,12 @@ namespace boost{namespace icl
     };  
 
     // ------------------------------------------------------------------------
-    inline boost::posix_time::ptime operator ++(boost::posix_time::ptime& x)
+    boost::posix_time::ptime operator ++(boost::posix_time::ptime& x)
     {
         return x += boost::posix_time::ptime::time_duration_type::unit();
     }
 
-    inline boost::posix_time::ptime operator --(boost::posix_time::ptime& x)
+    boost::posix_time::ptime operator --(boost::posix_time::ptime& x)
     {
         return x -= boost::posix_time::ptime::time_duration_type::unit();
     }
@@ -106,12 +106,12 @@ namespace boost{namespace icl
         typedef boost::posix_time::time_duration type; 
     };  
 
-    inline boost::posix_time::time_duration operator ++(boost::posix_time::time_duration& x)
+    boost::posix_time::time_duration operator ++(boost::posix_time::time_duration& x)
     {
         return x += boost::posix_time::ptime::time_duration_type::unit();
     }
 
-    inline boost::posix_time::time_duration operator --(boost::posix_time::time_duration& x)
+    boost::posix_time::time_duration operator --(boost::posix_time::time_duration& x)
     {
         return x -= boost::posix_time::ptime::time_duration_type::unit();
     }

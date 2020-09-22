@@ -10,7 +10,7 @@
 
 #include <vector>
 #include <list>
-#include <boost/next_prior.hpp>
+#include <boost/utility.hpp>   //for boost::next
 #include <boost/config.hpp>    //for std::min macros
 #include <boost/shared_ptr.hpp>
 #include <boost/tuple/tuple.hpp>

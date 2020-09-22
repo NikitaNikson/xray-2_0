@@ -44,7 +44,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child0>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child0;
@@ -66,7 +65,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child0>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child0;
@@ -95,7 +93,7 @@
             typedef proto::basic_expr<proto::tag::function, list1<A0>, 1> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -130,7 +128,7 @@
             typedef proto::basic_expr<Tag, list1<A0>, 1> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -186,7 +184,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child1>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child1;
@@ -208,7 +205,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child1>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child1;
@@ -237,7 +233,7 @@
             typedef proto::basic_expr<proto::tag::function, list2<A0 , A1>, 2> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -272,7 +268,7 @@
             typedef proto::basic_expr<Tag, list2<A0 , A1>, 2> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -328,7 +324,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child2>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child2;
@@ -350,7 +345,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child2>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child2;
@@ -379,7 +373,7 @@
             typedef proto::basic_expr<proto::tag::function, list3<A0 , A1 , A2>, 3> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -414,7 +408,7 @@
             typedef proto::basic_expr<Tag, list3<A0 , A1 , A2>, 3> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -470,7 +464,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child3>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child3;
@@ -492,7 +485,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child3>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child3;
@@ -521,7 +513,7 @@
             typedef proto::basic_expr<proto::tag::function, list4<A0 , A1 , A2 , A3>, 4> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -556,7 +548,7 @@
             typedef proto::basic_expr<Tag, list4<A0 , A1 , A2 , A3>, 4> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -612,7 +604,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child4>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child4;
@@ -634,7 +625,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child4>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child4;
@@ -663,7 +653,7 @@
             typedef proto::basic_expr<proto::tag::function, list5<A0 , A1 , A2 , A3 , A4>, 5> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -698,7 +688,7 @@
             typedef proto::basic_expr<Tag, list5<A0 , A1 , A2 , A3 , A4>, 5> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -754,7 +744,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child5>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child5;
@@ -776,7 +765,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child5>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child5;
@@ -805,7 +793,7 @@
             typedef proto::basic_expr<proto::tag::function, list6<A0 , A1 , A2 , A3 , A4 , A5>, 6> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -840,7 +828,7 @@
             typedef proto::basic_expr<Tag, list6<A0 , A1 , A2 , A3 , A4 , A5>, 6> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -896,7 +884,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child6>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child6;
@@ -918,7 +905,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child6>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child6;
@@ -947,7 +933,7 @@
             typedef proto::basic_expr<proto::tag::function, list7<A0 , A1 , A2 , A3 , A4 , A5 , A6>, 7> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -982,7 +968,7 @@
             typedef proto::basic_expr<Tag, list7<A0 , A1 , A2 , A3 , A4 , A5 , A6>, 7> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -1038,7 +1024,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child7>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child7;
@@ -1060,7 +1045,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child7>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child7;
@@ -1089,7 +1073,7 @@
             typedef proto::basic_expr<proto::tag::function, list8<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7>, 8> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -1124,7 +1108,7 @@
             typedef proto::basic_expr<Tag, list8<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7>, 8> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -1180,7 +1164,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child8>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child8;
@@ -1202,7 +1185,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child8>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child8;
@@ -1231,7 +1213,7 @@
             typedef proto::basic_expr<proto::tag::function, list9<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8>, 9> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -1266,7 +1248,7 @@
             typedef proto::basic_expr<Tag, list9<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8>, 9> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -1322,7 +1304,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child9>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child9;
@@ -1344,7 +1325,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child9>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child9;
@@ -1369,7 +1349,7 @@
             typedef proto::basic_expr<proto::tag::function, list10<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8 , A9>, 10> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<function, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<function, Expr, State, Data>
             {};
             
             typedef proto::tag::function proto_tag;
@@ -1399,7 +1379,7 @@
             typedef proto::basic_expr<Tag, list10<A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8 , A9>, 10> proto_grammar;
             template<typename Expr, typename State, typename Data>
             struct impl
-              : detail::pass_through_impl<nary_expr, deduce_domain, Expr, State, Data>
+              : detail::pass_through_impl<nary_expr, Expr, State, Data>
             {};
             
             typedef Tag proto_tag;
@@ -1455,7 +1435,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child10>::reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr &e)
                 {
                     return e.proto_base().child10;
@@ -1477,7 +1456,6 @@
                 typedef typename detail::expr_traits<typename Expr::proto_child10>::const_reference type;
                 
                 
-                BOOST_FORCEINLINE
                 static type call(Expr const &e)
                 {
                     return e.proto_base().child10;

@@ -17,11 +17,6 @@
 #include <boost/proto/proto_fwd.hpp>
 #include <boost/proto/args.hpp>
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(push)
-# pragma warning(disable : 4714) // function 'xxx' marked as __forceinline not inlined
-#endif
-
 namespace boost { namespace proto { namespace detail
 {
 
@@ -50,7 +45,6 @@ namespace boost { namespace proto { namespace detail
         typedef proto::expr<proto::tag::terminal, term<value_type>, 0> expr_type;
         typedef typename Generator::template result<Generator(expr_type)>::type result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return Generator()(expr_type::make(t));
@@ -65,7 +59,6 @@ namespace boost { namespace proto { namespace detail
         typedef proto::basic_expr<proto::tag::terminal, term<value_type>, 0> expr_type;
         typedef typename Generator::template result<Generator(expr_type)>::type result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return Generator()(expr_type::make(t));
@@ -79,7 +72,6 @@ namespace boost { namespace proto { namespace detail
         typedef typename term_traits<T &>::value_type value_type;
         typedef proto::expr<proto::tag::terminal, term<value_type>, 0> result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return result_type::make(t);
@@ -93,7 +85,6 @@ namespace boost { namespace proto { namespace detail
         typedef typename term_traits<T &>::value_type value_type;
         typedef proto::basic_expr<proto::tag::terminal, term<value_type>, 0> result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return result_type::make(t);
@@ -116,7 +107,6 @@ namespace boost { namespace proto { namespace detail
         typedef proto::expr<proto::tag::terminal, term<reference>, 0> expr_type;
         typedef typename Generator::template result<Generator(expr_type)>::type result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return Generator()(expr_type::make(t));
@@ -135,7 +125,6 @@ namespace boost { namespace proto { namespace detail
         typedef proto::basic_expr<proto::tag::terminal, term<reference>, 0> expr_type;
         typedef typename Generator::template result<Generator(expr_type)>::type result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return Generator()(expr_type::make(t));
@@ -153,7 +142,6 @@ namespace boost { namespace proto { namespace detail
     #endif
         typedef proto::expr<proto::tag::terminal, term<reference>, 0> result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return result_type::make(t);
@@ -171,7 +159,6 @@ namespace boost { namespace proto { namespace detail
     #endif
         typedef proto::basic_expr<proto::tag::terminal, term<reference>, 0> result_type;
 
-        BOOST_FORCEINLINE
         result_type operator()(T &t) const
         {
             return result_type::make(t);
@@ -179,9 +166,5 @@ namespace boost { namespace proto { namespace detail
     };
 
 }}}
-
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(pop)
-#endif
 
 #endif

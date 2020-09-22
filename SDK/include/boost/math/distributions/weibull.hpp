@@ -28,7 +28,7 @@ inline bool check_weibull_shape(
       RealType shape,
       RealType* result, const Policy& pol)
 {
-   if((shape <= 0) || !(boost::math::isfinite)(shape))
+   if((shape < 0) || !(boost::math::isfinite)(shape))
    {
       *result = policies::raise_domain_error<RealType>(
          function,
@@ -133,19 +133,11 @@ inline RealType pdf(const weibull_distribution<RealType, Policy>& dist, const Re
       return result;
 
    if(x == 0)
-   {
-      if(shape == 1)
-      {
-         return 1 / scale;
-      }
-      if(shape > 1)
-      {
-         return 0;
-      }
-      return policies::raise_overflow_error<RealType>(function, 0, Policy());
+   { // Special case, but x == min, pdf = 1 for shape = 1,
+      return 0;
    }
    result = exp(-pow(x / scale, shape));
-   result *= pow(x / scale, shape - 1) * shape / scale;
+   result *= pow(x / scale, shape) * shape / x;
 
    return result;
 }

@@ -19,12 +19,11 @@
 #define STD std
 #endif
 
+
 #include <vector>
 #include <valarray>
 
-namespace boost {
-namespace serialization { 
-namespace detail {
+namespace boost { namespace serialization { namespace detail {
 
 template <class T, class Allocator>
 T* get_data(STD::vector<T,Allocator>& v)
@@ -38,6 +37,7 @@ T* get_data(STD::vector<T,Allocator> const & v)
   return get_data(const_cast<STD::vector<T,Allocator>&>(v));
 }
 
+
 template <class T>
 T* get_data(STD::valarray<T>& v)
 {
@@ -50,12 +50,6 @@ const T* get_data(STD::valarray<T> const& v)
   return get_data(const_cast<STD::valarray<T>&>(v));
 }
 
-} // detail
-} // serialization
-} // boost
-
-#if defined(__SGI_STL_PORT) || defined(_STLPORT_VERSION)
-#undef STD
-#endif
+} } } //namespace boost::serialization::detail
 
 #endif // BOOST_SERIALIZATION_DETAIL_GET_DATA_HPP

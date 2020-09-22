@@ -16,6 +16,5 @@
 #include <boost/fusion/adapted/struct/adapt_struct.hpp>
 #include <boost/fusion/adapted/struct/define_assoc_struct.hpp>
 #include <boost/fusion/adapted/struct/define_struct.hpp>
-#include <boost/fusion/adapted/struct/define_struct_inline.hpp>
 
 #endif

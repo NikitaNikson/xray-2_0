@@ -1,5 +1,5 @@
-//  Copyright (c) 2001-2012 Hartmut Kaiser
-//
+//  Copyright (c) 2001-2011 Hartmut Kaiser
+// 
 //  Distributed under the Boost Software License, Version 1.0. (See accompanying
 //  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -12,21 +12,21 @@
 namespace boost { namespace spirit { namespace iterator_policies
 {
     ///////////////////////////////////////////////////////////////////////////
-    //  The purpose of the multi_pass_unique template is to eliminate
-    //  empty policy classes (policies not containing any data items) from the
-    //  multiple inheritance chain. This is necessary since some compilers
-    //  fail to apply the empty base optimization if multiple inheritance is
+    //  The purpose of the multi_pass_unique template is to eliminate 
+    //  empty policy classes (policies not containing any data items) from the 
+    //  multiple inheritance chain. This is necessary since some compilers 
+    //  fail to apply the empty base optimization if multiple inheritance is 
     //  involved.
-    //  Additionally this can be used to combine separate policies into one
+    //  Additionally this can be used to combine separate policies into one 
     //  single multi_pass_policy as required by the multi_pass template
     ///////////////////////////////////////////////////////////////////////////
 
 #if defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION)
-    // without partial template specialization there is nothing much to do in
+    // without partial template specialization there is nothing much to do in 
     // terms of empty base optimization anyways...
-    template <typename T, typename Ownership, typename Checking,
+    template <typename T, typename Ownership, typename Checking, 
         typename Input, typename Storage>
-    struct multi_pass_unique
+    struct multi_pass_unique 
       : Ownership, Checking, Input, Storage
     {
         multi_pass_unique() {}
@@ -41,20 +41,12 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Ownership::swap(x);
             this->Checking::swap(x);
             this->Input::swap(x);
             this->Storage::swap(x);
-        }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
         }
     };
 #else
@@ -86,23 +78,15 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Ownership::swap(x);
             this->Checking::swap(x);
             this->Input::swap(x);
             this->Storage::swap(x);
         }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
-        }
     };
-
+    
     ///////////////////////////////////////////////////////////////////////////
     template <typename T, typename Ownership, typename Checking
       , typename Input, typename Storage>
@@ -121,19 +105,11 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Ownership::swap(x);
             this->Checking::swap(x);
             this->Storage::swap(x);
-        }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
         }
 
         // implement input policy functions by forwarding to the Input type
@@ -172,25 +148,21 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Ownership::swap(x);
             this->Input::swap(x);
             this->Storage::swap(x);
         }
 
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
-        }
-
         // checking policy functions are forwarded to the Checking type
         template <typename MultiPass>
-        inline static void docheck(MultiPass const& mp)
+        inline static void docheck(MultiPass const& mp) 
             { Checking::docheck(mp); }
+
+        template <typename MultiPass>
+        inline static void clear_queue(MultiPass& mp) 
+            { Checking::clear_queue(mp); }
     };
 
     ///////////////////////////////////////////////////////////////////////////
@@ -210,18 +182,10 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Ownership::swap(x);
             this->Storage::swap(x);
-        }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
         }
 
         // implement input policy functions by forwarding to the Input type
@@ -243,8 +207,12 @@ namespace boost { namespace spirit { namespace iterator_policies
 
         // checking policy functions are forwarded to the Checking type
         template <typename MultiPass>
-        inline static void docheck(MultiPass const& mp)
+        inline static void docheck(MultiPass const& mp) 
             { Checking::docheck(mp); }
+
+        template <typename MultiPass>
+        inline static void clear_queue(MultiPass& mp) 
+            { Checking::clear_queue(mp); }
     };
 
     ///////////////////////////////////////////////////////////////////////////
@@ -265,24 +233,16 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Checking::swap(x);
             this->Input::swap(x);
             this->Storage::swap(x);
         }
 
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
-        }
-
         // ownership policy functions are forwarded to the Ownership type
         template <typename MultiPass>
-        inline static void clone(MultiPass& mp)
+        inline static void clone(MultiPass& mp) 
             { Ownership::clone(mp); }
 
         template <typename MultiPass>
@@ -311,18 +271,10 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Checking::swap(x);
             this->Storage::swap(x);
-        }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
         }
 
         // implement input policy functions by forwarding to the Input type
@@ -344,7 +296,7 @@ namespace boost { namespace spirit { namespace iterator_policies
 
         // ownership policy functions are forwarded to the Ownership type
         template <typename MultiPass>
-        inline static void clone(MultiPass& mp)
+        inline static void clone(MultiPass& mp) 
             { Ownership::clone(mp); }
 
         template <typename MultiPass>
@@ -373,28 +325,24 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Input::swap(x);
             this->Storage::swap(x);
         }
 
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
-        }
-
         // checking policy functions are forwarded to the Checking type
         template <typename MultiPass>
-        inline static void docheck(MultiPass const& mp)
+        inline static void docheck(MultiPass const& mp) 
             { Checking::docheck(mp); }
+
+        template <typename MultiPass>
+        inline static void clear_queue(MultiPass& mp) 
+            { Checking::clear_queue(mp); }
 
         // ownership policy functions are forwarded to the Ownership type
         template <typename MultiPass>
-        inline static void clone(MultiPass& mp)
+        inline static void clone(MultiPass& mp) 
             { Ownership::clone(mp); }
 
         template <typename MultiPass>
@@ -422,17 +370,9 @@ namespace boost { namespace spirit { namespace iterator_policies
             Input::destroy(mp);
             Storage::destroy(mp);
         }
-
-        void swap(multi_pass_unique& x)
+        void swap(multi_pass_unique& x) 
         {
             this->Storage::swap(x);
-        }
-
-        template <typename MultiPass>
-        inline static void clear_queue(MultiPass& mp)
-        {
-            Checking::clear_queue(mp);
-            Storage::clear_queue(mp);
         }
 
         // implement input policy functions by forwarding to the Input type
@@ -454,12 +394,16 @@ namespace boost { namespace spirit { namespace iterator_policies
 
         // checking policy functions are forwarded to the Checking type
         template <typename MultiPass>
-        inline static void docheck(MultiPass const& mp)
+        inline static void docheck(MultiPass const& mp) 
             { Checking::docheck(mp); }
+
+        template <typename MultiPass>
+        inline static void clear_queue(MultiPass& mp) 
+            { Checking::clear_queue(mp); }
 
         // ownership policy functions are forwarded to the Ownership type
         template <typename MultiPass>
-        inline static void clone(MultiPass& mp)
+        inline static void clone(MultiPass& mp) 
             { Ownership::clone(mp); }
 
         template <typename MultiPass>
@@ -473,7 +417,7 @@ namespace boost { namespace spirit { namespace iterator_policies
 #endif
 
     ///////////////////////////////////////////////////////////////////////////
-    // the multi_pass_shared structure is used to combine the shared data items
+    // the multi_pass_shared structure is used to combine the shared data items 
     // of all policies into one single structure
     ///////////////////////////////////////////////////////////////////////////
     template<typename T, typename Ownership, typename Checking, typename Input
@@ -507,7 +451,7 @@ namespace boost { namespace spirit { namespace iterator_policies
         {
             typedef typename Ownership::unique ownership_policy;
             typedef typename Checking::unique checking_policy;
-            typedef typename Input::BOOST_NESTED_TEMPLATE unique<T>
+            typedef typename Input::BOOST_NESTED_TEMPLATE unique<T> 
                 input_policy;
             typedef typename Storage::BOOST_NESTED_TEMPLATE unique<
                 typename input_policy::value_type> storage_policy;
@@ -526,26 +470,26 @@ namespace boost { namespace spirit { namespace iterator_policies
           , typename Ownership::shared, typename Checking::shared
           , typename Input::BOOST_NESTED_TEMPLATE shared<T>
           , typename Storage::BOOST_NESTED_TEMPLATE shared<
-                typename Input::BOOST_NESTED_TEMPLATE unique<T>::value_type> >
+                typename Input::BOOST_NESTED_TEMPLATE unique<T>::value_type> > 
         {
             typedef typename Ownership::shared ownership_policy;
             typedef typename Checking::shared checking_policy;
-            typedef typename Input::BOOST_NESTED_TEMPLATE shared<T>
+            typedef typename Input::BOOST_NESTED_TEMPLATE shared<T> 
                 input_policy;
             typedef typename Storage::BOOST_NESTED_TEMPLATE shared<
-                typename Input::BOOST_NESTED_TEMPLATE unique<T>::value_type>
+                typename Input::BOOST_NESTED_TEMPLATE unique<T>::value_type> 
             storage_policy;
 
             typedef multi_pass_shared<T, ownership_policy, checking_policy
               , input_policy, storage_policy> shared_base_type;
 
-            explicit shared(T& input)
+            explicit shared(T& input) 
               : shared_base_type(input), inhibit_clear_queue_(false) {}
-            explicit shared(T const& input)
+            explicit shared(T const& input) 
               : shared_base_type(input), inhibit_clear_queue_(false) {}
 
-            // This is needed for the correct implementation of expectation
-            // points. Normally expectation points flush any multi_pass
+            // This is needed for the correct implementation of expectation 
+            // points. Normally expectation points flush any multi_pass 
             // iterator they may act on, but if the corresponding error handler
             // is of type 'retry' no flushing of the internal buffers should be
             // executed (even if explicitly requested).

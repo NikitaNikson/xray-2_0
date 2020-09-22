@@ -10,6 +10,12 @@
 #include <tuple>
 #include <boost/fusion/support/tag_of_fwd.hpp>
 
+namespace std
+{
+    template <typename... Elements>
+    class tuple;
+}
+
 namespace boost { namespace fusion
 {
     struct std_tuple_tag;

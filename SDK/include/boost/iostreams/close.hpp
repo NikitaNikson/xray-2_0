@@ -73,7 +73,7 @@ void close_all(T& t, Sink& snk)
     boost::iostreams::close(t, snk, BOOST_IOS::out);
 }
 
-} // End namespace detail. 
+} // End namespaces detail. 
 
 } } // End namespaces iostreams, boost.
 

@@ -21,6 +21,7 @@ struct backend;
 
 struct  DECLSPEC_NOVTABLE engine {
 public:
+
 	enum lua_hook_type {
 		lua_hook_call						= int(0),
 		lua_hook_return						= int(1),

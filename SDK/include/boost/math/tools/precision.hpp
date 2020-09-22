@@ -18,6 +18,8 @@
 #include <boost/mpl/if.hpp>
 #include <boost/math/policies/policy.hpp>
 
+#include <iostream>
+#include <iomanip>
 // These two are for LDBL_MAN_DIG:
 #include <limits.h>
 #include <math.h>
@@ -43,14 +45,12 @@ inline int digits(BOOST_MATH_EXPLICIT_TEMPLATE_TYPE_SPEC(T))
 {
 #ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
    BOOST_STATIC_ASSERT( ::std::numeric_limits<T>::is_specialized);
-   BOOST_STATIC_ASSERT( ::std::numeric_limits<T>::radix == 2 || ::std::numeric_limits<T>::radix == 10);
+   BOOST_STATIC_ASSERT( ::std::numeric_limits<T>::radix == 2);
 #else
    BOOST_ASSERT(::std::numeric_limits<T>::is_specialized);
-   BOOST_ASSERT(::std::numeric_limits<T>::radix == 2 || ::std::numeric_limits<T>::radix == 10);
+   BOOST_ASSERT(::std::numeric_limits<T>::radix == 2);
 #endif
-   return std::numeric_limits<T>::radix == 2 
-      ? std::numeric_limits<T>::digits
-      : ((std::numeric_limits<T>::digits + 1) * 1000L) / 301L;
+   return std::numeric_limits<T>::digits;
 }
 
 template <class T>
@@ -147,7 +147,7 @@ inline T log_min_value(const mpl::int_<0>& BOOST_MATH_APPEND_EXPLICIT_TEMPLATE_T
    BOOST_ASSERT(::std::numeric_limits<T>::is_specialized);
 #endif
    BOOST_MATH_STD_USING
-   static const T val = log((std::numeric_limits<T>::min)());
+   static const T val = log((std::numeric_limits<T>::max)());
    return val;
 }
 
@@ -179,21 +179,15 @@ inline T epsilon(const mpl::false_& BOOST_MATH_APPEND_EXPLICIT_TEMPLATE_TYPE(T))
 
 } // namespace detail
 
-#ifdef BOOST_MSVC
-#pragma warning(push)
-#pragma warning(disable:4309)
-#endif
-
 template <class T>
 inline T log_max_value(BOOST_MATH_EXPLICIT_TEMPLATE_TYPE(T))
 {
 #ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
    typedef typename mpl::if_c<
-      (std::numeric_limits<T>::radix == 2) &&
-      (std::numeric_limits<T>::max_exponent == 128
+      std::numeric_limits<T>::max_exponent == 128
       || std::numeric_limits<T>::max_exponent == 1024
-      || std::numeric_limits<T>::max_exponent == 16384),
-      mpl::int_<(std::numeric_limits<T>::max_exponent > INT_MAX ? INT_MAX : static_cast<int>(std::numeric_limits<T>::max_exponent))>,
+      || std::numeric_limits<T>::max_exponent == 16384,
+      mpl::int_<std::numeric_limits<T>::max_exponent>,
       mpl::int_<0>
    >::type tag_type;
    BOOST_STATIC_ASSERT( ::std::numeric_limits<T>::is_specialized);
@@ -211,11 +205,10 @@ inline T log_min_value(BOOST_MATH_EXPLICIT_TEMPLATE_TYPE(T))
 {
 #ifndef BOOST_NO_LIMITS_COMPILE_TIME_CONSTANTS
    typedef typename mpl::if_c<
-      (std::numeric_limits<T>::radix == 2) &&
-      (std::numeric_limits<T>::max_exponent == 128
+      std::numeric_limits<T>::max_exponent == 128
       || std::numeric_limits<T>::max_exponent == 1024
-      || std::numeric_limits<T>::max_exponent == 16384),
-      mpl::int_<(std::numeric_limits<T>::max_exponent > INT_MAX ? INT_MAX : static_cast<int>(std::numeric_limits<T>::max_exponent))>,
+      || std::numeric_limits<T>::max_exponent == 16384,
+      mpl::int_<std::numeric_limits<T>::max_exponent>,
       mpl::int_<0>
    >::type tag_type;
 
@@ -228,10 +221,6 @@ inline T log_min_value(BOOST_MATH_EXPLICIT_TEMPLATE_TYPE(T))
    return val;
 #endif
 }
-
-#ifdef BOOST_MSVC
-#pragma warning(pop)
-#endif
 
 template <class T>
 inline T epsilon(BOOST_MATH_EXPLICIT_TEMPLATE_TYPE_SPEC(T))

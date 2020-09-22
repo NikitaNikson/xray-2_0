@@ -32,12 +32,9 @@
 #include <boost/proto/domain.hpp>
 #include <boost/proto/transform/pass_through.hpp>
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(push)
-# if BOOST_WORKAROUND( BOOST_MSVC, >= 1400 )
-#  pragma warning(disable: 4180) // warning C4180: qualifier applied to function type has no meaning; ignored
-# endif
-# pragma warning(disable : 4714) // function 'xxx' marked as __forceinline not inlined
+#if BOOST_WORKAROUND( BOOST_MSVC, >= 1400 )
+    #pragma warning(push)
+    #pragma warning(disable: 4180) // warning C4180: qualifier applied to function type has no meaning; ignored
 #endif
 
 namespace boost { namespace proto
@@ -116,7 +113,7 @@ namespace boost { namespace proto
       : mpl::false_
     {};
 
-    #if BOOST_WORKAROUND(__GNUC__, == 3) || (BOOST_WORKAROUND(__GNUC__, == 4) && __GNUC_MINOR__ == 0)
+    #if BOOST_WORKAROUND(__GNUC__, == 3) || (__GNUC__ == 4 && __GNUC_MINOR__ == 0)
     // work around GCC bug
     template<typename Tag, typename Args, long N>
     struct is_callable<proto::expr<Tag, Args, N> >
@@ -397,8 +394,11 @@ namespace boost { namespace proto
             /// \pre <tt>matches\<Expr, terminal\<T\> \>::value</tt> is \c true.
             /// \return \c e
             /// \throw nothrow
-            BOOST_FORCEINLINE
-            BOOST_PROTO_RETURN_TYPE_STRICT_LOOSE(result_type, typename impl::expr_param)
+            #ifdef BOOST_PROTO_STRICT_RESULT_OF
+            result_type
+            #else
+            typename impl::expr_param
+            #endif
             operator ()(
                 typename impl::expr_param e
               , typename impl::state_param
@@ -428,7 +428,7 @@ namespace boost { namespace proto
 
         template<typename Expr, typename State, typename Data>
         struct impl
-          : detail::pass_through_impl<if_else_, deduce_domain, Expr, State, Data>
+          : detail::pass_through_impl<if_else_, Expr, State, Data>
         {};
 
         /// INTERNAL ONLY
@@ -464,8 +464,11 @@ namespace boost { namespace proto
             /// \pre <tt>matches\<Expr, nullary_expr\<Tag, T\> \>::value</tt> is \c true.
             /// \return \c e
             /// \throw nothrow
-            BOOST_FORCEINLINE
-            BOOST_PROTO_RETURN_TYPE_STRICT_LOOSE(result_type, typename impl::expr_param)
+            #ifdef BOOST_PROTO_STRICT_RESULT_OF
+            result_type
+            #else
+            typename impl::expr_param
+            #endif
             operator ()(
                 typename impl::expr_param e
               , typename impl::state_param
@@ -499,7 +502,7 @@ namespace boost { namespace proto
 
         template<typename Expr, typename State, typename Data>
         struct impl
-          : detail::pass_through_impl<unary_expr, deduce_domain, Expr, State, Data>
+          : detail::pass_through_impl<unary_expr, Expr, State, Data>
         {};
 
         /// INTERNAL ONLY
@@ -525,7 +528,7 @@ namespace boost { namespace proto
 
         template<typename Expr, typename State, typename Data>
         struct impl
-          : detail::pass_through_impl<binary_expr, deduce_domain, Expr, State, Data>
+          : detail::pass_through_impl<binary_expr, Expr, State, Data>
         {};
 
         /// INTERNAL ONLY
@@ -546,7 +549,7 @@ namespace boost { namespace proto
                                                                                                 \
         template<typename Expr, typename State, typename Data>                                  \
         struct impl                                                                             \
-          : detail::pass_through_impl<Op, deduce_domain, Expr, State, Data>                     \
+          : detail::pass_through_impl<Op, Expr, State, Data>                                    \
         {};                                                                                     \
                                                                                                 \
         typedef proto::tag::Op proto_tag;                                                       \
@@ -564,7 +567,7 @@ namespace boost { namespace proto
                                                                                                 \
         template<typename Expr, typename State, typename Data>                                  \
         struct impl                                                                             \
-          : detail::pass_through_impl<Op, deduce_domain, Expr, State, Data>                     \
+          : detail::pass_through_impl<Op, Expr, State, Data>                                    \
         {};                                                                                     \
                                                                                                 \
         typedef proto::tag::Op proto_tag;                                                       \
@@ -652,7 +655,6 @@ namespace boost { namespace proto
             /// \param t The object to wrap.
             /// \return <tt>proto::as_expr\<Domain\>(t)</tt>
             template<typename T>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_expr(T &)>::type>::type
             operator ()(T &t) const
             {
@@ -662,7 +664,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename T>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_expr(T const &)>::type>::type
             operator ()(T const &t) const
             {
@@ -671,7 +672,6 @@ namespace boost { namespace proto
 
             #if BOOST_WORKAROUND(BOOST_MSVC, == 1310)
             template<typename T, std::size_t N_>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_expr(T (&)[N_])>::type>::type
             operator ()(T (&t)[N_]) const
             {
@@ -679,7 +679,6 @@ namespace boost { namespace proto
             }
 
             template<typename T, std::size_t N_>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_expr(T const (&)[N_])>::type>::type
             operator ()(T const (&t)[N_]) const
             {
@@ -715,7 +714,6 @@ namespace boost { namespace proto
             /// \param t The object to wrap.
             /// \return <tt>proto::as_child\<Domain\>(t)</tt>
             template<typename T>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_child(T &)>::type>::type
             operator ()(T &t) const
             {
@@ -725,7 +723,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename T>
-            BOOST_FORCEINLINE
             typename add_const<typename result<as_child(T const &)>::type>::type
             operator ()(T const &t) const
             {
@@ -756,7 +753,6 @@ namespace boost { namespace proto
             /// \return <tt>proto::child_c\<N\>(expr)</tt>
             /// \throw nothrow
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::child_c<Expr &, N>::type
             operator ()(Expr &e) const
             {
@@ -766,7 +762,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::child_c<Expr const &, N>::type
             operator ()(Expr const &e) const
             {
@@ -801,7 +796,6 @@ namespace boost { namespace proto
             /// \return <tt>proto::child\<N\>(expr)</tt>
             /// \throw nothrow
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::child<Expr &, N>::type
             operator ()(Expr &e) const
             {
@@ -811,7 +805,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::child<Expr const &, N>::type
             operator ()(Expr const &e) const
             {
@@ -841,7 +834,6 @@ namespace boost { namespace proto
             /// \return <tt>proto::value(expr)</tt>
             /// \throw nothrow
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::value<Expr &>::type
             operator ()(Expr &e) const
             {
@@ -851,7 +843,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::value<Expr const &>::type
             operator ()(Expr const &e) const
             {
@@ -881,7 +872,6 @@ namespace boost { namespace proto
             /// \return <tt>proto::left(expr)</tt>
             /// \throw nothrow
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::left<Expr &>::type
             operator ()(Expr &e) const
             {
@@ -891,7 +881,6 @@ namespace boost { namespace proto
             /// \overload
             ///
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::left<Expr const &>::type
             operator ()(Expr const &e) const
             {
@@ -921,7 +910,6 @@ namespace boost { namespace proto
             /// \return <tt>proto::right(expr)</tt>
             /// \throw nothrow
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::right<Expr &>::type
             operator ()(Expr &e) const
             {
@@ -929,7 +917,6 @@ namespace boost { namespace proto
             }
 
             template<typename Expr>
-            BOOST_FORCEINLINE
             typename result_of::right<Expr const &>::type
             operator ()(Expr const &e) const
             {
@@ -961,7 +948,6 @@ namespace boost { namespace proto
     ///
     /// \param t The object to wrap.
     template<typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_expr<T, default_domain>::type>::type
     as_expr(T &t BOOST_PROTO_DISABLE_IF_IS_CONST(T) BOOST_PROTO_DISABLE_IF_IS_FUNCTION(T))
     {
@@ -971,7 +957,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_expr<T const, default_domain>::type>::type
     as_expr(T const &t)
     {
@@ -981,7 +966,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Domain, typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_expr<T, Domain>::type>::type
     as_expr(T &t BOOST_PROTO_DISABLE_IF_IS_CONST(T) BOOST_PROTO_DISABLE_IF_IS_FUNCTION(T))
     {
@@ -991,7 +975,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Domain, typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_expr<T const, Domain>::type>::type
     as_expr(T const &t)
     {
@@ -1018,7 +1001,6 @@ namespace boost { namespace proto
     ///
     /// \param t The object to wrap.
     template<typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_child<T, default_domain>::type>::type
     as_child(T &t BOOST_PROTO_DISABLE_IF_IS_CONST(T) BOOST_PROTO_DISABLE_IF_IS_FUNCTION(T))
     {
@@ -1028,7 +1010,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_child<T const, default_domain>::type>::type
     as_child(T const &t)
     {
@@ -1038,7 +1019,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Domain, typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_child<T, Domain>::type>::type
     as_child(T &t BOOST_PROTO_DISABLE_IF_IS_CONST(T) BOOST_PROTO_DISABLE_IF_IS_FUNCTION(T))
     {
@@ -1048,7 +1028,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Domain, typename T>
-    BOOST_FORCEINLINE
     typename add_const<typename result_of::as_child<T const, Domain>::type>::type
     as_child(T const &t)
     {
@@ -1069,7 +1048,6 @@ namespace boost { namespace proto
     /// \throw nothrow
     /// \return A reference to the Nth child
     template<typename N, typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::child<Expr &, N>::type
     child(Expr &e BOOST_PROTO_DISABLE_IF_IS_CONST(Expr))
     {
@@ -1079,7 +1057,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename N, typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::child<Expr const &, N>::type
     child(Expr const &e)
     {
@@ -1089,7 +1066,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Expr2>
-    BOOST_FORCEINLINE
     typename detail::expr_traits<typename Expr2::proto_base_expr::proto_child0>::reference
     child(Expr2 &expr2 BOOST_PROTO_DISABLE_IF_IS_CONST(Expr2))
     {
@@ -1099,7 +1075,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Expr2>
-    BOOST_FORCEINLINE
     typename detail::expr_traits<typename Expr2::proto_base_expr::proto_child0>::const_reference
     child(Expr2 const &expr2)
     {
@@ -1117,7 +1092,6 @@ namespace boost { namespace proto
     /// \throw nothrow
     /// \return A reference to the Nth child
     template<long N, typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::child_c<Expr &, N>::type
     child_c(Expr &e BOOST_PROTO_DISABLE_IF_IS_CONST(Expr))
     {
@@ -1127,7 +1101,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<long N, typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::child_c<Expr const &, N>::type
     child_c(Expr const &e)
     {
@@ -1137,7 +1110,7 @@ namespace boost { namespace proto
     /// \brief Return the value stored within the specified Proto
     /// terminal expression.
     ///
-    /// Return the value stored within the specified Proto
+    /// Return the the value stored within the specified Proto
     /// terminal expression. The value is returned by
     /// reference.
     ///
@@ -1146,7 +1119,6 @@ namespace boost { namespace proto
     /// \throw nothrow
     /// \return A reference to the terminal's value
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::value<Expr &>::type
     value(Expr &e BOOST_PROTO_DISABLE_IF_IS_CONST(Expr))
     {
@@ -1156,7 +1128,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::value<Expr const &>::type
     value(Expr const &e)
     {
@@ -1175,7 +1146,6 @@ namespace boost { namespace proto
     /// \throw nothrow
     /// \return A reference to the left child
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::left<Expr &>::type
     left(Expr &e BOOST_PROTO_DISABLE_IF_IS_CONST(Expr))
     {
@@ -1185,7 +1155,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::left<Expr const &>::type
     left(Expr const &e)
     {
@@ -1204,7 +1173,6 @@ namespace boost { namespace proto
     /// \throw nothrow
     /// \return A reference to the right child
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::right<Expr &>::type
     right(Expr &e BOOST_PROTO_DISABLE_IF_IS_CONST(Expr))
     {
@@ -1214,7 +1182,6 @@ namespace boost { namespace proto
     /// \overload
     ///
     template<typename Expr>
-    BOOST_FORCEINLINE
     typename result_of::right<Expr const &>::type
     right(Expr const &e)
     {
@@ -1251,8 +1218,8 @@ namespace boost { namespace proto
 
 }}
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
-# pragma warning(pop)
+#if BOOST_WORKAROUND( BOOST_MSVC, >= 1400 )
+    #pragma warning(pop)
 #endif
 
 #endif

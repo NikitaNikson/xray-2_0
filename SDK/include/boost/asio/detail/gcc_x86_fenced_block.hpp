@@ -2,7 +2,7 @@
 // detail/gcc_x86_fenced_block.hpp
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2013 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2011 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -40,17 +40,17 @@ public:
   // Constructor for a full fenced block.
   explicit gcc_x86_fenced_block(full_t)
   {
-    lbarrier();
+    barrier1();
   }
 
   // Destructor.
   ~gcc_x86_fenced_block()
   {
-    sbarrier();
+    barrier2();
   }
 
 private:
-  static int barrier()
+  static int barrier1()
   {
     int r = 0, m = 1;
     __asm__ __volatile__ (
@@ -61,21 +61,12 @@ private:
     return r;
   }
 
-  static void lbarrier()
+  static void barrier2()
   {
 #if defined(__SSE2__)
-    __asm__ __volatile__ ("lfence" ::: "memory");
+    __asm__ __volatile__ ("mfence" ::: "memory");
 #else // defined(__SSE2__)
-    barrier();
-#endif // defined(__SSE2__)
-  }
-
-  static void sbarrier()
-  {
-#if defined(__SSE2__)
-    __asm__ __volatile__ ("sfence" ::: "memory");
-#else // defined(__SSE2__)
-    barrier();
+    barrier1();
 #endif // defined(__SSE2__)
   }
 };

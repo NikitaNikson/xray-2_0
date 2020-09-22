@@ -27,16 +27,15 @@ namespace boost
 namespace chrono
 {
 
-process_real_cpu_clock::time_point process_real_cpu_clock::now() BOOST_NOEXCEPT
+process_real_cpu_clock::time_point process_real_cpu_clock::now() BOOST_CHRONO_NOEXCEPT
 {
     clock_t c = ::clock();
     if ( c == clock_t(-1) ) // error
     {
       BOOST_ASSERT(0 && "Boost::Chrono - Internal Error");
     }
-    typedef ratio_divide<giga, ratio<CLOCKS_PER_SEC> >::type R;
     return time_point(
-      duration(static_cast<rep>(c)*R::num/R::den)
+      duration(c*(1000000000l/CLOCKS_PER_SEC))
     );
 }
 
@@ -57,14 +56,13 @@ process_real_cpu_clock::time_point process_real_cpu_clock::now(
     {
       ec.clear();
     }
-    typedef ratio_divide<giga, ratio<CLOCKS_PER_SEC> >::type R;
     return time_point(
-      duration(static_cast<rep>(c)*R::num/R::den)
+      duration(c*(1000000000l/CLOCKS_PER_SEC))
     );
 }
 #endif
 
-process_user_cpu_clock::time_point process_user_cpu_clock::now() BOOST_NOEXCEPT
+process_user_cpu_clock::time_point process_user_cpu_clock::now() BOOST_CHRONO_NOEXCEPT
 {
 
     //  note that Windows uses 100 nanosecond ticks for FILETIME
@@ -129,7 +127,7 @@ process_user_cpu_clock::time_point process_user_cpu_clock::now(
 }
 #endif
 
-process_system_cpu_clock::time_point process_system_cpu_clock::now() BOOST_NOEXCEPT
+process_system_cpu_clock::time_point process_system_cpu_clock::now() BOOST_CHRONO_NOEXCEPT
 {
 
     //  note that Windows uses 100 nanosecond ticks for FILETIME
@@ -194,7 +192,7 @@ process_system_cpu_clock::time_point process_system_cpu_clock::now(
 }
 #endif
 
-process_cpu_clock::time_point process_cpu_clock::now()  BOOST_NOEXCEPT
+process_cpu_clock::time_point process_cpu_clock::now()  BOOST_CHRONO_NOEXCEPT
 {
 
     //  note that Windows uses 100 nanosecond ticks for FILETIME

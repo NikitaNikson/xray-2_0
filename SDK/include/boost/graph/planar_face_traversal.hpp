@@ -10,11 +10,8 @@
 #define __PLANAR_FACE_TRAVERSAL_HPP__
 
 #include <vector>
-#include <set>
-#include <map>
-#include <boost/next_prior.hpp>
+#include <boost/utility.hpp> //for next and prior
 #include <boost/graph/graph_traits.hpp>
-#include <boost/graph/properties.hpp>
 
 
 namespace boost

@@ -18,6 +18,9 @@
 #	define CS_PLATFORM_XBOX_360
 #	define CS_STATIC_LIBRARIES
 #	define CS_PLATFORM_ID				[xbox_360]
+#elif defined(WIN64)
+#	define CS_PLATFORM_WINDOWS_32
+#	define CS_PLATFORM_ID
 #else // #elif defined(_XBOX)
 	STATIC_CHECK(false, Unknown_Platform);
 #endif // #elif defined(_XBOX)

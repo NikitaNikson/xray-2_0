@@ -20,7 +20,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 1> src_type;
         typedef proto::expr<Tag, dst_args, 1> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -44,7 +43,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 1> src_type;
         typedef proto::basic_expr<Tag, dst_args, 1> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -68,7 +66,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 2> src_type;
         typedef proto::expr<Tag, dst_args, 2> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -92,7 +89,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 2> src_type;
         typedef proto::basic_expr<Tag, dst_args, 2> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -116,7 +112,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 3> src_type;
         typedef proto::expr<Tag, dst_args, 3> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -140,7 +135,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 3> src_type;
         typedef proto::basic_expr<Tag, dst_args, 3> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -164,7 +158,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 4> src_type;
         typedef proto::expr<Tag, dst_args, 4> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -188,7 +181,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 4> src_type;
         typedef proto::basic_expr<Tag, dst_args, 4> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -212,7 +204,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 5> src_type;
         typedef proto::expr<Tag, dst_args, 5> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -236,7 +227,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 5> src_type;
         typedef proto::basic_expr<Tag, dst_args, 5> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -260,7 +250,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 6> src_type;
         typedef proto::expr<Tag, dst_args, 6> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -284,7 +273,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 6> src_type;
         typedef proto::basic_expr<Tag, dst_args, 6> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -308,7 +296,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 7> src_type;
         typedef proto::expr<Tag, dst_args, 7> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -332,7 +319,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 7> src_type;
         typedef proto::basic_expr<Tag, dst_args, 7> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -356,7 +342,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 8> src_type;
         typedef proto::expr<Tag, dst_args, 8> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -380,7 +365,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 8> src_type;
         typedef proto::basic_expr<Tag, dst_args, 8> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -404,7 +388,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 9> src_type;
         typedef proto::expr<Tag, dst_args, 9> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -428,7 +411,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 9> src_type;
         typedef proto::basic_expr<Tag, dst_args, 9> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -452,7 +434,6 @@
         dst_args;
         typedef proto::expr<Tag, src_args, 10> src_type;
         typedef proto::expr<Tag, dst_args, 10> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {
@@ -476,7 +457,6 @@
         dst_args;
         typedef proto::basic_expr<Tag, src_args, 10> src_type;
         typedef proto::basic_expr<Tag, dst_args, 10> type;
-        BOOST_FORCEINLINE
         static type const call(src_type const &e)
         {
             type that = {

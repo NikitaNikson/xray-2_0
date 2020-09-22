@@ -1,8 +1,8 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2011 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2011 Mateusz Loskot, London, UK.
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -14,7 +14,7 @@
 #ifndef BOOST_GEOMETRY_ALGORITHMS_CONVEX_HULL_HPP
 #define BOOST_GEOMETRY_ALGORITHMS_CONVEX_HULL_HPP
 
-#include <boost/array.hpp>
+
 
 #include <boost/geometry/core/cs.hpp>
 #include <boost/geometry/core/point_order.hpp>
@@ -27,26 +27,28 @@
 
 #include <boost/geometry/views/detail/range_type.hpp>
 
-#include <boost/geometry/algorithms/num_points.hpp>
 #include <boost/geometry/algorithms/detail/as_range.hpp>
-#include <boost/geometry/algorithms/detail/assign_box_corners.hpp>
 
 
 namespace boost { namespace geometry
 {
 
-
 #ifndef DOXYGEN_NO_DETAIL
 namespace detail { namespace convex_hull
 {
 
-template <order_selector Order>
+template
+<
+    typename Geometry,
+    order_selector Order,
+    typename Strategy
+>
 struct hull_insert
 {
 
     // Member template function (to avoid inconvenient declaration
     // of output-iterator-type, from hull_to_geometry)
-    template <typename Geometry, typename OutputIterator, typename Strategy>
+    template <typename OutputIterator>
     static inline OutputIterator apply(Geometry const& geometry,
             OutputIterator out, Strategy const& strategy)
     {
@@ -58,15 +60,22 @@ struct hull_insert
     }
 };
 
+template
+<
+    typename Geometry,
+    typename OutputGeometry,
+    typename Strategy
+>
 struct hull_to_geometry
 {
-    template <typename Geometry, typename OutputGeometry, typename Strategy>
     static inline void apply(Geometry const& geometry, OutputGeometry& out,
             Strategy const& strategy)
     {
         hull_insert
             <
-                geometry::point_order<OutputGeometry>::value
+                Geometry,
+                geometry::point_order<OutputGeometry>::value,
+                Strategy
             >::apply(geometry,
                 std::back_inserter(
                     // Handle linestring, ring and polygon the same:
@@ -76,17 +85,6 @@ struct hull_to_geometry
                         >(out)), strategy);
     }
 };
-
-
-// Helper metafunction for default strategy retrieval
-template <typename Geometry>
-struct default_strategy
-    : strategy_convex_hull
-          <
-              Geometry,
-              typename point_type<Geometry>::type
-          >
-{};
 
 
 }} // namespace detail::convex_hull
@@ -100,41 +98,24 @@ namespace dispatch
 
 template
 <
+    typename Tag1,
     typename Geometry,
-    typename Tag = typename tag<Geometry>::type
+    typename Output,
+    typename Strategy
 >
 struct convex_hull
-    : detail::convex_hull::hull_to_geometry
+    : detail::convex_hull::hull_to_geometry<Geometry, Output, Strategy>
 {};
 
-template <typename Box>
-struct convex_hull<Box, box_tag>
-{
-    template <typename OutputGeometry, typename Strategy>
-    static inline void apply(Box const& box, OutputGeometry& out,
-            Strategy const& )
-    {
-        static bool const Close
-            = geometry::closure<OutputGeometry>::value == closed;
-        static bool const Reverse
-            = geometry::point_order<OutputGeometry>::value == counterclockwise;
 
-        // A hull for boxes is trivial. Any strategy is (currently) skipped.
-        boost::array<typename point_type<Box>::type, 4> range;
-        geometry::detail::assign_box_corners_oriented<Reverse>(box, range);
-        geometry::append(out, range);
-        if (Close)
-        {
-            geometry::append(out, *boost::begin(range));
-        }
-    }
-};
-
-
-
-template <order_selector Order>
+template
+<
+    typename GeometryTag,
+    order_selector Order,
+    typename GeometryIn, typename Strategy
+ >
 struct convex_hull_insert
-    : detail::convex_hull::hull_insert<Order>
+    : detail::convex_hull::hull_insert<GeometryIn, Order, Strategy>
 {};
 
 
@@ -142,25 +123,26 @@ struct convex_hull_insert
 #endif // DOXYGEN_NO_DISPATCH
 
 
-template<typename Geometry, typename OutputGeometry, typename Strategy>
-inline void convex_hull(Geometry const& geometry,
-            OutputGeometry& out, Strategy const& strategy)
+template<typename Geometry1, typename Geometry2, typename Strategy>
+inline void convex_hull(Geometry1 const& geometry,
+            Geometry2& out, Strategy const& strategy)
 {
     concept::check_concepts_and_equal_dimensions
         <
-            const Geometry,
-            OutputGeometry
+            const Geometry1,
+            Geometry2
         >();
 
     BOOST_CONCEPT_ASSERT( (geometry::concept::ConvexHullStrategy<Strategy>) );
 
-    if (geometry::num_points(geometry) == 0)
-    {
-        // Leave output empty
-        return;
-    }
 
-    dispatch::convex_hull<Geometry>::apply(geometry, out, strategy);
+    dispatch::convex_hull
+        <
+            typename tag<Geometry1>::type,
+            Geometry1,
+            Geometry2,
+            Strategy
+        >::apply(geometry, out, strategy);
 }
 
 
@@ -168,24 +150,31 @@ inline void convex_hull(Geometry const& geometry,
 \brief \brief_calc{convex hull}
 \ingroup convex_hull
 \details \details_calc{convex_hull,convex hull}.
-\tparam Geometry the input geometry type
-\tparam OutputGeometry the output geometry type
+\tparam Geometry1 \tparam_geometry
+\tparam Geometry2 \tparam_geometry
 \param geometry \param_geometry,  input geometry
 \param hull \param_geometry \param_set{convex hull}
 
 \qbk{[include reference/algorithms/convex_hull.qbk]}
  */
-template<typename Geometry, typename OutputGeometry>
-inline void convex_hull(Geometry const& geometry,
-            OutputGeometry& hull)
+template<typename Geometry1, typename Geometry2>
+inline void convex_hull(Geometry1 const& geometry,
+            Geometry2& hull)
 {
     concept::check_concepts_and_equal_dimensions
         <
-            const Geometry,
-            OutputGeometry
+            const Geometry1,
+            Geometry2
         >();
 
-    typedef typename detail::convex_hull::default_strategy<Geometry>::type strategy_type;
+    typedef typename point_type<Geometry2>::type point_type;
+
+    typedef typename strategy_convex_hull
+        <
+            typename cs_tag<point_type>::type,
+            Geometry1,
+            point_type
+        >::type strategy_type;
 
     convex_hull(geometry, hull, strategy_type());
 }
@@ -207,7 +196,9 @@ inline OutputIterator convex_hull_insert(Geometry const& geometry,
 
     return dispatch::convex_hull_insert
         <
-            geometry::point_order<Geometry>::value
+            typename tag<Geometry>::type,
+            geometry::point_order<Geometry>::value,
+            Geometry, Strategy
         >::apply(geometry, out, strategy);
 }
 
@@ -233,7 +224,14 @@ inline OutputIterator convex_hull_insert(Geometry const& geometry,
     concept::check<Geometry const>();
     concept::check<typename point_type<Geometry>::type>();
 
-    typedef typename detail::convex_hull::default_strategy<Geometry>::type strategy_type;
+    typedef typename point_type<Geometry>::type point_type;
+
+    typedef typename strategy_convex_hull
+        <
+            typename cs_tag<point_type>::type,
+            Geometry,
+            point_type
+        >::type strategy_type;
 
     return convex_hull_insert(geometry, out, strategy_type());
 }

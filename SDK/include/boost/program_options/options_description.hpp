@@ -102,16 +102,6 @@ namespace program_options {
         */
         const std::string& key(const std::string& option) const;
 
-
-        /** Returns the canonical name for the option description to enable the user to
-            recognised a matching option.
-            1) For short options ('-', '/'), returns the short name prefixed.
-            2) For long options ('--' / '-') returns the long name prefixed
-            3) All other cases, returns the long name (if present) or the short name,
-                unprefixed.
-        */
-        std::string canonical_display_name(int canonical_option_style = 0) const;
-
         const std::string& long_name() const;
 
         /// Explanation of this option
@@ -170,7 +160,7 @@ namespace program_options {
         See @ref a_adding_options "here" for option adding interface discussion.
         @sa option_description
     */
-    class BOOST_PROGRAM_OPTIONS_DECL options_description {
+	class BOOST_PROGRAM_OPTIONS_DECL options_description : private boost::noncopyable {
     public:
         static const unsigned m_default_line_length;
         

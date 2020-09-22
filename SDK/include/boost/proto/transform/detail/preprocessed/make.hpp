@@ -20,7 +20,6 @@
         {
             typedef proto::expr<T, A, 0> result_type;
             template<typename A0>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0) const
             {
                 return result_type::make(a0);
@@ -31,14 +30,12 @@
         {
             typedef proto::basic_expr<T, A, 0> result_type;
             template<typename A0>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0) const
             {
                 return result_type::make(a0);
             }
         };
         template<typename Type >
-        BOOST_FORCEINLINE
         Type construct()
         {
             return construct_<Type>()();
@@ -64,7 +61,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -122,7 +118,6 @@
         {
             typedef proto::expr<T, A, 1> result_type;
             template<typename A0>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0) const
             {
                 return result_type::make(a0);
@@ -133,14 +128,12 @@
         {
             typedef proto::basic_expr<T, A, 1> result_type;
             template<typename A0>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0) const
             {
                 return result_type::make(a0);
             }
         };
         template<typename Type , typename A0>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0)
         {
             return construct_<Type>()(a0);
@@ -166,7 +159,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -179,28 +171,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0>
-    struct make<Object(A0...)>
-      : transform<make<Object(A0...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A0
-                  , detail::expand_pattern_rest_0<
-                        Object
-                        
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -246,7 +216,6 @@
         {
             typedef proto::expr<T, A, 2> result_type;
             template<typename A0 , typename A1>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1) const
             {
                 return result_type::make(a0 , a1);
@@ -257,14 +226,12 @@
         {
             typedef proto::basic_expr<T, A, 2> result_type;
             template<typename A0 , typename A1>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1) const
             {
                 return result_type::make(a0 , a1);
             }
         };
         template<typename Type , typename A0 , typename A1>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1)
         {
             return construct_<Type>()(a0 , a1);
@@ -290,7 +257,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -303,28 +269,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1>
-    struct make<Object(A0 , A1...)>
-      : transform<make<Object(A0 , A1...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A1
-                  , detail::expand_pattern_rest_1<
-                        Object
-                        , A0
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -370,7 +314,6 @@
         {
             typedef proto::expr<T, A, 3> result_type;
             template<typename A0 , typename A1 , typename A2>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2) const
             {
                 return result_type::make(a0 , a1 , a2);
@@ -381,14 +324,12 @@
         {
             typedef proto::basic_expr<T, A, 3> result_type;
             template<typename A0 , typename A1 , typename A2>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2) const
             {
                 return result_type::make(a0 , a1 , a2);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2)
         {
             return construct_<Type>()(a0 , a1 , a2);
@@ -414,7 +355,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -427,28 +367,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2>
-    struct make<Object(A0 , A1 , A2...)>
-      : transform<make<Object(A0 , A1 , A2...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A2
-                  , detail::expand_pattern_rest_2<
-                        Object
-                        , A0 , A1
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -494,7 +412,6 @@
         {
             typedef proto::expr<T, A, 4> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3) const
             {
                 return result_type::make(a0 , a1 , a2 , a3);
@@ -505,14 +422,12 @@
         {
             typedef proto::basic_expr<T, A, 4> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3) const
             {
                 return result_type::make(a0 , a1 , a2 , a3);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3);
@@ -538,7 +453,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -551,28 +465,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3>
-    struct make<Object(A0 , A1 , A2 , A3...)>
-      : transform<make<Object(A0 , A1 , A2 , A3...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A3
-                  , detail::expand_pattern_rest_3<
-                        Object
-                        , A0 , A1 , A2
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -618,7 +510,6 @@
         {
             typedef proto::expr<T, A, 5> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4);
@@ -629,14 +520,12 @@
         {
             typedef proto::basic_expr<T, A, 5> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4);
@@ -662,7 +551,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -675,28 +563,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4>
-    struct make<Object(A0 , A1 , A2 , A3 , A4...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A4
-                  , detail::expand_pattern_rest_4<
-                        Object
-                        , A0 , A1 , A2 , A3
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -742,7 +608,6 @@
         {
             typedef proto::expr<T, A, 6> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5);
@@ -753,14 +618,12 @@
         {
             typedef proto::basic_expr<T, A, 6> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4 , a5);
@@ -786,7 +649,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -799,28 +661,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A5>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5>
-    struct make<Object(A0 , A1 , A2 , A3 , A4 , A5...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4 , A5...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A5
-                  , detail::expand_pattern_rest_5<
-                        Object
-                        , A0 , A1 , A2 , A3 , A4
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -866,7 +706,6 @@
         {
             typedef proto::expr<T, A, 7> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6);
@@ -877,14 +716,12 @@
         {
             typedef proto::basic_expr<T, A, 7> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4 , a5 , a6);
@@ -910,7 +747,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -923,28 +759,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A5>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A6>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6>
-    struct make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A6
-                  , detail::expand_pattern_rest_6<
-                        Object
-                        , A0 , A1 , A2 , A3 , A4 , A5
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -990,7 +804,6 @@
         {
             typedef proto::expr<T, A, 8> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7);
@@ -1001,14 +814,12 @@
         {
             typedef proto::basic_expr<T, A, 8> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7);
@@ -1034,7 +845,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -1047,28 +857,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A5>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A6>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A7>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7>
-    struct make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A7
-                  , detail::expand_pattern_rest_7<
-                        Object
-                        , A0 , A1 , A2 , A3 , A4 , A5 , A6
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -1114,7 +902,6 @@
         {
             typedef proto::expr<T, A, 9> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8);
@@ -1125,14 +912,12 @@
         {
             typedef proto::basic_expr<T, A, 9> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8);
@@ -1158,7 +943,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -1171,28 +955,6 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A5>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A6>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A7>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A8>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8>
-    struct make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A8
-                  , detail::expand_pattern_rest_8<
-                        Object
-                        , A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };
     namespace detail
     {
@@ -1238,7 +1000,6 @@
         {
             typedef proto::expr<T, A, 10> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8 , typename A9>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8 , A9 &a9) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a9);
@@ -1249,14 +1010,12 @@
         {
             typedef proto::basic_expr<T, A, 10> result_type;
             template<typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8 , typename A9>
-            BOOST_FORCEINLINE
             result_type operator ()(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8 , A9 &a9) const
             {
                 return result_type::make(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a9);
             }
         };
         template<typename Type , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8 , typename A9>
-        BOOST_FORCEINLINE
         Type construct(A0 &a0 , A1 &a1 , A2 &a2 , A3 &a3 , A4 &a4 , A5 &a5 , A6 &a6 , A7 &a7 , A8 &a8 , A9 &a9)
         {
             return construct_<Type>()(a0 , a1 , a2 , a3 , a4 , a5 , a6 , a7 , a8 , a9);
@@ -1282,7 +1041,6 @@
             
             
             
-            BOOST_FORCEINLINE
             result_type operator ()(
                 typename impl::expr_param e
               , typename impl::state_param s
@@ -1295,26 +1053,4 @@
                 return detail::construct<result_type>(detail::as_lvalue( typename when<_, A0>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A1>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A2>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A3>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A4>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A5>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A6>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A7>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A8>::template impl<Expr, State, Data>()(e, s, d) ) , detail::as_lvalue( typename when<_, A9>::template impl<Expr, State, Data>()(e, s, d) ));
             }
         };
-    };
-    
-    
-    
-    
-    template<typename Object , typename A0 , typename A1 , typename A2 , typename A3 , typename A4 , typename A5 , typename A6 , typename A7 , typename A8 , typename A9>
-    struct make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8 , A9...)>
-      : transform<make<Object(A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8 , A9...)> >
-    {
-        template<typename Expr, typename State, typename Data>
-        struct impl
-          : make<
-                typename detail::expand_pattern<
-                    proto::arity_of<Expr>::value
-                  , A9
-                  , detail::expand_pattern_rest_9<
-                        Object
-                        , A0 , A1 , A2 , A3 , A4 , A5 , A6 , A7 , A8
-                    >
-                >::type
-            >::template impl<Expr, State, Data>
-        {};
     };

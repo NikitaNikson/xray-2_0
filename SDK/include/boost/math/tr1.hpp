@@ -104,7 +104,6 @@ namespace boost{ namespace math{ namespace tr1{ extern "C"{
 #  include <boost/config/auto_link.hpp>
 #endif
 
-#if !(defined(BOOST_INTEL) && defined(__APPLE__)) && !(defined(__FLT_EVAL_METHOD__) && !defined(__cplusplus))
 #ifndef FLT_EVAL_METHOD
 typedef float float_t;
 typedef double double_t;
@@ -117,7 +116,6 @@ typedef double double_t;
 #else
 typedef long double float_t;
 typedef long double double_t;
-#endif
 #endif
 
 // C99 Functions:

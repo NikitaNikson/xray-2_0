@@ -31,7 +31,6 @@ struct state_machine_def :  public boost::msm::front::detail::state_base<BaseSta
     // tags
     // default: no flag
     typedef ::boost::mpl::vector0<>               flag_list;
-    typedef ::boost::mpl::vector0<>               internal_flag_list;
     //default: no deferred events
     typedef ::boost::mpl::vector0<>               deferred_events;
     // customization (message queue, exceptions)
@@ -198,7 +197,7 @@ struct state_machine_def :  public boost::msm::front::detail::state_base<BaseSta
 protected:
     // Default no-transition handler. Can be replaced in the Derived SM class.
     template <class FSM,class Event>
-    void no_transition(Event const& ,FSM&, int )
+    void no_transition(Event const& ,FSM&, int state)
     {
         BOOST_ASSERT(false);
     }

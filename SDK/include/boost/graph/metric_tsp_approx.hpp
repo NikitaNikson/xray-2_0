@@ -216,7 +216,7 @@ namespace boost
         // Create tour using a preorder traversal of the mst
         vector<Node> tour;
         PreorderTraverser<Node, Tree> tvis(tour);
-        traverse_tree(indexmap[start], t, tvis);
+        traverse_tree(0, t, tvis);
 
         pair<GVItr, GVItr> g_verts(vertices(g));
         for(PreorderTraverser<Node, Tree>::const_iterator curr(tvis.begin());
@@ -228,7 +228,7 @@ namespace boost
         }
 
         // Connect back to the start of the tour
-        vis.visit_vertex(start, g);
+        vis.visit_vertex(*g_verts.first, g);
     }
 
     // Default tsp tour visitor that puts the tour in an OutputIterator

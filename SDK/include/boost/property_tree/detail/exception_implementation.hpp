@@ -53,7 +53,7 @@ namespace boost { namespace property_tree
     }
 
     template<class D> inline
-    D ptree_bad_data::data() const
+    D ptree_bad_data::data()
     {
         return boost::any_cast<D>(m_data);
     }
@@ -73,7 +73,7 @@ namespace boost { namespace property_tree
     }
 
     template<class P> inline
-    P ptree_bad_path::path() const
+    P ptree_bad_path::path()
     {
         return boost::any_cast<P>(m_path);
     }

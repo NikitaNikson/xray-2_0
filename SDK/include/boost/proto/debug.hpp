@@ -91,9 +91,6 @@ namespace boost { namespace proto
             {}
 
             std::ostream &sout_;
-
-        private:
-            ostream_wrapper &operator =(ostream_wrapper const &);
         };
 
         struct named_any

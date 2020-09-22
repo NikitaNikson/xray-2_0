@@ -61,8 +61,6 @@ inline void save(
     ar << serialization::make_nvp("v" , indices[target(e,graph)]);
     ar << serialization::make_nvp("edge_property", get(edge_all_t(), graph, e) );
   }
-
-  ar << serialization::make_nvp("graph_property", get_property(graph, graph_all_t()) );
 }
 
 
@@ -97,7 +95,6 @@ inline void load(
     boost::tie(e,inserted) = add_edge(verts[u], verts[v], graph);
     ar >> serialization::make_nvp("edge_property", get(edge_all_t(), graph, e) );
   }
-  ar >> serialization::make_nvp("graph_property", get_property(graph, graph_all_t()) );
 }
 
 template<class Archive, class OEL, class VL, class D, class VP, class EP, class GP, class EL>

@@ -547,8 +547,7 @@ template<class Type>
 typename boost::enable_if<is_static_open<Type>, bool>::type
 is_empty(const Type& object)
 { 
-    return domain_less_equal<Type>(upper(object),                   lower(object) ) 
-        || domain_less_equal<Type>(upper(object), domain_next<Type>(lower(object)));
+    return domain_less_equal<Type>(upper(object), domain_next<Type>(lower(object))); 
 }
 
 template<class Type>
@@ -558,8 +557,7 @@ is_empty(const Type& object)
     if(object.bounds() == interval_bounds::closed())
         return domain_less<Type>(upper(object), lower(object)); 
     else if(object.bounds() == interval_bounds::open())
-        return domain_less_equal<Type>(upper(object),                   lower(object) )
-            || domain_less_equal<Type>(upper(object), domain_next<Type>(lower(object)));
+        return domain_less_equal<Type>(upper(object), domain_next<Type>(lower(object))); 
     else
         return domain_less_equal<Type>(upper(object), lower(object)); 
 }
@@ -609,8 +607,8 @@ namespace non_empty
     exclusive_less(const Type& left, const Type& right)
     { 
         BOOST_ASSERT(!(icl::is_empty(left) || icl::is_empty(right)));
-        return     domain_less <Type>(upper(left), lower(right))
-            || (   domain_equal<Type>(upper(left), lower(right))
+        return     domain_less <Type>(left.upper(), right.lower())
+            || (   domain_equal<Type>(left.upper(), right.lower())
                 && inner_bounds(left,right) != interval_bounds::open() );
     }
 
@@ -663,12 +661,12 @@ contains(const Type& super, const typename interval_traits<Type>::domain_type& e
 {
     return
         (is_left_closed(super.bounds())  
-            ? domain_less_equal<Type>(lower(super), element) 
-            :       domain_less<Type>(lower(super), element))
+            ? domain_less_equal<Type>(super.lower(), element) 
+            :       domain_less<Type>(super.lower(), element))
     &&
         (is_right_closed(super.bounds()) 
-            ? domain_less_equal<Type>(element, upper(super)) 
-            :       domain_less<Type>(element, upper(super)));
+            ? domain_less_equal<Type>(element, super.upper()) 
+            :       domain_less<Type>(element, super.upper()));
 }
 
 //- within ---------------------------------------------------------------------
@@ -716,8 +714,8 @@ inline typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 exclusive_less(const Type& left, const Type& right)
 { 
     return     icl::is_empty(left) || icl::is_empty(right)
-        ||     domain_less<Type>(upper(left), lower(right))
-        || (   domain_equal<Type>(upper(left), lower(right))
+        ||     domain_less<Type>(left.upper(), right.lower())
+        || (   domain_equal<Type>(left.upper(), right.lower())
             && inner_bounds(left,right) != interval_bounds::open() );
 }
 
@@ -727,7 +725,7 @@ template<class Type>
 typename boost::enable_if<has_static_bounds<Type>, bool>::type
 lower_less(const Type& left, const Type& right)
 {
-    return domain_less<Type>(lower(left), lower(right));
+    return domain_less<Type>(left.lower(), right.lower());
 }
     
 template<class Type>
@@ -742,9 +740,9 @@ typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 lower_less(const Type& left, const Type& right)
 {
     if(left_bounds(left,right) == interval_bounds::right_open())  //'[(' == 10
-        return domain_less_equal<Type>(lower(left), lower(right));
+        return domain_less_equal<Type>(left.lower(), right.lower());
     else 
-        return domain_less<Type>(lower(left), lower(right));
+        return domain_less<Type>(left.lower(), right.lower());
 }
     
 
@@ -753,7 +751,7 @@ template<class Type>
 typename boost::enable_if<has_static_bounds<Type>, bool>::type
 upper_less(const Type& left, const Type& right)
 {
-    return domain_less<Type>(upper(left), upper(right));
+    return domain_less<Type>(left.upper(), right.upper());
 }
 
 template<class Type>
@@ -768,9 +766,9 @@ typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 upper_less(const Type& left, const Type& right)
 {
     if(right_bounds(left,right) == interval_bounds::left_open())
-        return domain_less_equal<Type>(upper(left), upper(right));
+        return domain_less_equal<Type>(left.upper(), right.upper());
     else
-        return domain_less<Type>(upper(left), upper(right));
+        return domain_less<Type>(left.upper(), right.upper());
 }
     
 //------------------------------------------------------------------------------
@@ -815,7 +813,7 @@ template<class Type>
 typename boost::enable_if<is_asymmetric_interval<Type>, bool>::type
 lower_equal(const Type& left, const Type& right)
 {
-    return domain_equal<Type>(lower(left), lower(right));
+    return domain_equal<Type>(left.lower(), right.lower());
 }
 
 template<class Type>
@@ -837,7 +835,7 @@ typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 lower_equal(const Type& left, const Type& right)
 {
     return (left.bounds().left()==right.bounds().left())
-        && domain_equal<Type>(lower(left), lower(right));
+        && domain_equal<Type>(left.lower(), right.lower());
 }
 
 
@@ -846,7 +844,7 @@ template<class Type>
 typename boost::enable_if<is_asymmetric_interval<Type>, bool>::type
 upper_equal(const Type& left, const Type& right)
 {
-    return domain_equal<Type>(upper(left), upper(right));
+    return domain_equal<Type>(left.upper(), right.upper());
 }
 
 template<class Type>
@@ -868,7 +866,7 @@ typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 upper_equal(const Type& left, const Type& right)
 {
     return (left.bounds().right()==right.bounds().right())
-        && domain_equal<Type>(upper(left), upper(right));
+        && domain_equal<Type>(left.upper(), right.upper());
 }
 
 //------------------------------------------------------------------------------
@@ -951,7 +949,7 @@ typename boost::enable_if<is_continuous_interval<Type>, bool>::type
 touches(const Type& left, const Type& right)
 {
     return is_complementary(inner_bounds(left,right))
-        && domain_equal<Type>(upper(left), lower(right));
+        && domain_equal<Type>(left.upper(), right.lower());
 }
 
 
@@ -1404,7 +1402,7 @@ distance(const Type& x1, const Type& x2)
     if(icl::is_empty(x1) || icl::is_empty(x2))
         return icl::identity_element<DiffT>::value();
     else if(domain_less<Type>(upper(x1), lower(x2)))
-        return lower(x2) - upper(x1);
+        return x2.lower() - x1.upper();
     else if(domain_less<Type>(upper(x2), lower(x1)))
         return lower(x1) - upper(x2);
     else

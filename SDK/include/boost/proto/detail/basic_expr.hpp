@@ -100,7 +100,7 @@
         typedef basic_expr proto_grammar;
         typedef basic_default_domain proto_domain;
         typedef default_generator proto_generator;
-        typedef proto::tag::proto_expr<Tag, proto_domain> fusion_tag;
+        typedef proto::tag::proto_expr fusion_tag;
         typedef basic_expr proto_derived_expr;
         typedef void proto_is_expr_; /**< INTERNAL ONLY */
 
@@ -109,7 +109,6 @@
 
         /// \return *this
         ///
-        BOOST_FORCEINLINE
         basic_expr const &proto_base() const
         {
             return *this;
@@ -117,7 +116,6 @@
 
         /// \overload
         ///
-        BOOST_FORCEINLINE
         basic_expr &proto_base()
         {
             return *this;
@@ -128,7 +126,6 @@
         /// arguments.
         ///
         template<typename A0>
-        BOOST_FORCEINLINE
         static basic_expr const make(A0 &a0)
         {
             return detail::make_terminal(a0, static_cast<basic_expr *>(0), static_cast<proto_args *>(0));
@@ -137,7 +134,6 @@
         /// \overload
         ///
         template<typename A0>
-        BOOST_FORCEINLINE
         static basic_expr const make(A0 const &a0)
         {
             return detail::make_terminal(a0, static_cast<basic_expr *>(0), static_cast<proto_args *>(0));
@@ -147,7 +143,6 @@
         /// arguments.
         ///
         template<BOOST_PP_ENUM_PARAMS(ARG_COUNT, typename A)>
-        BOOST_FORCEINLINE
         static basic_expr const make(BOOST_PP_ENUM_BINARY_PARAMS(ARG_COUNT, A, const &a))
         {
             basic_expr that = {BOOST_PP_ENUM_PARAMS(ARG_COUNT, a)};
@@ -168,7 +163,6 @@
         /// \attention Proto overloads <tt>operator&</tt>, which means that
         /// proto-ified objects cannot have their addresses taken, unless we use
         /// the following hack to make \c &x implicitly convertible to \c X*.
-        BOOST_FORCEINLINE
         operator address_of_hack_type_() const
         {
             return boost::addressof(this->child0);

@@ -36,7 +36,7 @@ namespace boost { namespace spirit
               , utf8_string
               , recursive_wrapper<info>
               , recursive_wrapper<std::pair<info, info> >
-              , recursive_wrapper<std::list<info> >
+              , std::list<info>
             >
         value_type;
 

@@ -1,8 +1,8 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2011 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2011 Mateusz Loskot, London, UK.
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -14,18 +14,16 @@
 #ifndef BOOST_GEOMETRY_ALGORITHMS_CLEAR_HPP
 #define BOOST_GEOMETRY_ALGORITHMS_CLEAR_HPP
 
+#include <boost/mpl/assert.hpp>
+#include <boost/type_traits/remove_const.hpp>
 
-#include <boost/geometry/algorithms/not_implemented.hpp>
 #include <boost/geometry/core/access.hpp>
 #include <boost/geometry/core/exterior_ring.hpp>
 #include <boost/geometry/core/interior_rings.hpp>
 #include <boost/geometry/core/mutable_range.hpp>
 #include <boost/geometry/core/tag_cast.hpp>
+
 #include <boost/geometry/geometries/concepts/check.hpp>
-#include <boost/type_traits/remove_const.hpp>
-#include <boost/variant/apply_visitor.hpp>
-#include <boost/variant/static_visitor.hpp>
-#include <boost/variant/variant_fwd.hpp>
 
 
 namespace boost { namespace geometry
@@ -74,7 +72,6 @@ struct no_action
     }
 };
 
-
 }} // namespace detail::clear
 #endif // DOXYGEN_NO_DETAIL
 
@@ -82,74 +79,48 @@ struct no_action
 namespace dispatch
 {
 
-template
-<
-    typename Geometry,
-    typename Tag = typename tag_cast<typename tag<Geometry>::type, multi_tag>::type
->
-struct clear: not_implemented<Tag>
-{};
+template <typename Tag, typename Geometry>
+struct clear
+{
+    BOOST_MPL_ASSERT_MSG
+        (
+            false, NOT_OR_NOT_YET_IMPLEMENTED_FOR_THIS_GEOMETRY_TYPE
+            , (types<Geometry>)
+        );
+};
 
 // Point/box/segment do not have clear. So specialize to do nothing.
 template <typename Geometry>
-struct clear<Geometry, point_tag>
+struct clear<point_tag, Geometry>
     : detail::clear::no_action<Geometry>
 {};
 
 template <typename Geometry>
-struct clear<Geometry, box_tag>
+struct clear<box_tag, Geometry>
     : detail::clear::no_action<Geometry>
 {};
 
 template <typename Geometry>
-struct clear<Geometry, segment_tag>
+struct clear<segment_tag, Geometry>
     : detail::clear::no_action<Geometry>
 {};
 
 template <typename Geometry>
-struct clear<Geometry, linestring_tag>
+struct clear<linestring_tag, Geometry>
     : detail::clear::collection_clear<Geometry>
 {};
 
 template <typename Geometry>
-struct clear<Geometry, ring_tag>
+struct clear<ring_tag, Geometry>
     : detail::clear::collection_clear<Geometry>
 {};
 
 
 // Polygon can (indirectly) use std for clear
 template <typename Polygon>
-struct clear<Polygon, polygon_tag>
+struct clear<polygon_tag, Polygon>
     : detail::clear::polygon_clear<Polygon>
 {};
-
-
-template <typename Geometry>
-struct devarianted_clear
-{
-    static inline void apply(Geometry& geometry)
-    {
-        clear<Geometry>::apply(geometry);
-    }
-};
-
-template <BOOST_VARIANT_ENUM_PARAMS(typename T)>
-struct devarianted_clear<variant<BOOST_VARIANT_ENUM_PARAMS(T)> >
-{
-    struct visitor: static_visitor<void>
-    {
-        template <typename Geometry>
-        inline void operator()(Geometry& geometry) const
-        {
-            clear<Geometry>::apply(geometry);
-        }
-    };
-
-    static inline void apply(variant<BOOST_VARIANT_ENUM_PARAMS(T)>& geometry)
-    {
-        apply_visitor(visitor(), geometry);
-    }
-};
 
 
 } // namespace dispatch
@@ -174,7 +145,11 @@ inline void clear(Geometry& geometry)
 {
     concept::check<Geometry>();
 
-    dispatch::devarianted_clear<Geometry>::apply(geometry);
+    dispatch::clear
+        <
+            typename tag_cast<typename tag<Geometry>::type, multi_tag>::type,
+            Geometry
+        >::apply(geometry);
 }
 
 

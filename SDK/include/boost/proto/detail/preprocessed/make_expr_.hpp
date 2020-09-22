@@ -18,7 +18,6 @@
         , void , void , void , void , void , void , void , void , void , void>
     {
         typedef typename proto::detail::protoify<A, Domain>::result_type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A>::type a) const
         {
             return proto::detail::protoify<A, Domain>()(a);
@@ -41,7 +40,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0) const
         {
             expr_type const that = {
@@ -71,7 +69,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1) const
         {
             expr_type const that = {
@@ -101,7 +98,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2) const
         {
             expr_type const that = {
@@ -131,7 +127,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3) const
         {
             expr_type const that = {
@@ -161,7 +156,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4) const
         {
             expr_type const that = {
@@ -191,7 +185,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4 , typename add_reference<A5 >::type a5) const
         {
             expr_type const that = {
@@ -221,7 +214,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4 , typename add_reference<A5 >::type a5 , typename add_reference<A6 >::type a6) const
         {
             expr_type const that = {
@@ -251,7 +243,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4 , typename add_reference<A5 >::type a5 , typename add_reference<A6 >::type a6 , typename add_reference<A7 >::type a7) const
         {
             expr_type const that = {
@@ -281,7 +272,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4 , typename add_reference<A5 >::type a5 , typename add_reference<A6 >::type a6 , typename add_reference<A7 >::type a7 , typename add_reference<A8 >::type a8) const
         {
             expr_type const that = {
@@ -311,7 +301,6 @@
         typedef typename base_expr<Domain, Tag, proto_args>::type expr_type;
         typedef typename Domain::proto_generator proto_generator;
         typedef typename proto_generator::template result<proto_generator(expr_type)>::type result_type;
-        BOOST_FORCEINLINE
         result_type operator()(typename add_reference<A0 >::type a0 , typename add_reference<A1 >::type a1 , typename add_reference<A2 >::type a2 , typename add_reference<A3 >::type a3 , typename add_reference<A4 >::type a4 , typename add_reference<A5 >::type a5 , typename add_reference<A6 >::type a6 , typename add_reference<A7 >::type a7 , typename add_reference<A8 >::type a8 , typename add_reference<A9 >::type a9) const
         {
             expr_type const that = {

@@ -1,8 +1,8 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2011 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2011 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2011 Mateusz Loskot, London, UK.
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -21,7 +21,6 @@
 #include <boost/geometry/multi/algorithms/detail/modify.hpp>
 
 #include <boost/geometry/multi/core/tags.hpp>
-#include <boost/geometry/multi/geometries/concepts/check.hpp>
 
 
 namespace boost { namespace geometry
@@ -33,19 +32,19 @@ namespace dispatch
 {
 
 template <typename MultiPoint>
-struct correct<MultiPoint, multi_point_tag>
+struct correct<multi_point_tag, MultiPoint>
     : detail::correct::correct_nop<MultiPoint>
 {};
 
 
 template <typename MultiLineString>
-struct correct<MultiLineString, multi_linestring_tag>
+struct correct<multi_linestring_tag, MultiLineString>
     : detail::correct::correct_nop<MultiLineString>
 {};
 
 
 template <typename Geometry>
-struct correct<Geometry, multi_polygon_tag>
+struct correct<multi_polygon_tag, Geometry>
     : detail::multi_modify
         <
             Geometry,

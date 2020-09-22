@@ -374,7 +374,7 @@ namespace detail
         BOOST_STATIC_CONSTANT( fast, high_bit_fast = base_type::high_bit_fast );
         #endif
 
-        BOOST_STATIC_CONSTANT( least, sig_bits = (~( least(0u) )) );
+        BOOST_STATIC_CONSTANT( least, sig_bits = least(~( least(0u) )) );
         BOOST_STATIC_CONSTANT( fast, sig_bits_fast = fast(sig_bits) );
 
     };  // boost::detail::mask_uint_t
@@ -397,7 +397,7 @@ namespace detail
         BOOST_STATIC_CONSTANT( fast, high_bit_fast = base_type::high_bit_fast );
         #endif
 
-        BOOST_STATIC_CONSTANT( least, sig_bits = (~( least(0u) )) );
+        BOOST_STATIC_CONSTANT( least, sig_bits = least(~( least(0u) )) );
         BOOST_STATIC_CONSTANT( fast, sig_bits_fast = fast(sig_bits) );
 
     };  // boost::detail::mask_uint_t
@@ -575,7 +575,7 @@ namespace detail
 
         // Compare a byte to the remainder's highest byte
         static  unsigned char  index( value_type rem, unsigned char x )
-            { return x ^ rem; }
+            { return (unsigned char)(x ^ (rem & 0xff)); }
 
         // Shift out the remainder's highest byte
         static  value_type  shift( value_type rem )

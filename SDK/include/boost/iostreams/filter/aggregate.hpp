@@ -33,7 +33,7 @@ namespace boost { namespace iostreams {
 
 //
 // Template name: aggregate_filter.
-// Template parameters:
+// Template paramters:
 //      Ch - The character type.
 //      Alloc - The allocator type.
 // Description: Utility for defining DualUseFilters which filter an

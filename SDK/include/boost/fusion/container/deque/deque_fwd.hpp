@@ -1,5 +1,5 @@
 /*=============================================================================
-    Copyright (c) 2005-2012 Joel de Guzman
+    Copyright (c) 2005-2011 Joel de Guzman
     Copyright (c) 2005-2007 Dan Marsden
 
     Distributed under the Boost Software License, Version 1.0. (See accompanying
@@ -8,28 +8,43 @@
 #if !defined(FUSION_DEQUE_FORWARD_02092007_0749)
 #define FUSION_DEQUE_FORWARD_02092007_0749
 
-#include <boost/config.hpp>
+#include <boost/fusion/container/deque/limits.hpp>
+#include <boost/preprocessor/repetition/enum_params_with_a_default.hpp>
 
-///////////////////////////////////////////////////////////////////////////////
-// With no decltype and variadics, we will use the C++03 version
-///////////////////////////////////////////////////////////////////////////////
-#if (defined(BOOST_NO_DECLTYPE)             \
-  || defined(BOOST_NO_VARIADIC_TEMPLATES)   \
-  || defined(BOOST_NO_RVALUE_REFERENCES))
-# include <boost/fusion/container/deque/detail/pp_deque_fwd.hpp>
+#if !defined(BOOST_FUSION_DONT_USE_PREPROCESSED_FILES)
+#include <boost/fusion/container/deque/detail/preprocessed/deque_fwd.hpp>
 #else
-# if !defined(BOOST_FUSION_HAS_VARIADIC_DEQUE)
-#   define BOOST_FUSION_HAS_VARIADIC_DEQUE
-# endif
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 2, line: 0, output: "detail/preprocessed/deque" FUSION_MAX_DEQUE_SIZE_STR "_fwd.hpp")
+#endif
 
-///////////////////////////////////////////////////////////////////////////////
-// C++11 interface
-///////////////////////////////////////////////////////////////////////////////
+/*=============================================================================
+    Copyright (c) 2001-2011 Joel de Guzman
+
+    Distributed under the Boost Software License, Version 1.0. (See accompanying
+    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
+    This is an auto-generated file. Do not edit!
+==============================================================================*/
+
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 1)
+#endif
+
 namespace boost { namespace fusion
 {
-    template <typename ...T>
+    struct void_;
+
+    template<
+        BOOST_PP_ENUM_PARAMS_WITH_A_DEFAULT(
+            FUSION_MAX_DEQUE_SIZE, typename T, void_)>
     struct deque;
 }}
 
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(output: null)
 #endif
+
+#endif // BOOST_FUSION_DONT_USE_PREPROCESSED_FILES
+
 #endif

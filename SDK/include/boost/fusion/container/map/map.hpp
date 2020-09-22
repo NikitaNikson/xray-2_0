@@ -11,8 +11,6 @@
 #include <boost/fusion/support/category_of.hpp>
 #include <boost/fusion/support/detail/access.hpp>
 #include <boost/fusion/container/map/map_fwd.hpp>
-#include <boost/fusion/container/map/detail/at_impl.hpp>
-#include <boost/fusion/container/map/detail/value_at_impl.hpp>
 #include <boost/fusion/container/map/detail/begin_impl.hpp>
 #include <boost/fusion/container/map/detail/end_impl.hpp>
 #include <boost/fusion/container/map/detail/value_of_impl.hpp>
@@ -52,7 +50,7 @@ namespace boost { namespace fusion
     template <BOOST_PP_ENUM_PARAMS(FUSION_MAX_MAP_SIZE, typename T)>
     struct map : sequence_base<map<BOOST_PP_ENUM_PARAMS(FUSION_MAX_MAP_SIZE, T)> >
     {
-        struct category : random_access_traversal_tag, associative_tag {};
+        struct category : forward_traversal_tag, associative_tag {};
 
         typedef map_tag fusion_tag;
         typedef fusion_sequence_tag tag; // this gets picked up by MPL

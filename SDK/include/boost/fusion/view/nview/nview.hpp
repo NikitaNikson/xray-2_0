@@ -23,8 +23,6 @@
 #include <boost/fusion/container/vector.hpp>
 #include <boost/fusion/view/transform_view.hpp>
 
-#include <boost/config.hpp>
-
 namespace boost { namespace fusion
 {
     namespace detail
@@ -37,21 +35,12 @@ namespace boost { namespace fusion
             template<typename U>
             struct result<addref(U)> : add_reference<U> {};
 
-#ifdef BOOST_NO_RVALUE_REFERENCES
             template <typename T>
             typename add_reference<T>::type 
             operator()(T& x) const
             {
                 return x;
             }
-#else
-            template <typename T>
-            typename result<addref(T)>::type
-            operator()(T&& x) const
-            {
-                return x;
-            }
-#endif
         };
 
         struct addconstref
