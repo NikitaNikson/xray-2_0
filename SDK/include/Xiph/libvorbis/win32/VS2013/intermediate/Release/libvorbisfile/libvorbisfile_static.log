@@ -1,0 +1,22 @@
+﻿  vorbisfile.c
+..\..\..\lib\vorbisfile.c(259): warning C4244: 'function' : conversion from 'ogg_int64_t' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(273): warning C4244: '=' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(539): warning C4244: 'return' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(566): warning C4244: 'return' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(570): warning C4244: 'return' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(580): warning C4244: 'return' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(642): warning C4244: 'return' : conversion from 'ogg_int64_t' to 'int', possible loss of data
+..\..\..\lib\vorbisfile.c(875): warning C4244: 'function' : conversion from 'ogg_int64_t' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(1013): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+..\..\..\lib\vorbisfile.c(1119): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+..\..\..\lib\vorbisfile.c(1120): warning C4244: 'return' : conversion from 'double' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(1124): warning C4244: 'return' : conversion from 'double' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(1152): warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(1680): warning C4244: '=' : conversion from 'ogg_int64_t' to 'long', possible loss of data
+..\..\..\lib\vorbisfile.c(1717): warning C4244: 'initializing' : conversion from 'double' to 'ogg_int64_t', possible loss of data
+..\..\..\lib\vorbisfile.c(1747): warning C4244: 'initializing' : conversion from 'double' to 'ogg_int64_t', possible loss of data
+..\..\..\lib\vorbisfile.c(2083): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1361,5): warning MSB8012: TargetPath(D:\STK2\build6\SDK\include\Xiph\libvorbis\win32\VS2013\libvorbisfile\..\libraries\libvorbisfile.lib) does not match the Library's OutputFile property value (D:\STK2\build6\SDK\include\Xiph\libvorbis\win32\VS2013\libraries\libvorbisfile_static.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1363,5): warning MSB8012: TargetName(libvorbisfile) does not match the Library's OutputFile property value (libvorbisfile_static). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  libvorbisfile_static.vcxproj -> D:\STK2\build6\SDK\include\Xiph\libvorbis\win32\VS2013\libvorbisfile\..\libraries\libvorbisfile.lib

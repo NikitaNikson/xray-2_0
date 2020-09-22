@@ -1,0 +1,9 @@
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WinFormsUI.csproj.GenerateResource.Cache
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WinFormsUI.csprojAssemblyReference.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WinFormsUI.csproj.CoreCompileInputs.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.pdb

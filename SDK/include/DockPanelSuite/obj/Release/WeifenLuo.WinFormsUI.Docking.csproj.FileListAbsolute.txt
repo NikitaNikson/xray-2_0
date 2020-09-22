@@ -1,0 +1,9 @@
+D:\STK2\build6\SDK\include\DockPanelSuite\bin\Release\license.txt
+D:\STK2\build6\SDK\include\DockPanelSuite\bin\Release\WeifenLuo.WinFormsUI.Docking.dll
+D:\STK2\build6\SDK\include\DockPanelSuite\bin\Release\WeifenLuo.WinFormsUI.Docking.pdb
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.csprojResolveAssemblyReference.cache
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.Resources.resources
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.Strings.resources
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.csproj.GenerateResource.Cache
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.dll
+D:\STK2\build6\SDK\include\DockPanelSuite\obj\Release\WeifenLuo.WinFormsUI.Docking.pdb

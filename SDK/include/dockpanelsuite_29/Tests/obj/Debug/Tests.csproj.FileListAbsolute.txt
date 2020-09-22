@@ -1,0 +1,2 @@
+D:\Weifen\dockpanelsuite\Tests\obj\Debug\Tests.csprojAssemblyReference.cache
+D:\Weifen\dockpanelsuite\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache

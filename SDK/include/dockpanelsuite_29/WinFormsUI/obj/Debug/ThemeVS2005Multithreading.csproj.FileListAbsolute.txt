@@ -1,0 +1,11 @@
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\license.txt
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2005Multithreading.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2005Multithreading.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2005Multithreading.Resources.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2005Multithreading.Strings.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2005Multithreading.csproj.GenerateResource.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2005Multithreading.csproj.CoreCompileInputs.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2005Multithreading.csproj.CopyComplete
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2005Multithreading.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2005Multithreading.pdb

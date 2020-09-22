@@ -1,0 +1,15 @@
+D:\Weifen\dockpanelsuite\Tests\obj\Release\Tests.csprojAssemblyReference.cache
+D:\Weifen\dockpanelsuite\Tests\obj\Release\Tests.csproj.CoreCompileInputs.cache
+D:\Weifen\dockpanelsuite\bin\net40\NUnit3.TestAdapter.dll
+D:\Weifen\dockpanelsuite\bin\net40\nunit.engine.dll
+D:\Weifen\dockpanelsuite\bin\net40\nunit.engine.api.dll
+D:\Weifen\dockpanelsuite\bin\net40\Mono.Cecil.dll
+D:\Weifen\dockpanelsuite\bin\net40\Mono.Cecil.Pdb.dll
+D:\Weifen\dockpanelsuite\bin\net40\Mono.Cecil.Mdb.dll
+D:\Weifen\dockpanelsuite\bin\net40\Mono.Cecil.Rocks.dll
+D:\Weifen\dockpanelsuite\bin\net40\license.txt
+D:\Weifen\dockpanelsuite\bin\net40\Tests.dll
+D:\Weifen\dockpanelsuite\bin\net40\Tests.pdb
+D:\Weifen\dockpanelsuite\Tests\obj\Release\Tests.csproj.CopyComplete
+D:\Weifen\dockpanelsuite\Tests\obj\Release\Tests.dll
+D:\Weifen\dockpanelsuite\Tests\obj\Release\Tests.pdb

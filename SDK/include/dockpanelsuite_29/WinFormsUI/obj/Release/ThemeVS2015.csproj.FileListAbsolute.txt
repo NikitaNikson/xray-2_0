@@ -1,0 +1,11 @@
+D:\Weifen\dockpanelsuite\bin\net40\license.txt
+D:\Weifen\dockpanelsuite\bin\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll
+D:\Weifen\dockpanelsuite\bin\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2012.Resources.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2012.Strings.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.ThemeVS2015.Resources.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\ThemeVS2015.csproj.GenerateResource.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\ThemeVS2015.csproj.CoreCompileInputs.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\ThemeVS2015.csproj.CopyComplete
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.pdb

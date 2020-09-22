@@ -1,0 +1,12 @@
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\license.txt
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2003.csprojAssemblyReference.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2003.Resources.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.ThemeVS2003.Strings.resources
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2003.csproj.GenerateResource.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2003.csproj.CoreCompileInputs.cache
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\ThemeVS2003.csproj.CopyComplete
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.dll
+D:\Weifen\dockpanelsuite\WinFormsUI\obj\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2003.pdb

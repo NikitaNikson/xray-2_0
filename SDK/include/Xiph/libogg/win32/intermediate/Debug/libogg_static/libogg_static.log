@@ -1,0 +1,6 @@
+﻿  framing.c
+  bitwise.c
+  Generating Code...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1361,5): warning MSB8012: TargetPath(D:\STK2\build6\SDK\include\Xiph\libogg\win32\VS2013\..\libraries\Debug\libogg_static.lib) does not match the Library's OutputFile property value (D:\STK2\build6\SDK\include\Xiph\libogg\win32\libraries\Debug\libogg_static_d.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1363,5): warning MSB8012: TargetName(libogg_static) does not match the Library's OutputFile property value (libogg_static_d). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  libogg_static.vcxproj -> D:\STK2\build6\SDK\include\Xiph\libogg\win32\VS2013\..\libraries\Debug\libogg_static.lib
