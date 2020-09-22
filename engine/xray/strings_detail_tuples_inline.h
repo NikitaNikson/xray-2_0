@@ -119,9 +119,9 @@ inline void HELPER::add_string								( xray::strings::detail::tuples& self, T p
 {
 	COMPILE_ASSERT			( index < max_item_count, Error_invalid_string_index_specified );
 
-	pcstr const cstr		= string(p);
+	pcstr const cstr = string((char const*)p);
 	ASSERT					( cstr );
-	self.m_strings[ index ]	= pair( cstr, length( p ) );
+	self.m_strings[index] = pair(cstr, length((char const*)p));
 }
 
 #undef HELPER

@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{5f70814e-65a1-4014-8579-a6825f326567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{9cf17b8b-e97f-49ab-b1c4-a9c75590d7b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\animation_data_interface">
+      <UniqueIdentifier>{43c9a93c-3d10-42a6-8169-b8662ecb396a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{aa55e994-0ac6-411c-9b67-6984e54d5ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curves">
+      <UniqueIdentifier>{8657d402-bc11-4199-a6e5-b2c1ffe2a27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curves\poly_curve">
+      <UniqueIdentifier>{b9a290ab-7b25-4cd0-b799-fbbc46067b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation_data">
+      <UniqueIdentifier>{aec70eda-bb59-4c31-b65e-d261ccdb0ff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation">
+      <UniqueIdentifier>{df47d849-ba05-4b3a-8b85-8a6adde100c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\animation_mix">
+      <UniqueIdentifier>{fbf3bb1d-c4b4-4ea4-9e13-d694f523a9d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\bone_animation">
+      <UniqueIdentifier>{59c3a6c2-3b19-4f2f-a050-50ad7702e86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\animation_layer">
+      <UniqueIdentifier>{f1a2a95e-c685-4d80-b80b-b0775dc9f6a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\animation_layer\quaternion_mix">
+      <UniqueIdentifier>{5c805a50-44e8-44f5-ad6f-3ff65f492492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\skeleton_animation">
+      <UniqueIdentifier>{f66b68f2-e719-487f-b1d2-de9b2449865e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation\animation_group">
+      <UniqueIdentifier>{c7030f6d-8d63-44c3-9375-dc6bc13b708f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="skeleton">
+      <UniqueIdentifier>{65f95861-e8be-48a5-8cb5-de397fb6d738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation_resources">
+      <UniqueIdentifier>{e4e4acea-8f22-4054-9596-57a3bda77da3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="animation_player">
+      <UniqueIdentifier>{d64cbe22-761b-4b55-b906-ada1eb7f9e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing">
+      <UniqueIdentifier>{4f3528b1-006c-4126-be18-a0d0fec78484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\mixer">
+      <UniqueIdentifier>{fb09b2ed-598b-4f7e-853d-4e62f94d204e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree">
+      <UniqueIdentifier>{c2a54eb1-0693-4bc7-a8a7-be341e383965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes">
+      <UniqueIdentifier>{9f2af40b-3237-49e0-ab4b-fd7abedea65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\multiplication">
+      <UniqueIdentifier>{99f1e462-28f9-48c5-85e6-60eb4440111c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\addition">
+      <UniqueIdentifier>{f33a8780-8086-46fa-972b-18a27474061d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\animation">
+      <UniqueIdentifier>{6e35f9aa-9bd9-49d0-a910-7ab775c16c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\base">
+      <UniqueIdentifier>{f0c5510a-b996-47ad-b99b-ff19e27c6523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\binary_operation">
+      <UniqueIdentifier>{462dd65e-bf9c-484a-8eb2-2fef081c3bef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\subtraction">
+      <UniqueIdentifier>{31c10bd1-ac14-403f-9cbf-3aa719bba8e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\nodes\weight">
+      <UniqueIdentifier>{0a24544e-28a5-450f-b8f5-b5579fbbe4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\operations">
+      <UniqueIdentifier>{1b156bde-960f-4a31-8a85-2509eb5f1ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\operations\node_constructor">
+      <UniqueIdentifier>{57a3577a-b919-4c51-86d4-3d419354a3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\operations\weaver">
+      <UniqueIdentifier>{83921972-a02c-4173-aa9f-50bff63ab554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\binary tree\operations\visitor">
+      <UniqueIdentifier>{17b43f9a-bbce-4cf1-92c5-72751fc45c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators">
+      <UniqueIdentifier>{57cc0e05-8104-4c16-a9ee-31365e432118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators">
+      <UniqueIdentifier>{72175121-da20-4fc5-98d4-812bbac86984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators\linear">
+      <UniqueIdentifier>{98458ce6-9cba-4a9e-a327-6b25aad6ddaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators\base">
+      <UniqueIdentifier>{0ade7640-095f-4ca4-85ad-73cfc842dbec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators\cubic_spline">
+      <UniqueIdentifier>{a65861ea-2a1e-4c43-b156-107236266aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators\fermi-dirac">
+      <UniqueIdentifier>{30a5d6e0-26f3-43b2-864b-6ba2d1ff4b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\interpolators\instant">
+      <UniqueIdentifier>{5a929759-b37f-45a3-b51b-95f5f8dc19c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\operations">
+      <UniqueIdentifier>{8c09e78f-20bf-42e5-8019-9e612b7eb810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\operations\size_calculator">
+      <UniqueIdentifier>{40371615-48c5-4583-954e-3199e22170d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\operations\visitor">
+      <UniqueIdentifier>{3bf6df7f-6914-4f39-a396-e9c7680edda0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\interpolators\operations\comparer">
+      <UniqueIdentifier>{4f32e3ab-d785-40c6-bddf-247247321c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\animation_clip">
+      <UniqueIdentifier>{0b612f20-39d7-4c2c-9dfa-a02780c5a4de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree">
+      <UniqueIdentifier>{8fead1a5-69c5-493f-9670-20b99cebde42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes">
+      <UniqueIdentifier>{92375bfe-c0bd-4a61-980d-e29f6cdf273c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\multiplication">
+      <UniqueIdentifier>{855616d0-401c-40f7-90ab-751246161ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\addition">
+      <UniqueIdentifier>{ead8a869-0a3f-4e1c-9488-643ea345f9fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\subtraction">
+      <UniqueIdentifier>{f6e144df-e814-4596-b453-89cbd148a67c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\transition">
+      <UniqueIdentifier>{704751ea-be35-48bc-a4ec-2f9bb0bd724f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\base">
+      <UniqueIdentifier>{2572c72b-a877-4477-9696-3abd001d68d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\weight">
+      <UniqueIdentifier>{b44abda3-31e2-4ce7-91ce-5b363375f5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\animation">
+      <UniqueIdentifier>{d1f555f5-d185-4d11-85aa-1044af8b37b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\nodes\n_ary_operation">
+      <UniqueIdentifier>{b757b463-e70d-4094-81f5-e2beb220b3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\builder">
+      <UniqueIdentifier>{cacc84f4-994c-4f2e-b9d5-dac75c4a78fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations">
+      <UniqueIdentifier>{c69e6cf7-8c2a-41f5-8116-b87784d6c5f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\comparer">
+      <UniqueIdentifier>{2f935829-48c3-4b67-b3d5-69000bfe3f75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\destroyer">
+      <UniqueIdentifier>{a1099225-3055-43a7-ad6a-0c8bb2a4bfa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\double_dispatcher">
+      <UniqueIdentifier>{a8e13232-d9ad-4077-bcfb-2300273caf7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\visitor">
+      <UniqueIdentifier>{9eb868cb-55ec-4107-a626-e409c96dbb97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\interpolator_selector">
+      <UniqueIdentifier>{a2801a22-ee18-42ae-8662-38abfe7db79a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\node_comparer">
+      <UniqueIdentifier>{9dfb0fbc-94cd-46f5-b9c4-f27abdab24d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\size_calculator">
+      <UniqueIdentifier>{cc0ff6e9-1d3f-44c2-b569-6431fda10599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\transition_constructor">
+      <UniqueIdentifier>{ab20b848-a5d8-4a35-b3d1-10a387a6de84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\operations\weight_calculator">
+      <UniqueIdentifier>{bee43eb0-1635-480b-aa48-076b2f801086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\tree">
+      <UniqueIdentifier>{3738a726-8402-44e8-aa64-9e397d522d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\tree\animation_state">
+      <UniqueIdentifier>{cae896ca-d0d2-475b-9952-303fc65d07f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\n-ary tree\tree\intrusive_base">
+      <UniqueIdentifier>{4fa8b98b-aaa3-4ea6-bd34-9bd86e6f6a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems">
+      <UniqueIdentifier>{8b1460f4-d5ff-4a9e-80e1-ea873039abf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\animation">
+      <UniqueIdentifier>{6c8f9de4-e9d3-4367-9ebd-bcb68297f4af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\weight">
+      <UniqueIdentifier>{52713063-9295-495c-9724-0736b60c8512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\multiplication">
+      <UniqueIdentifier>{31eb836b-f502-49a9-8139-cae0f24585af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\base">
+      <UniqueIdentifier>{b961151b-bbb7-40e9-ace2-805aaadb93ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\expression">
+      <UniqueIdentifier>{26e4592e-7282-437e-ad15-b40383e0c3f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\addition">
+      <UniqueIdentifier>{f0502f8c-b8cf-4bb1-946c-8bb69e3ef3b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\subtraction">
+      <UniqueIdentifier>{d270d8b4-28f4-4ef3-8e25-b3f921d41690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\lexems\binary_operation">
+      <UniqueIdentifier>{0aab345f-21f7-46b4-8d19-deb3b6296a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\bone_mixer">
+      <UniqueIdentifier>{f76b3957-0eb6-466f-a6d5-dde716e3418c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mixing\bone_mixer\data">
+      <UniqueIdentifier>{b1c9267d-c949-47ed-85be-2e09a77cb213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="movement_controller">
+      <UniqueIdentifier>{9973a771-20f4-4281-9d07-1b4448d8f209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_animation_player">
+      <UniqueIdentifier>{385534bb-83b6-46ab-91b1-98107dc35a4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="animation_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="check_animation_data.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="track_process.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="poly_curve.cpp">
+      <Filter>curves\poly_curve</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_channel_data.cpp">
+      <Filter>animation_data</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_animation_data.cpp">
+      <Filter>animation_data</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_names.cpp">
+      <Filter>animation_data</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton_animation_data.cpp">
+      <Filter>animation_data</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_mix.cpp">
+      <Filter>animation\animation_mix</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_animation.cpp">
+      <Filter>animation\bone_animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_layer.cpp">
+      <Filter>animation\animation_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="eigen_matrix.cpp">
+      <Filter>animation\animation_layer\quaternion_mix</Filter>
+    </ClCompile>
+    <ClCompile Include="quaternion_mix.cpp">
+      <Filter>animation\animation_layer\quaternion_mix</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton_animation.cpp">
+      <Filter>animation\skeleton_animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_controller_set.cpp">
+      <Filter>animation\animation_group</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_group.cpp">
+      <Filter>animation\animation_group</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_group_action.cpp">
+      <Filter>animation\animation_group</Filter>
+    </ClCompile>
+    <ClCompile Include="fixed_bone.cpp">
+      <Filter>animation\animation_group</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton.cpp">
+      <Filter>skeleton</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_cookers.cpp">
+      <Filter>animation_resources</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_player.cpp">
+      <Filter>animation_player</Filter>
+    </ClCompile>
+    <ClCompile Include="mixer.cpp">
+      <Filter>mixing\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixer_test.cpp">
+      <Filter>mixing\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_binary_tree_multiplication_node.cpp">
+      <Filter>mixing\binary tree\nodes\multiplication</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_binary_tree_addition_node.cpp">
+      <Filter>mixing\binary tree\nodes\addition</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_binary_tree_animation_node.cpp">
+      <Filter>mixing\binary tree\nodes\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_binary_tree_subtraction_node.cpp">
+      <Filter>mixing\binary tree\nodes\subtraction</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_binary_tree_weight_node.cpp">
+      <Filter>mixing\binary tree\nodes\weight</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_node_constructor.cpp">
+      <Filter>mixing\binary tree\operations\node_constructor</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_weaver.cpp">
+      <Filter>mixing\binary tree\operations\weaver</Filter>
+    </ClCompile>
+    <ClCompile Include="linear_interpolator.cpp">
+      <Filter>mixing\interpolators\interpolators\linear</Filter>
+    </ClCompile>
+    <ClCompile Include="fermi_dirac_interpolator.cpp">
+      <Filter>mixing\interpolators\interpolators\fermi-dirac</Filter>
+    </ClCompile>
+    <ClCompile Include="instant_interpolator.cpp">
+      <Filter>mixing\interpolators\interpolators\instant</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolator_size_calculator.cpp">
+      <Filter>mixing\interpolators\operations\size_calculator</Filter>
+    </ClCompile>
+    <ClCompile Include="interpolator_comparer.cpp">
+      <Filter>mixing\interpolators\operations\comparer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_animation_clip.cpp">
+      <Filter>mixing\animation_clip</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_multiplication_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\multiplication</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_addition_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\addition</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_subtraction_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\subtraction</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_transition_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\transition</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_weight_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\weight</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_animation_node.cpp">
+      <Filter>mixing\n-ary tree\nodes\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_builder.cpp">
+      <Filter>mixing\n-ary tree\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_comparer.cpp">
+      <Filter>mixing\n-ary tree\operations\comparer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_destroyer.cpp">
+      <Filter>mixing\n-ary tree\operations\destroyer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_interpolator_selector.cpp">
+      <Filter>mixing\n-ary tree\operations\interpolator_selector</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_node_comparer.cpp">
+      <Filter>mixing\n-ary tree\operations\node_comparer</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_size_calculator.cpp">
+      <Filter>mixing\n-ary tree\operations\size_calculator</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_transition_constructor.cpp">
+      <Filter>mixing\n-ary tree\operations\transition_constructor</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree_weight_calculator.cpp">
+      <Filter>mixing\n-ary tree\operations\weight_calculator</Filter>
+    </ClCompile>
+    <ClCompile Include="mixing_n_ary_tree.cpp">
+      <Filter>mixing\n-ary tree\tree</Filter>
+    </ClCompile>
+    <ClCompile Include="bone_mixer.cpp">
+      <Filter>mixing\bone_mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="test_animation_player.cpp">
+      <Filter>test_animation_player</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mixing_animation_group.cpp">
+      <Filter>test_animation_player</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animation_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\library_linkage.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\type_definitions.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\world.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\anim_track_common.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_animation_action.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_animation_channel_data.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_animation_controller_set.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_bi_spline_data.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_bone_animation_data.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_bone_names.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\i_skeleton_animation_data.h">
+      <Filter>include\animation_data_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="check_animation_data.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="poly_curve.h">
+      <Filter>curves\poly_curve</Filter>
+    </ClInclude>
+    <ClInclude Include="poly_curve_inline.h">
+      <Filter>curves\poly_curve</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_channel_data.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="bi_spline_data.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="bi_spline_data_inline.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_animation_data.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_names.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton_animation_data.h">
+      <Filter>animation_data</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_mix.h">
+      <Filter>animation\animation_mix</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_mix_inline.h">
+      <Filter>animation\animation_mix</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_animation.h">
+      <Filter>animation\bone_animation</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_animation_inline.h">
+      <Filter>animation\bone_animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_layer.h">
+      <Filter>animation\animation_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_layer_inline.h">
+      <Filter>animation\animation_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_animation_mixing.h">
+      <Filter>animation\animation_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="eigen_matrix.h">
+      <Filter>animation\animation_layer\quaternion_mix</Filter>
+    </ClInclude>
+    <ClInclude Include="quaternion_mix.h">
+      <Filter>animation\animation_layer\quaternion_mix</Filter>
+    </ClInclude>
+    <ClInclude Include="blend_function.h">
+      <Filter>animation\skeleton_animation</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton_animation.h">
+      <Filter>animation\skeleton_animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_controller_set.h">
+      <Filter>animation\animation_group</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_group.h">
+      <Filter>animation\animation_group</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_group_action.h">
+      <Filter>animation\animation_group</Filter>
+    </ClInclude>
+    <ClInclude Include="fixed_bone.h">
+      <Filter>animation\animation_group</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton.h">
+      <Filter>skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="skeleton_inline.h">
+      <Filter>skeleton</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_cookers.h">
+      <Filter>animation_resources</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_player.h">
+      <Filter>animation_player</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_debug.h">
+      <Filter>mixing</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_math.h">
+      <Filter>mixing</Filter>
+    </ClInclude>
+    <ClInclude Include="mixer.h">
+      <Filter>mixing\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixer_inline.h">
+      <Filter>mixing\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_multiplication_node.h">
+      <Filter>mixing\binary tree\nodes\multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_multiplication_node_inline.h">
+      <Filter>mixing\binary tree\nodes\multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_addition_node.h">
+      <Filter>mixing\binary tree\nodes\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_addition_node_inline.h">
+      <Filter>mixing\binary tree\nodes\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_animation_node.h">
+      <Filter>mixing\binary tree\nodes\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_animation_node_inline.h">
+      <Filter>mixing\binary tree\nodes\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_base_node.h">
+      <Filter>mixing\binary tree\nodes\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_base_node_inline.h">
+      <Filter>mixing\binary tree\nodes\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_binary_operation_node.h">
+      <Filter>mixing\binary tree\nodes\binary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_binary_operation_node_inline.h">
+      <Filter>mixing\binary tree\nodes\binary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_subtraction_node.h">
+      <Filter>mixing\binary tree\nodes\subtraction</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_subtraction_node_inline.h">
+      <Filter>mixing\binary tree\nodes\subtraction</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_weight_node.h">
+      <Filter>mixing\binary tree\nodes\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_weight_node_inline.h">
+      <Filter>mixing\binary tree\nodes\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_node_constructor.h">
+      <Filter>mixing\binary tree\operations\node_constructor</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_node_constructor_inline.h">
+      <Filter>mixing\binary tree\operations\node_constructor</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_weaver.h">
+      <Filter>mixing\binary tree\operations\weaver</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_tree_visitor.h">
+      <Filter>mixing\binary tree\operations\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="linear_interpolator.h">
+      <Filter>mixing\interpolators\interpolators\linear</Filter>
+    </ClInclude>
+    <ClInclude Include="base_interpolator.h">
+      <Filter>mixing\interpolators\interpolators\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base_interpolator_inline.h">
+      <Filter>mixing\interpolators\interpolators\base</Filter>
+    </ClInclude>
+    <ClInclude Include="fermi_dirac_interpolator.h">
+      <Filter>mixing\interpolators\interpolators\fermi-dirac</Filter>
+    </ClInclude>
+    <ClInclude Include="instant_interpolator.h">
+      <Filter>mixing\interpolators\interpolators\instant</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolator_size_calculator.h">
+      <Filter>mixing\interpolators\operations\size_calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolator_visitor.h">
+      <Filter>mixing\interpolators\operations\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolator_comparer.h">
+      <Filter>mixing\interpolators\operations\comparer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_clip.h">
+      <Filter>mixing\animation_clip</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_clip_inline.h">
+      <Filter>mixing\animation_clip</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_multiplication_node.h">
+      <Filter>mixing\n-ary tree\nodes\multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_addition_node.h">
+      <Filter>mixing\n-ary tree\nodes\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_subtraction_node.h">
+      <Filter>mixing\n-ary tree\nodes\subtraction</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_transition_node.h">
+      <Filter>mixing\n-ary tree\nodes\transition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_transition_node_inline.h">
+      <Filter>mixing\n-ary tree\nodes\transition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_base_node.h">
+      <Filter>mixing\n-ary tree\nodes\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_base_node_inline.h">
+      <Filter>mixing\n-ary tree\nodes\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_weight_node.h">
+      <Filter>mixing\n-ary tree\nodes\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_weight_node_inline.h">
+      <Filter>mixing\n-ary tree\nodes\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_animation_node.h">
+      <Filter>mixing\n-ary tree\nodes\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_animation_node_inline.h">
+      <Filter>mixing\n-ary tree\nodes\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_n_ary_operation_node.h">
+      <Filter>mixing\n-ary tree\nodes\n_ary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_n_ary_operation_node_inline.h">
+      <Filter>mixing\n-ary tree\nodes\n_ary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_builder.h">
+      <Filter>mixing\n-ary tree\builder</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_comparer.h">
+      <Filter>mixing\n-ary tree\operations\comparer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_destroyer.h">
+      <Filter>mixing\n-ary tree\operations\destroyer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_double_dispatcher.h">
+      <Filter>mixing\n-ary tree\operations\double_dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_visitor.h">
+      <Filter>mixing\n-ary tree\operations\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_interpolator_selector.h">
+      <Filter>mixing\n-ary tree\operations\interpolator_selector</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_node_comparer.h">
+      <Filter>mixing\n-ary tree\operations\node_comparer</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_size_calculator.h">
+      <Filter>mixing\n-ary tree\operations\size_calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_transition_constructor.h">
+      <Filter>mixing\n-ary tree\operations\transition_constructor</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_weight_calculator.h">
+      <Filter>mixing\n-ary tree\operations\weight_calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_weight_calculator_inline.h">
+      <Filter>mixing\n-ary tree\operations\weight_calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree.h">
+      <Filter>mixing\n-ary tree\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_inline.h">
+      <Filter>mixing\n-ary tree\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_state.h">
+      <Filter>mixing\n-ary tree\tree\animation_state</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_state_inline.h">
+      <Filter>mixing\n-ary tree\tree\animation_state</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_intrusive_base.h">
+      <Filter>mixing\n-ary tree\tree\intrusive_base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_n_ary_tree_intrusive_base_inline.h">
+      <Filter>mixing\n-ary tree\tree\intrusive_base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_lexeme.h">
+      <Filter>mixing\lexems\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_animation_lexeme_inline.h">
+      <Filter>mixing\lexems\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_weight_lexeme.h">
+      <Filter>mixing\lexems\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_weight_lexeme_inline.h">
+      <Filter>mixing\lexems\weight</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_multiplication_lexeme.h">
+      <Filter>mixing\lexems\multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_multiplication_lexeme_inline.h">
+      <Filter>mixing\lexems\multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_base_lexeme.h">
+      <Filter>mixing\lexems\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_base_lexeme_inline.h">
+      <Filter>mixing\lexems\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_expression.h">
+      <Filter>mixing\lexems\expression</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_expression_inline.h">
+      <Filter>mixing\lexems\expression</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_addition_lexeme.h">
+      <Filter>mixing\lexems\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_addition_lexeme_inline.h">
+      <Filter>mixing\lexems\addition</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_subtraction_lexeme.h">
+      <Filter>mixing\lexems\subtraction</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_subtraction_lexeme_inline.h">
+      <Filter>mixing\lexems\subtraction</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_operation_lexeme.h">
+      <Filter>mixing\lexems\binary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="mixing_binary_operation_lexeme_inline.h">
+      <Filter>mixing\lexems\binary_operation</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_mixer.h">
+      <Filter>mixing\bone_mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_mixer_data.h">
+      <Filter>mixing\bone_mixer\data</Filter>
+    </ClInclude>
+    <ClInclude Include="test_animation_player.h">
+      <Filter>test_animation_player</Filter>
+    </ClInclude>
+    <ClInclude Include="test_mixing_animation_group.h">
+      <Filter>test_animation_player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

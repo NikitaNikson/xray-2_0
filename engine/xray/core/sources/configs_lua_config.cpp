@@ -26,10 +26,11 @@
 #endif // #ifdef DEBUG
 
 #include <cs/lua/library_linkage.h>
-#include <luabind/library_linkage.h>
+//#include <luabind/library_linkage.h>
 #include <cs/core/library_linkage.h>
 #include <cs/script/library_linkage.h>
-#include <cs/core/memory.h>
+//#include <cs/core/memory.h>
+#include "memory.h"
 
 using xray::core::script_engine_wrapper;
 
@@ -75,15 +76,15 @@ public:
 	{
 		XRAY_UNREFERENCED_PARAMETER	( check_for_null );
 		s_mutex->lock				( );
-		m_top						= lua_gettop( s_world->virtual_machine() );
+//		m_top						= lua_gettop( s_world->virtual_machine() );
 //		R_ASSERT					( !check_for_null || !m_top, "%d", m_top );
 	}
 
 	inline	~lua_stack_guard		( )
 	{
-		int const top				= lua_gettop( s_world->virtual_machine() );
-		XRAY_UNREFERENCED_PARAMETER	( top );
-		R_ASSERT_CMP				( m_top, ==, top );
+//		int const top				= lua_gettop( s_world->virtual_machine() );
+//		XRAY_UNREFERENCED_PARAMETER	( top );
+//		R_ASSERT_CMP				( m_top, ==, top );
 		s_mutex->unlock				( );
 	}
 
@@ -113,6 +114,7 @@ namespace configs {
 
 void initialize						( pcstr resource_path, pcstr underscore_G_path )
 {
+	/*
 	cs::core::memory_allocator		( &allocate, 0 );
 
 	XRAY_CONSTRUCT_REFERENCE		( s_wrapper, script_engine_wrapper ) ( resource_path, underscore_G_path );
@@ -121,7 +123,7 @@ void initialize						( pcstr resource_path, pcstr underscore_G_path )
 	R_ASSERT						( !s_world );
 	s_world							= cs_script_create_world( *s_wrapper );
 	lua_pop							( s_world->virtual_machine(), lua_gettop( s_world->virtual_machine() ) );
-
+	*/
 	lua_stack_guard					guard;
 
 	export_classes					();
@@ -145,7 +147,7 @@ void finalize						( )
 
 #ifdef NDEBUG
 namespace std {
-	inline void terminate()
+	inline void xray_terminate()
 	{
 		UNREACHABLE_CODE();
 	}

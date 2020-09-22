@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{e36fe49c-5daa-48c0-812e-f2739c784c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{fb3ca707-d579-423a-8cd9-bc79355a727f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{1544ed5c-8444-4cda-ae07-eb8861074cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objects">
+      <UniqueIdentifier>{169aa8f5-98f2-4565-ba3a-7f9099b5ac30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ogg">
+      <UniqueIdentifier>{030cdc3a-e03e-4010-9da7-343bee09675f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cooker">
+      <UniqueIdentifier>{2ed62b6d-ee90-4a19-829f-a82d74ce16c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="commands">
+      <UniqueIdentifier>{9d41c78d-f3fc-4d2b-a792-68ca4238209b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_world_command_processor.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_object.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_object_callback.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_stream.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_stream_rms.cpp">
+      <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ogg_utils.cpp">
+      <Filter>ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="ogg_source_cooker.cpp">
+      <Filter>cooker</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_cooker.cpp">
+      <Filter>cooker</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_stream_cooker.cpp">
+      <Filter>cooker</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_object_commands.cpp">
+      <Filter>commands</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\library_linkage.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\world.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_world_inline.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_object.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_stream.h">
+      <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ogg_utils.h">
+      <Filter>ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="ogg_source_cooker.h">
+      <Filter>cooker</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_cooker.h">
+      <Filter>cooker</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_stream_cooker.h">
+      <Filter>cooker</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_object_commands.h">
+      <Filter>commands</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

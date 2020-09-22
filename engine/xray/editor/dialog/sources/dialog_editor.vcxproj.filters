@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="document">
+      <UniqueIdentifier>{8c863919-a187-4519-b89a-2d110ceae4c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="document\commands">
+      <UniqueIdentifier>{4a0b51e3-fb19-4471-a2ba-825cbd6969a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="document\links_manager">
+      <UniqueIdentifier>{700f7466-dc6a-4eb2-a11e-f4b419aac66c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="document\node">
+      <UniqueIdentifier>{cebb2a29-07e9-4fb2-84d1-02b6c7568fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager">
+      <UniqueIdentifier>{3c4f5e75-cf71-48e5-9fdf-698fe7711f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\objects">
+      <UniqueIdentifier>{c1102d42-e44b-4f51-b92b-e76406b6823c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link">
+      <UniqueIdentifier>{eb3b7114-93a0-44ef-b003-3446b064e865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link\expression">
+      <UniqueIdentifier>{760af08c-e2d6-4094-b35a-52975f747658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link\expression\operations">
+      <UniqueIdentifier>{a428b078-e606-406a-adf6-6e311ff3b9cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link\expression\operations\operations">
+      <UniqueIdentifier>{338765d7-00e8-406c-a63c-5f37f8143ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link\expression\precondition">
+      <UniqueIdentifier>{b21d5c87-5add-4e0f-bb63-b6ee45f6494c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\link\action">
+      <UniqueIdentifier>{4820cb64-6243-416b-865a-5116b39ed9cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\cookers">
+      <UniqueIdentifier>{72828a87-c40e-4aa5-bf12-6abc5a3989c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog_manager\string_tables">
+      <UniqueIdentifier>{67220e74-0616-45aa-bf0e-54df6e7bcb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{674149c3-70bc-4e8e-a0e6-fcb0e07e40bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{502bef34-f9a5-4bb8-87e2-fbe03ade9b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels">
+      <UniqueIdentifier>{acb77be3-2503-4de8-a776-074c5ea00b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\toolbar">
+      <UniqueIdentifier>{57cbe510-f2cd-4a11-b5f4-e2dbdcf11ef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\files_viewer">
+      <UniqueIdentifier>{1f78a7bb-3073-4f4d-9bad-d5cdb989a9ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\properties">
+      <UniqueIdentifier>{f1869e94-1ba5-4d3c-acb5-64b096bf99a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\languages">
+      <UniqueIdentifier>{a11dd552-5cbf-4447-95c9-ae6929a6e890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\precondition_action_editor">
+      <UniqueIdentifier>{772e6f15-77c5-4ef3-81c6-e075f5cd3156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\text_editor">
+      <UniqueIdentifier>{7ffba873-d9d1-4f65-8f36-1ec3610441bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="panels\export_import">
+      <UniqueIdentifier>{d0c44955-5d84-4936-a71e-b8a24bfe77ba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dialog_document.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_document_node_factory.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_hypergraph.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="command_add_delete_group.cpp">
+      <Filter>document\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_add_delete_links.cpp">
+      <Filter>document\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_change_node_properties.cpp">
+      <Filter>document\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_change_node_string_table.cpp">
+      <Filter>document\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_move_nodes.cpp">
+      <Filter>document\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_graph_link.cpp">
+      <Filter>document\links_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_links_manager.cpp">
+      <Filter>document\links_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_graph_node.cpp">
+      <Filter>document\node</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_graph_node_layout.cpp">
+      <Filter>document\node</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_graph_node_style.cpp">
+      <Filter>document\node</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_node_connection_editor.cpp">
+      <Filter>document\node</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_node_hypergraph.cpp">
+      <Filter>document\node</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs_manager.cpp">
+      <Filter>dialog_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog.cpp">
+      <Filter>dialog_manager\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_node_base.cpp">
+      <Filter>dialog_manager\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_phrase.cpp">
+      <Filter>dialog_manager\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="game_dialog.cpp">
+      <Filter>dialog_manager\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_link.cpp">
+      <Filter>dialog_manager\link</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_expression.cpp">
+      <Filter>dialog_manager\link\expression</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_operation.cpp">
+      <Filter>dialog_manager\link\expression\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_operation_and.cpp">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_operation_not.cpp">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_operation_or.cpp">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_precondition.cpp">
+      <Filter>dialog_manager\link\expression\precondition</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_action.cpp">
+      <Filter>dialog_manager\link\action</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_cooker.cpp">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_editor_resources_cooker.cpp">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_node_visitors.cpp">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClCompile>
+    <ClCompile Include="game_dialog_cooker.cpp">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClCompile>
+    <ClCompile Include="string_table_id.cpp">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClCompile>
+    <ClCompile Include="string_table_id_options.cpp">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClCompile>
+    <ClCompile Include="string_table_ids_storage.cpp">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_editor.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_editor_components.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_editor_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_creator.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_control_panel.cpp">
+      <Filter>panels\toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_files_source.cpp">
+      <Filter>panels\files_viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_files_view_panel.cpp">
+      <Filter>panels\files_viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_item_properties_panel.cpp">
+      <Filter>panels\properties</Filter>
+    </ClCompile>
+    <ClCompile Include="add_language_form.cpp">
+      <Filter>panels\languages</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_language_panel.cpp">
+      <Filter>panels\languages</Filter>
+    </ClCompile>
+    <ClCompile Include="remove_language_form.cpp">
+      <Filter>panels\languages</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_link_action.cpp">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_link_precondition.cpp">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_precondition_action_editor.cpp">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_text_editor.cpp">
+      <Filter>panels\text_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_text_editor_sorter.cpp">
+      <Filter>panels\text_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_export_form.cpp">
+      <Filter>panels\export_import</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_import_form.cpp">
+      <Filter>panels\export_import</Filter>
+    </ClCompile>
+    <ClCompile Include="excel_file.cpp">
+      <Filter>panels\export_import</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog_editor_entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dialog_document.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_hypergraph.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="command_add_delete_group.h">
+      <Filter>document\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_add_delete_links.h">
+      <Filter>document\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_change_node_properties.h">
+      <Filter>document\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_change_node_string_table.h">
+      <Filter>document\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_move_nodes.h">
+      <Filter>document\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_graph_link.h">
+      <Filter>document\links_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_links_manager.h">
+      <Filter>document\links_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_graph_node.h">
+      <Filter>document\node</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_graph_node_layout.h">
+      <Filter>document\node</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_graph_node_style.h">
+      <Filter>document\node</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_node_connection_editor.h">
+      <Filter>document\node</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_node_hypergraph.h">
+      <Filter>document\node</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogs_manager.h">
+      <Filter>dialog_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog.h">
+      <Filter>dialog_manager\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_node_base.h">
+      <Filter>dialog_manager\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_phrase.h">
+      <Filter>dialog_manager\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="game_dialog.h">
+      <Filter>dialog_manager\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_link.h">
+      <Filter>dialog_manager\link</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_expression.h">
+      <Filter>dialog_manager\link\expression</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_operation.h">
+      <Filter>dialog_manager\link\expression\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_operation_and.h">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_operation_not.h">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_operation_or.h">
+      <Filter>dialog_manager\link\expression\operations\operations</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_precondition.h">
+      <Filter>dialog_manager\link\expression\precondition</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_action.h">
+      <Filter>dialog_manager\link\action</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_cooker.h">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_editor_resources_cooker.h">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_node_visitors.h">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClInclude>
+    <ClInclude Include="game_dialog_cooker.h">
+      <Filter>dialog_manager\cookers</Filter>
+    </ClInclude>
+    <ClInclude Include="string_table_id.h">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClInclude>
+    <ClInclude Include="string_table_id_options.h">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClInclude>
+    <ClInclude Include="string_table_ids_storage.h">
+      <Filter>dialog_manager\string_tables</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_editor.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_editor_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_creator.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\library_linkage.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_control_panel.h">
+      <Filter>panels\toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_files_source.h">
+      <Filter>panels\files_viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_files_view_panel.h">
+      <Filter>panels\files_viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_item_properties_panel.h">
+      <Filter>panels\properties</Filter>
+    </ClInclude>
+    <ClInclude Include="add_language_form.h">
+      <Filter>panels\languages</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_language_panel.h">
+      <Filter>panels\languages</Filter>
+    </ClInclude>
+    <ClInclude Include="remove_language_form.h">
+      <Filter>panels\languages</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_link_action.h">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_link_precondition.h">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_precondition_action_editor.h">
+      <Filter>panels\precondition_action_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_text_editor.h">
+      <Filter>panels\text_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_text_editor_sorter.h">
+      <Filter>panels\text_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_export_form.h">
+      <Filter>panels\export_import</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog_import_form.h">
+      <Filter>panels\export_import</Filter>
+    </ClInclude>
+    <ClInclude Include="excel_file.h">
+      <Filter>panels\export_import</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

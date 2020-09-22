@@ -425,8 +425,11 @@ static void set_fp_state( u32& previous_denormals, u32& previous_control_word )
 #if XRAY_PLATFORM_WINDOWS
 	previous_denormals					= _mm_getcsr();
 
+#if _MSC_VER == 1500
 	u32 const _MM_DENORMALS_ZERO_MASK	= 0x0040;
 	u32 const _MM_DENORMALS_ZERO_ON		= 0x0040;
+#endif
+
 	_MM_SET_FLUSH_ZERO_MODE				(_MM_FLUSH_ZERO_ON);
 	_mm_setcsr							( (previous_denormals & ~_MM_DENORMALS_ZERO_MASK) | _MM_DENORMALS_ZERO_ON );
 #else

@@ -4,15 +4,18 @@
 //	Copyright (C) GSC Game World - 2009
 ////////////////////////////////////////////////////////////////////////////
 
+#pragma warning( disable : 4995 )
+
 #ifndef XRAY_MEMORY_OVERRIDE_OPERATORS_H_INCLUDED
 #define XRAY_MEMORY_OVERRIDE_OPERATORS_H_INCLUDED
 
 #define _CRT_ALLOCATION_DEFINED
 
-#include <new.h>
+
+//#include <new.h>
 
 extern "C" {
-
+	/*
 inline pvoid malloc						( size_t )
 {
 	UNREACHABLE_CODE(return 0);
@@ -44,6 +47,8 @@ inline void free						( pvoid )
 	__assume(0);
 #endif // #ifndef __SNC__
 }
+
+*/
 
 #ifdef _MSC_VER
 	_Check_return_ _CRTIMP inline char *  __cdecl _strdup(_In_opt_z_ const char * _Src)

@@ -38,11 +38,23 @@
 
 #include "linkage_resolver.h"
 
+//disabled lua conf
+#ifdef WIN64
+#ifdef NDEBUG
+namespace std {
+	inline void xray_terminate()
+	{
+		UNREACHABLE_CODE();
+	}
+} // namespace std
+#endif // #ifdef NDEBUG
+#endif
+
 namespace boost
 {
 	void __cdecl throw_exception(std::bad_cast const&)
 	{
-		std::terminate();
+		std::xray_terminate();
 	}
 }
 

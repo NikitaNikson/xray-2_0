@@ -1,0 +1,1919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{bdafff0a-ce16-4bad-8bb5-7455b4752936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{00477a05-a974-4a29-ae32-dc910a4b01ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{41b9215a-1dff-4b45-96f7-eb90003f3305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\editor_controls">
+      <UniqueIdentifier>{b9021a19-da8e-4370-b999-f11f015c3002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\collision">
+      <UniqueIdentifier>{4fe75776-8503-4661-abde-ff97fb09ed54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\project">
+      <UniqueIdentifier>{00222833-69c6-4a7f-8df8-f38123dfc4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects">
+      <UniqueIdentifier>{33f04b8a-90be-46a1-b09b-b1403dfb85ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\base">
+      <UniqueIdentifier>{66a68c6b-e5ea-45db-b96f-c2fbbf597568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\solid_visual">
+      <UniqueIdentifier>{49ae7b99-95f5-4f9c-a911-0cf3e959bb82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\light">
+      <UniqueIdentifier>{27313d7f-871c-431f-8c58-dc42409fa48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\compound">
+      <UniqueIdentifier>{d506bd73-7234-4663-9c3e-d13a5c59b5bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\shared">
+      <UniqueIdentifier>{80b76637-1766-4b3a-8f80-3b35b2e187c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\shared\curve">
+      <UniqueIdentifier>{86da44b2-7fbf-4f05-997d-a4dda7126933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\object properties">
+      <UniqueIdentifier>{0a2bb37a-9529-4514-9fcf-af4fb695b1d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\terrain">
+      <UniqueIdentifier>{44763558-33f8-41ac-baff-6eb76ffdcfef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\tools&amp;objects\terrain\commands">
+      <UniqueIdentifier>{5e0506c1-7872-47b4-9564-2039e0fcd40a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\flying_camera">
+      <UniqueIdentifier>{36d8b5f0-6410-4025-8419-62c80bfee792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\commands">
+      <UniqueIdentifier>{16ddfef7-06cd-4896-8beb-0caf7011eb76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\input_engine">
+      <UniqueIdentifier>{cfbfa5e4-b536-4cf3-b146-77b61f6c78fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\gui_binder">
+      <UniqueIdentifier>{62cd808e-5255-422c-8709-aef0f7c3ab39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\actions">
+      <UniqueIdentifier>{26f4e4a6-09fc-4fb7-a5c6-b2df43a136a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\action_engine">
+      <UniqueIdentifier>{a7560819-aa1c-49ab-9063-65fe2afc2ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\input_actions">
+      <UniqueIdentifier>{eea9d4ad-d6f3-43e0-b006-c7846931e3a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{b2dcd110-5dc4-4e53-a63e-3fad62f508ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\about_dialog">
+      <UniqueIdentifier>{3e23d9f1-5384-4a1d-b3dc-fa19f946c625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\tree_values">
+      <UniqueIdentifier>{d28574f2-0d9e-4830-861d-31a54b68ef74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\tab">
+      <UniqueIdentifier>{cea52a7a-2da1-4aa5-8004-d1e7d8363f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\ide">
+      <UniqueIdentifier>{7df527a7-e771-42c2-8b07-43ef60eb6c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools">
+      <UniqueIdentifier>{54f43855-d554-498a-9cc1-bd4d4724d196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\project">
+      <UniqueIdentifier>{ca05bcef-1467-44bd-9ee7-d11a09bf795e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\solid_visual_tool">
+      <UniqueIdentifier>{5bef3129-6097-412b-9473-86e1c6c8371f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\light_tool">
+      <UniqueIdentifier>{7f99f26a-a54f-4e9b-9cda-3d82bffbf399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\terrain_tool">
+      <UniqueIdentifier>{6b3bb73e-b03a-44da-acf5-0ef50a978f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\object_inspector">
+      <UniqueIdentifier>{2bf3d46d-b346-47e9-9098-15fdc2760c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\tools_tab">
+      <UniqueIdentifier>{277de3dd-b122-4db4-b09d-61de048dd6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\tool_compound">
+      <UniqueIdentifier>{efe00378-4a86-444d-bbe2-b0c00d188bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\project&amp;tools\control_properties">
+      <UniqueIdentifier>{8882d078-a7b7-4d5e-aab7-ed563777b164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\library_object">
+      <UniqueIdentifier>{0b7e6e77-3473-4a9d-9bff-ead2d2f2837c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\options">
+      <UniqueIdentifier>{2b071320-1ee8-4c8b-8142-db964ed6ca94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\options\options_pages">
+      <UniqueIdentifier>{254789f5-da3a-4877-ab83-3b3937093f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\loading_dialog">
+      <UniqueIdentifier>{8671bfb3-a590-4b70-a2cb-0302fb8a9c3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\connection_editor">
+      <UniqueIdentifier>{96a21b7b-cdc6-461e-83d2-ec1a813caf49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\scene_graph">
+      <UniqueIdentifier>{3ee2a9a3-050a-431b-bcb3-2bb3808818f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor">
+      <UniqueIdentifier>{fb07d636-f0a4-46ea-81d6-62fa9c3ffb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_files_view_panel">
+      <UniqueIdentifier>{5f818677-98a6-47ff-ac82-5983ab991743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_files_view_panel\controls">
+      <UniqueIdentifier>{60de0931-ccb7-4f78-a5a5-c2d3926f0f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_files_view_panel\controls\graph_view">
+      <UniqueIdentifier>{53999291-9e29-4577-ae67-fbcc6a3dca3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\raw_file_property_struct">
+      <UniqueIdentifier>{565e574d-4740-45c4-af32-6a7ec5de3cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_file_struct">
+      <UniqueIdentifier>{00eb94dd-a9ed-4e22-804d-e2565fcc4846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\cookers">
+      <UniqueIdentifier>{41344fe6-24e3-4958-8138-095a8234b9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_options_struct">
+      <UniqueIdentifier>{a40a53c9-7ec9-45f7-8c26-7b31d82cd5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_items_view_panel">
+      <UniqueIdentifier>{f7d7328f-febf-477f-a229-0d3a384de317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_struct">
+      <UniqueIdentifier>{c1f85f75-e66e-4503-9dec-bdcf21184325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel">
+      <UniqueIdentifier>{06b5fb6e-2f1f-42d3-8d6d-243206a8ee17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls">
+      <UniqueIdentifier>{1ec105c5-0316-45ca-8677-aa052cd932d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\inplace_combo_box">
+      <UniqueIdentifier>{f76ca62d-c360-4629-80ac-19d55b0d2992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\sound_file_item">
+      <UniqueIdentifier>{83767804-68d9-4be8-a126-fac86237486e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_property">
+      <UniqueIdentifier>{a695f470-571a-450b-aa03-5c7b9bec0276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_dependency">
+      <UniqueIdentifier>{7628e2f9-cbf7-4284-899b-ad1a573d411a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\dependency_editor">
+      <UniqueIdentifier>{883d3f82-7d4d-4e59-b7aa-0f4298fcd1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_bool">
+      <UniqueIdentifier>{5a71779a-782a-4a37-9de9-8bf6f3fa0c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_float">
+      <UniqueIdentifier>{ea1de264-a901-45e3-8bde-f25a48f4f6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_bool">
+      <UniqueIdentifier>{345afb35-55b4-4e25-97e7-95e3160b1143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_float">
+      <UniqueIdentifier>{78f5afd9-6cf0-417c-bd45-e33edf252ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\sound_editor\sound_item_editor_panel\factory">
+      <UniqueIdentifier>{64d80e84-a37f-453d-a0a2-fbb79d2a11d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\view">
+      <UniqueIdentifier>{676b6d93-03fa-4fef-ae4a-c21310210d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor">
+      <UniqueIdentifier>{4087a2da-55f7-4d37-a3ca-bff994ccd8fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph">
+      <UniqueIdentifier>{b69187ce-92a3-4c0b-a7a1-73a1dcdcbb0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_hypergraph">
+      <UniqueIdentifier>{4db0ae35-fd8e-41c5-baa1-a8075babe1fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_graph_node">
+      <UniqueIdentifier>{2a7459c6-db95-4fc6-a220-68b07f10ee2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_graph_node\particle_node_types">
+      <UniqueIdentifier>{edf6d20d-cb4b-4db1-8c67-27736bd46ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_graph_node\particle_node_types\particle_time_based_layout_props">
+      <UniqueIdentifier>{7af6d97b-e71d-4eef-b744-7e6c40a544b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_links_manager">
+      <UniqueIdentifier>{7b95ac01-0e96-4698-9493-3fb7a9bcde7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_node_properties">
+      <UniqueIdentifier>{1685a05d-ad82-43de-8934-87214673cb65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_graph\particle_graph_commands">
+      <UniqueIdentifier>{b717a4da-7331-42d7-ade5-c0509956fe2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_groups_source">
+      <UniqueIdentifier>{96002944-e459-4bf6-b35f-27227a88feb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels">
+      <UniqueIdentifier>{c13ac703-4e0b-444d-a432-c6f61f153573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_source_panel">
+      <UniqueIdentifier>{2abde4f0-acf9-4f40-83da-84fbda2035f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel">
+      <UniqueIdentifier>{a660cfcb-a498-416f-8aae-458dea637cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel\particle_scalable_control">
+      <UniqueIdentifier>{9574b728-a8d8-4ab2-89bf-51b6565d1d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_data_sources_panel">
+      <UniqueIdentifier>{ce197899-5258-4c20-adfa-7f325183e672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_nodes">
+      <UniqueIdentifier>{cbc59234-4529-44c3-a425-78c3eb15e838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_holders">
+      <UniqueIdentifier>{dd55d489-36c4-415a-a3ae-86c8693af461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\resource_editor">
+      <UniqueIdentifier>{36fe54ec-ca39-402a-9024-5615d4dda516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\resource_editor\editors">
+      <UniqueIdentifier>{77224129-18ad-4e75-85d6-e255aea409e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\resource_editor\editors\texture_editor">
+      <UniqueIdentifier>{e0c80198-70ce-4ded-90de-811597c91b78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\resource_editor\editors\common">
+      <UniqueIdentifier>{6632ab7b-bd66-462d-8808-525898f3810e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties">
+      <UniqueIdentifier>{e1d56eeb-750b-43b0-8922-c0fb0b68839e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\container">
+      <UniqueIdentifier>{c48232b8-2dd2-4398-af2a-b6c7138c0c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\holder">
+      <UniqueIdentifier>{d050168e-66a7-46f4-bfec-71988dc95c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\holder\type_holders">
+      <UniqueIdentifier>{e119b26a-f87f-42fa-b356-bc13cd0ad42f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values">
+      <UniqueIdentifier>{9763ca6d-fef4-4ac5-b8b2-7de20461bd8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean">
+      <UniqueIdentifier>{e1b3655c-b94e-47d2-9d64-474675931954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\value">
+      <UniqueIdentifier>{478c0174-a502-47b9-8a71-4d2497e448e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\value\value">
+      <UniqueIdentifier>{25903498-23d0-4ca9-8f85-16e18633ad7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\value\reference">
+      <UniqueIdentifier>{27f070e3-7b7c-4f50-9d34-8f49bf827f29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\values">
+      <UniqueIdentifier>{0d22d656-8076-40e5-af9f-aeea5a935f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\values\converter">
+      <UniqueIdentifier>{d65a7e27-587d-4e87-84c2-c2d5a05c2c63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\values\reference">
+      <UniqueIdentifier>{5134d1da-448a-4867-8387-9ebc59838aa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\boolean\values\value">
+      <UniqueIdentifier>{8f213592-bbfa-4619-b169-f65716c7f208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection">
+      <UniqueIdentifier>{d744c682-467f-4c5c-bdec-ad312fd0f00d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\converter">
+      <UniqueIdentifier>{07b20e89-5d59-47be-a288-93396dd3d999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\editor">
+      <UniqueIdentifier>{108d363f-1db3-4017-b0e1-0e610d986d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\enumerator">
+      <UniqueIdentifier>{f1dedd65-dc15-4087-8f46-ba702c25ed80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\value">
+      <UniqueIdentifier>{2d75f579-1f57-4f10-b805-d3a8b880b3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\value\base">
+      <UniqueIdentifier>{aa327985-f970-4041-8a77-eef1b939326c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\value\getter">
+      <UniqueIdentifier>{46b50f27-5c28-4d9c-9552-c677d0ac2dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\collection\value\value">
+      <UniqueIdentifier>{26081885-c958-4ddb-ad34-399e90ca625c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color">
+      <UniqueIdentifier>{d0ca2fba-5438-4a22-9a63-dfc6e8d43387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color\base">
+      <UniqueIdentifier>{b494791b-6c0d-49d3-9697-70c8cc685a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color\converter">
+      <UniqueIdentifier>{570999f4-0e17-4862-9450-dbda381d772d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color\editor">
+      <UniqueIdentifier>{35272f95-f884-49a1-8b18-2646805c4af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color\value">
+      <UniqueIdentifier>{c83fe6c9-67ae-4519-abf4-510211830244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\color\reference">
+      <UniqueIdentifier>{bf9469b7-2be6-4c9f-89c5-b3ed1bb055af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\container">
+      <UniqueIdentifier>{97fe7d20-904c-40e5-9fe1-c3ee4dac4f11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\container\converter">
+      <UniqueIdentifier>{614709c7-b35a-4771-a41c-d72d3f6318a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\container\value">
+      <UniqueIdentifier>{66a415f7-7461-4c99-a4ae-83ba78277e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float">
+      <UniqueIdentifier>{273f2454-4ef1-40f5-b480-91dbc2168544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\converter">
+      <UniqueIdentifier>{cab90203-cc07-4fc2-af3c-1b0a68bc2ede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\values_enum">
+      <UniqueIdentifier>{6f873188-0d7c-4db4-a850-2670e3230504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\values_enum\converter">
+      <UniqueIdentifier>{49b27c77-a405-4e71-95d2-4bade7d0158d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\values_enum\value">
+      <UniqueIdentifier>{529b2e4c-299f-4571-8ae4-ec34743bab06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\values_enum\reference">
+      <UniqueIdentifier>{c2cbc8f1-fecb-4b24-ba4e-4d71af156c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value_limited">
+      <UniqueIdentifier>{8e8b12dd-1409-450a-a632-e93bc0a6d139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value_limited\value">
+      <UniqueIdentifier>{97a1d37c-ee2b-43d4-a17e-d340539ffcff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value_limited\reference">
+      <UniqueIdentifier>{7e69ff99-2346-404b-a06b-aa36d4900571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value">
+      <UniqueIdentifier>{1556aca9-1959-4074-bdd4-78092d1c4342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value\reference">
+      <UniqueIdentifier>{33c6dbb8-587e-451e-833f-18e79887d7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\float\value\value">
+      <UniqueIdentifier>{82e4940f-0ffd-4931-bcdd-d05036bc039e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer">
+      <UniqueIdentifier>{d7dac284-937d-460d-b1d8-b5789128c9da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values_enum">
+      <UniqueIdentifier>{0a7ab3e8-0c0c-4a39-9850-a6f93da3c704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values_enum\converter">
+      <UniqueIdentifier>{f6510156-15c8-4a18-a20e-030a47dc4e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values_enum\value">
+      <UniqueIdentifier>{6114e70a-5107-4574-ae67-27cfa0ebc163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values_enum\reference">
+      <UniqueIdentifier>{4f7f58b8-09c3-4986-b9cb-c7cfde0c5e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values">
+      <UniqueIdentifier>{eea970c7-1922-4971-a54c-d3724c60887a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\base">
+      <UniqueIdentifier>{4c29d04c-d642-49f0-93e5-913c344c32c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\converter">
+      <UniqueIdentifier>{ce9a82ad-9298-46d0-bc94-ae499edfa263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\value_getter">
+      <UniqueIdentifier>{8bb81cb1-c6ad-45b2-ab53-0714c6c68911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\value">
+      <UniqueIdentifier>{ed55ee40-28ff-44cd-80a7-d131418cb67f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\reference_getter">
+      <UniqueIdentifier>{1c344495-6697-479f-b479-2b5621a6f278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\values\reference">
+      <UniqueIdentifier>{633f6c8b-d99c-40e3-ac2a-0cc40ac85bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value_limited">
+      <UniqueIdentifier>{3b38eed0-cab4-43ec-bd1b-434c0572b31b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value_limited\value">
+      <UniqueIdentifier>{573e0634-44dc-4352-a6d0-d9052f2435cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value_limited\reference">
+      <UniqueIdentifier>{4f567560-6625-44b2-8e50-75d51515832b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value">
+      <UniqueIdentifier>{11235f06-a629-424f-953a-7dbbbf843196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value\value">
+      <UniqueIdentifier>{9c1d4825-69c6-4ffb-95fb-9f196eaa0e9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\integer\value\reference">
+      <UniqueIdentifier>{939b5460-d613-42ba-8ea7-0acebfc8130a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string">
+      <UniqueIdentifier>{4f6d7e7b-d336-4a0a-b934-e4140b13723c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\file_name">
+      <UniqueIdentifier>{cb8f9833-261b-42a1-8ae1-19201fda47e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\file_name\base">
+      <UniqueIdentifier>{7828dae8-6add-4df9-995c-a82b2fcf52e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\file_name\editor">
+      <UniqueIdentifier>{3c2ac419-5c82-4e9d-87b2-69debd35b833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\file_name\value">
+      <UniqueIdentifier>{817ce94d-31bf-48f5-9213-5ab47fe198e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\file_name\shared">
+      <UniqueIdentifier>{8a8083a3-db3a-490a-a712-b99894384a55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\tree_values">
+      <UniqueIdentifier>{83fb3432-68d9-49ad-bcab-531ade99f193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\tree_values\converter">
+      <UniqueIdentifier>{3b4d78c6-23d4-4e80-a3bf-09b08cfa744d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\tree_values\editor">
+      <UniqueIdentifier>{fe3c2f6b-42b3-4448-93d4-515147542874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values">
+      <UniqueIdentifier>{1f3fb088-8965-4867-bb9b-7404c56ce763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\base">
+      <UniqueIdentifier>{34240d40-3c52-4965-9027-e4a7b266c4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\converter">
+      <UniqueIdentifier>{85f59284-b7d6-4b9f-9911-e35c59d2f1db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\value_getter">
+      <UniqueIdentifier>{e8eb2e88-6fa2-4ca6-acb9-1fda55a8931d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\value">
+      <UniqueIdentifier>{f02a8ea4-7fdc-4dd3-8266-75c10e730207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\shared_getter">
+      <UniqueIdentifier>{a28c6420-7bec-47f6-a14f-2f7cc660fd37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\values\shared">
+      <UniqueIdentifier>{9488f0e0-530d-4861-b70f-18b2b0773372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\value">
+      <UniqueIdentifier>{24aca376-d5a8-4b5c-902a-fe669153a6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\value\value">
+      <UniqueIdentifier>{0790f6d1-7879-4d2a-a729-8a2801a9483e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\string\value\shared">
+      <UniqueIdentifier>{d723f115-92b3-4fa8-949a-23b84d4ad2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\vec3f">
+      <UniqueIdentifier>{0c9e3b3a-5624-4e66-9503-af22335b513f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\vec3f\base">
+      <UniqueIdentifier>{018a6b41-da17-437f-bed6-bdf67aca08be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\vec3f\converter">
+      <UniqueIdentifier>{7e77671d-cbdc-4889-aaf1-ed37f7bc5fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\vec3f\value">
+      <UniqueIdentifier>{7fb7120c-2991-43ac-9c30-21128cf7191e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="properties\values\vec3f\reference">
+      <UniqueIdentifier>{89889423-b3f1-4863-b03b-e2d2bccc80b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="level_editor">
+      <UniqueIdentifier>{78717502-ded5-453d-9da6-5dd2da84231c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="level_editor\project_browser_dialog">
+      <UniqueIdentifier>{b33ecf46-6d1b-4178-9f30-0f4caa8e4936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{753c65c3-6eb9-4c1c-a80a-4bc204e9c8f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\cursors">
+      <UniqueIdentifier>{40b0ebd0-c566-43e7-9ce1-89ba30cc697c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_control_base.cpp">
+      <Filter>world\editor_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_control_rotation.cpp">
+      <Filter>world\editor_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_control_scaling.cpp">
+      <Filter>world\editor_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="transform_control_translation.cpp">
+      <Filter>world\editor_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_object.cpp">
+      <Filter>world\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_object_control.cpp">
+      <Filter>world\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_object_dynamic.cpp">
+      <Filter>world\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="picker.cpp">
+      <Filter>world\collision</Filter>
+    </ClCompile>
+    <ClCompile Include="project.cpp">
+      <Filter>world\project</Filter>
+    </ClCompile>
+    <ClCompile Include="project_items.cpp">
+      <Filter>world\project</Filter>
+    </ClCompile>
+    <ClCompile Include="object_base.cpp">
+      <Filter>world\tools&amp;objects\base</Filter>
+    </ClCompile>
+    <ClCompile Include="object_base_transform.cpp">
+      <Filter>world\tools&amp;objects\base</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_base.cpp">
+      <Filter>world\tools&amp;objects\base</Filter>
+    </ClCompile>
+    <ClCompile Include="object_solid_visual.cpp">
+      <Filter>world\tools&amp;objects\solid_visual</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_solid_visual.cpp">
+      <Filter>world\tools&amp;objects\solid_visual</Filter>
+    </ClCompile>
+    <ClCompile Include="object_light.cpp">
+      <Filter>world\tools&amp;objects\light</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_light.cpp">
+      <Filter>world\tools&amp;objects\light</Filter>
+    </ClCompile>
+    <ClCompile Include="object_compound.cpp">
+      <Filter>world\tools&amp;objects\compound</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_compound.cpp">
+      <Filter>world\tools&amp;objects\compound</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_window_storage.cpp">
+      <Filter>world\tools&amp;objects\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="color_curve_editor.cpp">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClCompile>
+    <ClCompile Include="float_curve.cpp">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClCompile>
+    <ClCompile Include="float_curve_editor.cpp">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClCompile>
+    <ClCompile Include="float_curve_editor_draw.cpp">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClCompile>
+    <ClCompile Include="attribute.cpp">
+      <Filter>world\tools&amp;objects\object properties</Filter>
+    </ClCompile>
+    <ClCompile Include="object_properties.cpp">
+      <Filter>world\tools&amp;objects\object properties</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_control_cursor.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_bump.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_control.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_flatten.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_painter.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_raise_lower.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_smooth.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object_core.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object_drawing.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object_export.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object_helpers.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_object_import.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_quad.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_terrain.cpp">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_modifier_command.cpp">
+      <Filter>world\tools&amp;objects\terrain\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="flying_camera.cpp">
+      <Filter>world\flying_camera</Filter>
+    </ClCompile>
+    <ClCompile Include="command_add_library_object.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_apply_control_transform.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_create_remove_link.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_delete_object.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_drop_objects.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_paste_objects.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_place_objects.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_select.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_set_object_transform.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_snap_base.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="command_snap_objects.cpp">
+      <Filter>world\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="input_engine.cpp">
+      <Filter>world\input_engine</Filter>
+    </ClCompile>
+    <ClCompile Include="gui_binder.cpp">
+      <Filter>world\gui_binder</Filter>
+    </ClCompile>
+    <ClCompile Include="actions.cpp">
+      <Filter>world\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="input_actions.cpp">
+      <Filter>world\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="action_engine.cpp">
+      <Filter>world\action_engine</Filter>
+    </ClCompile>
+    <ClCompile Include="about_dialog.cpp">
+      <Filter>windows\about_dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="window_tree_values.cpp">
+      <Filter>windows\tree_values</Filter>
+    </ClCompile>
+    <ClCompile Include="window_tab.cpp">
+      <Filter>windows\tab</Filter>
+    </ClCompile>
+    <ClCompile Include="input_keys_holder.cpp">
+      <Filter>windows\ide</Filter>
+    </ClCompile>
+    <ClCompile Include="window_ide.cpp">
+      <Filter>windows\ide</Filter>
+    </ClCompile>
+    <ClCompile Include="window_ide_hook.cpp">
+      <Filter>windows\ide</Filter>
+    </ClCompile>
+    <ClCompile Include="window_ide_serialize.cpp">
+      <Filter>windows\ide</Filter>
+    </ClCompile>
+    <ClCompile Include="project_tab.cpp">
+      <Filter>windows\project&amp;tools\project</Filter>
+    </ClCompile>
+    <ClCompile Include="solid_visual_tool_tab.cpp">
+      <Filter>windows\project&amp;tools\solid_visual_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="light_tool_tab.cpp">
+      <Filter>windows\project&amp;tools\light_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_core_form.cpp">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_import_form.cpp">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_painter_control_tab.cpp">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="terrain_tool_tab.cpp">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClCompile>
+    <ClCompile Include="object_inspector_tab.cpp">
+      <Filter>windows\project&amp;tools\object_inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="tools_tab.cpp">
+      <Filter>windows\project&amp;tools\tools_tab</Filter>
+    </ClCompile>
+    <ClCompile Include="compound_object_tab.cpp">
+      <Filter>windows\project&amp;tools\tool_compound</Filter>
+    </ClCompile>
+    <ClCompile Include="compound_tool_tab.cpp">
+      <Filter>windows\project&amp;tools\tool_compound</Filter>
+    </ClCompile>
+    <ClCompile Include="control_properties_tab.cpp">
+      <Filter>windows\project&amp;tools\control_properties</Filter>
+    </ClCompile>
+    <ClCompile Include="library_object_tab.cpp">
+      <Filter>windows\library_object</Filter>
+    </ClCompile>
+    <ClCompile Include="options_dialog.cpp">
+      <Filter>windows\options</Filter>
+    </ClCompile>
+    <ClCompile Include="options_page_general.cpp">
+      <Filter>windows\options\options_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="options_page_input.cpp">
+      <Filter>windows\options\options_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="loading_dialog.cpp">
+      <Filter>windows\loading_dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="property_connection_editor.cpp">
+      <Filter>windows\connection_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_graph_node.cpp">
+      <Filter>windows\scene_graph</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_graph_node_style.cpp">
+      <Filter>windows\scene_graph</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_graph_tab.cpp">
+      <Filter>windows\scene_graph</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_editor.cpp">
+      <Filter>windows\sound_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_files_source.cpp">
+      <Filter>windows\sound_editor\sound_files_view_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_files_view_panel.cpp">
+      <Filter>windows\sound_editor\sound_files_view_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="graph_view.cpp">
+      <Filter>windows\sound_editor\sound_files_view_panel\controls\graph_view</Filter>
+    </ClCompile>
+    <ClCompile Include="raw_file_property_struct.cpp">
+      <Filter>windows\sound_editor\raw_file_property_struct</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_file_struct.cpp">
+      <Filter>windows\sound_editor\sound_file_struct</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_object_cook.cpp">
+      <Filter>windows\sound_editor\cookers</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_options_struct.cpp">
+      <Filter>windows\sound_editor\sound_options_struct</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_items_source.cpp">
+      <Filter>windows\sound_editor\sound_items_view_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_items_view_panel.cpp">
+      <Filter>windows\sound_editor\sound_items_view_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_item_struct.cpp">
+      <Filter>windows\sound_editor\sound_item_struct</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_item_editor_panel.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="inplace_combo_box.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\inplace_combo_box</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_file_item.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_file_item_property.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_property</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_file_item_dependency.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_dependency</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_editor.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_editor_bool_bool.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_bool</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_editor_bool_float.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_float</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_editor_float_bool.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_bool</Filter>
+    </ClCompile>
+    <ClCompile Include="dependency_editor_float_float.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_float</Filter>
+    </ClCompile>
+    <ClCompile Include="sound_item_factory.cpp">
+      <Filter>windows\sound_editor\sound_item_editor_panel\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="window_view.cpp">
+      <Filter>windows\view</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_editor.cpp">
+      <Filter>windows\particle_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_document.cpp">
+      <Filter>windows\particle_editor\particle_graph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_collection.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_style.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_hypergraph.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_node_connection_editor.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_action.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_emitter.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_event.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_graph_node_property.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_links_manager.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_links_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_node_properties.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_node_properties</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_node_property_holders.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_node_properties</Filter>
+    </ClCompile>
+    <ClCompile Include="add_delete_group_nodes.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClCompile>
+    <ClCompile Include="add_delete_node.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClCompile>
+    <ClCompile Include="change_node_index.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClCompile>
+    <ClCompile Include="disable_group_nodes.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClCompile>
+    <ClCompile Include="move_node.cpp">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_groups_source.cpp">
+      <Filter>windows\particle_editor\particle_groups_source</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_source_nodes_container.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_source_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_sources_panel.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_source_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_time_based_layout_panel.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_scalable_control.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel\particle_scalable_control</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_data_sources_panel.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_data_source_nodes.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_data_sources_holder.cpp">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_holders</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_editor.cpp">
+      <Filter>windows\resource_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_editor_base.cpp">
+      <Filter>windows\resource_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_editor_cancel.cpp">
+      <Filter>windows\resource_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_editor_commit.cpp">
+      <Filter>windows\resource_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_selector.cpp">
+      <Filter>windows\resource_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_editors_factory.cpp">
+      <Filter>windows\resource_editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_document.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_document_options.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_document_preview.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_editor_source.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_options.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_options_cooker.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_tga_to_argb_cook.cpp">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder.cpp">
+      <Filter>properties</Filter>
+    </ClCompile>
+    <ClCompile Include="property_container.cpp">
+      <Filter>properties\container</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_boolean.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_collection.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_color.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_container.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_float.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_integer.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_string.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_holder_vec3f.cpp">
+      <Filter>properties\holder</Filter>
+    </ClCompile>
+    <ClCompile Include="property_boolean.cpp">
+      <Filter>properties\values\boolean\value\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_boolean_reference.cpp">
+      <Filter>properties\values\boolean\value\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_boolean_values.cpp">
+      <Filter>properties\values\boolean\values\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_boolean_values_value_reference.cpp">
+      <Filter>properties\values\boolean\values\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_boolean_values_value.cpp">
+      <Filter>properties\values\boolean\values\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection_converter.cpp">
+      <Filter>properties\values\collection\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection_editor.cpp">
+      <Filter>properties\values\collection\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection_enumerator.cpp">
+      <Filter>properties\values\collection\enumerator</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection_base.cpp">
+      <Filter>properties\values\collection\value\base</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection_getter.cpp">
+      <Filter>properties\values\collection\value\getter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_collection.cpp">
+      <Filter>properties\values\collection\value\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_color_base.cpp">
+      <Filter>properties\values\color\base</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_color.cpp">
+      <Filter>properties\values\color\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_editor_color.cpp">
+      <Filter>properties\values\color\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="property_color.cpp">
+      <Filter>properties\values\color\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_color_reference.cpp">
+      <Filter>properties\values\color\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_container_converter.cpp">
+      <Filter>properties\values\container\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_property_container.cpp">
+      <Filter>properties\values\container\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_float.cpp">
+      <Filter>properties\values\float\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_float_enum.cpp">
+      <Filter>properties\values\float\values_enum\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float_enum_value.cpp">
+      <Filter>properties\values\float\values_enum\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float_enum_value_reference.cpp">
+      <Filter>properties\values\float\values_enum\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float_limited.cpp">
+      <Filter>properties\values\float\value_limited\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float_limited_reference.cpp">
+      <Filter>properties\values\float\value_limited\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float.cpp">
+      <Filter>properties\values\float\value\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_float_reference.cpp">
+      <Filter>properties\values\float\value\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_integer_enum.cpp">
+      <Filter>properties\values\integer\values_enum\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_enum_value.cpp">
+      <Filter>properties\values\integer\values_enum\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_enum_value_reference.cpp">
+      <Filter>properties\values\integer\values_enum\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_integer_values.cpp">
+      <Filter>properties\values\integer\values\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_values_value_getter.cpp">
+      <Filter>properties\values\integer\values\value_getter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_values_value.cpp">
+      <Filter>properties\values\integer\values\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_values_value_reference_getter.cpp">
+      <Filter>properties\values\integer\values\reference_getter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_values_value_reference.cpp">
+      <Filter>properties\values\integer\values\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_limited.cpp">
+      <Filter>properties\values\integer\value_limited\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_limited_reference.cpp">
+      <Filter>properties\values\integer\value_limited\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer.cpp">
+      <Filter>properties\values\integer\value\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_integer_reference.cpp">
+      <Filter>properties\values\integer\value\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="property_editor_file_name.cpp">
+      <Filter>properties\values\string\file_name\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="property_file_name_value.cpp">
+      <Filter>properties\values\string\file_name\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_file_name_value_shared_str.cpp">
+      <Filter>properties\values\string\file_name\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_tree_values.cpp">
+      <Filter>properties\values\string\tree_values\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_editor_tree_values.cpp">
+      <Filter>properties\values\string\tree_values\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_string_values.cpp">
+      <Filter>properties\values\string\values\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string_values_value_getter.cpp">
+      <Filter>properties\values\string\values\value_getter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string_values_value.cpp">
+      <Filter>properties\values\string\values\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string_values_value_shared_str_getter.cpp">
+      <Filter>properties\values\string\values\shared_getter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string_values_value_shared_str.cpp">
+      <Filter>properties\values\string\values\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string.cpp">
+      <Filter>properties\values\string\value\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_string_shared_str.cpp">
+      <Filter>properties\values\string\value\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="property_vec3f_base.cpp">
+      <Filter>properties\values\vec3f\base</Filter>
+    </ClCompile>
+    <ClCompile Include="property_converter_vec3f.cpp">
+      <Filter>properties\values\vec3f\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="property_vec3f.cpp">
+      <Filter>properties\values\vec3f\value</Filter>
+    </ClCompile>
+    <ClCompile Include="property_vec3f_reference.cpp">
+      <Filter>properties\values\vec3f\reference</Filter>
+    </ClCompile>
+    <ClCompile Include="level_editor.cpp">
+      <Filter>level_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="level_editor_actions.cpp">
+      <Filter>level_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="project_browser_dialog.cpp">
+      <Filter>level_editor\project_browser_dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_entry_point.cpp" />
+    <ClCompile Include="editor_resource_manager.cpp" />
+    <ClCompile Include="..\..\..\render\engine\sources\texture_compressor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_config_value_editor.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\library_linkage.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\property_holder.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\world.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_ide.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_world_defines.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_world_inline.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_control_base.h">
+      <Filter>world\editor_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="transform_control_base.h">
+      <Filter>world\editor_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="transform_control_rotation.h">
+      <Filter>world\editor_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="transform_control_scaling.h">
+      <Filter>world\editor_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="transform_control_translation.h">
+      <Filter>world\editor_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_object.h">
+      <Filter>world\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_object_control.h">
+      <Filter>world\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_object_dynamic.h">
+      <Filter>world\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="picker.h">
+      <Filter>world\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="project.h">
+      <Filter>world\project</Filter>
+    </ClInclude>
+    <ClInclude Include="project_defines.h">
+      <Filter>world\project</Filter>
+    </ClInclude>
+    <ClInclude Include="project_items.h">
+      <Filter>world\project</Filter>
+    </ClInclude>
+    <ClInclude Include="object_base.h">
+      <Filter>world\tools&amp;objects\base</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_base.h">
+      <Filter>world\tools&amp;objects\base</Filter>
+    </ClInclude>
+    <ClInclude Include="object_solid_visual.h">
+      <Filter>world\tools&amp;objects\solid_visual</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_solid_visual.h">
+      <Filter>world\tools&amp;objects\solid_visual</Filter>
+    </ClInclude>
+    <ClInclude Include="object_light.h">
+      <Filter>world\tools&amp;objects\light</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_light.h">
+      <Filter>world\tools&amp;objects\light</Filter>
+    </ClInclude>
+    <ClInclude Include="object_compound.h">
+      <Filter>world\tools&amp;objects\compound</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_compound.h">
+      <Filter>world\tools&amp;objects\compound</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_window_storage.h">
+      <Filter>world\tools&amp;objects\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="color_curve_editor.h">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClInclude>
+    <ClInclude Include="float_curve.h">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClInclude>
+    <ClInclude Include="float_curve_editor.h">
+      <Filter>world\tools&amp;objects\shared\curve</Filter>
+    </ClInclude>
+    <ClInclude Include="attribute.h">
+      <Filter>world\tools&amp;objects\object properties</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_control_cursor.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_bump.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_control.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_flatten.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_painter.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_raise_lower.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_smooth.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_object.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_object_inline.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_quad.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_terrain.h">
+      <Filter>world\tools&amp;objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_modifier_command.h">
+      <Filter>world\tools&amp;objects\terrain\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="flying_camera.h">
+      <Filter>world\flying_camera</Filter>
+    </ClInclude>
+    <ClInclude Include="command_add_library_object.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_apply_control_transform.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_create_remove_link.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_delete_object.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_drop_objects.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_paste_objects.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_place_objects.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_select.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_set_object_transform.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_snap_base.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="command_snap_objects.h">
+      <Filter>world\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="input_engine.h">
+      <Filter>world\input_engine</Filter>
+    </ClInclude>
+    <ClInclude Include="gui_binder.h">
+      <Filter>world\gui_binder</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>world\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="action_continuous.h">
+      <Filter>world\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="action_single.h">
+      <Filter>world\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="actions.h">
+      <Filter>world\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="input_actions.h">
+      <Filter>world\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="action_engine.h">
+      <Filter>world\action_engine</Filter>
+    </ClInclude>
+    <ClInclude Include="input_action.h">
+      <Filter>world\input_actions</Filter>
+    </ClInclude>
+    <ClInclude Include="input_action_single.h">
+      <Filter>world\input_actions</Filter>
+    </ClInclude>
+    <ClInclude Include="about_dialog.h">
+      <Filter>windows\about_dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="window_tree_values.h">
+      <Filter>windows\tree_values</Filter>
+    </ClInclude>
+    <ClInclude Include="window_tab.h">
+      <Filter>windows\tab</Filter>
+    </ClInclude>
+    <ClInclude Include="input_keys_holder.h">
+      <Filter>windows\ide</Filter>
+    </ClInclude>
+    <ClInclude Include="window_ide.h">
+      <Filter>windows\ide</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_tab.h">
+      <Filter>windows\project&amp;tools</Filter>
+    </ClInclude>
+    <ClInclude Include="project_tab.h">
+      <Filter>windows\project&amp;tools\project</Filter>
+    </ClInclude>
+    <ClInclude Include="solid_visual_tool_tab.h">
+      <Filter>windows\project&amp;tools\solid_visual_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="light_tool_tab.h">
+      <Filter>windows\project&amp;tools\light_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_core_form.h">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_import_form.h">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_painter_control_tab.h">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="terrain_tool_tab.h">
+      <Filter>windows\project&amp;tools\terrain_tool</Filter>
+    </ClInclude>
+    <ClInclude Include="object_inspector_tab.h">
+      <Filter>windows\project&amp;tools\object_inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="tools_tab.h">
+      <Filter>windows\project&amp;tools\tools_tab</Filter>
+    </ClInclude>
+    <ClInclude Include="compound_object_tab.h">
+      <Filter>windows\project&amp;tools\tool_compound</Filter>
+    </ClInclude>
+    <ClInclude Include="compound_tool_tab.h">
+      <Filter>windows\project&amp;tools\tool_compound</Filter>
+    </ClInclude>
+    <ClInclude Include="control_properties_tab.h">
+      <Filter>windows\project&amp;tools\control_properties</Filter>
+    </ClInclude>
+    <ClInclude Include="library_object_tab.h">
+      <Filter>windows\library_object</Filter>
+    </ClInclude>
+    <ClInclude Include="options_dialog.h">
+      <Filter>windows\options</Filter>
+    </ClInclude>
+    <ClInclude Include="options_page.h">
+      <Filter>windows\options</Filter>
+    </ClInclude>
+    <ClInclude Include="options_page_general.h">
+      <Filter>windows\options\options_pages</Filter>
+    </ClInclude>
+    <ClInclude Include="options_page_input.h">
+      <Filter>windows\options\options_pages</Filter>
+    </ClInclude>
+    <ClInclude Include="loading_dialog.h">
+      <Filter>windows\loading_dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="property_connection_editor.h">
+      <Filter>windows\connection_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_graph_node.h">
+      <Filter>windows\scene_graph</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_graph_node_style.h">
+      <Filter>windows\scene_graph</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_graph_tab.h">
+      <Filter>windows\scene_graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_editor.h">
+      <Filter>windows\sound_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_file_selection_event_args.h">
+      <Filter>windows\sound_editor\sound_files_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_files_source.h">
+      <Filter>windows\sound_editor\sound_files_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_files_view_panel.h">
+      <Filter>windows\sound_editor\sound_files_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="graph_view.h">
+      <Filter>windows\sound_editor\sound_files_view_panel\controls\graph_view</Filter>
+    </ClInclude>
+    <ClInclude Include="raw_file_property_struct.h">
+      <Filter>windows\sound_editor\raw_file_property_struct</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_file_struct.h">
+      <Filter>windows\sound_editor\sound_file_struct</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_object_cook.h">
+      <Filter>windows\sound_editor\cookers</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_options_struct.h">
+      <Filter>windows\sound_editor\sound_options_struct</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_item_selection_event_args.h">
+      <Filter>windows\sound_editor\sound_items_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_items_source.h">
+      <Filter>windows\sound_editor\sound_items_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_items_view_panel.h">
+      <Filter>windows\sound_editor\sound_items_view_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_item_struct.h">
+      <Filter>windows\sound_editor\sound_item_struct</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_item_editor_panel.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="inplace_combo_box.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\inplace_combo_box</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_file_item.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_file_item_property.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_property</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_file_item_dependency.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\sound_file_item_dependency</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor_type.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor_bool_bool.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_bool</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor_bool_float.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_bool_float</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor_float_bool.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_bool</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency_editor_float_float.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\controls\dependency_editor\dependency_editor_float_float</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_item_factory.h">
+      <Filter>windows\sound_editor\sound_item_editor_panel\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="window_view.h">
+      <Filter>windows\view</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_editor.h">
+      <Filter>windows\particle_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_document.h">
+      <Filter>windows\particle_editor\particle_graph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node.h">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_collection.h">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_style.h">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_hypergraph.h">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_node_connection_editor.h">
+      <Filter>windows\particle_editor\particle_graph\particle_hypergraph</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_action.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_emitter.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_event.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_graph_node_property.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_time_based_layout_props.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_node\particle_node_types\particle_time_based_layout_props</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_links_manager.h">
+      <Filter>windows\particle_editor\particle_graph\particle_links_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_node_properties.h">
+      <Filter>windows\particle_editor\particle_graph\particle_node_properties</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_node_property_holders.h">
+      <Filter>windows\particle_editor\particle_graph\particle_node_properties</Filter>
+    </ClInclude>
+    <ClInclude Include="add_delete_group_nodes.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClInclude>
+    <ClInclude Include="add_delete_node.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClInclude>
+    <ClInclude Include="change_node_index.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClInclude>
+    <ClInclude Include="disable_group_nodes.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClInclude>
+    <ClInclude Include="move_node.h">
+      <Filter>windows\particle_editor\particle_graph\particle_graph_commands</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_groups_source.h">
+      <Filter>windows\particle_editor\particle_groups_source</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_source_nodes_container.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_source_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_sources_panel.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_source_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_time_based_layout_panel.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_scalable_control.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_time_based_layout_panel\particle_scalable_control</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_data_sources_panel.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_data_source_nodes.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_data_sources_holder.h">
+      <Filter>windows\particle_editor\particle_editor_panels\particle_data_sources_panel\particle_data_source_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editor.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editor_base.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editor_cancel.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editor_commit.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editor_options_wrapper.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_selector.h">
+      <Filter>windows\resource_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_editors_factory.h">
+      <Filter>windows\resource_editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_document.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_document_factory.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_editor_source.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_options.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_options_cooker.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_tga_to_argb_cook.h">
+      <Filter>windows\resource_editor\editors\texture_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_document_factory.h">
+      <Filter>windows\resource_editor\editors\common</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_options.h">
+      <Filter>windows\resource_editor\editors\common</Filter>
+    </ClInclude>
+    <ClInclude Include="property_holder_include.h">
+      <Filter>properties</Filter>
+    </ClInclude>
+    <ClInclude Include="property_container.h">
+      <Filter>properties\container</Filter>
+    </ClInclude>
+    <ClInclude Include="property_container_holder.h">
+      <Filter>properties\container</Filter>
+    </ClInclude>
+    <ClInclude Include="property_holder.h">
+      <Filter>properties\holder</Filter>
+    </ClInclude>
+    <ClInclude Include="bool_holder.h">
+      <Filter>properties\holder\type_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="color_holder.h">
+      <Filter>properties\holder\type_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="float_holder.h">
+      <Filter>properties\holder\type_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="integer_holder.h">
+      <Filter>properties\holder\type_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="string_holder.h">
+      <Filter>properties\holder\type_holders</Filter>
+    </ClInclude>
+    <ClInclude Include="property_boolean.h">
+      <Filter>properties\values\boolean\value\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_boolean_reference.h">
+      <Filter>properties\values\boolean\value\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_boolean_values.h">
+      <Filter>properties\values\boolean\values\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_boolean_values_value_reference.h">
+      <Filter>properties\values\boolean\values\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_boolean_values_value.h">
+      <Filter>properties\values\boolean\values\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection_converter.h">
+      <Filter>properties\values\collection\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection_editor.h">
+      <Filter>properties\values\collection\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection_enumerator.h">
+      <Filter>properties\values\collection\enumerator</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection_base.h">
+      <Filter>properties\values\collection\value\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection_getter.h">
+      <Filter>properties\values\collection\value\getter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_collection.h">
+      <Filter>properties\values\collection\value\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_color_base.h">
+      <Filter>properties\values\color\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_color.h">
+      <Filter>properties\values\color\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_editor_color.h">
+      <Filter>properties\values\color\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="property_color.h">
+      <Filter>properties\values\color\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_color_reference.h">
+      <Filter>properties\values\color\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_container_converter.h">
+      <Filter>properties\values\container\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_property_container.h">
+      <Filter>properties\values\container\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_float.h">
+      <Filter>properties\values\float\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_float_enum.h">
+      <Filter>properties\values\float\values_enum\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float_enum_value.h">
+      <Filter>properties\values\float\values_enum\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float_enum_value_reference.h">
+      <Filter>properties\values\float\values_enum\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float_limited.h">
+      <Filter>properties\values\float\value_limited\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float_limited_reference.h">
+      <Filter>properties\values\float\value_limited\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float.h">
+      <Filter>properties\values\float\value\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_float_reference.h">
+      <Filter>properties\values\float\value\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_integer_enum.h">
+      <Filter>properties\values\integer\values_enum\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_enum_value.h">
+      <Filter>properties\values\integer\values_enum\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_enum_value_reference.h">
+      <Filter>properties\values\integer\values_enum\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_values_value_base.h">
+      <Filter>properties\values\integer\values\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_integer_values.h">
+      <Filter>properties\values\integer\values\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_values_value_getter.h">
+      <Filter>properties\values\integer\values\value_getter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_values_value.h">
+      <Filter>properties\values\integer\values\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_values_value_reference_getter.h">
+      <Filter>properties\values\integer\values\reference_getter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_values_value_reference.h">
+      <Filter>properties\values\integer\values\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_limited.h">
+      <Filter>properties\values\integer\value_limited\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_limited_reference.h">
+      <Filter>properties\values\integer\value_limited\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer.h">
+      <Filter>properties\values\integer\value\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_integer_reference.h">
+      <Filter>properties\values\integer\value\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="property_file_name_value_base.h">
+      <Filter>properties\values\string\file_name\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_editor_file_name.h">
+      <Filter>properties\values\string\file_name\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="property_file_name_value.h">
+      <Filter>properties\values\string\file_name\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_file_name_value_shared_str.h">
+      <Filter>properties\values\string\file_name\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_tree_values.h">
+      <Filter>properties\values\string\tree_values\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_editor_tree_values.h">
+      <Filter>properties\values\string\tree_values\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_values_value_base.h">
+      <Filter>properties\values\string\values\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_string_values.h">
+      <Filter>properties\values\string\values\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_values_value_getter.h">
+      <Filter>properties\values\string\values\value_getter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_values_value.h">
+      <Filter>properties\values\string\values\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_values_value_shared_str_getter.h">
+      <Filter>properties\values\string\values\shared_getter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_values_value_shared_str.h">
+      <Filter>properties\values\string\values\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string.h">
+      <Filter>properties\values\string\value\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_string_shared_str.h">
+      <Filter>properties\values\string\value\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="property_vec3f_base.h">
+      <Filter>properties\values\vec3f\base</Filter>
+    </ClInclude>
+    <ClInclude Include="property_converter_vec3f.h">
+      <Filter>properties\values\vec3f\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="property_vec3f.h">
+      <Filter>properties\values\vec3f\value</Filter>
+    </ClInclude>
+    <ClInclude Include="property_vec3f_reference.h">
+      <Filter>properties\values\vec3f\reference</Filter>
+    </ClInclude>
+    <ClInclude Include="level_editor.h">
+      <Filter>level_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="project_browser_dialog.h">
+      <Filter>level_editor\project_browser_dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="resources.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_resource_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursors\transform_general.cur">
+      <Filter>resources\cursors</Filter>
+    </None>
+  </ItemGroup>
+</Project>

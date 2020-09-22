@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="application">
+      <UniqueIdentifier>{1a22721c-db04-4d48-8eea-6223d9ccabef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\benchmark_test">
+      <UniqueIdentifier>{e75f5b7c-5cce-4225-afc7-d70be1376b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\benchmark">
+      <UniqueIdentifier>{5d190399-fa1f-4c38-93bf-b5ba883691e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\sphere_primitive">
+      <UniqueIdentifier>{14f6de22-abb0-4459-b0c9-8f8a9e596a9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\timers">
+      <UniqueIdentifier>{9c53f822-c1f1-489d-9876-87fcba1c58ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\timers\gpu_timer">
+      <UniqueIdentifier>{20483727-baac-4edd-99de-7c68bb4bda6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\timers\cpu_timer">
+      <UniqueIdentifier>{f3ecf644-a260-4e4f-a25b-0f89b43443a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\benchmark_renderer">
+      <UniqueIdentifier>{24612bff-41fb-4887-8a72-23437ce1f2d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\tests">
+      <UniqueIdentifier>{e0db7bc8-cc8a-48fd-a388-fb814cb48151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\tests\test_simple_shader_op">
+      <UniqueIdentifier>{241ca98c-242b-4360-a17b-6988d901feae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\tests\test_clear_render_target_depth_stencil">
+      <UniqueIdentifier>{c4463565-1a1b-41eb-bf42-3ed3300ab494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\tests\test_texture_shader_reading">
+      <UniqueIdentifier>{63f6b732-53ec-488e-a5d0-bc4f58bef101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\tests\test_3d_shader_op">
+      <UniqueIdentifier>{14530909-ea2c-480f-860c-5666c498f307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{a5104acf-e65d-4a09-a114-dac283ca44d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{4dc95bbb-ebf5-4170-94c6-d78e7f10d83b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="graphics_benchmark_application.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+    <ClCompile Include="benchmark.cpp">
+      <Filter>application\benchmark</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere_primitive.cpp">
+      <Filter>application\sphere_primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="gpu_timer.cpp">
+      <Filter>application\timers\gpu_timer</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu_timer.cpp">
+      <Filter>application\timers\cpu_timer</Filter>
+    </ClCompile>
+    <ClCompile Include="benchmark_renderer.cpp">
+      <Filter>application\benchmark_renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="test_simple_shader_op.cpp">
+      <Filter>application\tests\test_simple_shader_op</Filter>
+    </ClCompile>
+    <ClCompile Include="test_clear_render_target_depth_stencil.cpp">
+      <Filter>application\tests\test_clear_render_target_depth_stencil</Filter>
+    </ClCompile>
+    <ClCompile Include="test_texture_shader_reading.cpp">
+      <Filter>application\tests\test_texture_shader_reading</Filter>
+    </ClCompile>
+    <ClCompile Include="test_3d_shader_op.cpp">
+      <Filter>application\tests\test_3d_shader_op</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_benchmark_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="math_error.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_benchmark_entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="graphics_benchmark_application.h">
+      <Filter>application</Filter>
+    </ClInclude>
+    <ClInclude Include="benchmark_test.h">
+      <Filter>application\benchmark_test</Filter>
+    </ClInclude>
+    <ClInclude Include="benchmark.h">
+      <Filter>application\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="benchmark_nested_types.h">
+      <Filter>application\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere_primitive.h">
+      <Filter>application\sphere_primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_timer.h">
+      <Filter>application\timers\gpu_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu_timer.h">
+      <Filter>application\timers\cpu_timer</Filter>
+    </ClInclude>
+    <ClInclude Include="benchmark_renderer.h">
+      <Filter>application\benchmark_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="test_simple_shader_op.h">
+      <Filter>application\tests\test_simple_shader_op</Filter>
+    </ClInclude>
+    <ClInclude Include="test_clear_render_target_depth_stencil.h">
+      <Filter>application\tests\test_clear_render_target_depth_stencil</Filter>
+    </ClInclude>
+    <ClInclude Include="test_texture_shader_reading.h">
+      <Filter>application\tests\test_texture_shader_reading</Filter>
+    </ClInclude>
+    <ClInclude Include="test_3d_shader_op.h">
+      <Filter>application\tests\test_3d_shader_op</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_benchmark_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_benchmark_resources.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="graphics_benchmark.ico">
+      <Filter>resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="graphics_benchmark.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

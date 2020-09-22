@@ -11,6 +11,10 @@
 #include "asio_types_multi.h"
 #include "async_handler_host.h"
 
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/linestring.hpp>
+#include <boost/geometry/geometries/adapted/boost_array.hpp>
+
 namespace xray {
 namespace network {
 namespace lowlevel {

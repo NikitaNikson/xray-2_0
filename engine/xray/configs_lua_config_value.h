@@ -24,6 +24,7 @@ namespace luabind {
 	} // namespace detail
 
 	typedef detail::basic_iterator<detail::basic_access> iterator;
+	typedef void* memory_allocation_function_parameter;
 } // namespace luabind
 
 namespace xray {

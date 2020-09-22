@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{eef2668b-3bd9-4e5f-b304-3373cb9245d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application">
+      <UniqueIdentifier>{629061af-171a-4dd9-a89c-8011ce253eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application\skeleton">
+      <UniqueIdentifier>{ec0b7245-ec7f-4909-a139-aa3bc5d5f856}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="math_error_win.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="test_animations_library_linkage.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="test_animations_application.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+    <ClCompile Include="test_animations_entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="test_animations_memory.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="test_animations_application.h">
+      <Filter>application</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

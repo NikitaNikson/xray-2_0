@@ -154,7 +154,8 @@ crt_allocator::crt_allocator		( ) :
 #	if _MSC_VER == 1500
 		pcstr const library_name	= "msvcr90.dll";
 #	else // #if _MSC_VER == 1500
-#		error define correct library name here
+	pcstr const library_name = "msvcr120.dll";
+//#		error define correct library name here
 #endif // #if _MSC_VER == 1500
 
 	HMODULE const handle			= GetModuleHandle( library_name );

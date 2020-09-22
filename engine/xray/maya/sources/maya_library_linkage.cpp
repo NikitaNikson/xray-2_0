@@ -15,4 +15,13 @@
 #pragma comment( lib, "Foundation.lib" )
 #pragma comment( lib, "OpenMaya.lib" )
 #pragma comment( lib, "OpenMayaAnim.lib" )
-#pragma comment( lib, "TootleSoftwareOnlyStatic_2k8_MTDLL.lib" )
+#if _MSC_VER == 1500
+	#pragma comment( lib, "TootleSoftwareOnlyStatic_2k8_MTDLL.lib" )
+#else
+	#ifdef WIN64
+		#pragma comment( lib, "TootleSoftwareOnlyStatic_2013_MTDLL_64.lib" )
+		
+	#else
+		#pragma comment( lib, "TootleSoftwareOnlyStatic_2013_MTDLL.lib" )
+	#endif
+#endif
