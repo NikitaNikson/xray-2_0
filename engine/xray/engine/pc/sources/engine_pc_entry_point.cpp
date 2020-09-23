@@ -57,7 +57,12 @@ namespace boost
 {
 	void __cdecl throw_exception(std::bad_cast const&)
 	{
-		std::xray_terminate();
+		#ifdef NDEBUG
+			std::xray_terminate();
+		#else
+			std::terminate();
+		#endif // #ifdef NDEBUG
+
 	}
 }
 

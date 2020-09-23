@@ -485,7 +485,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
       <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
-      <ImportLibrary>$(SolutionDir)../binaries/$(Platform)/libraries/$(TargetName).lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)../binaries/$(Platform)/libraries/xray_$(TargetName)-debug.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>

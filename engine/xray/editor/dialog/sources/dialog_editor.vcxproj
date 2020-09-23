@@ -138,7 +138,7 @@
     <Link>
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray_$(ProjectName)-debug.dll</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <EmbedManagedResourceFile>$(SolutionDir)../intermediates/$(Configuration)/editor_base/editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <EmbedManagedResourceFile>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/editor_base/editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
       <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/$(TargetName).pdb</ProgramDatabaseFile>

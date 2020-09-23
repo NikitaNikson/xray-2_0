@@ -273,17 +273,17 @@
 /delayload:x3daudio1_7.dll
 /delayload:ddraw.dll %(AdditionalOptions)</AdditionalOptions>
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray_$(ProjectName)-debug.dll</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);$(SolutionDir)../SDK/libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);$(SolutionDir)../SDK/libraries;$(SolutionDir)../DXSDK/Lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/$(TargetName).pdb</ProgramDatabaseFile>
-      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/xray_$(TargetName)-debug.pdb</ProgramDatabaseFile>
+      <MapFileName>$(TargetDir)xray_$(TargetName)-debug.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
       <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
-      <ImportLibrary>$(SolutionDir)../binaries/$(Platform)/libraries/$(TargetName).lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)../binaries/$(Platform)/libraries/xray_$(TargetName)-debug.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
