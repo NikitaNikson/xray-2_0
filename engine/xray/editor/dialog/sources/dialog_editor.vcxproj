@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{5EC58FB8-223B-4991-9074-AB7739DD7773}</ProjectGuid>
     <RootNamespace>dialog_editor</RootNamespace>
     <Keyword>Win32Proj</Keyword>
@@ -111,7 +110,7 @@
     <Link>
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray_$(ProjectName).dll</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <EmbedManagedResourceFile>$(TargetDir)intermediates\$(Configuration)\editor_base\editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <EmbedManagedResourceFile>$(SolutionDir)..\binaries\$(Platform)\intermediates\$(Configuration)\editor_base\editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
@@ -139,7 +138,7 @@
     <Link>
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray_$(ProjectName)-debug.dll</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <EmbedManagedResourceFile>$(TargetDir)intermediates\$(Configuration)\editor_base\editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <EmbedManagedResourceFile>$(SolutionDir)../intermediates/$(Configuration)/editor_base/editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
       <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/$(TargetName).pdb</ProgramDatabaseFile>
@@ -206,6 +205,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="Flobbster.Windows.Forms.PropertyGrid">
+      <HintPath>..\..\..\..\..\SDK\Flobbster.Windows.Forms.PropertyGrid.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
@@ -238,6 +240,9 @@
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\..\..\SDK\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase">
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
@@ -245,6 +250,12 @@
     <Reference Include="WindowsFormsIntegration">
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="xray_editor_base">
+      <HintPath>..\..\..\..\..\binaries\Win32\xray_editor_base.dll</HintPath>
+    </Reference>
+    <Reference Include="xray_editor_controls">
+      <HintPath>..\..\..\..\..\binaries\Win32\xray_editor_controls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -255,16 +266,6 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\wpf_controls\wpf_controls.csproj">
       <Project>{1351b0d6-e811-43f6-b57d-08655826de18}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\base\sources\editor_base.vcxproj">
-      <Project>{d48cbbff-8b47-4e0f-915b-3220f3bc2402}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\controls\sources\editor_controls.vcxproj">
-      <Project>{fddfc8ad-1e92-4a92-8937-152c64c5b980}</Project>
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>

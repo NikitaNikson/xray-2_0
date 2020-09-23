@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{F9523302-4516-4FEC-863B-01031632EC37}</ProjectGuid>
     <RootNamespace>xray.editor</RootNamespace>
     <Keyword>Win32Proj</Keyword>
@@ -123,7 +122,7 @@
       <OutputFile>$(SolutionDir)../binaries/$(Platform)/xray_$(ProjectName).dll</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries/;$(SolutionDir)cs/libraries/$(Platform);$(SolutionDir)../SDK/libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <EmbedManagedResourceFile>$(TargetDir)intermediates\$(Configuration)\editor_base\editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <EmbedManagedResourceFile>$(SolutionDir)..\binaries\$(Platform)\intermediates\$(Configuration)\editor_base\editor_base.resources.resources;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug />
       <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/$(TargetName).pdb</ProgramDatabaseFile>
@@ -332,6 +331,15 @@
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </Reference>
+    <Reference Include="xray_dialog_editor">
+      <HintPath>..\..\..\..\..\binaries\Win32\xray_dialog_editor.dll</HintPath>
+    </Reference>
+    <Reference Include="xray_editor_base">
+      <HintPath>..\..\..\..\..\binaries\Win32\xray_editor_base.dll</HintPath>
+    </Reference>
+    <Reference Include="xray_editor_controls">
+      <HintPath>..\..\..\..\..\binaries\Win32\xray_editor_controls.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\engine\pc\sources\engine_pc.vcxproj">
@@ -341,21 +349,6 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\wpf_controls\wpf_controls.csproj">
       <Project>{1351b0d6-e811-43f6-b57d-08655826de18}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\base\sources\editor_base.vcxproj">
-      <Project>{d48cbbff-8b47-4e0f-915b-3220f3bc2402}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\controls\sources\editor_controls.vcxproj">
-      <Project>{fddfc8ad-1e92-4a92-8937-152c64c5b980}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\..\dialog\sources\dialog_editor.vcxproj">
-      <Project>{5ec58fb8-223b-4991-9074-ab7739dd7773}</Project>
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>

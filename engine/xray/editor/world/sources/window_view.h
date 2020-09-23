@@ -176,6 +176,8 @@ private:
 public:
 	System::Windows::Forms::ToolStrip^  GetToolStrip(System::String^ name);
 	System::Windows::Forms::ToolStrip^  CreateToolStrip(System::String^ name, int prio);
+private: System::Void ViewPanel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+}
 };
 
 } // namespace editor

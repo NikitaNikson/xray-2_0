@@ -39,7 +39,8 @@ static void	main_protected		( pvoid )
 #if _MSC_VER == 1500
 	pcstr const library_name	= "msvcr90.dll";
 #else // #if _MSC_VER == 1500
-#	error define correct library name here
+//#	error define correct library name here
+	pcstr const library_name = "msvcr120.dll";
 #endif // #if _MSC_VER == 1500
 
 	typedef pvoid (*malloc_ptr_type)( size_t );

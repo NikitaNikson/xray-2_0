@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{D48CBBFF-8B47-4E0F-915B-3220F3BC2402}</ProjectGuid>
     <RootNamespace>editor_base</RootNamespace>
     <Keyword>Win32Proj</Keyword>
@@ -231,13 +230,6 @@
     <Reference Include="WeifenLuo.WinFormsUI.Docking">
       <HintPath>..\..\..\..\..\SDK\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\engine\pc\sources\engine_pc.vcxproj">
-      <Project>{ac5dd91f-ce10-4e05-b48a-e1ddec5ccd9c}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="command_engine.cpp" />
