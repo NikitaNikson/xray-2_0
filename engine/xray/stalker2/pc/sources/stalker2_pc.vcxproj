@@ -152,7 +152,7 @@
     <OutDir>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>stalker2-win32-dynamic</TargetName>
+    <TargetName>stalker2-win32-dynamic-debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(static)|Win32'">
     <OutDir>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/$(ProjectName)\</OutDir>

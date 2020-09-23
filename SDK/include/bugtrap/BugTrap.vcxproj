@@ -40,8 +40,8 @@
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\..\..\..\binaries\</OutDir>
-    <IntDir>..\..\..\..\..\intermediate\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)../binaries/$(Platform)/intermediates/$(Configuration)/$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,19 +70,19 @@
       <ResourceOutputFileName>$(IntDir)$(TargetName).res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>ws2_32.lib;comctl32.lib;shlwapi.lib;version.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)D.dll</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\..\..\libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;comctl32.lib;shlwapi.lib;version.lib;wininet.lib;minizip.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SolutionDir)../binaries/$(Platform)/$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)../binaries/$(Platform)/libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>BugTrap.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(SolutionDir)../binaries/$(Platform)/$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>false</GenerateMapFile>
       <MapFileName />
       <MapExports>false</MapExports>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention />
-      <ImportLibrary>..\..\..\..\..\libraries\$(ProjectName).lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)../binaries/$(Platform)/libraries/(TargetName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>

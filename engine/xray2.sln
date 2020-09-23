@@ -89,6 +89,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_controls", "xray\wpf_co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BugTrap", "..\SDK\include\bugtrap\BugTrap.vcxproj", "{E8CF1ADA-264A-4127-86C2-FD7057D3792C}"
 	ProjectSection(ProjectDependencies) = postProject
+		{CA2604CA-A2AC-49A1-A468-8AB5A2E6CBC9} = {CA2604CA-A2AC-49A1-A468-8AB5A2E6CBC9}
 		{893279CB-0805-405F-B484-9BB728A18261} = {893279CB-0805-405F-B484-9BB728A18261}
 	EndProjectSection
 EndProject
