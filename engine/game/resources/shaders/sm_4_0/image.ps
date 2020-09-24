@@ -6,11 +6,12 @@ struct 	v2p
 };
 
 
+Texture2D t_generic0;
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Pixel
-float4 main ( float4 c : COLOR0 ) : SV_Target
+float4 main ( v2p I ) : SV_Target
 {
 //	return	tex2D	(s_base,I.tc0);
-//	return  t_base.Sample( smp_rtlinear, I.tc0 );
-	return c;
+	return  t_generic0.Sample( smp_rtlinear, I.tc0 );
 }

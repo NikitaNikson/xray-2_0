@@ -1,13 +1,55 @@
 #include "common.h"
 
+struct o_terrain
+{
+	float4 hpos 	: SV_Position;
+
+	half4  c1 		: COLOR0;
+	half4  c2 		: COLOR1;
+	
+	float2 tc1 		: TEXCOORD0;
+	float4 tex		: TEXCOORD1;
+	float4 position : TEXCOORD2;
+	half3  N 		: TEXCOORD3;
+};
+
+uniform sampler   s_tile;
+uniform Texture2D t_tile;
+
+// calculate origin of texture in 4x4 atlas
+float2 get_tile_origin(float id)
+{
+	int iid = id * 256;
+
+	float x = (iid % 4) * 0.25;
+	float y = (iid / 4) * 0.25;
+
+	return float2(x, y);
+}
+
+float2 mk_tc(float2 tc, float tile_id)
+{
+	tc = frac(tc) * 0.25 + get_tile_origin(tile_id);
+
+	return tc;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Pixel
-float4 main ( p_TL I ) : SV_Target
+f_deffer main ( o_terrain i )
 {
-	return float4(1,1,1,1); //t_base.Sample( smp_base, I.Tex0 )*I.Color;
+	f_deffer O;
+	float4 final;
 
-//	float4 res = s_base.Sample( smp_base, I.Tex0 )*I.Color;
-//	clip(res-m_AlphaRef);
-//	clip(res-0.5);
-//	return res;
+	final  = t_tile.Sample(s_tile, mk_tc(i.tc1, i.tex.r)) * i.c1.r;
+	final += t_tile.Sample(s_tile, mk_tc(i.tc1, i.tex.g)) * i.c1.g;
+	final += t_tile.Sample(s_tile, mk_tc(i.tc1, i.tex.b)) * i.c1.b;
+
+	final *= i.c2;
+
+	O.C = float4(final.xyz, 0);
+	O.Ne = float4(i.N, 1);
+	O.position = i.hpos;
+
+	return O;
 }

@@ -61,11 +61,11 @@ float4 	main		( float2 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
 #endif
 #else	//	SUN_QUALITY
 	half 	s 	= sunmask(P4);
-	#if SUN_QUALITY==1
-		s 	*= shadow		(PS);
-	#elif SUN_QUALITY==2
-		s 	*= shadowtest_sun 	(PS,tcJ);
-	#endif
+//	#if SUN_QUALITY==1
+//		s 	*= shadow		(PS);
+//	#elif SUN_QUALITY==2
+//		s 	*= shadowtest_sun 	(PS,tcJ);
+//	#endif
 #endif	//	SUN_QUALITY
 
 

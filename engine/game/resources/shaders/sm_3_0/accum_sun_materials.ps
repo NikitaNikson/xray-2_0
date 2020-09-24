@@ -35,14 +35,11 @@ float4 	main		( float2 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
 #else
 float4 	main		( float2 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
 {
-  float4 _P		= tex2D 	(s_position, 	tc);
-  half4  _N		= tex2D 	(s_normal,   	tc);
+	float4 _P		= tex2D 	(s_position, 	tc);
+	half4  _N		= tex2D 	(s_normal,   	tc);
 
 	// ----- light-model
 	half 	m	= xmaterial	;
-# ifndef USE_R2_STATIC_SUN
-			m 	= _P.w		;
-# endif
 	half4	light 	= plight_infinity (m,_P,_N,Ldynamic_dir);
 
 	// ----- shadow
@@ -64,7 +61,7 @@ float4 	main		( float2 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
 //	#if SUN_QUALITY==1
 //		s 	*= shadow		(PS);
 //	#elif SUN_QUALITY==2
-//		s 	*= shadowtest_sun 	(PS,tcJ);
+		s 	*= shadowtest_sun 	(PS,tcJ);
 //	#endif
 //#endif	//	SUN_QUALITY
 

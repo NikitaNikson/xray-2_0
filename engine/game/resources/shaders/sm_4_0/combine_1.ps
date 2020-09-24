@@ -244,11 +244,7 @@ _out main ( _input I, uint iSample : SV_SAMPLEINDEX )
 }
 */
 
-_out main( )
+float4 main( float2 tc : TEXCOORD0 ) : SV_Target0
 {
-	_out o;
-	o.low = float4(0,0,0,0);
-	o.high = float4(1,1,1,1);
-
-	return o;
+	return t_diffuse.Sample(smp_rtlinear, tc); //* t_accumulator.Sample(smp_rtlinear, tc);
 }

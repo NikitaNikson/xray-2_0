@@ -10,11 +10,21 @@ struct 	v2p
 //////////////////////////////////////////////////////////////////////////////////////////
 // Pixel
 //	Need PS 2.0 for the fog to be applied
-half4 	main_ps_2_0		( v2p I )	: COLOR
+//half4 	main		( v2p I )	: COLOR
+f_deffer	main		( v2p I )
 {
+	f_deffer O;
+
 	half4	t_base 	= tex2D		(s_base,I.tc0);
 	half3	final 	= t_base*I.c0*2;
 
 	// out
-	return  half4	(final, t_base.a*I.c0.a*I.c0.a);
+//	return  half4	(final, t_base.a*I.c0.a*I.c0.a);
+//	return	half4	(1,1,1,1);
+
+	O.C = half4	(final, t_base.a*I.c0.a*I.c0.a);
+	O.position = half4 (1, 1, 1, 0);
+	O.Ne = half4 (1, 1, 1, 0);
+
+	return O;
 }

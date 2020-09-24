@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-uniform	sampler	s_smap	: register(ps,s0);	// 2D/cube shadowmap
+uniform	sampler	s_smap;//	: register(ps,s0);	// 2D/cube shadowmap
 
 #define	KERNEL	.6f
 //#define	USE_SJITTER
