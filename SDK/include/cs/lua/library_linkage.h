@@ -6,9 +6,15 @@
 //	Description : library linkage file
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef LUA_LIBRARY_LINKAGE_H_INCLUDED
-#define LUA_LIBRARY_LINKAGE_H_INCLUDED
+#ifndef CS_LUA_LIBRARY_LINKAGE_H_INCLUDED
+#define CS_LUA_LIBRARY_LINKAGE_H_INCLUDED
 
-#pragma comment(lib, "lua.JIT.1.1.4.lib" )
+#include <cs/config.h>
 
-#endif // #ifndef LUA_LIBRARY_LINKAGE_H_INCLUDED
+#if CS_USE_LUAJIT
+#	include <luajit/library_linkage.h>
+#else // #if CS_USE_LUAJIT
+#	include <lua/library_linkage.h>
+#endif // #if CS_USE_LUAJIT
+
+#endif // #ifndef CS_LUA_LIBRARY_LINKAGE_H_INCLUDED
