@@ -1,0 +1,147 @@
+New = {
+	__merge_table_id__ = "New",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 1,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	lib_name = "base:static",
+	lightmap = true,
+	name = "New",
+	position = float3( 0, 0, 0 ),
+	range = 1,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	tool_name = "light",
+	type = "object",
+} -- New
+
+New2 = {
+	__merge_table_id__ = "New2",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 1,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	lib_name = "base:static",
+	lightmap = true,
+	name = "New2",
+	position = float3( 0, 0, 0 ),
+	range = 1,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	tool_name = "light",
+	type = "object",
+} -- New2
+
+New3 = {
+	__merge_table_id__ = "New3",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 1,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	cone = 45,
+	lib_name = "base:dynamic",
+	light_type = 2,
+	name = "New3",
+	position = float3( 0, 0, 0 ),
+	range = 1,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	texture = "",
+	tool_name = "light",
+	type = "object",
+	volumetric = false,
+} -- New3
+
+light = {
+	__merge_table_id__ = "light",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 1,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	cone = 45,
+	lib_name = "base:dynamic",
+	light_type = 2,
+	name = "light",
+	position = float3( 0, 0, 0 ),
+	range = 1,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	texture = "",
+	tool_name = "light",
+	type = "object",
+	volumetric = false,
+} -- light
+
+light_static = {
+	__merge_table_id__ = "light_static",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 1,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	lib_name = "base:static",
+	lightmap = true,
+	name = "light_static",
+	position = float3( 0, 0, 0 ),
+	range = 1,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	tool_name = "light",
+	type = "object",
+} -- light_static
+
+light_volumetric = {
+	__merge_table_id__ = "light",
+	aabb_max = float3( 0.5, 0.5, 0.5 ),
+	aabb_min = float3( -0.5, -0.5, -0.5 ),
+	brightness = 2,
+	cast_shadow = true,
+	color = float4( 1, 1, 1, 1 ),
+	cone = 80,
+	lib_name = "base:dynamic",
+	light_type = 2,
+	name = "light_volumetric",
+	position = float3( 0, 0, 0 ),
+	range = 100,
+	restrictions = {
+		id = "id",
+		["library name"] = "library name",
+	}, -- restrictions
+
+	rotation = float3( 0, 0, 0 ),
+	scale = float3( 1, 1, 1 ),
+	texture = "",
+	tool_name = "light",
+	type = "object",
+	volumetric = true,
+} -- light_volumetric
+

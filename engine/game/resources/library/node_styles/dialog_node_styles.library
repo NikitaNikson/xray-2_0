@@ -1,0 +1,19 @@
+
+	dialog_node = {
+		name = "dialog_node",
+		width = 64,
+		height = 64,
+		
+		connection_styles = {
+			{
+				name = "input1",
+				dir = "input",
+				align = "center"
+			},
+			{
+				name = "output2",
+				dir = "output",
+				align = "center"
+			}
+		}
+	}

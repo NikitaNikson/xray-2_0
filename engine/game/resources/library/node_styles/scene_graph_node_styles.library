@@ -1,0 +1,36 @@
+
+	test = {
+		name = "scene_graph_node",
+		active_color = "Red",
+		highlight_color = "Blue",
+		inactive_color = "Green",
+		view_mode = "brief",
+
+		horiz_align = "c",
+		vert_align = "b",
+
+		connection_styles = {
+			{
+				name = "child",
+				dir = "input",
+				align = "left",
+				x = 5, y = 5,
+				width = 64, height = 64,
+
+				active_color = "Gold",
+				highlight_color = "Aqua",
+				inactive_color = "Info"
+			},
+			{
+				name = "parent",
+				dir = "output",
+				align = "right",
+				x = 5, y = 5,
+				width = 64, height = 64,
+
+				active_color = "Gold",
+				highlight_color = "Aqua",
+				inactive_color = "Info"
+			}	
+		}
+	}

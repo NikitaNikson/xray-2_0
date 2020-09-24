@@ -1,0 +1,10 @@
+mounts = {
+		resources = {
+			virtual_path = "resources",
+			physical_path = "../../resources"
+		},
+		converted = {
+			virtual_path = "resources.converted",
+			physical_path = "../../resources.converted"
+		}
+}

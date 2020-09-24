@@ -1,0 +1,11 @@
+
+	terrain_64x64 = {
+		name = "terrain_64x64",
+		lib_name = "base:terrain_node",
+		position = float3(0,0,0),
+		rotation = float3(0,0,0),
+		cell_size = 2,
+		size = 64,
+		textures = {"det/det_grass","det/det_asphalt","det/det_earth","det/det_snow"}
+--		textures = {"testdetail","testdetail2","testdetail3","testdetail4"}
+	}

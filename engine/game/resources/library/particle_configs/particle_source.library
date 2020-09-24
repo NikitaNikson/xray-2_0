@@ -1,0 +1,18 @@
+
+	particle_nodes = {
+	
+		node1 = {
+			name = "node1",
+			type = "float",
+			image_type = 0,
+
+			properties = {}
+		}
+	},
+	
+	particle_toolbar = {
+		{
+			name = "toolbar1",
+			children = {"node1"}
+		}
+	}
