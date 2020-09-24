@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luabind.0.8.1", "luabind.0.8.1.vcxproj", "{CC52E0B3-CC35-4934-9302-035B748F3F2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug (single DLL)|Win32 = Debug (single DLL)|Win32
+		Debug (single DLL)|x64 = Debug (single DLL)|x64
+		Debug (static)|Win32 = Debug (static)|Win32
+		Debug (static)|x64 = Debug (static)|x64
+		Debug .NET|Win32 = Debug .NET|Win32
+		Debug .NET|x64 = Debug .NET|x64
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		PS3 GCC Debug|Win32 = PS3 GCC Debug|Win32
+		PS3 GCC Debug|x64 = PS3 GCC Debug|x64
+		PS3 GCC Master Gold|Win32 = PS3 GCC Master Gold|Win32
+		PS3 GCC Master Gold|x64 = PS3 GCC Master Gold|x64
+		PS3 GCC Release|Win32 = PS3 GCC Release|Win32
+		PS3 GCC Release|x64 = PS3 GCC Release|x64
+		PS3 SNC Debug|Win32 = PS3 SNC Debug|Win32
+		PS3 SNC Debug|x64 = PS3 SNC Debug|x64
+		PS3 SNC Master Gold|Win32 = PS3 SNC Master Gold|Win32
+		PS3 SNC Master Gold|x64 = PS3 SNC Master Gold|x64
+		PS3 SNC Release|Win32 = PS3 SNC Release|Win32
+		PS3 SNC Release|x64 = PS3 SNC Release|x64
+		Release (single DLL)|Win32 = Release (single DLL)|Win32
+		Release (single DLL)|x64 = Release (single DLL)|x64
+		Release (static)|Win32 = Release (static)|Win32
+		Release (static)|x64 = Release (static)|x64
+		Release .NET|Win32 = Release .NET|Win32
+		Release .NET|x64 = Release .NET|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (single DLL)|Win32.ActiveCfg = Debug (single DLL)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (single DLL)|Win32.Build.0 = Debug (single DLL)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (single DLL)|x64.ActiveCfg = Debug (single DLL)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (single DLL)|x64.Build.0 = Debug (single DLL)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (static)|Win32.ActiveCfg = Debug (static)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (static)|Win32.Build.0 = Debug (static)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (static)|x64.ActiveCfg = Debug (static)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug (static)|x64.Build.0 = Debug (static)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug .NET|Win32.ActiveCfg = Debug .NET|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug .NET|Win32.Build.0 = Debug .NET|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug .NET|x64.ActiveCfg = Debug .NET|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug .NET|x64.Build.0 = Debug .NET|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug|Win32.Build.0 = Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug|x64.ActiveCfg = Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Debug|x64.Build.0 = Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Debug|Win32.ActiveCfg = PS3 GCC Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Debug|Win32.Build.0 = PS3 GCC Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Debug|x64.ActiveCfg = PS3 GCC Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Debug|x64.Build.0 = PS3 GCC Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Master Gold|Win32.ActiveCfg = PS3 GCC Master Gold|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Master Gold|Win32.Build.0 = PS3 GCC Master Gold|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Master Gold|x64.ActiveCfg = PS3 GCC Master Gold|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Master Gold|x64.Build.0 = PS3 GCC Master Gold|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Release|Win32.ActiveCfg = PS3 GCC Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Release|Win32.Build.0 = PS3 GCC Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Release|x64.ActiveCfg = PS3 GCC Release|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 GCC Release|x64.Build.0 = PS3 GCC Release|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Debug|Win32.ActiveCfg = PS3 SNC Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Debug|Win32.Build.0 = PS3 SNC Debug|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Debug|x64.ActiveCfg = PS3 SNC Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Debug|x64.Build.0 = PS3 SNC Debug|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Master Gold|Win32.ActiveCfg = PS3 SNC Master Gold|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Master Gold|Win32.Build.0 = PS3 SNC Master Gold|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Master Gold|x64.ActiveCfg = PS3 SNC Master Gold|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Master Gold|x64.Build.0 = PS3 SNC Master Gold|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Release|Win32.ActiveCfg = PS3 SNC Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Release|Win32.Build.0 = PS3 SNC Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Release|x64.ActiveCfg = PS3 SNC Release|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.PS3 SNC Release|x64.Build.0 = PS3 SNC Release|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (single DLL)|Win32.ActiveCfg = Release (single DLL)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (single DLL)|Win32.Build.0 = Release (single DLL)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (single DLL)|x64.ActiveCfg = Release (single DLL)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (single DLL)|x64.Build.0 = Release (single DLL)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (static)|Win32.ActiveCfg = Release (static)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (static)|Win32.Build.0 = Release (static)|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (static)|x64.ActiveCfg = Release (static)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release (static)|x64.Build.0 = Release (static)|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release .NET|Win32.ActiveCfg = Release .NET|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release .NET|Win32.Build.0 = Release .NET|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release .NET|x64.ActiveCfg = Release .NET|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release .NET|x64.Build.0 = Release .NET|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release|Win32.ActiveCfg = Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release|Win32.Build.0 = Release|Win32
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release|x64.ActiveCfg = Release|x64
+		{CC52E0B3-CC35-4934-9302-035B748F3F2C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

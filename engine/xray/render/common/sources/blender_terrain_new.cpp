@@ -10,7 +10,7 @@
 namespace xray {
 namespace render{
 
-blender_terrain_NEW::blender_terrain_NEW(): blender_deffer_base(true, true, true)
+blender_terrain_NEW::blender_terrain_NEW(): blender_deffer_base(false, false, false)
 {
 	m_blend = true;
 	m_desc.m_version = 1;
@@ -29,7 +29,8 @@ void blender_terrain_NEW::compile(blender_compiler& compiler, const blender_comp
 				.set_z_test			(TRUE)
 				.set_stencil		(TRUE,D3DCMP_ALWAYS,0x01,0xff,0xff,D3DSTENCILOP_KEEP,D3DSTENCILOP_REPLACE,D3DSTENCILOP_KEEP)
 				.set_alpha_blend	(FALSE)
-				.def_sampler		("s_tile", options.tex_list[0])
+				.def_sampler		("s_tile1", options.tex_list[0])
+				.def_sampler		("s_tile2", options.tex_list[1])
 			.end_pass()
 		.end_technique();
 

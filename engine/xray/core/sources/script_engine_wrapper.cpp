@@ -24,19 +24,19 @@ void script_engine_wrapper::log							( cs::message_initiator const &message_ini
 
 	logging::verbosity verbosity	= logging::trace;
 	switch ( message_type ) {
-	case cs::core::message_type::msg_error: {
+		case cs::core::message_type_error : {
 			verbosity		= logging::error;
 			break;
 		}
-		case cs::core::message_type::msg_warning: {
+		case cs::core::message_type_warning : {
 			verbosity		= logging::warning;
 			break;
 		}
-		case cs::core::message_type::msg_info: {
+		case cs::core::message_type_information : {
 			verbosity		= logging::info;
 			break;
 		}
-		case cs::core::message_type::msg_output: {
+		case cs::core::message_type_output : {
 			verbosity		= logging::debug;
 			break;
 		}
@@ -51,7 +51,7 @@ pcstr script_engine_wrapper::get_file_name	( int const file_type, pcstr const fi
 	pcstr					extension = "";
 	pcstr					folder = "";
 	switch (file_type) {
-		case (0 /*cs::script::engine::file_type_script*/) : {
+		case (cs::script::engine::file_type_script) : {
 			if ( add_extension )
 				extension	= ".lua";
 
@@ -61,14 +61,14 @@ pcstr script_engine_wrapper::get_file_name	( int const file_type, pcstr const fi
 				folder		= m_resource_path;
 			break;
 		}
-		case (1 /*cs::script::engine::file_type_script_chunk*/) : {
+		case (cs::script::engine::file_type_script_chunk) : {
 			if ( add_extension )
 				extension	= ".lua_chunk";
 
 			folder			= m_resource_path;
 			break;
 		}
-		case (2 /*cs::script::engine::file_type_config*/) : {
+		case (cs::script::engine::file_type_config) : {
 			UNREACHABLE_CODE();
 			break;
 		}

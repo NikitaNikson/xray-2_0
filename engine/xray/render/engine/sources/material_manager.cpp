@@ -6,44 +6,10 @@
 
 #include "pch.h"
 #include <xray/render/engine/material_manager.h>
+#include <xray/thm.h>
 
 namespace xray {
 namespace render_dx10 {
-
-
-#define THM_CHUNK_VERSION				0x0810
-#define THM_CHUNK_DATA					0x0811
-#define THM_CHUNK_TEXTUREPARAM			0x0812
-#define THM_CHUNK_TYPE					0x0813
-#define THM_CHUNK_TEXTURE_TYPE			0x0814
-#define THM_CHUNK_DETAIL_EXT			0x0815
-#define THM_CHUNK_MATERIAL				0x0816
-#define THM_CHUNK_BUMP					0x0817
-#define THM_CHUNK_EXT_NORMALMAP			0x0818
-#define THM_CHUNK_FADE_DELAY			0x0819
-
-enum
-{
-	ttImage	= 0,
-	ttCubeMap,
-	ttBumpMap,
-	ttNormalMap,
-	ttTerrain,
-};
-
-enum
-{
-	tbmResereved	= 0,
-	tbmNone,
-	tbmUse,
-	tbmUseParallax,
-};
-
-enum
-{
-	flDiffuseDetail		= (1<<23),
-	flBumpDetail		= (1<<26),
-};
 
 float r__dtex_range = 50;
 

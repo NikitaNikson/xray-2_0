@@ -58,7 +58,7 @@ void				texture_document::fill_property_holder					(texture_options* options, pr
 											property_holder::refresh_grid_on_change); 
 
 	}
-	else if(options->type == texture_options::terrain)
+	else /*if(options->type == texture_options::terrain)
 	{
 		holder->add_string		("terrain bump", "Terrain", "", gcnew String(options->bump_name.c_str()), gcnew string_getter_type(wrapper, &texture_options_wrapper::get_bump_name), gcnew string_setter_type(wrapper, &texture_options_wrapper::set_bump_name), 
 											gcnew external_editor_event_handler(this, &texture_document::external_editor_launch),
@@ -83,7 +83,7 @@ void				texture_document::fill_property_holder					(texture_options* options, pr
 											property_holder::no_password_char,
 											property_holder::refresh_grid_on_change); 
 	}
-	else if(options->type == texture_options::type_2d)
+	else if(options->type == texture_options::type_2d)*/
 	{
 		holder->add_string		("alpha blend", "2D Part", "", wrapper->m_alpha_mode_list[(int)options->alpha_blend_mode]->ToString() , gcnew string_getter_type(wrapper, &texture_options_wrapper::get_alpha_blend), gcnew string_setter_type(wrapper, &texture_options_wrapper::set_alpha_blend), 
 											wrapper->m_alpha_mode_list,
@@ -108,10 +108,31 @@ void				texture_document::fill_property_holder					(texture_options* options, pr
 											property_holder::do_not_notify_parent_on_change,
 											property_holder::no_password_char,
 											property_holder::do_not_refresh_grid_on_change);
+
+		holder->add_float		("material", "2D Part", "", options->detail_scale, gcnew float_getter_type(wrapper, &texture_options_wrapper::get_material_id), gcnew float_setter_type(wrapper, &texture_options_wrapper::set_material_id),
+											(is_use_by_selector) ? property_holder::property_read_only : property_holder::property_read_write,
+											property_holder::do_not_notify_parent_on_change,
+											property_holder::no_password_char,
+											property_holder::do_not_refresh_grid_on_change);
+/*
 		holder->add_string		("normal map", "2D Part", "", gcnew String(options->normal_name.c_str()), gcnew string_getter_type(wrapper, &texture_options_wrapper::get_normal_name), gcnew string_setter_type(wrapper, &texture_options_wrapper::set_normal_name), 
 											gcnew external_editor_event_handler(this, &texture_document::external_editor_launch),
 											"_nmap",
 											(is_use_by_selector)?property_holder::property_read_only:property_holder::property_read_write,
+											property_holder::do_not_notify_parent_on_change,
+											property_holder::no_password_char,
+											property_holder::do_not_refresh_grid_on_change);
+*/
+		holder->add_string		("detail texture", "Detail", "", gcnew String(options->detail_name.c_str()), gcnew string_getter_type(wrapper, &texture_options_wrapper::get_detail_name), gcnew string_setter_type(wrapper, &texture_options_wrapper::set_detail_name),
+											gcnew external_editor_event_handler(this, &texture_document::external_editor_launch),
+											"",
+											(is_use_by_selector) ? property_holder::property_read_only : property_holder::property_read_write,
+											property_holder::do_not_notify_parent_on_change,
+											property_holder::no_password_char,
+											property_holder::do_not_refresh_grid_on_change);
+
+		holder->add_float		("detail scale", "Detail", "", options->detail_scale, gcnew float_getter_type(wrapper, &texture_options_wrapper::get_detail_scale), gcnew float_setter_type(wrapper, &texture_options_wrapper::set_detail_scale),
+											(is_use_by_selector) ? property_holder::property_read_only : property_holder::property_read_write,
 											property_holder::do_not_notify_parent_on_change,
 											property_holder::no_password_char,
 											property_holder::do_not_refresh_grid_on_change);
@@ -120,13 +141,13 @@ void				texture_document::fill_property_holder					(texture_options* options, pr
 
 void				texture_document::external_editor_launch					(Object^ sender, RoutedEventArgs ^ )
 {
-#if 0
+#if 1
 	grid_property^ prop = safe_cast<grid_property^>(sender);
 	
 	resource_selector_ptr selector(
 		static_cast<resource_editor_base^>(this->m_editor)->world,
-		resource_selector::resource_type::Texture,
-		safe_cast<Flobbster::Windows::Forms::PropertyBag::PropertySpecDescriptor^>(prop->descriptors[0])->Item->Tag
+		resource_selector::resource_type::Texture//,
+		//safe_cast<Flobbster::Windows::Forms::PropertyBag::PropertySpecDescriptor^>(prop->descriptors[0])->Item->Tag
 	);
 
 	selector->name = "texture_editor";

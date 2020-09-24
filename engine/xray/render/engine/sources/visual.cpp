@@ -60,7 +60,7 @@ void render_visual::load( memory::chunk_reader& chunk)
 		ASSERT					( ( index_count % 3) == 0, "invalid index count[%d]", index_count);
 		reader.r				( indices, reader.length(), reader.length());
 
-//		m_collision_geom		= &*collision::create_triangle_mesh_geometry( xray::render::g_allocator, vertices, vertex_count, indices, index_count);
+		m_collision_geom		= &*collision::create_triangle_mesh_geometry( xray::render::g_allocator, vertices, vertex_count, indices, index_count);
 
 		FREE( vertices);
 		FREE( indices);

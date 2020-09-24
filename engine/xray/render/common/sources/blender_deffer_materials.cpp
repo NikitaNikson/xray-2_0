@@ -11,7 +11,7 @@ namespace xray {
 namespace render {
 
 
-blender_deffer_materials::blender_deffer_materials( u32 material_index): blender_deffer_base( false, false, false),
+blender_deffer_materials::blender_deffer_materials( u32 material_index): blender_deffer_base( true, true, true),
 m_material_ind (material_index)
 {
 	m_desc.m_version = 1;

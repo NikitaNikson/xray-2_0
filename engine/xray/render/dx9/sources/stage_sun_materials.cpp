@@ -13,6 +13,11 @@
 #include <xray/render/common/sources/shader_manager.h>
 #include <xray/render/common/sources/lights_db.h>
 
+//////
+#include "model_manager.h"
+#include "visual.h"
+#include <xray/render/common/sources/terrain.h>
+
 namespace xray {
 namespace render{
 
@@ -26,7 +31,7 @@ namespace
 	float		ps_r2_sun_depth_far_scale	= 1.00000f;			// 1.00001f
 	float		ps_r2_sun_depth_far_bias	= 0.00000f;			// -0.0000f
 	float		ps_r2_sun_depth_near_scale	= 1.00001f;			// 1.00001f
-	float		ps_r2_sun_depth_near_bias	= -0.00004f;		// -0.00005f
+	float		ps_r2_sun_depth_near_bias	= -0.0004f;		// -0.00005f
 	float		ps_r2_sun_lumscale			= 1.0f;				// 1.0f
 	float		ps_r2_sun_lumscale_hemi		= 1.0f;				// 1.0f
 	float		ps_r2_sun_lumscale_amb		= 1.0f;
@@ -296,7 +301,7 @@ void stage_sun_materials::execute( sun_cascade cascade)
 {
 	PIX_EVENT(stage_sun_materials);
 
-	set_rt	(m_context->m_rt_accumulator, 0, 0, m_context->m_base_zb);
+	// set_rt	(m_context->m_rt_accumulator, 0, 0, m_context->m_base_zb);
 	backend& be = backend::get_ref();
 
 	//// Choose normal code-path or filtered
@@ -311,6 +316,143 @@ void stage_sun_materials::execute( sun_cascade cascade)
 	
 	if (!sun)
 		return;
+
+	// shadowmap...
+	set_rt(m_context->m_rt_color_null, 0, 0, m_context->m_rt_smap.c_ptr()->get_target_view());
+	backend::get_ref().clear(D3DCLEAR_ZBUFFER, 0x00000000, 1.0, 0);
+/*
+	float4x4 frustum = mul4x4( 
+		m_context->get_v(),
+		math::create_projection(math::deg2rad(67.5), 1.33, 0.1, OLES_SUN_LIMIT_27_01_07)
+	);
+
+	m_context->push_set_w(float4x4().identity());
+	m_context->push_set_v(float4x4().identity());//math::create_camera_at(float3(20, 5, 10), float3(20, 9, -40), float3(0, 1, 0)));
+	m_context->push_set_p(calc_sun_matrix(frustum, sun->direction));//math::create_projection(math::deg2rad(90.f), 1.0f, 0.5f, 100.f));
+
+	float4x4 sun_matrix = calc_sun_matrix(frustum, sun->direction);
+*/
+
+	float3 at = m_context->get_view_pos() + m_context->get_view_dir()*50.f;
+	float3 from = at - sun->direction*150.f;
+
+	float4x4 sun_matrix = mul4x4(
+		math::create_camera_at(from, at, float3(0,1,0)),
+		math::create_projection_orthogonal(100.f, 100.f, 0.5f, 1000.f)
+	);
+
+	m_context->push_set_w(float4x4().identity());
+	m_context->push_set_v(float4x4().identity());
+	m_context->push_set_p(sun_matrix);
+
+	//////
+	if (model_manager::get_ref().get_draw_editor())
+	{
+		model_manager::Editor_Visuals& dynamic_visuals = model_manager::get_ref().get_editor_visuals();
+
+		model_manager::Editor_Visuals::iterator	it_d = dynamic_visuals.begin(),
+			end_d = dynamic_visuals.end();
+
+		backend::get_ref().set_cull_mode(D3DCULL_CCW);
+		backend::get_ref().set_color_write_enable();
+
+		for (; it_d != end_d; ++it_d)
+		{
+			render_visual* visual = static_cast<render_visual*>(&(*(it_d->visual)));
+			ASSERT(visual);
+			if (!it_d->beditor_chain || it_d->system_object)
+				continue;
+
+			m_context->set_w(it_d->transform);
+			visual->render();
+		}
+
+		////// Rendering terrain cells ///////////////////////////////////////////
+
+		terrain::cells const& terrain_cells = terrain::get_ref().get_editor_cells();
+
+		terrain::cells::const_iterator it_tr = terrain_cells.begin();
+		terrain::cells::const_iterator en_tr = terrain_cells.end();
+
+		m_context->set_w(math::float4x4().identity());
+
+		for (; it_tr != en_tr; ++it_tr)
+			it_tr->visual->render();
+
+	}
+
+	vector<render_visual*> m_visuals;
+	render_queue<key_rq, queue_item, key_rq_sort_desc>	m_static_rq;
+	if (model_manager::get_ref().get_draw_game())
+	{
+		model_manager::Editor_Visuals& dynamic_visuals = model_manager::get_ref().get_editor_visuals();
+
+		model_manager::Editor_Visuals::iterator	it_d = dynamic_visuals.begin(),
+			end_d = dynamic_visuals.end();
+
+		backend::get_ref().set_cull_mode(D3DCULL_CCW);
+		backend::get_ref().set_color_write_enable();
+
+		for (; it_d != end_d; ++it_d)
+		{
+			render_visual* visual = static_cast<render_visual*>(&(*(it_d->visual)));
+			ASSERT(visual);
+			if (it_d->beditor_chain || it_d->system_object)
+				continue;
+
+			m_context->set_w(it_d->transform);
+			visual->render();
+		}
+
+		////// Rendering terrain cells ///////////////////////////////////////////
+		terrain::cells const& terrain_cells = terrain::get_ref().get_game_cells();
+
+		terrain::cells::const_iterator it_tr = terrain_cells.begin();
+		terrain::cells::const_iterator en_tr = terrain_cells.end();
+
+		m_context->set_w(math::float4x4().identity());
+
+		for (; it_tr != en_tr; ++it_tr)
+			it_tr->visual->render();
+
+		model_manager::get_ref().select_visuals(m_context->get_view_pos(), m_context->get_vp()/*m_context->m_full_xform*/, m_visuals);
+		vector<render_visual*>::iterator	it = m_visuals.begin(),
+			end = m_visuals.end();
+
+		for (; it != end; ++it)
+		{
+			render_visual* visual = *it;
+			//ASSERT(visual);
+			if (!visual)
+				continue;
+
+			if (!visual->m_shader)
+				continue;
+
+			key_rq key;
+			ref_pass pass = visual->m_shader->m_sh_techniques[0]->m_passes[0];
+			queue_item item = { pass, visual, 0 };
+
+			key.priority = pass->get_priority();
+			m_static_rq.add_dip(key, item);
+		}
+
+		//CHK_DX(HW.pDevice->SetRenderState(D3DRS_TWOSIDEDSTENCILMODE,FALSE));
+		backend::get_ref().set_stencil(TRUE, D3DCMP_ALWAYS, 0x01, 0xff, 0xff, D3DSTENCILOP_KEEP, D3DSTENCILOP_REPLACE, D3DSTENCILOP_KEEP);
+		backend::get_ref().set_cull_mode(D3DCULL_CCW);
+		backend::get_ref().set_color_write_enable();
+
+		m_static_rq.render(true);
+	}
+
+	m_visuals.clear();
+	/////
+
+	m_context->pop_p();
+	m_context->pop_v();
+	m_context->pop_w();
+
+	set_rt(m_context->m_rt_accumulator, 0, 0, m_context->m_base_zb);
 
 	// Common calc for quad-rendering
 	u32		offset;
@@ -356,27 +498,27 @@ void stage_sun_materials::execute( sun_cascade cascade)
 		be.set_color_write_enable()	;
 
 		// texture adjustment matrix
-		//float		tc_adj = 0.5f/float(hw_wrapper::get_ref().o.smap_size);
-		//float		range = (cascade_near==cascade) ? ps_r2_sun_depth_near_scale : ps_r2_sun_depth_far_scale;
-		//float		bias  = (cascade_near==cascade) ? -ps_r2_sun_depth_near_bias : ps_r2_sun_depth_far_bias;
-		//float4x4	smap_texel_adjust = 
-		//{
-		//	float4(0.5f,          0.0f,          0.0f,  0.0f),
-		//	float4(0.0f,          -0.5f,	     0.0f,  0.0f),
-		//	float4(0.0f,          0.0f,          range, 0.0f),
-		//	float4(0.5f + tc_adj, 0.5f + tc_adj, bias,  1.0f)
-		//};
+		float		tc_adj = 0.5f/float(hw_wrapper::get_ref().o.smap_size);
+		float		range = (cascade_near==cascade) ? ps_r2_sun_depth_near_scale : ps_r2_sun_depth_far_scale;
+		float		bias  = (cascade_near==cascade) ? ps_r2_sun_depth_near_bias : ps_r2_sun_depth_far_bias;
+		float4x4	smap_texel_adjust = 
+		{
+			float4(0.5f,          0.0f,          0.0f,  0.0f),
+			float4(0.0f,          -0.5f,	     0.0f,  0.0f),
+			float4(0.0f,          0.0f,          range, 0.0f),
+			float4(0.5f + tc_adj, 0.5f + tc_adj, bias,  1.0f)
+		};
 
 		// compute xforms
 		//FPU::m64r			();
 
 		// shadow xform
-		// 	float4x4	m_shadow;
-		// 	float4x4	xf_project;
-		// 	
-		// 	xf_project = mul4x4(sun->X.D.combine, smap_texel_adjust);
-		// 	//m_shadow   = mul4x4(m_context->m_mat_view_inv, xf_project);
-		// 	m_shadow   = mul4x4(m_context->get_inv_v(), xf_project);
+		float4x4 m_shadow;
+
+//		m_shadow = mul4x4(smap_texel_adjust, math::create_projection(math::deg2rad(90.f), 1.0f, 0.5f, 100.f));
+//		m_shadow = mul4x4(m_shadow, mul4x4(math::create_camera_at(float3(20, 5, 10), float3(20, 9, -40), float3(0, 1, 0)), m_context->get_inv_v()));
+
+		m_shadow = mul4x4(mul4x4( m_context->get_inv_v(), sun_matrix), smap_texel_adjust);
 
 		// tsm-bias
 		//if ( (technique_near_cascade==technique_id) && (hw_wrapper::get_ref().o.hw_smap) )
@@ -439,7 +581,7 @@ void stage_sun_materials::execute( sun_cascade cascade)
 
 		be.set_c("Ldynamic_dir", sun_dir.x, sun_dir.y, sun_dir.z, 0);
 		be.set_c("Ldynamic_color", sun_clr.x, sun_clr.y, sun_clr.z, sun_spec);
-		//	be.set_c("m_shadow", m_shadow);
+		be.set_c("m_shadow", m_shadow);
 		be.set_c("sunmask", m_clouds_shadow);
 
 		// nv-DBT

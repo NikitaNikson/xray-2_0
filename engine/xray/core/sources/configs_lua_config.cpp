@@ -8,7 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "pch.h"
-#include "script_engine_wrapper.h"
+//#include "script_engine_wrapper.h"
 #include <boost/crc.hpp>
 #include <xray/configs.h>
 #include <xray/strings_stream.h>
@@ -25,21 +25,20 @@
 #	define CS_SCRIPT_USE_DEBUG_LIBRARY
 #endif // #ifdef DEBUG
 
-#include <cs/lua/library_linkage.h>
-//#include <luabind/library_linkage.h>
-#include <cs/core/library_linkage.h>
-#include <cs/script/library_linkage.h>
-//#include <cs/core/memory.h>
-#include "memory.h"
+#include <luajit/library_linkage.h>
+#include <luabind/library_linkage.h>
+#include <luabind/luabind.hpp>
+#include <luabind/lua_include.hpp>
 
-using xray::core::script_engine_wrapper;
+//using xray::core::script_engine_wrapper;
 
-static xray::uninitialized_reference<script_engine_wrapper>		s_wrapper;
+//static xray::uninitialized_reference<script_engine_wrapper>		s_wrapper;
 static xray::uninitialized_reference<xray::threading::mutex>	s_mutex;
 
-static cs::script::world* s_world	= 0;
 static pcstr s_super_tables_id		= "__super_tables__";
 static pcstr s_super_tables_ids_id	= "__super_tables";
+
+static lua_State * s_virtual_machine;
 
 namespace xray {
 namespace core {
@@ -49,24 +48,79 @@ namespace configs {
 } // namespace core
 } // namespace xray
 
-
-static void* CS_CALL allocate		( luabind::memory_allocation_function_parameter, void const* current_buffer, size_t const needed_size )
+static void* allocate(luabind::memory_allocation_function_parameter, void const* current_buffer, size_t const needed_size)
 {
-	xray::core::configs::g_lua_allocator.user_current_thread_id	( );
+	xray::core::configs::g_lua_allocator.user_current_thread_id();
 
-	pvoid buffer					= const_cast<pvoid>(current_buffer);
-	if ( !needed_size ) {
-		XRAY_FREE_IMPL				( xray::core::configs::g_lua_allocator, buffer );
-		return						0;
+	pvoid buffer = const_cast<pvoid>(current_buffer);
+	if (!needed_size) 
+	{
+		XRAY_FREE_IMPL(xray::core::configs::g_lua_allocator, buffer);
+		return 0;
 	}
 
-	if ( !current_buffer )
-		return						XRAY_MALLOC_IMPL( xray::core::configs::g_lua_allocator, (u32)needed_size, "lua" );
+	if (!current_buffer)
+		return XRAY_MALLOC_IMPL(xray::core::configs::g_lua_allocator, (u32)needed_size, "lua");
 
-	return							XRAY_REALLOC_IMPL( xray::core::configs::g_lua_allocator, buffer, (u32)needed_size, "lua" );
+	return XRAY_REALLOC_IMPL(xray::core::configs::g_lua_allocator, buffer, (u32)needed_size, "lua");
 }
 
-#include <luabind/lua_include.hpp>
+static int lua_error_callback(lua_State *state)
+{
+	LOG_ERROR("LUA ERROR! %s", lua_tostring(s_virtual_machine, -1));
+	DEBUG_BREAK();
+
+	return 0;
+}
+
+static void luabind_error_callback(lua_State *state)
+{
+	LOG_ERROR("LUA ERROR!");
+	DEBUG_BREAK();
+}
+
+static bool execute_script(pcstr buffer, size_t length, pcstr where)
+{
+	lua_pushstring(s_virtual_machine, "modules");
+	lua_gettable(s_virtual_machine, LUA_GLOBALSINDEX);
+
+	lua_pushstring(s_virtual_machine, where);
+	lua_gettable(s_virtual_machine, -2);
+
+	// create table if not exists
+	if(lua_isnil(s_virtual_machine, -1))
+	{
+		lua_pop(s_virtual_machine, 1);
+
+		lua_newtable(s_virtual_machine);
+		lua_pushstring(s_virtual_machine, where);
+		lua_pushvalue(s_virtual_machine, -2);
+		lua_settable(s_virtual_machine, -4);
+
+		// metatable
+		lua_newtable(s_virtual_machine);
+		lua_pushvalue(s_virtual_machine, LUA_GLOBALSINDEX);
+		lua_setfield(s_virtual_machine, -2, "__index");
+		lua_setmetatable(s_virtual_machine, -2);
+	}
+
+	if(luaL_loadbuffer(s_virtual_machine, buffer, length, where) != 0)
+	{
+		LOG_ERROR("LUA ERROR: %s", lua_tostring(s_virtual_machine, -1));
+		lua_pop(s_virtual_machine, 3);
+		return false;
+	}
+
+	// set environment
+	lua_pushvalue(s_virtual_machine, -2);
+	lua_setfenv(s_virtual_machine, -2);
+
+	lua_call(s_virtual_machine, 0, 0);
+
+	lua_pop(s_virtual_machine, 2);
+
+	return true;
+}
 
 static void export_classes			( );
 
@@ -76,15 +130,15 @@ public:
 	{
 		XRAY_UNREFERENCED_PARAMETER	( check_for_null );
 		s_mutex->lock				( );
-//		m_top						= lua_gettop( s_world->virtual_machine() );
+		m_top						= lua_gettop( s_virtual_machine );
 //		R_ASSERT					( !check_for_null || !m_top, "%d", m_top );
 	}
 
 	inline	~lua_stack_guard		( )
 	{
-//		int const top				= lua_gettop( s_world->virtual_machine() );
-//		XRAY_UNREFERENCED_PARAMETER	( top );
-//		R_ASSERT_CMP				( m_top, ==, top );
+		int const top				= lua_gettop( s_virtual_machine );
+		XRAY_UNREFERENCED_PARAMETER	( top );
+		R_ASSERT_CMP				( m_top, ==, top );
 		s_mutex->unlock				( );
 	}
 
@@ -114,16 +168,24 @@ namespace configs {
 
 void initialize						( pcstr resource_path, pcstr underscore_G_path )
 {
-	/*
-	cs::core::memory_allocator		( &allocate, 0 );
+	XRAY_UNREFERENCED_PARAMETERS(resource_path, underscore_G_path);
 
-	XRAY_CONSTRUCT_REFERENCE		( s_wrapper, script_engine_wrapper ) ( resource_path, underscore_G_path );
+	luabind::allocator = allocate;
+	luabind::allocator_parameter = 0;
+
+//	XRAY_CONSTRUCT_REFERENCE		( s_wrapper, script_engine_wrapper ) ( resource_path, underscore_G_path );
 	XRAY_CONSTRUCT_REFERENCE		( s_mutex, threading::mutex );
 
-	R_ASSERT						( !s_world );
-	s_world							= cs_script_create_world( *s_wrapper );
-	lua_pop							( s_world->virtual_machine(), lua_gettop( s_world->virtual_machine() ) );
-	*/
+	s_virtual_machine = lua_open();
+	luabind::open(s_virtual_machine);
+
+	luabind::set_error_callback(luabind_error_callback);
+	lua_atpanic(s_virtual_machine, lua_error_callback);
+
+	lua_pushstring(s_virtual_machine, "modules");
+	lua_newtable(s_virtual_machine);
+	lua_settable(s_virtual_machine, LUA_GLOBALSINDEX);
+
 	lua_stack_guard					guard;
 
 	export_classes					();
@@ -131,12 +193,14 @@ void initialize						( pcstr resource_path, pcstr underscore_G_path )
 
 void finalize						( )
 {
-	R_ASSERT						( s_world );
-	cs_script_destroy_world			( s_world );
-	R_ASSERT						( !s_world );
+//	R_ASSERT						( s_world );
+//	cs_script_destroy_world			( s_world );
+//	R_ASSERT						( !s_world );
 
 	XRAY_DESTROY_REFERENCE			( s_mutex );
-	XRAY_DESTROY_REFERENCE			( s_wrapper );
+//	XRAY_DESTROY_REFERENCE			( s_wrapper );
+
+	lua_close(s_virtual_machine);
 }
 
 } // namespace configs
@@ -144,16 +208,16 @@ void finalize						( )
 } // namespace xray
 
 #include <xray/configs.h>
-
+/*
 #ifdef NDEBUG
 namespace std {
-	inline void xray_terminate()
+	inline void terminate()
 	{
 		UNREACHABLE_CODE();
 	}
 } // namespace std
 #endif // #ifdef NDEBUG
-
+*/
 using xray::configs::lua_config;
 
 ////////////////////////////////////////////////////////////////////////////
@@ -231,7 +295,7 @@ void lua_config::save				( xray::strings::stream& stream ) const
 
 static void collect_garbage						( )
 {
-	lua_State* const state			= s_world->virtual_machine( );
+	lua_State* const state			= s_virtual_machine;
 	lua_gc							( state, LUA_GCCOLLECT, 0 );
 	lua_gc							( state, LUA_GCCOLLECT, 0 );
 }
@@ -251,7 +315,8 @@ xray::configs::lua_config* create_lua_config	( pcstr file_name, memory::reader& 
 	STR_JOINA						( temp, "modules['", file_name, "']" );
 
 	collect_garbage					( );
-	s_world->execute_script			( (pcstr)reader.pointer(), reader.elapsed(), temp );
+//	s_world->execute_script			( (pcstr)reader.pointer(), reader.elapsed(), temp );
+	execute_script((pcstr)reader.pointer(), reader.elapsed(), file_name);
 	collect_garbage					( );
 
 	return							new_config( file_name );
@@ -265,7 +330,8 @@ xray::configs::lua_config*   create_lua_config_inplace	( mutable_buffer const & 
 	STR_JOINA						( temp, "modules['", file_name, "']" );
 
 	collect_garbage					( );
-	s_world->execute_script			( (pcstr)reader.pointer(), reader.elapsed(), temp );
+//	s_world->execute_script			( (pcstr)reader.pointer(), reader.elapsed(), temp );
+	execute_script((pcstr)reader.pointer(), reader.elapsed(), file_name);
 	collect_garbage					( );
 
 	return							new_config_inplace( in_out_buffer, file_name );
@@ -380,7 +446,8 @@ xray::configs::lua_config_ptr xray::configs::create_lua_config_from_string ( pcs
 	STR_JOINA						( temp, "modules['", file_name, "']" );
 
 	collect_garbage					( );
-	s_world->execute_script			( string, strings::length(string), temp );
+//	s_world->execute_script			( string, strings::length(string), temp );
+	execute_script(string, strings::length(string), file_name);
 	collect_garbage					( );
 
  	lua_config * result				= new_config( file_name );
@@ -698,8 +765,6 @@ binary_config_ptr xray::configs::create_binary_config	( mutable_buffer const& bu
 	return							result;
 }
 
-#include <luabind/luabind.hpp>
-
 static xray::configs::lua_config *   new_config	( pcstr file_name )
 {
 	lua_mutex_guard					mutex_guard;
@@ -718,7 +783,7 @@ static xray::configs::lua_config *   new_config_inplace	( xray::mutable_buffer c
 	lua_mutex_guard					mutex_guard;
 	xray::core::configs::g_lua_allocator.user_current_thread_id	( );
 
-	lua_State* const state			= s_world->virtual_machine( );
+	lua_State* const state			= s_virtual_machine;
 	luabind::object	const modules	= luabind::globals( state )["modules"];
 	luabind::object	const object	= modules[ file_name ];
 	R_ASSERT						( luabind::type(object) == LUA_TTABLE, "cannot load lua configuration file[%s]\r\n see log file for details", file_name );
@@ -734,7 +799,7 @@ lua_config_ptr xray::configs::create_lua_config	( mutable_buffer const & buffer,
 
 	xray::core::configs::g_lua_allocator.user_current_thread_id	( );
 
-	lua_State* const state			= s_world->virtual_machine( );
+	lua_State* const state			= s_virtual_machine;
 	lua_newtable					( state );
 	luabind::object					object( luabind::from_stack(state,-1) );
 	lua_pop							( state, 1 );
@@ -2647,7 +2712,7 @@ static void export_classes						( )
 		}
 	};
 
-	module( s_world->virtual_machine() )
+	module( s_virtual_machine )
 	[
 		namespace_( "xray" )[
 			def( "platform", platform_helper::platform_id )

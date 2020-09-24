@@ -335,7 +335,7 @@ void dialog_graph_node::string_table::set(String^ new_str_id)
 {
 	if(object && !is_dialog())
 	{
-		unmanaged_string str = unmanaged_string(new_str_id);
+		unmanaged_string str = new_str_id;
 		dynamic_cast<dialog_phrase*>(object)->set_string_table_id(str.c_str());
 	}
 }

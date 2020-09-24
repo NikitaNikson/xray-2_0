@@ -28,6 +28,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "physics", "xray\physics\sources\physics.vcxproj", "{3ABCF987-4236-460A-87DD-40DA98BA3B31}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor_base", "xray\editor\base\sources\editor_base.vcxproj", "{D48CBBFF-8B47-4E0F-915B-3220F3BC2402}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C} = {AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor_controls", "xray\editor\controls\sources\editor_controls.vcxproj", "{FDDFC8AD-1E92-4A92-8937-152C64C5B980}"
 EndProject
@@ -56,6 +59,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ui", "xray\ui\sources\ui.vcxproj", "{C739B7EC-C9C7-497D-8A9F-735AFC484914}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "xray\game\sources\game.vcxproj", "{9D1B540F-5E44-4ECA-B371-2BBF93B9DBC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C} = {AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rtp", "xray\rtp\sources\rtp.vcxproj", "{03011367-A6E5-4163-B06F-1E56531ADEBE}"
 EndProject
@@ -80,6 +86,15 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stalker2 - PS3", "xray\stalker2\ps3\sources\stalker2_ps3.vcxproj", "{DF2483FF-540E-4953-ACFE-520EDCC5FA37}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "engine_pc", "xray\engine\pc\sources\engine_pc.vcxproj", "{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F6DF8113-67EE-4891-8BA1-987BD0B77FB0} = {F6DF8113-67EE-4891-8BA1-987BD0B77FB0}
+		{E479FF54-6317-42C2-8B50-7522D869814F} = {E479FF54-6317-42C2-8B50-7522D869814F}
+		{82E59A6B-049A-412E-AEB1-3B679AAEC50F} = {82E59A6B-049A-412E-AEB1-3B679AAEC50F}
+		{39624382-B2EB-46C8-A54B-733AC2D1C83F} = {39624382-B2EB-46C8-A54B-733AC2D1C83F}
+		{3ABCF987-4236-460A-87DD-40DA98BA3B31} = {3ABCF987-4236-460A-87DD-40DA98BA3B31}
+		{3C336F8E-48C1-4EEC-815C-027D836222BC} = {3C336F8E-48C1-4EEC-815C-027D836222BC}
+		{C739B7EC-C9C7-497D-8A9F-735AFC484914} = {C739B7EC-C9C7-497D-8A9F-735AFC484914}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "engine", "xray\engine\sources\engine.vcxproj", "{81243BA2-540C-4118-B99F-DC3CDBA53A34}"
 EndProject

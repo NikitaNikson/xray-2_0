@@ -446,7 +446,7 @@
     <ClCompile>
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)/stlport;$(SolutionDir);../../../../SDK/include;../../../../DXSDK/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/stlport;$(SolutionDir);../../../../SDK/include;../../../../DXSDK/include;../../3rd party;../../3rd party/luabind/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>false</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -724,15 +724,8 @@
     <ClCompile Include="configs_binary_config_value.cpp" />
     <ClCompile Include="configs_ltx_config.cpp" />
     <ClCompile Include="configs_ltx_config_cook.cpp" />
-    <ClCompile Include="configs_lua_config.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='PS3 SNC Debug|Win32'">$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
-      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='PS3 SNC Debug|Win32'">237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="configs_lua_config.cpp" />
     <ClCompile Include="configs_lua_config_cook.cpp" />
-    <ClCompile Include="configs_lua_config_new.cpp" />
     <ClCompile Include="console_command.cpp" />
     <ClCompile Include="console_command_processor.cpp" />
     <ClCompile Include="core_entry_point.cpp" />
@@ -1939,20 +1932,12 @@
     <ClInclude Include="..\..\command_line_extensions.h" />
     <ClInclude Include="..\..\compressor.h" />
     <ClInclude Include="..\..\compressor_ppmd.h" />
-    <ClInclude Include="..\..\configs.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="..\..\configs.h" />
     <ClInclude Include="..\..\configs_binary_config.h" />
     <ClInclude Include="..\..\configs_binary_config_value.h" />
     <ClInclude Include="..\..\configs_binary_config_value_inline.h" />
-    <ClInclude Include="..\..\configs_lua_config.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="..\..\configs_lua_config_value.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="..\..\configs_lua_config.h" />
+    <ClInclude Include="..\..\configs_lua_config_value.h" />
     <ClInclude Include="..\..\console_command.h" />
     <ClInclude Include="..\..\console_command_inline.h" />
     <ClInclude Include="..\..\console_command_processor.h" />

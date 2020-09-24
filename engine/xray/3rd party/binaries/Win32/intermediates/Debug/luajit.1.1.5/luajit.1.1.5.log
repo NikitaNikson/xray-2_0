@@ -1,0 +1,40 @@
+﻿  lapi.c
+  lauxlib.c
+  lbaselib.c
+  lcoco.c
+  lcode.c
+  ldblib.c
+  ldebug.c
+  ldo.c
+  ldump.c
+  lfunc.c
+  lgc.c
+  linit.c
+  liolib.c
+  ljitlib.c
+  ljit_backend.c
+  ljit_core.c
+  ljit_dasm.c
+  ljit_mem.c
+  llex.c
+  lmathlib.c
+  lmem.c
+  loadlib.c
+  lobject.c
+  lopcodes.c
+  loslib.c
+  lparser.c
+  lstate.c
+  lstring.c
+  lstrlib.c
+  ltable.c
+  ltablib.c
+  ltm.c
+  lundump.c
+  lvm.c
+  lzio.c
+  print.c
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(D:\STK2\build6\engine\xray\3rd party\luajit\../binaries/Win32/intermediates/Debug/luajit.1.1.5\luajit.1.1.5.dll) does not match the Linker's OutputFile property value (D:\STK2\build6\engine\xray\3rd party\binaries\Win32\xray_luajit.1.1.5-debug.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1195,5): warning MSB8012: TargetName(luajit.1.1.5) does not match the Linker's OutputFile property value (xray_luajit.1.1.5-debug). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Creating library D:\STK2\build6\engine\xray\3rd party\luajit\../binaries/Win32/libraries/luajit.1.1.5.lib and object D:\STK2\build6\engine\xray\3rd party\luajit\../binaries/Win32/libraries/luajit.1.1.5.exp
+  luajit.1.1.5.vcxproj -> D:\STK2\build6\engine\xray\3rd party\luajit\../binaries/Win32/intermediates/Debug/luajit.1.1.5\luajit.1.1.5.dll

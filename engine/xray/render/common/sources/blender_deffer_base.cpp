@@ -33,11 +33,11 @@ void define_macro(shader_defines_list& defines, const char* param, const char* v
 }
 
 blender_deffer_base::blender_deffer_base(bool use_detail, bool use_bump, bool use_steep_plax):
-  m_use_bump(true/*use_bump*/),
-  m_use_steep_plax(true/*use_steep_plax*/),
-  m_use_detail(false/*use_detail*/)
+  m_use_bump(/*true*/use_bump),
+  m_use_steep_plax(/*true*/use_steep_plax),
+  m_use_detail(/*false*/use_detail)
 {
-	XRAY_UNREFERENCED_PARAMETERS	( use_detail, use_bump, use_steep_plax );
+//	XRAY_UNREFERENCED_PARAMETERS	( use_detail, use_bump, use_steep_plax );
 
 	//add_property(pid_material_name,pt_string);
 	//add_property(pid_lmap_name, pt_string);

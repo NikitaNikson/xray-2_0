@@ -1140,12 +1140,6 @@
     <ClCompile Include="configs_binary_config_cook.cpp">
       <Filter>extensions\configs\binary_config\cook</Filter>
     </ClCompile>
-    <ClCompile Include="configs_lua_config.cpp">
-      <Filter>extensions\configs\lua</Filter>
-    </ClCompile>
-    <ClCompile Include="configs_lua_config_new.cpp">
-      <Filter>extensions\configs\lua</Filter>
-    </ClCompile>
     <ClCompile Include="script_engine_wrapper.cpp">
       <Filter>extensions\configs\lua\wrapper</Filter>
     </ClCompile>
@@ -1248,6 +1242,9 @@
     <ClCompile Include="core_entry_point_win.cpp" />
     <ClCompile Include="core_entry_point_win_xbox360.cpp" />
     <ClCompile Include="core_entry_point_xbox360.cpp" />
+    <ClCompile Include="configs_lua_config.cpp">
+      <Filter>extensions\configs\lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">

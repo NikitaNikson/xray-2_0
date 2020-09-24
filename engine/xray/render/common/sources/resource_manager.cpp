@@ -368,6 +368,7 @@ res_vs*	resource_manager::create_vs(const char* name, shader_defines_list& defin
 		//shader_defines_list	defines;
 		//make_defines(local_opts, defines);
 		
+		//LOGI_INFO("SHADER PATH", " IS: %s", get_shader_path());
 		map_shader_sources::iterator src_it = m_sources.find(sh_name);
 		R_ASSERT(src_it != m_sources.end(), "Shader '%s' not found", sh_name);
 		ASSERT(!src_it->second.empty());

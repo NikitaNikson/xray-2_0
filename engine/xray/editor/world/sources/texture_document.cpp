@@ -134,7 +134,7 @@ void						texture_document::load					()
 	else
 	{
 		//receive bitmap for single selected image
-		unmanaged_string u_str = unmanaged_string("resources/textures_new/sources/"+Name+".tga");
+		unmanaged_string u_str = "resources/textures_new/sources/"+Name+".tga";
 
 		if(!check_to_rus_chars(u_str.c_str()))
 		{
