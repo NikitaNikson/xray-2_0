@@ -17,6 +17,9 @@
 
 using xray::console_commands::console_command;
 
+static bool hat_upd = false;
+static float temp_cam = 0.9f;
+
 namespace stalker2{
 
 console::console( game& g )
@@ -85,6 +88,8 @@ m_active		( false )
 	m_ui_tips_view_hl->w()->set_position(float2(0.0f, 0.0f));
 	m_ui_tips_view_hl->w()->set_size	(float2(100,100));
 	m_ui_tips_view_hl->w()->set_visible	(true);
+
+	game& m_game = g;
 }
 
 console::~console()
@@ -178,6 +183,8 @@ private:
 	ui::window&	m_ui_window;
 	game&		m_game;
 };
+
+console_commands::console_command::status_str status_str;
 
 void console::tick( )
 {
@@ -274,6 +281,23 @@ void console::tick( )
 	m_last_log_count			= log_cnt;
 	m_last_position				= scroll_pos;
 	scroll_v->set_step_size		( line_height );
+
+	//ugly hack for fov camera!!!!!!!
+	console_commands::console_command* temp = console_commands::find("cam_fov");
+	if (temp) {
+		temp->status(status_str);
+		if (temp_cam != atof(status_str)) {
+			hat_upd = false;
+		}
+
+		if (hat_upd == false)
+			{
+				hat_upd = true;
+				temp_cam = atof(status_str);
+				//LOGI_INFO("CAM_FOV", " value is: %s", status_str);
+				m_game.create_projection(temp_cam);
+			}
+		}
 }
 
 struct compare_pcstr_pred

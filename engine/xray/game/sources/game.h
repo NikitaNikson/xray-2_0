@@ -38,6 +38,7 @@ public:
 
 	virtual					~game					( );
 
+	virtual	void			create_projection		(float temp_cam = 0);
 	virtual	void			enable					( bool value );
 	virtual	void			tick					( u32 current_frame_id );
 	virtual	void			clear_resources			( );

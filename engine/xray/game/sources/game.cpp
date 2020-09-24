@@ -35,12 +35,18 @@
 #include <xray/animation/world.h>
 #include <xray/rtp/world.h>
 #include <xray/configs.h>
+#include <xray/console_command.h>
 
 using xray::console_commands::cc_delegate;
 using xray::console_commands::cc_float3;
+using xray::console_commands::cc_float;
 
 static bool s_draw_stats_value = true;
 static console_commands::cc_bool s_draw_stats("draw_stats", s_draw_stats_value);
+
+
+static float cam_fov = 0.9f;
+static cc_float cc_cam_fov("cam_fov", cam_fov, 0.3f, 1.8f);
 
 static xray::physics::shell*	s_dbg_shell_1	= 0;
 static command_line::key		s_level_key("level", "", "", "level to load");
@@ -211,17 +217,26 @@ game::game(
 						float3( 0.f,  1.f, 0.f ))
 					);
 
-	m_projection				= math::create_projection( math::pi_d4, 1/(4.f/3.f), .2f, 5000.0f );
+	create_projection();
 
-	
-	register_console_commands	( );
+	register_console_commands();
 
 	fixed_string512				project_path;
-	bool const load_level		= s_level_key.is_set_as_string(&project_path);
+	bool const load_level = s_level_key.is_set_as_string(&project_path);
 
-	if( load_level && !m_engine.command_line_editor() )
+	if (load_level && !m_engine.command_line_editor())
 	{
-		load				( project_path.c_str() );
+		load(project_path.c_str());
+	}
+}
+
+ void game::create_projection(float temp_cam) {
+	 if (temp_cam)
+	{
+		m_projection = math::create_projection(temp_cam, 1 / (4.f / 3.f), .2f, 5000.0f);
+	}
+	else {
+		m_projection = math::create_projection(math::pi_d2, 1 / (4.f / 3.f), .2f, 5000.0f);
 	}
 }
 
@@ -386,6 +401,8 @@ void game::tick					( u32 const current_frame_id )
 	m_rtp_world.tick			( );
 
 	m_animation_world.tick		( );
+
+	//LOGI_INFO("CAM_FOV", " value is: %s", status_str);
 }
 
 void game::update_stats( u32 const current_frame_id )
