@@ -250,7 +250,7 @@ void xray::memory::dump_statistics		( )
 {
 #if !XRAY_USE_CRT_MEMORY_ALLOCATOR
 	u64 crt_allocated_size		= 0;
-	u64 process_allocated_size	= 0;
+//	u64 process_allocated_size	= 0;
 	u64 total_size				= 0;
 	u64 allocated_size			= 0;
 	allocators_type::const_iterator	i = s_allocators->begin( );
@@ -262,27 +262,28 @@ void xray::memory::dump_statistics		( )
 
 		if ( &s_crt_allocator == (*i).allocator )
 			crt_allocated_size		= size;
-		else {
-			if ( &s_process_allocator == (*i).allocator )
-				process_allocated_size	= size;
-		}
+//		else {
+//			if ( &s_process_allocator == (*i).allocator )
+//				process_allocated_size	= size;
+//		}
 
 		if ( size )
 			(*i).allocator->dump_statistics	( );
 	}
+
+	R_ASSERT_CMP(allocated_size, >= , crt_allocated_size);
+	u64 const xray_used = allocated_size - crt_allocated_size;
 #else // #if !XRAY_USE_CRT_MEMORY_ALLOCATOR
-	u64 crt_allocated_size		= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( );
-	u64 process_allocated_size	= (static_cast<base_allocator const&>(s_process_allocator)).allocated_size( );
+//	u64 crt_allocated_size		= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( );
+//	u64 process_allocated_size	= (static_cast<base_allocator const&>(s_process_allocator)).allocated_size( );
 	u64 const total_size		= (static_cast<base_allocator const&>(s_crt_allocator)).total_size( );
 	u64 const allocated_size	= (static_cast<base_allocator const&>(s_crt_allocator)).allocated_size( );
 #endif // #if !XRAY_USE_CRT_MEMORY_ALLOCATOR
-//глючит
-#if !XRAY_USE_CRT_MEMORY_ALLOCATOR
-	R_ASSERT_CMP				( allocated_size, >=, crt_allocated_size + process_allocated_size );
-#endif
-	u64 const xray_used			= allocated_size - (crt_allocated_size + process_allocated_size);
+
 	LOG_INFO					( "---------------overall memory stats---------------" );
+#if !XRAY_USE_CRT_MEMORY_ALLOCATOR
 	LOG_INFO					( "xray: " XRAY_PRINTF_SPEC_LONG_LONG(10) " (%6.2f%%)", xray_used, total_size == 0.f ? 0.f : float(xray_used)/float(total_size)*100.f );
+#endif
 	LOG_INFO					( "used: " XRAY_PRINTF_SPEC_LONG_LONG(10) " (%6.2f%%)", allocated_size, total_size == 0.f ? 0.f : float(allocated_size)/float(total_size)*100.f );
 	LOG_INFO					( "free: " XRAY_PRINTF_SPEC_LONG_LONG(10) " (%6.2f%%)", total_size - allocated_size, total_size == 0.f ? 0.f : float(total_size - allocated_size)/float(total_size)*100.f );
 	LOG_INFO					( "size: " XRAY_PRINTF_SPEC_LONG_LONG(10), total_size );

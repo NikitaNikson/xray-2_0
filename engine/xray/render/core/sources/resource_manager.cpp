@@ -416,7 +416,7 @@ res_vs_hw*	resource_manager::create_vs_hw( char const * name, shader_defines_lis
 		//make_defines( local_opts, defines);
 		
 		map_shader_sources::iterator src_it = m_sources.find( sh_name);
-		ASSERT( src_it != m_sources.end()); //What to do if file not found?????
+		R_ASSERT( src_it != m_sources.end(), "Shader '%s' not found", sh_name);
 		ASSERT( !src_it->second.empty());
 
 
@@ -517,7 +517,7 @@ res_ps_hw* resource_manager::create_ps_hw( LPCSTR name, shader_defines_list& def
 		//make_defines( local_opts, defines);
 
 		map_shader_sources::iterator src_it = m_sources.find( sh_name);
-		ASSERT( src_it != m_sources.end()); //What to do if file not found?????
+		R_ASSERT( src_it != m_sources.end(), "Shader '%s' not found", sh_name);
 		ASSERT( !src_it->second.empty());
 
 		HRESULT hr = shader_compile( name,
@@ -1076,7 +1076,8 @@ struct load_texture_delegate
 			dest_rect			( dest_rect),
 			user_name			( user_name),
 			arr_ind				( arr_ind)
-			{}
+	{
+	}
 
 
 	void execute( resources::queries_result& data)
@@ -1132,7 +1133,8 @@ struct load_texture_delegate
 			//if( i%2 == 0)
 			device::ref().d3d_context()->CopySubresourceRegion( dest_texture->get_hw_texture(), D3D10CalcSubresource( i, arr_ind, dest_desc.MipLevels), 0, 0, 0, src_tex, i, NULL);
 
-		DELETE ((load_texture_delegate*)this);
+		load_texture_delegate *_this = this;
+		DELETE (_this);
 	}
 
 private:

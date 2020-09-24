@@ -44,6 +44,15 @@ shader_manager::~shader_manager()
 		DELETE( it->second);
 	}
 	m_blenders.clear();
+
+	it = m_blenders_by_texture.begin();
+	end = m_blenders_by_texture.end();
+
+	for( ; it != end; ++it)
+	{
+		DELETE( it->second);
+	}
+	m_blenders_by_texture.clear();
 }
 
 void shader_manager::init_blenders()

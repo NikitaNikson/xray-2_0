@@ -19,7 +19,10 @@ namespace xray.editor.wpf_controls.property_grid_editors
 			
 			DataContextChanged += (o, e) =>
 			{
-				property = (property_grid_property)e.NewValue;
+                if (e.NewValue.GetType().FullName == "MS.Internal.NamedObject")
+                    return;
+
+                property = (property_grid_property)e.NewValue;
 				text_box.GetBindingExpression(TextBox.TextProperty).ParentBinding.ValidationRules.Add(new validation_rule(this));
 				
 				var attribute = (value_range_and_format_attribute)property.descriptors[0].Attributes[typeof(value_range_and_format_attribute)];

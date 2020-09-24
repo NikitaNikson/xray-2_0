@@ -33,8 +33,8 @@ m_collision_geom	( NULL)
 
 render_visual::~render_visual()
 {
-// 	if( m_collision_geom != NULL)
-// 		collision::destroy( m_collision_geom);
+ 	if( m_collision_geom != NULL)
+ 		collision::destroy( m_collision_geom);
 }
 
 bool b_test = false;

@@ -400,6 +400,15 @@ namespace xray
 
 			String^				get_tile();
 			void				set_tile(String^ value);
+
+			String^				get_detail_name();
+			void				set_detail_name(String^ value);
+
+			System::Single		get_detail_scale();
+			void				set_detail_scale(System::Single value);
+
+			System::Single		get_material_id();
+			void				set_material_id(System::Single value);
 		};
 		#pragma endregion
 				

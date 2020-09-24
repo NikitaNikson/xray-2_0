@@ -16,133 +16,48 @@ xray::memory::crt_allocator_type*	xray::memory::g_crt_allocator = 0;
 using xray::memory::crt_allocator;
 using xray::memory::process_allocator;
 
-static int heap_walk (
-	    HANDLE heap_handle,
-        struct _heapinfo *_entry
-        )
+static void	mem_usage		(HANDLE heap_handle, size_t* pAllocated, size_t* pTotalSize, u32* pBlocksUsed, u32* pBlocksFree)
 {
-        PROCESS_HEAP_ENTRY Entry;
-        DWORD errval;
-        int errflag;
-        int retval = _HEAPOK;
+	if ( !xray::debug::is_debugger_present( ) ) {
+		if (pAllocated) *pAllocated = 0;
+		if (pTotalSize) *pTotalSize = 0;
+		if (pBlocksUsed) *pBlocksUsed = 0;
+		if (pBlocksFree) *pBlocksFree = 0;
 
-        Entry.wFlags = 0;
-        Entry.iRegionIndex = 0;
-		Entry.cbData = 0;
-        if ( (Entry.lpData = _entry->_pentry) == NULL ) {
-            if ( !HeapWalk( heap_handle, &Entry ) ) {
-                if ( GetLastError() == ERROR_CALL_NOT_IMPLEMENTED ) {
-                    _doserrno = ERROR_CALL_NOT_IMPLEMENTED;
-                    errno = ENOSYS;
-                    return _HEAPEND;
-                }
-                return _HEAPBADBEGIN;
-            }
-        }
-        else {
-            if ( _entry->_useflag == _USEDENTRY ) {
-                if ( !HeapValidate( heap_handle, 0, _entry->_pentry ) )
-                    return _HEAPBADNODE;
-                Entry.wFlags = PROCESS_HEAP_ENTRY_BUSY;
-            }
-nextBlock:
-            /*
-             * Guard the HeapWalk call in case we were passed a bad pointer
-             * to an allegedly free block.
-             */
-            __try {
-                errflag = 0;
-                if ( !HeapWalk( heap_handle, &Entry ) )
-                    errflag = 1;
-            }
-            __except( EXCEPTION_EXECUTE_HANDLER ) {
-                errflag = 2;
-            }
+		return;
+	}
 
-            /*
-             * Check errflag to see how HeapWalk fared...
-             */
-            if ( errflag == 1 ) {
-                /*
-                 * HeapWalk returned an error.
-                 */
-                if ( (errval = GetLastError()) == ERROR_NO_MORE_ITEMS ) {
-                    return _HEAPEND;
-                }
-                else if ( errval == ERROR_CALL_NOT_IMPLEMENTED ) {
-                    _doserrno = errval;
-                    errno = ENOSYS;
-                    return _HEAPEND;
-                }
-                return _HEAPBADNODE;
-            }
-            else if ( errflag == 2 ) {
-                /*
-                 * Exception occurred during the HeapWalk!
-                 */
-                return _HEAPBADNODE;
-            }
-        }
+	R_ASSERT(HeapValidate(heap_handle, 0, NULL), "Memory corruption");
 
-        if ( Entry.wFlags & (PROCESS_HEAP_REGION |
-             PROCESS_HEAP_UNCOMMITTED_RANGE) )
-        {
-            goto nextBlock;
-        }
+	size_t	allocated	= 0;
+	size_t	free		= 0;
+	u32	blocks_free		= 0;
+	u32	blocks_used		= 0;
 
-        _entry->_pentry = (int*)Entry.lpData;
-        _entry->_size = Entry.cbData;
-        if ( Entry.wFlags & PROCESS_HEAP_ENTRY_BUSY ) {
-            _entry->_useflag = _USEDENTRY;
-        }
-        else {
-            _entry->_useflag = _FREEENTRY;
-        }
+	PROCESS_HEAP_ENTRY entry;
+	entry.lpData	= NULL;
 
-        return( retval );
-}
+	HeapLock		( heap_handle );
 
-static u32	mem_usage		(HANDLE heap_handle, u32* pBlocksUsed, u32* pBlocksFree)
-{
-	if ( !xray::debug::is_debugger_present( ) )
-		return		( 0 );
-
-	_HEAPINFO		hinfo;
-	int				heapstatus;
-	hinfo._pentry	= NULL;
-	size_t	total	= 0;
-	u32	blocks_free	= 0;
-	u32	blocks_used	= 0;
-	while( ( heapstatus = heap_walk( heap_handle, &hinfo ) ) == _HEAPOK )
-	{ 
-		if (hinfo._useflag == _USEDENTRY)	{
-			total		+= hinfo._size;
-			blocks_used	+= 1;
-		} else {
-			blocks_free	+= 1;
+	while ( HeapWalk( heap_handle, &entry ) ) {
+		if ( entry.wFlags & PROCESS_HEAP_ENTRY_BUSY ) {
+			blocks_used ++;
+			allocated += entry.cbData;
+		}
+		else if ( entry.wFlags & PROCESS_HEAP_UNCOMMITTED_RANGE ) {
+			blocks_free ++;
+			free += entry.cbData;
 		}
 	}
-	if (pBlocksFree)	*pBlocksFree= 1024*(u32)blocks_free;
-	if (pBlocksUsed)	*pBlocksUsed= 1024*(u32)blocks_used;
 
-	switch( heapstatus )
-	{
-	case _HEAPEMPTY:
-		break;
-	case _HEAPEND:
-		break;
-	case _HEAPBADPTR:
-		LOG_WARNING		( "bad pointer to heap" );
-		return			0;
-		break;
-	case _HEAPBADBEGIN:
-		LOG_WARNING		( "bad start of heap" );
-		return			0;
-	case _HEAPBADNODE:
-		LOG_WARNING		( "bad node in heap" );
-		return			0;
-	}
-	return (u32) total;
+	R_ASSERT(GetLastError() == ERROR_NO_MORE_ITEMS, "Memory corruption");
+
+	HeapUnlock		( heap_handle );
+
+	if (pBlocksFree)	*pBlocksFree = blocks_free;
+	if (pBlocksUsed)	*pBlocksUsed = blocks_used;
+	if (pAllocated)		*pAllocated  = allocated;
+	if (pTotalSize)		*pTotalSize  = free + allocated;
 }
 
 crt_allocator::crt_allocator		( ) :
@@ -150,9 +65,12 @@ crt_allocator::crt_allocator		( ) :
 	m_free_ptr						( 0 ),
 	m_realloc_ptr					( 0 )
 {
+/*
 #ifdef _DLL
 #	if _MSC_VER == 1500
 		pcstr const library_name	= "msvcr90.dll";
+#	elif _MSC_VER == 1912
+		pcstr const library_name	= "msvcrt.dll";
 #	else // #if _MSC_VER == 1500
 	pcstr const library_name = "msvcr120.dll";
 //#		error define correct library name here
@@ -168,18 +86,26 @@ crt_allocator::crt_allocator		( ) :
 	R_ASSERT						( m_free_ptr );
 
 	m_realloc_ptr					= (realloc_ptr_type)( GetProcAddress(handle, "realloc") );
-	R_ASSERT						( m_free_ptr );
+	R_ASSERT						( m_realloc_ptr );
 #endif // #ifdef _DLL
+*/
+	m_free_ptr = &free;
+	m_malloc_ptr = &malloc;
+	m_realloc_ptr = &realloc;
 }
 
 size_t crt_allocator::total_size		( ) const
 {
-	return						( mem_usage((HANDLE)_get_heap_handle(),0,0) );
+	size_t total_size;
+	mem_usage((HANDLE)_get_heap_handle(),0,&total_size,0,0);
+	return total_size;
 }
 
 size_t crt_allocator::allocated_size	( ) const
 {
-	return						( mem_usage((HANDLE)_get_heap_handle(),0,0) );
+	size_t allocated;
+	mem_usage((HANDLE)_get_heap_handle(),&allocated,0,0,0);
+	return allocated;
 }
 
 size_t process_allocator::total_size	( ) const
@@ -187,9 +113,10 @@ size_t process_allocator::total_size	( ) const
 	if ( !memory::try_lock_process_heap	( ) )
 		return					( 0 );
 
-	u32 const result			= mem_usage( GetProcessHeap() , 0, 0 );
+	size_t total_size;
+	mem_usage					( GetProcessHeap(), 0, &total_size, 0, 0 );
 	memory::unlock_process_heap	( );
-	return						( result );
+	return						total_size;
 }
 
 size_t process_allocator::allocated_size( ) const
@@ -197,7 +124,8 @@ size_t process_allocator::allocated_size( ) const
 	if ( !memory::try_lock_process_heap	( ) )
 		return					( 0 );
 
-	u32 const result			= mem_usage( GetProcessHeap() , 0, 0 );
+	size_t allocated;
+	mem_usage					( GetProcessHeap(), &allocated, 0, 0, 0 );
 	memory::unlock_process_heap	( );
-	return						( result );
+	return						allocated;
 }

@@ -19,6 +19,13 @@ inline RECTANGLE::rectangle								( )
 }
 
 TEMPLATE_SIGNATURE
+inline RECTANGLE::rectangle								( RECTANGLE& other ) :
+	min			( other.min ),
+	max			( other.max )
+{
+}
+
+TEMPLATE_SIGNATURE
 inline RECTANGLE::rectangle								( vector_type const& min, vector_type const& max ) :
 	min			( min ),
 	max			( max )

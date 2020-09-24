@@ -24,6 +24,8 @@ public:
 	
 	void apply(render_target_enum target) {backend::get_ref().set_rt(target, m_rt);}
 
+	ID3DRenderTargetView * get_target_view() const { return m_rt; }
+
 	inline bool	valid()	{return m_texture;}
 
 private:

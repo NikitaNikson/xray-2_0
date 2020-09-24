@@ -19,7 +19,10 @@ namespace xray.editor.wpf_controls.property_grid_editors
 
 			DataContextChanged += (o, i) =>
 			{
-				items_attribute = (combo_box_items_attribute)((property_grid_property)DataContext).descriptors[0].Attributes[typeof(combo_box_items_attribute)];
+                if (i.NewValue.GetType().FullName == "MS.Internal.NamedObject")
+                    return;
+
+                items_attribute = (combo_box_items_attribute)((property_grid_property)DataContext).descriptors[0].Attributes[typeof(combo_box_items_attribute)];
 			};
 		}
 

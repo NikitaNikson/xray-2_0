@@ -73,11 +73,13 @@ namespace xray {
 			// detail ext
 			xray::fs::path_string		normal_name;
 			xray::fs::path_string		color_name;
+			xray::fs::path_string		detail_name;
 			float						detail_scale;
 
 			// bump	
 			ETBumpMode					bump_mode;
 			xray::fs::path_string		bump_name;
+			float						material_id;
 
 			//terrain
 			int							tile;

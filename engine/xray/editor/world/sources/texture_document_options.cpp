@@ -287,6 +287,37 @@ void				texture_document::texture_options_wrapper::set_tile(String^ value)
 	m_options->tile = Convert::ToInt32(value, 10);
 }
 
+String^				texture_document::texture_options_wrapper::get_detail_name()
+{
+	return  gcnew String(m_options->detail_name.c_str());
+}
+void				texture_document::texture_options_wrapper::set_detail_name(String^ value)
+{
+	if (value == nullptr)
+		return;
+	m_options->detail_name = unmanaged_string(value).c_str();
+}
+
+System::Single		texture_document::texture_options_wrapper::get_detail_scale()
+{
+	return m_options->detail_scale;
+}
+
+void				texture_document::texture_options_wrapper::set_detail_scale(System::Single value)
+{
+	m_options->detail_scale = value;
+}
+
+System::Single		texture_document::texture_options_wrapper::get_material_id()
+{
+	return m_options->material_id;
+}
+
+void				texture_document::texture_options_wrapper::set_material_id(System::Single value)
+{
+	m_options->material_id = value;
+}
+
 #pragma endregion
 
 }//namespace editor

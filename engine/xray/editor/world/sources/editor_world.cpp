@@ -133,7 +133,7 @@ editor_world::~editor_world					(  )
 	delete					m_command_engine;
 	DELETE					(m_picker);
 	DELETE					(m_flying_camera);
-	//unregister_texture_cook	();
+	unregister_texture_cook	();
 	editor_resource_manager::finalize();
 }
 

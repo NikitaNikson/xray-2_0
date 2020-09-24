@@ -266,6 +266,8 @@ void console::tick( )
 		else
 			txt->split_and_set_text( line, line_width, line );
 
+		//txt->set_color			(string_color(log_str_buffer));
+
 		m_ui_view->add_item		( txt->w(), false );
 	}
 	
