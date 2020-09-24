@@ -54,7 +54,9 @@ static void install_bugtrap						( )
 	// this is workaround on incorrect BugTrapN initialization in
 	// case of call from unmanaged code: globals and statics are not initialized.
 	// but when we call it from managed code first, all works properly
+#ifdef USE_BUGTRAP
 	IntelleSoft::BugTrap::ExceptionHandler();
+#endif
 }
 
 #pragma unmanaged

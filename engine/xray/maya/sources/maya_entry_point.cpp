@@ -17,6 +17,7 @@
 #include "create_joint_cmd.h"
 #include "physics_exporter.h"
 #include "solid_visual_exporter.h"
+#include "solid_visual_writer_translator.h"
 #include "fake_drawing_locator.h"
 #include "xray_shader_node.h"
 #include <xray/core/core.h>
@@ -165,6 +166,10 @@ XRAY_DLL_EXPORT MStatus initializePlugin( MObject obj )
 	if (!stat)
 		stat.perror("registerFileTranslator failed");
 
+	stat = plugin.registerFileTranslator("X-Ray 2.0 model", NULL, &solid_visual_file_translator::creator);
+	if(!stat)
+		stat.perror("registerFileTranslator failed");
+
 	stat = plugin.registerCommand(solid_visual_exporter::Name, solid_visual_exporter::creator, solid_visual_exporter::newSyntax );
 	if (!stat)
 		stat.perror("registerCommand failed");
@@ -189,11 +194,12 @@ XRAY_DLL_EXPORT MStatus initializePlugin( MObject obj )
 
    MGlobal::executeCommand( command );
 
-
+/*
    xray::resources::query_mount_disk	("andy", 
 								"e:/stk2/resources/library/static", 
 								NULL,
 								&xray::maya::g_allocator);
+*/
 
    xray::fs::set_allocator_thread_id	(xray::threading::current_thread_id());
 

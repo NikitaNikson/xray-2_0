@@ -29,6 +29,7 @@ public:
 	void							add_button_item		(System::String^ key, int prio) = 0; // add empty strip
 	void							add_button_item		(gui_binder^ binder, System::String^ action_name, System::String^ key, int prio) = 0;
 	void							set_status_label	(int idx, System::String^ text) = 0;
+	void							set_caption			(System::String^ text) = 0;
 	
 	void							register_image		(System::String^ action_name, xray::editor_base::images16x16 image_id ) = 0;
 	System::Drawing::Image^			get_image			(System::String^ key) = 0;

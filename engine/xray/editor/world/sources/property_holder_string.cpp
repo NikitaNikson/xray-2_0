@@ -145,8 +145,8 @@ xray::editor::property_value* property_holder::add_string				(
 		String::typeid,
 		category,
 		description,
-		default_value,
-		filter
+		default_value
+//		filter
 	);
 	spec->Attributes = gcnew cli::array<Attribute^>(1);
 	spec->Attributes[0] = gcnew xray::editor::wpf_controls::property_grid_editors::external_editor_attribute(type_of_external_editor);

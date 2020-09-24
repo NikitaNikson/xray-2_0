@@ -74,7 +74,7 @@ void dialog_export_form::on_export_clicked(System::Object^, System::EventArgs^ )
 			
 			Int32 lines_counter = 2;
 			excel_file_path = excel_file_path->Replace("\\", "/");
-			unmanaged_string file_name = unmanaged_string(excel_file_path);
+			unmanaged_string file_name = excel_file_path;
 			fs::path_string config_directory_path;
 			fs::path_string config_file_name;
 			fs::directory_part_from_path(&config_directory_path, file_name.c_str());

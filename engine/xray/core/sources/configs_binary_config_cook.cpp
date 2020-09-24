@@ -117,6 +117,8 @@ void binary_config_cook::on_lua_config_loaded(resources::queries_result& data, r
 
 	xray::resources::query_result_for_user const& result = data[0];
 
+	UNREACHABLE_CODE();
+/*
 	xray::configs::lua_config_ptr source_config_ptr = static_cast_resource_ptr<xray::configs::lua_config_ptr>(result.get_unmanaged_resource());
 	xray::memory::stream str(parent_query->get_user_allocator());
 	xray::configs::create_binary_config_buffer(source_config_ptr->get_root(), str);
@@ -128,6 +130,7 @@ void binary_config_cook::on_lua_config_loaded(resources::queries_result& data, r
 	xray::configs::binary_config_ptr resource_config_ptr = xray::configs::create_binary_config(buffer);
 	parent_query->set_unmanaged_resource(resource_config_ptr.c_ptr(), xray::resources::memory_type_non_cacheable_resource, sizeof(binary_config));
 	parent_query->finish_query(result_success);
+*/
 }
 
 void binary_config_cook::on_binary_config_loaded(resources::queries_result& data, resources::query_result_for_cook* parent_query)

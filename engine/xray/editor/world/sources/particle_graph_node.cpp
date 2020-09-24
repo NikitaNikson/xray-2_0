@@ -50,7 +50,8 @@ void					particle_graph_node::in_constructor		()
 	m_image_type					= xray::editor_base::image_node_disabled;
 	m_parent_position_offset		= Point( 0, 0 );
 	m_property_holder				= NEW(::property_holder)("particle_node_props", NULL, NULL);
-	m_properties_config				= NEW(xray::configs::lua_config_value)((*xray::configs::create_lua_config())["properties"]);
+	m_properties_config_ptr			= NEW(configs::lua_config_ptr)(configs::create_lua_config());
+	m_properties_config				= NEW(xray::configs::lua_config_value)((**m_properties_config_ptr)["properties"]);
 	m_time_parameters_holder		= nullptr;
 }
 

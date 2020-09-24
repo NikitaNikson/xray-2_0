@@ -39,6 +39,9 @@ m_owner(ed)
 	m_resources = NEW(dialog_resources_ptr)();
 	m_hypergraph = (gcnew dialog_hypergraph(this));
 
+	*m_resources = NEW(dialog_resources)();
+	(*m_resources)->m_dialog = NEW(dialog_node_base_ptr)(NEW(dialog)());
+
 	SuspendLayout();
 
 	// m_hypergraph

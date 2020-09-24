@@ -256,8 +256,8 @@ void editor_renderer::flush_impl()
 //	render_lines();
 //	render_triangles();
 
-	vector< screen_line_desc >::iterator it				= m_screen_lines_desc.begin();
-	vector< screen_line_desc >::const_iterator const en = m_screen_lines_desc.end();
+	xray::render::vector< screen_line_desc >::iterator it				= m_screen_lines_desc.begin();
+	xray::render::vector< screen_line_desc >::const_iterator const en = m_screen_lines_desc.end();
 
 	int cur_position = 0;
 	for( ; it != en; ++it ) 
@@ -272,8 +272,8 @@ void editor_renderer::flush_impl()
 	
 	// 3D lines pass.
 	{
-		vector< screen_line_desc >::iterator it				= m_3D_screen_lines_desc.begin();
-		vector< screen_line_desc >::const_iterator const en = m_3D_screen_lines_desc.end();
+		xray::render::vector< screen_line_desc >::iterator it				= m_3D_screen_lines_desc.begin();
+		xray::render::vector< screen_line_desc >::const_iterator const en = m_3D_screen_lines_desc.end();
 
 		int cur_position = 0;
 		for( ; it != en; ++it ) 

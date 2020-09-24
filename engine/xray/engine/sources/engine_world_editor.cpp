@@ -111,6 +111,9 @@ void engine_world::initialize_editor		( )
 	m_game_enabled				= false;
 
 	if( threading::core_count( ) == 1 ) {
+#if XRAY_PLATFORM_WINDOWS | XRAY_PLATFORM_XBOX_360
+		CoInitializeEx			( 0, COINIT_APARTMENTTHREADED );
+#endif
 		try_load_editor			( );
 		return;
 	}

@@ -14,7 +14,6 @@
 
 using namespace System::Drawing::Imaging;
 using System::Drawing::Imaging::BitmapData;
-
 using xray::texture_compressor::TgaHeader;
 
 namespace xray {

@@ -34,7 +34,7 @@ void dialog_files_view_panel::on_node_double_click(System::Object^ , System::Win
 {
 	if( safe_cast<tree_node^>(e->Node)->m_node_type==tree_node_type::single_item)
 	{
-		System::String^ full_path = e->Node->FullPath->Remove(0,8);
+		System::String^ full_path = e->Node->FullPath;
 		m_editor->load_document(full_path);
 	}
 }
@@ -46,7 +46,7 @@ void dialog_files_view_panel::on_node_key_down(System::Object^ sender, System::W
 		TreeNode^ n = m_raw_files_tree_view->SelectedNode;
 		if(n->Nodes->Count==0)
 		{
-			System::String^ full_path = n->FullPath->Remove(0,8);
+			System::String^ full_path = n->FullPath;
 			m_editor->load_document(full_path);
 		}
 	}
@@ -78,7 +78,7 @@ void dialog_files_view_panel::add_new_folder(System::Object^ , xray::editor::tre
 	if(safe_cast<tree_node^>(m_raw_files_tree_view->SelectedNode)->m_node_type!=tree_node_type::single_item)
 	{
 		System::String^ node_path = m_raw_files_tree_view->SelectedNode->FullPath+"/new_folder";
-		node_path = node_path->Remove(0,8);
+		//node_path = node_path->Remove(0,8);
 		System::String^ folder_path = (source_path+node_path);
 		
 		int i = 1;
@@ -98,7 +98,7 @@ void dialog_files_view_panel::add_new_file(System::Object^ , xray::editor::tree_
 	if(safe_cast<tree_node^>(m_raw_files_tree_view->SelectedNode)->m_node_type!=tree_node_type::single_item)
 	{
 		System::String^ node_path = m_raw_files_tree_view->SelectedNode->FullPath+"/new_file";
-		node_path = node_path->Remove(0,8);
+		//node_path = node_path->Remove(0,8);
 		int i = 1;
 		System::String^ file_path = (source_path+node_path+i+extension);
 

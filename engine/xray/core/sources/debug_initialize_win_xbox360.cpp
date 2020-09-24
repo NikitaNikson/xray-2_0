@@ -200,7 +200,7 @@ static void enable_fpe				( )
 	error							= _controlfp_s( &flags, 0, 0 );
 	R_ASSERT						( !error );
 
-	flags							&= ~( /**_EM_INEXACT | _EM_UNDERFLOW|/**/ _EM_OVERFLOW | _EM_ZERODIVIDE | _EM_INVALID | _EM_DENORMAL );
+	flags							&= ~( /**_EM_INEXACT |**/ _EM_UNDERFLOW | _EM_OVERFLOW | _EM_ZERODIVIDE | _EM_INVALID | _EM_DENORMAL );
 
 	error							= _controlfp_s( 0, flags, _MCW_EM );
 	R_ASSERT						( !error );
@@ -215,7 +215,7 @@ static void disable_fpe				( )
 	error							= _controlfp_s( &flags, 0, 0 );
 	R_ASSERT						( !error );
 
-	flags							&= ~( /**_EM_INEXACT | _EM_UNDERFLOW|/**/ _EM_OVERFLOW | _EM_ZERODIVIDE | /**_EM_INVALID | /**/_EM_DENORMAL );
+	flags							|= /**_EM_INEXACT |**/ _EM_UNDERFLOW | _EM_OVERFLOW | _EM_ZERODIVIDE | _EM_INVALID | _EM_DENORMAL;
 
 	error							= _controlfp_s( 0, flags, _MCW_EM );
 //	errno_t const error				= _controlfp_s( 0, 0, _MCW_EM );

@@ -66,16 +66,15 @@ scene_render::scene_render(bool const render_test_scene): stage(&m_context)
 	m_device->GetDepthStencilSurface(&m_context.m_base_zb);
 
 	u32	smap_size = hw_wrapper::get_ref().o.smap_size;
-	
-	D3DFORMAT	null_fmt = hw_wrapper::get_ref().o.null_rt_format;
 
 	//PC DX9 requires fake color surface for rendering hw smaps
 	//if we can we use "null" surface format which actually does not allocate memory
+	D3DFORMAT	null_fmt = hw_wrapper::get_ref().o.null_rt_format;
 	m_context.m_rt_color_null = resource_manager::get_ref().create_rt(r2_rt_smap_surf, smap_size, smap_size, null_fmt);
 
-#pragma message(XRAY_TODO("uncomment when you are going to implement shadow maps"))	
-//	D3DFORMAT	smap_fmt = hw_wrapper::get_ref().o.hw_smap_format;
-//m_context.m_smap = resource_manager::get_ref().create_rt(r2_rt_smap_depth, smap_size, smap_size, smap_fmt);
+//#pragma message(XRAY_TODO("uncomment when you are going to implement shadow maps"))	
+	D3DFORMAT	smap_fmt = hw_wrapper::get_ref().o.hw_smap_format;
+	m_context.m_rt_smap = resource_manager::get_ref().create_rt(r2_rt_smap_depth, smap_size, smap_size, smap_fmt);
 
 	backend& be = backend::get_ref();
 
@@ -177,7 +176,7 @@ void scene_render::create_material_texture()
 				u16*	p = (u16*) (LPBYTE (R.pBits) + slice*R.SlicePitch + y*R.RowPitch + x*2);
 				float	fd,fs;
 				float	ld = float(x)/float(tex_material_ldotn-1);
-				float	ls = float(y)/float(tex_material_ldoth-1) /*+ math::epsilon_7*/;
+				float	ls = float(y)/float(tex_material_ldoth-1);// + math::epsilon_7;
 				
 				ls *= powf(ld,1/32.f);
 				

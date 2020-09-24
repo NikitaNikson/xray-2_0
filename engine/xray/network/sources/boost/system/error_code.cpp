@@ -50,7 +50,7 @@ namespace
   public:
     generic_error_category(){}
     const char *   name() const;
-    xray::network::std_string    message( int ev ) const;
+	xray::network::std_string    message( int ev ) const;
   };
 
   class system_error_category : public error_category
@@ -58,7 +58,7 @@ namespace
   public:
     system_error_category(){}
     const char *        name() const;
-    xray::network::std_string         message( int ev ) const;
+	xray::network::std_string         message( int ev ) const;
     error_condition     default_error_condition( int ev ) const;
   };
 
@@ -330,7 +330,7 @@ namespace
     case WSAETIMEDOUT: return make_error_condition( timed_out );
     case WSAEWOULDBLOCK: return make_error_condition( operation_would_block );
   #endif
-    default: return error_condition( ev, system_category );
+    default: return error_condition( ev, system_category() );
     }
   }
 

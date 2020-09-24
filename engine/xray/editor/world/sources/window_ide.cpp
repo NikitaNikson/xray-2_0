@@ -401,6 +401,11 @@ void window_ide::set_status_label(int idx, System::String^ text)
 	}
 }
 
+void window_ide::set_caption(System::String^ text)
+{
+	this->Text = text + " - X-Ray Engine v2.0 Editor";
+}
+
 xray::editor::options_manager^ window_ide::get_options_manager() 
 {
 	return m_options_dialog;

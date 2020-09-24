@@ -134,7 +134,7 @@ void						texture_document::load					()
 	else
 	{
 		//receive bitmap for single selected image
-		unmanaged_string u_str = unmanaged_string("resources/textures_new/sources/"+Name+".tga");
+		unmanaged_string u_str = "resources/textures_new/sources/"+Name+".tga";
 
 		if(!check_to_rus_chars(u_str.c_str()))
 		{
@@ -157,7 +157,8 @@ void						texture_document::load					()
 void						texture_document::request_unexisting_options		()
 {
 	m_editor->properties_panel->property_grid_control->Enabled = false;
-	for each(String^ options_path in m_selected_options)
+	List<String^>^ selected_options = gcnew List<String^>(m_selected_options);
+	for each(String^ options_path in selected_options)
 	{
 		unmanaged_string str(options_path);
 		if(check_to_rus_chars(str.c_str()))

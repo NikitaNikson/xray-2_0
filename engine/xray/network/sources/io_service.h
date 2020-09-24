@@ -7,6 +7,7 @@
 #ifndef IO_SERVICE_H_INCLUDED
 #define IO_SERVICE_H_INCLUDED
 
+#include <boost/array.hpp>
 #include "asio_handler_hook.h"
 #include "asio_types_multi.h"
 #include "async_handler_host.h"

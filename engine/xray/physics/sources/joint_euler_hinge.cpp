@@ -121,9 +121,9 @@ float	euler_hinge::get_low_limit	( axis axis_num )const
 {
 	 switch(axis_num)
 	{
-		case x_axis:	return	dJointGetAMotorParam(angular_motor(),dParamLoStop );
-		case y_axis:	return	dJointGetAMotorParam(angular_motor(),dParamLoStop2);
-		case z_axis:	return	dJointGetAMotorParam(angular_motor(),dParamLoStop3);
+		case x_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamLoStop );
+		case y_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamLoStop2);
+		case z_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamLoStop3);
 		default: NODEFAULT(return 0);
 	}
 }
@@ -132,9 +132,9 @@ float	euler_hinge::get_high_limit	( axis axis_num )const
 {
 	switch(axis_num)
 	{
-		case x_axis:	return	dJointGetAMotorParam(angular_motor(),dParamHiStop );
-		case y_axis:	return	dJointGetAMotorParam(angular_motor(),dParamHiStop2);
-		case z_axis:	return	dJointGetAMotorParam(angular_motor(),dParamHiStop3);
+		case x_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamHiStop );
+		case y_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamHiStop2);
+		case z_axis:	return	dJointGetAMotorParam((dJointID)angular_motor(),dParamHiStop3);
 		default: NODEFAULT(return 0);
 	}
 }

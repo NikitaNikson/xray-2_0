@@ -13,6 +13,13 @@
 #include <xray/macro_extensions.h>
 
 #include <xray/engine/library_dependencies.h>
+#include <xray/maya_animation/library_linkage.h>
+#include <vorbis/library_linkage.h>
+#include <xray/render/library_linkage.h>
+#include <luabind/library_linkage.h>
+#include <ode/library_linkage.h>
+
+#pragma comment(lib,"libboost_system-vc141-mt-x32-1_66.lib")
 
 #define XRAY_ENGINE_LIBRARY_BUILDING
 #include <xray/engine/library_linkage.h>
@@ -32,6 +39,13 @@
 
 #include "linkage_resolver.h"
 
+namespace boost
+{
+	void __cdecl throw_exception(std::bad_cast const&)
+	{
+		std::terminate();
+	}
+}
 
 BOOL APIENTRY DllMain							( HANDLE hModule, unsigned int ul_reason_for_call, LPVOID lpReserved )
 {

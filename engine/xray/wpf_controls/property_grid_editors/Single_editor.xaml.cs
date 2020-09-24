@@ -18,6 +18,9 @@ namespace xray.editor.wpf_controls.property_grid_editors
 
 			DataContextChanged += (o, e) =>
 			{
+                if (e.NewValue.GetType().FullName == "MS.Internal.NamedObject")
+                    return;
+
 				property = (property_grid_property)e.NewValue;
 				text_box.GetBindingExpression(TextBox.TextProperty).ParentBinding.ValidationRules.Add(new validation_rule(this));
 

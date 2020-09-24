@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="editor"
 	ProjectGUID="{F9523302-4516-4FEC-863B-01031632EC37}"
 	RootNamespace="xray.editor"
@@ -51,7 +51,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;"
 				StringPooling="true"
 				MinimalRebuild="false"
@@ -82,10 +82,12 @@
 				AdditionalOptions="/ignore:4248"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				EmbedManagedResourceFile="$(TargetDir)intermediates\$(ConfigurationName)\editor_base\editor_base.resources.resources"
 				DelayLoadDLLs=""
 				GenerateDebugInformation="true"
+				AssemblyDebug="0"
 				ProgramDatabaseFile="$(SolutionDir)../binaries/$(PlatformName)/$(TargetName).pdb"
 				GenerateMapFile="false"
 				SubSystem="2"
@@ -251,7 +253,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);$(SolutionDir)../SDK/include"
 				PreprocessorDefinitions="WIN32;"
 				StringPooling="false"
 				MinimalRebuild="false"
@@ -281,7 +283,7 @@
 				AdditionalOptions="/ignore:4248"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName)-debug.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;"
 				EmbedManagedResourceFile="$(TargetDir)intermediates\$(ConfigurationName)\editor_base\editor_base.resources.resources"
 				DelayLoadDLLs=""
 				AssemblyLinkResource=""
@@ -445,26 +447,29 @@
 			ReferencedProjectIdentifier="{FDDFC8AD-1E92-4A92-8937-152C64C5B980}"
 			RelativePathToProject=".\xray\editor\controls\sources\editor_controls.vcproj"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{45DA3FF9-E510-48E6-BC23-8A38BADAAC76}"
-			RelativePathToProject=".\PropertyGrid\PropertyGrid.csproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\DockPanelSkin.dll"
+			AssemblyName="DockPanelSkin, Version=1.0.0.0, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
 			RelativePath="System.Design.dll"
 			AssemblyName="System.Design, Version=2.0.0.0, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{DB2FF1D6-DA8A-4814-AF27-10F61BAFAC73}"
-			RelativePathToProject=".\bugtrap\BugTrapN.vcproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\Flobbster.Windows.Forms.PropertyGrid.dll"
+			AssemblyName="Flobbster.Windows.Forms.PropertyGrid, Version=0.0.0.0, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
 			RelativePathToProject=".\xray\engine\pc\sources\engine_pc.vcproj"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
-			RelativePathToProject=".\WeifenLuo.WinFormsUI.Docking\WeifenLuo.WinFormsUI.Docking.csproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\WeifenLuo.WinFormsUI.Docking.dll"
+			AssemblyName="WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
 			RelativePath="Microsoft.VisualBasic.dll"
@@ -472,7 +477,7 @@
 			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
-			RelativePath="Microsoft.Office.Interop.Excel.dll"
+			RelativePath="f:\Program Files (x86)\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll"
 			AssemblyName="Microsoft.Office.Interop.Excel, Version=12.0.0.0, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL"
 			MinFrameworkVersion="0"
 		/>
@@ -1348,6 +1353,7 @@
 						>
 						<File
 							RelativePath=".\terrain_core_form.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1361,6 +1367,7 @@
 						>
 						<File
 							RelativePath=".\terrain_import_form.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1374,6 +1381,7 @@
 						>
 						<File
 							RelativePath=".\terrain_painter_control_tab.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1473,6 +1481,7 @@
 						>
 						<File
 							RelativePath=".\control_properties_tab.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1530,6 +1539,7 @@
 						>
 						<File
 							RelativePath=".\options_page_general.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1615,6 +1625,7 @@
 					>
 					<File
 						RelativePath=".\scene_graph_tab.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1632,6 +1643,7 @@
 					>
 					<File
 						RelativePath=".\sound_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -1680,6 +1692,7 @@
 								>
 								<File
 									RelativePath=".\graph_view.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1759,6 +1772,7 @@
 						>
 						<File
 							RelativePath=".\sound_items_view_panel.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1788,6 +1802,7 @@
 						>
 						<File
 							RelativePath=".\sound_item_editor_panel.resx"
+							SubType="Designer"
 							>
 						</File>
 					</File>
@@ -1810,6 +1825,7 @@
 								<File
 									RelativePath=".\inplace_combo_box.resx"
 									DeploymentContent="true"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1827,6 +1843,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1844,6 +1861,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item_property.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1861,6 +1879,7 @@
 								>
 								<File
 									RelativePath=".\sound_file_item_dependency.resx"
+									SubType="Designer"
 									>
 								</File>
 							</File>
@@ -1894,6 +1913,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_bool_bool.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1911,6 +1931,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_bool_float.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1928,6 +1949,7 @@
 									>
 									<File
 										RelativePath=".\dependency_editor_float_bool.resx"
+										SubType="Designer"
 										>
 									</File>
 								</File>
@@ -1992,6 +2014,7 @@
 					>
 					<File
 						RelativePath=".\particle_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2287,6 +2310,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2309,6 +2333,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor_cancel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2322,6 +2347,7 @@
 					>
 					<File
 						RelativePath=".\resource_editor_commit.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2339,6 +2365,7 @@
 					>
 					<File
 						RelativePath=".\resource_selector.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -2366,6 +2393,7 @@
 							>
 							<File
 								RelativePath=".\texture_document.resx"
+								SubType="Designer"
 								>
 							</File>
 						</File>
@@ -3313,6 +3341,7 @@
 					>
 					<File
 						RelativePath=".\project_browser_dialog.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -3348,6 +3377,10 @@
 		</File>
 		<File
 			RelativePath=".\editor_resource_manager.h"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\render\engine\sources\texture_compressor.cpp"
 			>
 		</File>
 	</Files>

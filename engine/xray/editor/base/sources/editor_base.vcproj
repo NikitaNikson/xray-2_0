@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="editor_base"
 	ProjectGUID="{D48CBBFF-8B47-4E0F-915B-3220F3BC2402}"
 	RootNamespace="editor_base"
@@ -50,7 +50,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;NDEBUG;"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -219,7 +219,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);$(SolutionDir)../SDK/include"
 				PreprocessorDefinitions="WIN32;WINDOWS;"
 				StringPooling="false"
 				ExceptionHandling="0"
@@ -385,9 +385,10 @@
 			ReferencedProjectIdentifier="{AC5DD91F-CE10-4E05-B48A-E1DDEC5CCD9C}"
 			RelativePathToProject=".\xray\engine\pc\sources\engine_pc.vcproj"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
-			RelativePathToProject=".\WeifenLuo.WinFormsUI.Docking\WeifenLuo.WinFormsUI.Docking.csproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\WeifenLuo.WinFormsUI.Docking.dll"
+			AssemblyName="WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 	</References>
 	<Files>

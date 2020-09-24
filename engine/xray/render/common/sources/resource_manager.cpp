@@ -369,7 +369,7 @@ res_vs*	resource_manager::create_vs(const char* name, shader_defines_list& defin
 		//make_defines(local_opts, defines);
 		
 		map_shader_sources::iterator src_it = m_sources.find(sh_name);
-		ASSERT(src_it != m_sources.end()); //What to do if file not found?????
+		R_ASSERT(src_it != m_sources.end(), "Shader '%s' not found", sh_name);
 		ASSERT(!src_it->second.empty());
 
 		HRESULT hr = shader_compile(name,
@@ -464,7 +464,7 @@ res_ps* resource_manager::create_ps(LPCSTR name, shader_defines_list& defines)
 		//make_defines(local_opts, defines);
 
 		map_shader_sources::iterator src_it = m_sources.find(sh_name);
-		ASSERT(src_it != m_sources.end()); //What to do if file not found?????
+		R_ASSERT( src_it != m_sources.end(), "Shader '%s' not found", sh_name);
 		ASSERT(!src_it->second.empty());
 
 		HRESULT hr = shader_compile(name,
@@ -724,7 +724,13 @@ res_texture* resource_manager::create_texture(LPCSTR name)
 
 void resource_manager::load_texture(resources::queries_result& data)
 {
-	ASSERT(data.is_successful());
+	if (!data.is_successful())
+	{
+		if (!data.empty())
+			LOG_ERROR("Can't load texture '%s'", data[0].get_requested_path());
+
+		return;
+	}
 
 	if (!data[0].get_managed_resource())
 		return;
@@ -770,7 +776,7 @@ res_texture* resource_manager::create_texture( char const* user_name, math::uint
 
 	ID3DTexture2D*	d3d_texture = 0;
 	R_CHK( D3DXCreateTexture(	hw_wrapper::get_ref().device(), 
-								size.x, size.y, D3DX_DEFAULT /*needed to determine correct mip levels*/,
+								size.x, size.y, mip_levels,
 								usage,
 								format,
 								D3DPOOL_MANAGED,
@@ -814,7 +820,6 @@ struct load_texture_delegate
 	void execute(resources::queries_result& data)
 	{
 		ASSERT		(data.is_successful());
-
 		ASSERT		( data[0].get_managed_resource());
 
 		RECT rect;
@@ -826,10 +831,24 @@ struct load_texture_delegate
 
 		resources::pinned_ptr_const<u8> ptr  (data[0].get_managed_resource());
 
-		ID3DSurface* surface;
-		((ID3DTexture2D*)dest_texture->get_surface())->GetSurfaceLevel(0, &surface);
-		D3DXLoadSurfaceFromFileInMemory( surface, NULL, &rect, ptr.c_ptr(), ptr.size(), &src_rect, D3DX_FILTER_NONE, 0, NULL);
-		surface->Release();
+		DWORD levels = ((ID3DTexture2D*)dest_texture->get_surface())->GetLevelCount();
+
+		for(DWORD l = 0; l < levels; l++)
+		{
+			RECT r;
+			ID3DSurface* surface;
+
+			((ID3DTexture2D*)dest_texture->get_surface())->GetSurfaceLevel(l, &surface);
+
+			r.left = rect.left >> l;
+			r.top = rect.top >> l;
+			r.right = math::max(rect.right >> l, 1);
+			r.bottom = math::max(rect.bottom >> l, 1);
+
+			D3DXLoadSurfaceFromFileInMemory( surface, NULL, &r, ptr.c_ptr(), ptr.size(), NULL, D3DX_FILTER_TRIANGLE, 0, NULL);
+
+			surface->Release();
+		}
 
 		((ID3DTexture2D*)dest_texture->get_surface())->AddDirtyRect( &rect);
 //		HRESULT res = ((ID3DTexture2D*)dest_texture->get_surface())->SetAutoGenFilterType(D3DTEXF_PYRAMIDALQUAD);

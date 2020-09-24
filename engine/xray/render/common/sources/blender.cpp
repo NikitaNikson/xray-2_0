@@ -71,7 +71,7 @@ void blender::load(memory::reader& mem_reader)
 
 void blender::compile(blender_compiler& compiler, const blender_compilation_options& options)
 {
-	XRAY_UNREFERENCED_PARAMETERS	( compiler, options );
+	//XRAY_UNREFERENCED_PARAMETERS	( compiler, options );
 
 	//if (C.bEditor)	C.SetParams	(oPriority.value,oStrictSorting.value?true:false);
 	//else			C.SetParams	(oPriority.value,oStrictSorting.value?true:false);

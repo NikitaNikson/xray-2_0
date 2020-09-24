@@ -87,6 +87,7 @@ void STD_ALLOCATOR::construct									( pointer const p, T const& value )
 TEMPLATE_SIGNATURE
 void STD_ALLOCATOR::destroy										( pointer p )
 {
+	(void)p;
 	p->~T						( );
 }
 

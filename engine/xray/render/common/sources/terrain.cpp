@@ -369,7 +369,13 @@ void   terrain_cell_cook::create_resource	(resources::query_result_for_cook &	in
 
 	ref_declaration decl_ptr	= resource_manager::get_ref().create_decl	( terrain_vertex_declaration);
 	visual->geom				= model_manager::get_ref().create_geom		( visual->vertex_buffer_id, visual->index_buffer_id, decl_ptr);
-	visual->m_shader			= shader_manager::get_ref().create_shader	( terrain::get_ref().m_blender, 0, terrain::get_ref().m_texture_pool.get_pool_texture_name());
+
+	fixed_string<256> textures;
+	textures.assignf("%s,%s",
+		terrain::get_ref().m_texture_pool.get_pool_texture_name_1(),
+		terrain::get_ref().m_texture_pool.get_pool_texture_name_2()
+	);
+	visual->m_shader			= shader_manager::get_ref().create_shader	( terrain::get_ref().m_blender, 0, textures.c_str());
 
 	visual->vertex_row_size		= vertex_row_size;
 	visual->phisical_size		= phisical_size;

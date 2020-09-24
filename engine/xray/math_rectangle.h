@@ -38,6 +38,7 @@ public:
 
 public:
 	inline				rectangle	( );
+	inline				rectangle	( rectangle<vector_type>& other );
 	inline				rectangle	( vector_type const& min, vector_type const& max );
 
 	inline	rectangle&	zero		( );

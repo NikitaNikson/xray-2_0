@@ -159,6 +159,7 @@ static void splash_screen_main		( )
 
 	BITMAPFILEHEADER* const file_header = xray::pointer_cast<BITMAPFILEHEADER*>(buffer);
 	BITMAPINFOHEADER* const info_header	= xray::pointer_cast<BITMAPINFOHEADER*>(buffer + sizeof(BITMAPFILEHEADER));
+/*
 	pbyte const pixel_buffer		= buffer + file_header->bfOffBits;
 	u32 const bytes_per_line		= xray::math::align_up( u32(info_header->biBitCount*info_header->biWidth), u32(32) )/8;
 	pbyte const line				= (pbyte)ALLOCA(bytes_per_line);
@@ -176,10 +177,22 @@ static void splash_screen_main		( )
 			info_header->biBitCount,
 			buffer + file_header->bfOffBits
 		);
+*/
+
+	HDC desktop_dc = GetDC(HWND_DESKTOP);
+//	HBITMAP bitmap_handle = CreateCompatibleBitmap(desktop_dc, info_header->biWidth, info_header->biHeight);
+	HBITMAP bitmap_handle = CreateDIBitmap(desktop_dc, info_header, CBM_INIT, buffer + file_header->bfOffBits, 
+	(LPBITMAPINFO)info_header, DIB_RGB_COLORS);
+
+	ReleaseDC(HWND_DESKTOP, desktop_dc);
+
 	if ( !bitmap_handle ) {
 		LOG_ERROR					( "cannot create bitmap for splash screen from file \"%s\" ", file_name.c_str() );
 		return;
 	}
+
+//	SetDIBits(NULL, bitmap_handle, 0, info_header->biHeight, buffer + file_header->bfOffBits, 
+//	(LPBITMAPINFO)info_header, DIB_RGB_COLORS);
 
 	HMODULE const module			= GetModuleHandle( 0 );
 	s_splash_screen					= CreateDialog( module, MAKEINTRESOURCE( IDD_SPLASH_SCREEN ), 0, window_procedure );

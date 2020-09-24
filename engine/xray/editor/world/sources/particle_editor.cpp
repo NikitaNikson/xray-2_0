@@ -314,7 +314,7 @@ void 			particle_editor::on_view_new_folder				(Object^ , EventArgs^ )
 
 void			particle_editor::particle_editor_Activated		(System::Object^  , System::EventArgs^  )
 {
-	m_multidocument_base->view_panel->tree_view->root->FirstNode->Expand();
+//	m_multidocument_base->view_panel->tree_view->root->FirstNode->Expand();
 }
 
 //close form and save its settings

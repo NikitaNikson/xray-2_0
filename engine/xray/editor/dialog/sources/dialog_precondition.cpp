@@ -15,9 +15,9 @@ using xray::dialog_editor::dialog_expression;
 u32 dialog_precondition::m_created_counter = 0;
 
 dialog_precondition::dialog_precondition(int func, pstr par)
-:m_function(e_precondition_functions(func)),
-m_param(par)
+:m_function(e_precondition_functions(func))
 {
+	m_param = strings::duplicate(g_allocator, par);
 	++m_created_counter;
 }
 

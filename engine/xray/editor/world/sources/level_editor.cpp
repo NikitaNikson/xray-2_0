@@ -167,6 +167,11 @@ void level_editor::tick()
 
 	if( get_active_control() )
 		get_active_control()->update	( );
+
+	if(save_needed())
+		ide()->set_caption(m_project->project_name() + " [Modified]");
+	else
+		ide()->set_caption(m_project->project_name());
 }
 
 void level_editor::tool_loaded(tool_base^ )

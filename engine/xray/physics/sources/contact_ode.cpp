@@ -59,7 +59,7 @@ void	init_contact_ode( dxJointContact	&contact, const contact_joint_info &c )
 {
 	dContact dc;
 	d_init_contact( dc, c );
-	dJointInitContact( &contact, &dc );
+//	dJointInitContact( &contact, &dc );
 }
 
 //void	contact_ode::integrate( float	time_delta )

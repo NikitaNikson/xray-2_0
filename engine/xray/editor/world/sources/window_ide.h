@@ -422,6 +422,7 @@ public:
 	virtual void			get_view_size				(xray::math::int2&);
 	virtual void			get_view_size				(System::Drawing::Size%);
 	virtual void			set_status_label			(int idx, System::String^ text);
+	virtual	void			set_caption					(System::String^ text);
 	virtual void			set_mouse_sensivity			(float sensivity);
 	virtual IWin32Window^	wnd							() {return this;}
 	virtual options_manager^ get_options_manager		();

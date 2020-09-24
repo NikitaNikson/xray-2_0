@@ -12,7 +12,7 @@ bool g_allow_sensitivity_process	= false;
 
 HHOOK mouse_events_hook				= NULL;
 
-int round(float a)			{   return int(a + 0.5f);} 
+int iround(float a)			{   return int(a + 0.5f);} 
 
 LRESULT CALLBACK mouseHookProc(int nCode, WPARAM wParam, LPARAM lParam) 
 {
@@ -42,7 +42,7 @@ LRESULT CALLBACK mouseHookProc(int nCode, WPARAM wParam, LPARAM lParam)
    float ny 			= oy + (y - oy) * g_mouse_sensitivity;
  
    // Set cursor position
-   SetCursorPos			( round( nx ), round( ny ) );
+   SetCursorPos			( iround( nx ), iround( ny ) );
 
    // Set old location ready for next time
    ox = nx;

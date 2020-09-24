@@ -49,7 +49,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include;&quot;K:\old_files\Program Files (x86)\Autodesk\Maya2009\include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -59,6 +59,7 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="pch.h"
 				WarningLevel="4"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -71,9 +72,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="Wm4Foundation90.lib"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray.$(ProjectName).mll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName);$(SolutionDir)maya/lib;$(SolutionDir)tootle/lib"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)maya/lib&quot;;&quot;$(SolutionDir)tootle/lib&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;;&quot;K:\old_files\Program Files (x86)\Autodesk\Maya2009\lib&quot;"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(SolutionDir)../binaries/$(PlatformName)/xray.$(ProjectName).pdb"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
@@ -466,6 +470,14 @@
 			</File>
 			<File
 				RelativePath=".\solid_visual_writer_serialize.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\solid_visual_writer_translator.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\solid_visual_writer_translator.h"
 				>
 			</File>
 			<File

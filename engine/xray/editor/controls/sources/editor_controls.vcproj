@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="editor_controls"
 	ProjectGUID="{FDDFC8AD-1E92-4A92-8937-152C64C5B980}"
 	RootNamespace="controls"
@@ -243,7 +243,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);$(SolutionDir)../SDK/include"
 				PreprocessorDefinitions="WIN32;"
 				StringPooling="false"
 				MinimalRebuild="false"
@@ -424,13 +424,15 @@
 			AssemblyName="System.Xml, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
 			MinFrameworkVersion="131072"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{45DA3FF9-E510-48E6-BC23-8A38BADAAC76}"
-			RelativePathToProject=".\PropertyGrid\PropertyGrid.csproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\WeifenLuo.WinFormsUI.Docking.dll"
+			AssemblyName="WeifenLuo.WinFormsUI.Docking, Version=2.4.0.16114, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
-		<ProjectReference
-			ReferencedProjectIdentifier="{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
-			RelativePathToProject=".\WeifenLuo.WinFormsUI.Docking\WeifenLuo.WinFormsUI.Docking.csproj"
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\Flobbster.Windows.Forms.PropertyGrid.dll"
+			AssemblyName="Flobbster.Windows.Forms.PropertyGrid, Version=0.0.0.0, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 		<AssemblyReference
 			RelativePath="PresentationCore.dll"
@@ -454,7 +456,12 @@
 		/>
 		<ProjectReference
 			ReferencedProjectIdentifier="{1351B0D6-E811-43F6-B57D-08655826DE18}"
-			RelativePathToProject=".\wpf_controls\wpf_controls.csproj"
+			RelativePathToProject=".\xray\wpf_controls\wpf_controls.csproj"
+		/>
+		<AssemblyReference
+			RelativePath="..\..\..\..\..\SDK\DockPanelSkin.dll"
+			AssemblyName="DockPanelSkin, Version=1.0.0.0, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
 		/>
 	</References>
 	<Files>
@@ -638,6 +645,7 @@
 					>
 					<File
 						RelativePath=".\tree_view_filter_panel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -659,6 +667,7 @@
 					>
 					<File
 						RelativePath=".\tree_view_search_panel.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>
@@ -680,6 +689,7 @@
 					>
 					<File
 						RelativePath=".\scalable_scroll_bar.resx"
+						SubType="Designer"
 						>
 					</File>
 				</File>

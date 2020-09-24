@@ -11,7 +11,7 @@ namespace xray {
 namespace render {
 
 
-blender_deffer::blender_deffer(): blender_deffer_base(false, false, false)
+blender_deffer::blender_deffer(): blender_deffer_base(true, true, true)
 {
 	m_desc.m_version = 1;
 }

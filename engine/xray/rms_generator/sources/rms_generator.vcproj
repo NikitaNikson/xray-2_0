@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="rms_generator"
 	ProjectGUID="{951FE628-A044-4AB5-86E6-253295216330}"
 	RootNamespace="rms_generator"
@@ -286,7 +286,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="$(SolutionDir)/stlport;$(SolutionDir);"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)/stlport&quot;;&quot;$(SolutionDir)&quot;;../../../../SDK/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;"
 				MinimalRebuild="false"
 				ExceptionHandling="0"
@@ -311,7 +311,8 @@
 				Name="VCLinkerTool"
 				OutputFile="$(SolutionDir)../binaries/$(PlatformName)/xray_$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)../binaries/$(PlatformName)/libraries/;$(SolutionDir)cs/libraries/$(PlatformName)"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)../binaries/$(PlatformName)/libraries/&quot;;&quot;$(SolutionDir)cs/libraries/$(PlatformName)&quot;;&quot;$(SolutionDir)../SDK/libraries&quot;"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				LargeAddressAware="2"

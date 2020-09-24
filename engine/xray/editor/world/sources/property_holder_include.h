@@ -28,12 +28,12 @@ public:
 	{
 	}
 
-	inline T const&	DELEGATE_CALL	get				( )
+	inline T const&	/*DELEGATE_CALL*/	get				( )
 	{
 		return	(m_value);
 	}
 
-	inline void	DELEGATE_CALL		set				( T const &value )
+	inline void	/*DELEGATE_CALL*/		set				( T const &value )
 	{
 		m_value	= value;
 	}

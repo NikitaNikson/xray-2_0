@@ -12,12 +12,12 @@ namespace strings {
 
 class XRAY_CORE_API stream {
 public:
-	inline	explicit		stream			( memory::base_allocator* allocator );
-	inline					~stream			( );
-			void __cdecl	append			( pcstr format, ... );
-	inline	pcbyte			get_buffer		( ) const;
-	inline	u32				get_buffer_size	( ) const;
-	inline	void			clear			( );
+		explicit		stream			( memory::base_allocator* allocator );
+						~stream			( );
+		void __cdecl	append			( pcstr format, ... );
+		pcbyte			get_buffer		( ) const;
+		u32				get_buffer_size	( ) const;
+		void			clear			( );
 
 private:
 	memory::base_allocator*					m_allocator;
