@@ -536,28 +536,42 @@ void device::select_resolution( u32 & width, u32 & height, bool windowed, HWND w
 	}
 	else
 	{
-		width	= 1024;
-		height	= 768;
+		RECT desktop;
+		// Get a handle to the desktop window
+		const HWND hDesktop = GetDesktopWindow();
+		// Get the size of screen to the variable desktop
+		GetWindowRect(hDesktop, &desktop);
+		// The top left corner will have coordinates (0,0)
+		// and the bottom right corner will have coordinates
+		// (horizontal, vertical)
+		int horizontal = desktop.right;
+		int vertical = desktop.bottom;
+
+		//width	= 1024;
+		//height	= 768;
 		//ASSERT( !"device::select_resolution: Not implemented for fullscreen.");
 		//	TODO: OPTIONS
-		//string64					buff;
-		//sprintf_s					( buff,sizeof( buff),"%dx%d",psCurrentVidMode[0],psCurrentVidMode[1]);
+
+		string64					buff;
+		sprintf_s(buff, sizeof(buff), "%dx%d", horizontal, vertical);
 
 		//if( _ParseItem( buff,vid_mode_token)==u32( -1)) //not found
 		//{ //select safe
 		//	sprintf_s				( buff,sizeof( buff),"vid_mode %s",vid_mode_token[0].name);
 		//	Console->Execute		( buff);
 		//}
-
 		//dwWidth						= psCurrentVidMode[0];
 		//dwHeight					= psCurrentVidMode[1];
+
+		width = horizontal;
+		height = vertical;
 	}
 }
 
 
 void device::reset( /*bool windowed*/)
 {
-	m_chain_desc.Windowed	= m_windowed;
+	m_chain_desc.Windowed = m_windowed;
 
 	R_CHK( m_swap_chain->SetFullscreenState( !m_windowed, NULL));
 

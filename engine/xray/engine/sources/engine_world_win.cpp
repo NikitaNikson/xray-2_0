@@ -28,6 +28,8 @@
 
 #pragma comment( lib, "delayimp.lib" )
 
+static xray::command_line::key	bhwWindowed("windowed", "", "", "windowed mode");
+
 using xray::engine::engine_world;
 
 static pcstr s_window_id					= XRAY_ENGINE_ID " DX9 Renderer Window";
@@ -127,10 +129,12 @@ static void create_window			( HWND& result )
 	R_ASSERT				(window_size_x);
 
 	RECT		window_size = { 0, 0, window_size_x, window_size_y };
-	AdjustWindowRect		(&window_size, window_style, false);
 
-	result					= 
-		CreateWindow (
+	if ( bhwWindowed ) {
+		AdjustWindowRect(&window_size, window_style, false);
+
+		result =
+			CreateWindow (
 			s_window_class_id,
 			s_window_id,
 			window_style,
@@ -142,9 +146,41 @@ static void create_window			( HWND& result )
 			0,
 			s_window_class.hInstance,
 			0
-		);
+			);
+	} else {
+		RECT desktop;
+		// Get a handle to the desktop window
+		const HWND hDesktop = GetDesktopWindow();
+		// Get the size of screen to the variable desktop
+		GetWindowRect(hDesktop, &desktop);
+		// The top left corner will have coordinates (0,0)
+		// and the bottom right corner will have coordinates
+		// (horizontal, vertical)
+		int horizontal = desktop.right;
+		int vertical = desktop.bottom;
+
+		result =
+			CreateWindow(
+			s_window_class_id,
+			s_window_id,
+			WS_POPUP,
+			CW_USEDEFAULT,
+			CW_USEDEFAULT,
+			horizontal,
+			vertical,
+			GetDesktopWindow(),
+			0,
+			s_window_class.hInstance,
+			0
+			);
+	}
 
 	R_ASSERT				( result );
+
+	if (!bhwWindowed) {
+		ShowWindow(result, SW_MAXIMIZE);
+		UpdateWindow(result);
+	}
 }
 
 void engine_world::initialize_core	( )

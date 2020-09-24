@@ -9,16 +9,19 @@
 #include <xray/render/base/engine_wrapper.h>
 #include <dxerr.h>
 #include <boost/bind.hpp>
+//#include <xray/console_command.h>
 
 namespace xray {
 namespace render {
-
 
 inline void	fill_vid_mode_list			(const hw_wrapper* const ) {;}
 inline void	free_vid_mode_list			() {;}
 
 inline void	fill_render_mode_list		() {;}
 inline void	free_render_mode_list		() {;}
+
+//static bool bFullscreen = false;
+//static console_commands::cc_bool r_fullscreen("r_fullscreen", bFullscreen);
 
 hw_wrapper::hw_wrapper( xray::render::engine::wrapper& wrapper, HWND hwnd ):
 	m_wrapper		( wrapper ),
@@ -80,8 +83,9 @@ void hw_wrapper::create_device(HWND hwnd, bool move_window)
 	bool  windowed	= true;
 
 //	if (!g_dedicated_server)
-	//	TODO: OPTIONS
-		//windowed			= !psDeviceFlags.is(rsFullscreen);
+		//	TODO: OPTIONS
+	//if ( bFullscreen )
+		//windowed = false; //!psDeviceFlags.is(rsFullscreen);
 
 	m_dev_adapter	= D3DADAPTER_DEFAULT;
 	m_dev_type	= m_caps.force_gpu_ref ? D3DDEVTYPE_REF : D3DDEVTYPE_HAL;
@@ -462,10 +466,21 @@ void hw_wrapper::select_resolution(u32 &width, u32 &height, bool windowed) const
 	}
 	else
 	{
+		RECT desktop;
+		// Get a handle to the desktop window
+		const HWND hDesktop = GetDesktopWindow();
+		// Get the size of screen to the variable desktop
+		GetWindowRect(hDesktop, &desktop);
+		// The top left corner will have coordinates (0,0)
+		// and the bottom right corner will have coordinates
+		// (horizontal, vertical)
+		int horizontal = desktop.right;
+		int vertical = desktop.bottom;
+
 		ASSERT(!"hw_wrapper::select_resolution: Not implemented for fullscreen.");
 		//	TODO: OPTIONS
-		//string64					buff;
-		//sprintf_s					(buff,sizeof(buff),"%dx%d",psCurrentVidMode[0],psCurrentVidMode[1]);
+		string64					buff;
+		sprintf_s					(buff,sizeof(buff),"%dx%d",horizontal,vertical);
 
 		//if(_ParseItem(buff,vid_mode_token)==u32(-1)) //not found
 		//{ //select safe
@@ -475,6 +490,9 @@ void hw_wrapper::select_resolution(u32 &width, u32 &height, bool windowed) const
 
 		//dwWidth						= psCurrentVidMode[0];
 		//dwHeight					= psCurrentVidMode[1];
+
+		width = horizontal;
+		height = vertical;
 	}
 }
 
