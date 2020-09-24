@@ -1,0 +1,61 @@
+#include "common.h"
+#include "sload.h"
+
+uniform sampler2D s_tile;
+
+float4 get_tile_rect(int id)
+{
+	int top = (id / 4) * 255;
+	int left = (id - top * 4) * 255;
+
+	return float4(left * 0.25, top * 0.25, (left+1) * 0.25, (top+1) * 0.25);
+}
+
+float repeat(float val, float min, float max)
+{
+	if(val < min) val = max - (val % 0.25);
+	if(val > max) val = min + (val % 0.25);
+
+	return val;
+}
+
+struct o_terrain
+{
+	float4 hpos 	: POSITION;
+
+	half4 c1 	: COLOR0;
+	half4 c2 	: COLOR1;
+	
+	float2 tc1 	: TEXCOORD0;
+	float2 tc2 	: TEXCOORD1;
+	float2 tc3 	: TEXCOORD2;
+	int4   tex	: TEXCOORD3;
+	float4 position : TEXCOORD4;
+	half3  N 	: TEXCOORD5;
+};
+
+f_deffer main(o_terrain i)
+{
+	f_deffer o;
+
+	half 	ms	= xmaterial		;
+
+	float4 rect	= get_tile_rect(i.tex.r);
+	float2 tc1	= float2(repeat(i.tc1.x,rect.x,rect.z),repeat(i.tc1.y,rect.y,rect.w));
+	       rect	= get_tile_rect(i.tex.g);
+	float2 tc2	= float2(repeat(i.tc1.x,rect.x,rect.z),repeat(i.tc1.y,rect.y,rect.w));
+	       rect	= get_tile_rect(i.tex.b);
+	float2 tc3	= float2(repeat(i.tc1.x,rect.x,rect.z),repeat(i.tc1.y,rect.y,rect.w));
+
+	float4 t1	= tex2D(s_tile,tc1) * i.c1.r;
+	float4 t2	= tex2D(s_tile,tc2) * i.c1.g;
+	float4 t3	= tex2D(s_tile,tc3) * i.c1.b;
+
+	float4 final	= (t1 + t2 + t3) * i.c2;
+
+	o.Ne          	= half4(normalize((half3)i.N.xyz),i.position.w);
+	o.position    	= half4(i.position.xyz + o.Ne.xyz * def_virtualh/2.h, ms);
+	o.C 		= half4(final.rgb,0);
+
+	return o;
+}

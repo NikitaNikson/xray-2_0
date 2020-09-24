@@ -1,0 +1,12 @@
+#include "common.h"
+
+struct vf
+{
+	float4 C: COLOR0;
+};
+
+half4 main (vf i) : COLOR
+{
+	return i.C;
+//	return half4(1,1,1,1);
+}
