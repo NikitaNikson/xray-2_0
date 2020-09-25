@@ -165,11 +165,22 @@ m_visible				(false)
 object_base::~object_base()
 {
 	m_collision.destroy			();
-	property_holder* tmp		= m_property_holder;
-	DELETE						(tmp);
-	s_id_to_object.Remove		(m_id);
-	DELETE						(m_transform);
-	DELETE						(m_aabbox);
+	s_id_to_object.Clear();
+
+	//broken allocator?
+	//property_holder* tmp		= m_property_holder;
+	//DELETE						(tmp);
+
+	//object_base^		object;
+	//s_id_to_object.TryGetValue(m_id, object);
+	//if (object != nullptr)
+	//{	
+	//	s_id_to_object.Remove(m_id);
+	//	object = nullptr;
+	//}
+
+	//DELETE						(m_transform);
+	//DELETE						(m_aabbox);
 }
 
 void object_base::load(xray::configs::lua_config_value const& t)

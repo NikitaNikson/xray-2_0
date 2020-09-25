@@ -186,7 +186,7 @@ void material_manager::load_raw_files(resources::queries_result& data)
 		resources::pinned_ptr_const<u8>	ptr (data[i].get_managed_resource());
 		u32	const	size = data[i].get_managed_resource()->get_size();
 		memory::chunk_reader	ch_it(& * ptr, size, memory::chunk_reader::chunk_type_sequential);
-/*
+
 		if (ch_it.chunk_exists(THM_CHUNK_TEXTURE_TYPE))
 		{
 			memory::reader in = ch_it.open_reader(THM_CHUNK_TEXTURE_TYPE);
@@ -194,14 +194,15 @@ void material_manager::load_raw_files(resources::queries_result& data)
 
 			if (ttImage == type || ttTerrain == type || ttNormalMap == type)
 			{
-*/
-		u32 start = strings::length("resources/textures/");
-		u32 len = m_files_list[i].length() - start - 4;
-		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!HACK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		shared_string name = m_files_list[i].substr(start, len).c_str();
-		material*	mtl = NEW(material);
-		m_materials[name] = mtl;
-		mtl->load(ch_it);
+				u32 start = strings::length("resources/textures/");
+				u32 len = m_files_list[i].length() - start - 4;
+				//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!HACK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				shared_string name = m_files_list[i].substr(start, len).c_str();
+				material*	mtl = NEW(material);
+				m_materials[name] = mtl;
+				mtl->load(ch_it);
+			}
+		}
 	}
 
 	//release file names list
@@ -220,8 +221,11 @@ ref_material material_manager::get_material(const shared_string& name)
 	{
 		return it->second;
 	}
-	
+#ifdef DEBUG
+	ASSERT( false, "Material \"%s\"not found ! Some objects will render not properly!", name.c_str() );
+#else
 	LOG_ERROR("Material \"%s\"not found !", name.c_str() );
+#endif
 	return m_materials[name] = NEW(material);
 }
 
