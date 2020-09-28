@@ -109,28 +109,29 @@ static void create_window			( HWND& result )
 	u32 const screen_size_x	= GetSystemMetrics( SM_CXSCREEN );
 	u32 const screen_size_y	= GetSystemMetrics( SM_CYSCREEN );
 
-	DWORD const	window_style = WS_OVERLAPPED;// | WS_CAPTION;
-
-	u32 window_size_x		= 0;
-	u32 window_size_y		= 0;
-
-	u32 const window_sizes_x []	= { 1024, 800, 640 };
-	u32 const window_sizes_y []	= { 768, 600, 480 };
-	for ( u32 i=0; i<xray::array_size(window_sizes_x); ++i ) {
-		if ( window_sizes_x[i] < screen_size_x && 
-			 window_sizes_y[i] < screen_size_y )
-		{
-			window_size_x	= window_sizes_x[i];
-			window_size_y	= window_sizes_y[i];
-			break;
-		}
-	}
-
-	R_ASSERT				(window_size_x);
-
-	RECT		window_size = { 0, 0, window_size_x, window_size_y };
-
 	if ( bhwWindowed ) {
+
+		DWORD const	window_style = WS_OVERLAPPED;// | WS_CAPTION;
+
+		u32 window_size_x = 0;
+		u32 window_size_y = 0;
+
+		u32 const window_sizes_x[] = { 1024, 800, 640 };
+		u32 const window_sizes_y[] = { 768, 600, 480 };
+		for (u32 i = 0; i < xray::array_size(window_sizes_x); ++i) {
+			if (window_sizes_x[i] < screen_size_x &&
+				window_sizes_y[i] < screen_size_y)
+			{
+				window_size_x = window_sizes_x[i];
+				window_size_y = window_sizes_y[i];
+				break;
+			}
+		}
+
+		R_ASSERT(window_size_x);
+
+		RECT		window_size = { 0, 0, window_size_x, window_size_y };
+
 		AdjustWindowRect(&window_size, window_style, false);
 
 		result =
@@ -148,26 +149,17 @@ static void create_window			( HWND& result )
 			0
 			);
 	} else {
-		RECT desktop;
-		// Get a handle to the desktop window
-		const HWND hDesktop = GetDesktopWindow();
-		// Get the size of screen to the variable desktop
-		GetWindowRect(hDesktop, &desktop);
-		// The top left corner will have coordinates (0,0)
-		// and the bottom right corner will have coordinates
-		// (horizontal, vertical)
-		int horizontal = desktop.right;
-		int vertical = desktop.bottom;
+		DWORD const	window_style = WS_EX_TOPMOST | WS_POPUP;
 
 		result =
 			CreateWindow(
 			s_window_class_id,
 			s_window_id,
-			WS_POPUP,
+			window_style,
 			CW_USEDEFAULT,
 			CW_USEDEFAULT,
-			horizontal,
-			vertical,
+			screen_size_x,
+			screen_size_y,
 			GetDesktopWindow(),
 			0,
 			s_window_class.hInstance,
@@ -177,10 +169,10 @@ static void create_window			( HWND& result )
 
 	R_ASSERT				( result );
 
-	if (!bhwWindowed) {
-		ShowWindow(result, SW_MAXIMIZE);
-		UpdateWindow(result);
-	}
+	//if (!bhwWindowed) {
+		//ShowWindow(result, SW_MAXIMIZE);
+		//UpdateWindow(result);
+	//}
 }
 
 void engine_world::initialize_core	( )
