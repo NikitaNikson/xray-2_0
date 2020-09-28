@@ -282,23 +282,6 @@ void console::tick( )
 	m_last_log_count			= log_cnt;
 	m_last_position				= scroll_pos;
 	scroll_v->set_step_size		( line_height );
-
-	//ugly hack for fov camera!!!!!!!
-	console_commands::console_command* temp = console_commands::find("cam_fov");
-	if (temp) {
-		temp->status(status_str);
-		if (temp_cam != atof(status_str)) {
-			hat_upd = false;
-		}
-
-		if (hat_upd == false)
-			{
-				hat_upd = true;
-				temp_cam = atof(status_str);
-				//LOGI_INFO("CAM_FOV", " value is: %s", status_str);
-				m_game.create_projection(temp_cam);
-			}
-		}
 }
 
 struct compare_pcstr_pred

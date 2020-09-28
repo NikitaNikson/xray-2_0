@@ -38,7 +38,6 @@ public:
 
 	virtual					~game					( );
 
-	virtual	void			create_projection		(float temp_cam = 0);
 	virtual	void			enable					( bool value );
 	virtual	void			tick					( u32 current_frame_id );
 	virtual	void			clear_resources			( );
@@ -78,6 +77,7 @@ private:
 //	game_resource_manager*					m_game_resource_manager;
 	float4x4								m_inverted_view;
 	float4x4								m_projection;
+	float									m_fov;
 	stats_graph*							m_fps_graph;
 	console*								m_console;
 	stats*									m_stats;

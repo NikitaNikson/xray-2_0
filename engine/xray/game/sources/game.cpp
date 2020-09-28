@@ -44,9 +44,8 @@ using xray::console_commands::cc_float;
 static bool s_draw_stats_value = true;
 static console_commands::cc_bool s_draw_stats("draw_stats", s_draw_stats_value);
 
-
-static float cam_fov = 0.9f;
-static cc_float cc_cam_fov("cam_fov", cam_fov, 0.3f, 1.8f);
+static float cam_fov = 67.5f;
+static console_commands::cc_float cc_cam_fov("fov", cam_fov, 20.f, 140.0f);
 
 static xray::physics::shell*	s_dbg_shell_1	= 0;
 static command_line::key		s_level_key("level", "", "", "level to load");
@@ -198,7 +197,8 @@ game::game(
 	m_game_world			( NULL ),
 	m_main_menu				( NULL ),
 	m_enabled				( false ),
-	m_project_path			( "" )
+	m_project_path			( "" ),
+	m_fov					( 67.5f )
 {
 	register_cookers		( );
 	m_timer.start			( );
@@ -217,9 +217,9 @@ game::game(
 						float3( 0.f,  1.f, 0.f ))
 					);
 
-	create_projection();
-
 	register_console_commands();
+
+	m_projection = math::create_projection(math::deg2rad(m_fov), 1 / (4.f / 3.f), .2f, 5000.0f);
 
 	fixed_string512				project_path;
 	bool const load_level = s_level_key.is_set_as_string(&project_path);
@@ -227,16 +227,6 @@ game::game(
 	if (load_level && !m_engine.command_line_editor())
 	{
 		load(project_path.c_str());
-	}
-}
-
- void game::create_projection(float temp_cam) {
-	 if (temp_cam)
-	{
-		m_projection = math::create_projection(temp_cam, 1 / (4.f / 3.f), .2f, 5000.0f);
-	}
-	else {
-		m_projection = math::create_projection(math::pi_d2, 1 / (4.f / 3.f), .2f, 5000.0f);
 	}
 }
 
@@ -393,6 +383,11 @@ void game::tick					( u32 const current_frame_id )
 	update_stats						( current_frame_id );
 
 	m_render_world.engine().set_view_matrix			( math::invert4x3( m_inverted_view ) );
+	if (!math::similar(m_fov, cam_fov))
+	{
+		m_projection = math::create_projection(math::deg2rad(cam_fov), 1 / (4.f / 3.f), .2f, 5000.0f);
+		m_fov = cam_fov;
+	}
 	m_render_world.engine().set_projection_matrix	( m_projection );
 
 	m_ui_world.tick				( );
@@ -401,8 +396,6 @@ void game::tick					( u32 const current_frame_id )
 	m_rtp_world.tick			( );
 
 	m_animation_world.tick		( );
-
-	//LOGI_INFO("CAM_FOV", " value is: %s", status_str);
 }
 
 void game::update_stats( u32 const current_frame_id )
