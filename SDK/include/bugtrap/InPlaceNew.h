@@ -14,7 +14,7 @@
 
 #pragma once
 
-#ifndef _NEW_
+#if !defined(_NEW_) && (_MSC_VER < 1910)
 
 /**
  * @brief In-place "new" operator.
